@@ -1,0 +1,504 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+     <!-- This part is for using single $ for latex input, instead of \(\) -->
+     <script>
+      MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+          },
+      svg: {
+          fontCache: 'global'
+      }
+  };
+  </script>
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+    .lista
+        {
+            counter-reset: listaCounter 0 sublistaCounter 1 subsublistaCounter 1 subsubsublistaCounter 1;
+        }
+        /* .sublista{
+            counter-reset: sublistaCounter 1  SubsublistaCounter;
+        } */
+        </style>
+
+    <style>
+            /* body.number-title
+            {
+            counter-reset: temaCounter 1 subsectioncounter ;
+            } */
+            body.fondo-body{
+              counter-reset: temaCounter 10 sectionCounter;
+            }
+
+            /* h1.page-number-title
+            {
+            counter-reset: sectionCounter 0;
+            }  */
+
+            h1.tema-number-title
+                {
+                counter-reset: sectionCounter 0;
+                } 
+
+            h1.number-title
+            {
+            counter-reset: subsectionCounter;
+            /* counter-reset: subsectionCounter; */
+            }
+
+
+
+    </style>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+    <!-- Top Menu  -->
+    
+          
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Tecnologías de la Información y Comunicación II</div>
+          <div class="subtitle">Licenciatura en Administración Turística</div>
+          <div class="subsubtitle">Universidad del Mar, campus Huatulco </div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+
+      
+        </header>
+
+    <nav class="top-nav">
+        <ul>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Home.html"> Inicio  </a> </li>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Informacion_General.html"> Información</a> </li>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Notas.html"> Notas  </a> </li>
+        <!-- <li> <a href="https://pablojhh.github.io/TICDOS/Quizes.html"> Quizes  </a> </li>
+            <li> <a href="https://pablojhh.github.io/TICDOS/Practicas.html">Prácticas</a></li> -->
+            <li> <a href="https://pablojhh.github.io/TICDOS/Examenes.html"> Archivos  </a> </li>
+        </ul>
+    </nav>
+    
+    <title> Semana 7 y 8 </title>
+    
+    </head>
+
+  <body class="fondo-body" >
+    
+
+
+<!--######################################################################################################################## -->
+
+    <div class="nota-box"> <h1 class="page-number-title"> Semana 7 y 8</h1> 
+
+   <button class="respButton hvr-grow "> <h1 class="tema-number-title"> Funciones de Busqueda y Referencia</h1>  </button>
+      <div class="resp-box flexbox">
+        
+      <p>
+        <table class="tabla-funciones">
+            <thead>
+                <tr>
+                    <th>Función</th>
+                    <th>Sintaxis</th>
+                    <th>Descripción</th>
+                    <th>Ejemplo</th>
+                </tr>
+            </thead>
+            <tbody>
+                  <tr>
+                    <td class="nombre-funcion">BUSCAR (forma vectorial)</td>
+                    <td>BUSCAR(valor_buscado, vector_de_comparación, [vector_resultado])</td>
+                    <td>Busca un valor en un rango de una fila o una columna ( denominado vector_de_comparación ) 
+                      y devuelve un valor en la misma posición pero en un segundo rango de una fila o columna 
+                      llamado vector_resultado.</td>
+                    <td>=BUSCAR("Manzana", A1:A10, B1:B10)</td>
+                </tr>
+                <tr>
+                  <td class="nombre-funcion">BUSCAR (forma matricial)</td>
+                  <td>BUSCAR(valor_buscado, matriz)</td>
+                  <td>Busca el valor especificado en la primera fila o columna de una matriz y 
+                    devuelve un valor en la misma posición en la última fila o columna de la matriz.</td>
+                  <td>=BUSCAR("Manzana", A1:B10)</td>
+              </tr>
+                <tr>
+                    <td class="nombre-funcion">BUSCARV</td>
+                    <td>=BUSCARV(valor_buscado,matriz_buscar_en, indicador_columnas,[ordenado])</td>
+                    <td>Busca un valor en la primera columna de la izquierda de una tabla y luego devuelve 
+                      un valor en la misma fila desde la columna especificada en indicador_columnas.
+                    </td>
+                    <td>=BUSCARV("Manzana", A1:B10, 2, <code>FALSO</code>)</td>
+                </tr>
+                <tr>
+                  <td class="nombre-funcion">BUSCARH</td>
+                  <td>=BUSCARH(valor_buscado, matriz_buscar_en, indicador_filas, [ordenado])</td>
+                  <td>Busca en la primera fila de una tabla o matriz de valores y devuelve el valor en la misma 
+                    columna desde una fila especificada.</td>
+                  <td>=BUSCARH("Juan", A1:D10, 3, <code>VERDADERO</code>)</td>
+                </tr>
+                <tr>
+                  <td class="nombre-funcion">BUSCARX</td>
+                  <td>=BUSCARX(valor_buscado, matriz_buscada, matriz_devuelta, [si_no_se_encuentra], [modo_de_coincidencia]; [modo_de_búsqueda])</td>
+                  <td>busca en un rango o una matriz y, a continuación, devuelve el elemento correspondiente a 
+                    la primera coincidencia que encuentra. Si no existe ninguna coincidencia, BUSCARX puede 
+                    devolver la coincidencia más cercana (aproximada)</td>
+                  <td>=BUSCARH("Juan", A1:D10, 3, <code>VERDADERO</code>)</td>
+                </tr>
+                <!--
+                <tr>
+                  <td class="nombre-funcion">COINCIDIR</td>
+                  <td>=COINCIDIR(valor_buscado, matriz_buscada, [tipo_de_coincidencia])</td>
+                  <td>Devuelve la posición relativa de un elemento en una matriz, que coincide 
+                    con un valor dado en un orden especificado.</td>
+                  <td>=COINCIDIR("Manzana", A1:A10, 0)</td>
+                </tr>
+                <tr>
+                  <td class="nombre-funcion">COINCIDIRX</td>
+                  <td>=COINCIDIR(valor_buscado,matriz_buscada,tipo_de_coincidenci)</td>
+                  <td>Devuelve la posición relativa de un elemento en una matriz, que coincide 
+                    con un valor dado en un orden especificado.</td>
+                  <td>=COINCIDIRX("Manzana", A1:A10, 0)</td>
+                </tr>
+                <tr>
+                    <td class="nombre-funcion">ÍNDICE</td>
+                    <td>=ÍNDICE(matriz, núm_fila, [núm_columna])</td>
+                    <td>Devuelve el valor de una celda en una intersección específica de una fila y una columna en una lista o matriz.</td>
+                    <td>=ÍNDICE(A1:B10, 3, 2)</td>
+                </tr>
+                <tr>
+                    <td class="nombre-funcion">COINCIDIR</td>
+                    <td>=COINCIDIR(valor_buscado, rango_busqueda, [tipo_correspondencia])</td>
+                    <td>Devuelve la posición relativa de un elemento en una lista o matriz.</td>
+                    <td>=COINCIDIR("Manzana", A1:A10, 0)</td>
+                </tr>
+                <tr>
+                    <td class="nombre-funcion">BUSCAR</td>
+                    <td>=BUSCAR(Valor_buscado, matriz_buscar, [matriz_resultados])</td>
+                    <td>Busca un valor en la primera fila o columna de una matriz y devuelve un valor en la misma posición de una fila o columna especificada en la misma tabla.</td>
+                    <td>=BUSCAR("Manzana", A1:A10, B1:B10)</td>
+                </tr>
+                <tr>
+                    <td class="nombre-funcion">ÍNDICECOINCIDIR</td>
+                    <td>=ÍNDICECOINCIDIR(rango, criterio, índice)</td>
+                    <td>Devuelve el valor de una celda en la intersección de una fila y columna específicas en una tabla o rango.</td>
+                    <td>=ÍNDICECOINCIDIR(A1:B10, "Manzana", 2)</td>
+                </tr>
+                <tr>
+                    <td class="nombre-funcion">DESREF</td>
+                    <td>=DESREF(referencia, filas, columnas, [alto], [ancho])</td>
+                    <td>Devuelve una referencia a un rango desplazado en una cantidad específica de filas y columnas desde una celda o rango de celdas inicial.</td>
+                    <td>=DESREF(A1, 2, 1)</td>
+                </tr>
+                <tr>
+                    <td class="nombre-funcion">INDIRECTO</td>
+                    <td>=INDIRECTO(ref_texto, [a1])</td>
+                    <td>Devuelve una referencia especificada por un valor de texto.</td>
+                    <td>=INDIRECTO("A1")</td>
+                </tr>
+                <tr>
+                    <td class="nombre-funcion">DIRECCION</td>
+                    <td>=DIRECCIÓN(fila, columna, [absoluta], [a1], [referencia])</td>
+                    <td>Devuelve una referencia como un valor de texto a una celda específica en una hoja de cálculo.</td>
+                    <td>=DIRECCIÓN(1, 1)</td>
+                </tr> -->
+            </tbody>
+        </table>
+      </p>
+      
+    <h1 class="number-title">Observaciones</h1>
+        <p>
+          <h2 class="number-title">Generales </h2>
+          <ol>
+            <li>Se debe utilizar la función BUSCARH cuando el valor que estamos buscando se encuentra en una fila de alguna
+               tabla de datos. Por el contrario, la función BUSCARV realiza la búsqueda en una columna.
+               <!-- <p> 
+                <div class="flexbox">  
+                  <img src="../Imagenes/Excel/Funciones_BUSCAV_BUSCARH.png" alt="",height="auto",width="auto"> 
+                </div>
+               </p> -->
+       
+              </li><br>
+            <li>Las funciones BUSCAR, BUSCARV y BUSCARH no distinguen entre mayúsculas y minúsculas.</li><br>
+            <li>La “V” de BUSCARV hace referencia a una búsqueda vertical, mientras la "H" en BUSCARH,
+              la búsqueda se realiza de forma horizontal.
+            </li><br> 
+            <li>Use BUSCARH cuando los valores de comparación se encuentren en una fila en la parte superior de una 
+              tabla de datos y desee encontrar información que se halle dentro de un número especificado de filas.
+              Use BUSCARV cuando los valores de comparación se encuentren en una columna a la izquierda de los datos 
+              que desea encontrar.
+            </li><br> 
+            <li>La elección de utilizar la función BUSCARV o la función BUSCARH dependerá de la orientación de la tabla y de la ubicación de la información que se busca.</li><br>
+             
+          </ol>
+          <h2 class="number-title">Función BUSCAR</h2>
+          <ol>
+            <li><b>Importante:</b>  Los valores del <code>vector_de_comparación</code> se deben colocar en orden ascendente:
+              ..., -2, -1, 0, 1, 2, ..., A-Z, <code>FALSO</code>, <code>VERDADERO</code>; de lo contrario, BUSCAR puede devolver un valor
+              incorrecto.</li><br>
+              <li>Si el valor exacto que se esta buscando no se encuentra dentro de vector_comparacion,
+                la función BUSCAR va a aproximar “hacia abajo”, es decir, va a tomar el valor menor más
+                cercano que esté en la tabla. En otras palabras, si la función BUSCAR no puede encontrar 
+                el <code>valor_buscado</code>, la función muestra el valor 
+                mayor en el <code>vector_de_comparación</code>, que es menor o igual que el <code>valor_buscado</code>.</li><br>
+              <li>Si el <code>valor_buscado</code> es menor que el menor valor del <code>vector_de_comparación</code>, BUSCAR devuelve el valor de error #N/A.
+
+              </li>
+          </ol>
+
+
+          <!-- <h2 class="number-title">Función BUSCAR (forma vectorial)</h2>
+          <ol>
+              <li>Si la función BUSCAR no puede encontrar el <code>valor_buscado</code>, la función muestra el valor mayor en
+               <code>vector_de_comparación</code>, que es menor o igual que el <code>valor_buscado</code>.</li><br>
+               <li>Si el <code>valor_buscado</code> es menor que el menor valor del <code>vector_de_comparación</code>, BUSCAR devuelve el valor de error #N/A.</li><br>
+               
+              
+          </ol> -->
+
+          <h2 class="number-title">Función BUSCAR (forma matricial)</h2>
+          <ol>
+              <li>Use esta forma de BUSCAR cuando los valores que desea buscar están en la primera fila o columna de la matriz.</li><br>
+              <li>Si la matriz cubre un área más ancha que alta (más columnas que filas), BUSCAR busca el valor
+                  de <code>valor_buscado</code> en la primera fila.</li><br>
+              <li>Si una matriz es cuadrada o más alta que ancha (tiene más filas que columnas), BUSCAR busca en 
+                  la primera columna.
+              </li><br>
+              <li>La forma matricial de BUSCAR es muy similar a las funciones BUSCARH y BUSCARV. La diferencia es que BUSCARH
+                 busca el valor de <code>valor_buscado</code> en la primera fila, BUSCARV busca en la primera columna y BUSCAR realiza la búsqueda 
+                 según las dimensiones de la matriz.</li><br>
+              <li>La diferencia de la función BUSCAR con las funciones BUSCARH y BUSCARV, es que en estas se puede especificar 
+                un índice en vertical u horizontal, pero BUSCAR siempre selecciona el último valor de la fila o columna.</li>
+
+          </ol>
+
+          <h2 class="number-title">Función BUSCARV</h2>
+          <ol>
+            <li>El argumento opcional <b>[ordenado]</b> es un valor lógico <code>VERDADERO</code> o <code>FALSO</code> que especifica si
+              BUSCARV debe localizar una coincidencia exacta o aproximada. Si se omite o es <code>VERDADERO</code>, devolverá 
+              una coincidencia aproximada. Es decir, si no encuentra ninguna coincidencia exacta, devolverá el 
+              siguiente valor más grande y menor que <code>valor_buscado</code>. Si es <code>FALSO</code>, BUSCARV encontrará 
+              una coincidencia exacta. Si no encuentra ninguna, devolverá el valor de error #N/A.
+            </li><br>
+            <li>Si rango tiene el valor <code>FALSO</code>, pero la coincidencia exacta no se encuentra, la función devolverá el 
+              error #N/A.
+            </li><br>
+            <li>Al usar coincidencias aproximadas en BUSCARV, debes fijarte los datos estén ordenados
+                de forma ascendente.
+            </li><br>
+            <li>Al utilizar BUSCARV puede que en ocasiones occurre el error #N/D. Este error suele indicar que 
+              la función no puede encontrar el valor buscado. Si no quieres mostrar los errores en la tabla puedes
+              utilizar las fórmulas SI.ND o SI.ERROR. 
+            </li><br>
+            <li>La función BUSCARV cuenta con una limitación: sólo devuelve el primer resultado
+              que encuentra. Esto es, si <code>valor_buscado</code> aparece dos veces, sólo se accederá
+              al correspondiente valor de la misma fila en la columna indicada en indicador_columna 
+              de la primera ocurrencia. 
+            </li><br> 
+            <li>La columna donde se realizará la busqueda de <code>valor_buscado</code> debe aparecer siempre en la
+              columna situada a la izquierda de la tabla. Es decir, la tabla debe estructurarse de manera
+              que no haya ninguna otra columna importante a la izquierda de la columna en la que se realizará
+              la busqueda.
+            </li><br>
+            <li>Al usar BUSCARV puedes encontrar los siguientes mensajes de error:
+              <p>
+                <ol>
+                  <li># ¡REF!: si has especificado un indicador de columna que está fuera del rango de búsqueda. 
+                    Por ejemplo, en un rango de búsqueda con tres columnas, has ingresado el número 4 en el indicador
+                    de columna.
+                  </li><br>
+                  <li># ¡VALOR!: dado que la función BUSCARV siempre busca hacia la derecha, no está permitido ingresar 
+                    0 ni un número negativo en el indicador de columna, ya que no es posible buscar a la izquierda de 
+                    la primera columna.
+                  </li><br>
+                  <li>#¿NOMBRE?: este error ocurre en Excel cuando una fórmula está mal escrita, en el caso de BUSCARV,
+                    por ejemplo, así: “=bucarv”.
+                  </li><br>
+               </ol>
+              </p>
+          </ol>
+          <h2 class="number-title">Función BUSCARH</h2>
+          <ol>
+            <li>El argumento opcional <b>[ordenado]</b> es un valor lógico <code>VERDADERO</code> <code>FALSO</code> que especifica si BUSCARH
+               debe localizar una coincidencia exacta o aproximada. Si se omite o es <code>VERDADERO</code>, devolverá una 
+               coincidencia aproximada. 
+               Es decir, si no encuentra ninguna coincidencia exacta, devolverá el siguiente valor mayor que sea 
+               inferior a <code>valor_buscado</code>. Si es <code>FALSO</code>, BUSCARH encontrará una coincidencia exacta. Si no encuentra
+               ninguna, devolverá el valor de error #N/A.</li><br>
+            <li>Si ordenado es <code>VERDADERO</code>, los valores de la primera fila de matriz_buscar_en deben ser ordenados de forma 
+               ascendente: ...-2, -1, 0, 1, 2, ..., A-Z, <code>FALSO</code>, <code>VERDADERO</code>, de izquierda a derecha; de lo contrario,
+               BUSCARH puede devolver un valor incorrecto. Si ordenado es <code>FALSO</code>, no es necesario ordenar
+              matriz_buscar_en.
+            </li><br>
+            <li>Si BUSCARH no logra encontrar <code>valor_buscado</code> y ordenado es <code>VERDADERO</code>, usa el mayor valor que sea 
+              menor que <code>valor_buscado</code>.             
+            </li><br>
+            <li>Si <code>valor_buscado</code> es menor que el menor valor de la primera fila de matriz_buscar_en y
+              ordenado es <code>VERDADERO</code>, BUSCARH devuelve el valor de error #N/A.</li><br>
+            <li>Si ordenado es <code>FALSO</code> y <code>valor_buscado</code> es un valor de texto, puede usar los caracteres comodín de signo de
+              interrogación (?) y asterisco (*) en el argumento <code>valor_buscado</code>. El signo de interrogación corresponde 
+              a un solo carácter cualquiera y el asterisco equivale a cualquier secuencia de caracteres. Para buscar 
+              un signo de interrogación o un asterisco, escriba una tilde (~) antes del carácter.
+            </li><br>
+          </ol>
+
+          <h2 class="number-title">Función BUSCARX</h2>
+          <ol>
+            <li>La función BUSCARX de Excel, es más flexible que BUSCARV y te permite buscar no solo una,
+               sino varias entradas. Además, es posible buscar valores de forma vertical y horizontal. 
+               </li><br>
+            <li><table class="tabla-funciones">
+              <thead>
+                  <tr>
+                      <th>Argumento</th>
+                      <th>Descripción</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td class="nombre-funcion">valor_buscado (Obligatorio) </td>
+                      <td>El valor que se va a buscar. Si se omite, BUSCARX devuelve las celdas en blanco 
+                          que encuentra en matriz_buscada.
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">matriz_buscada (Requerido)</td>
+                      <td>El rango o matriz en el que Excel debe buscar la información deseada.</td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">matriz_devuelta (Requerido)</td>
+                      <td>El rango o matriz en el que quieres que Excel devuelva la información deseada.</td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">[si_no_se_encuentra] (Opcional)</td>
+                      <td>Si no se encuentra una coincidencia válida, devolver el texto [si_no_se_encuentra] que
+                         proporcione. Si no se encuentra una coincidencia válida y falta [si_no_se_encuentra], 
+                         se devuelve #N/A.
+                      </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">[modo_de_coincidencia] (Opcional)
+                      </td>
+                      <td>El modo de comparación permite especificar un tipo de coincidencia.
+                        <p>
+                          <ul>
+                            <li>0: coincidencia exacta. Si no se encuentra ninguno, devolver #N/A. Este valor es el predeterminado.</li><br>
+                            <li>-1: coincidencia exacta. Si no se encuentra ninguna, devolver el siguiente elemento más pequeño.</li><br>
+                            <li>1: coincidencia exacta. Si no se encuentra ninguna, devolver el siguiente elemento más grande.</li><br>
+                            <li>2: una coincidencia comodín donde *, ? y ~ tienen significado especial.</li><br>
+                          </ul>
+                        </p>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">[modo_de_búsqueda] (Opcional)
+                      </td>
+                      <td>Especifique el modo de búsqueda que se usará:
+                        <p>
+                          <ul>
+                            <li>1: realizar una búsqueda empezando por el primer elemento. Este valor es el predeterminado.</li><br>
+                            <li>-1: realizar una búsqueda inversa empezando por el último elemento.</li><br>
+                            <li>2: realizar una búsqueda binaria que se base en que lookup_array se ordene en 
+                                orden ascendente. Si no está ordenada, se devolverán resultados no válidos.</li><br>
+                            <li>-2: realizar una búsqueda binaria que se base en que lookup_array se ordene en 
+                                orden descendente. Si no está ordenada, se devolverán resultados no válidos.
+                            </li>
+                         </ul>
+                        </p>
+                      </td>
+                  </tr>
+              </tbody>
+          </table></li><br>
+          </ol>
+
+          <h2 class="number-title">Función COINCIDIR</h2>
+          <ol>
+            <li>El argumento opcional <b>Tipo_de_coincidencia</b>  es opcional y puede ser el número -1, 0 o 1.
+            El argumento tipo_de_coincidencia especifica cómo Excel hace coincidir el <code>valor_buscado</code> con los valores de matriz_buscada. El valor predeterminado
+            de este argumento es 1.
+            <p>
+              <table class="tabla-funciones">
+                <thead>
+                    <tr>
+                        <th>Tipo_de_coincidencia</th>
+                        <th>Comportamiento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td class="nombre-funcion">1 u omitido</td>
+                      <td>COINCIDIR  encuentra el mayor valor que es menor o igual que el <code>valor_buscado</code>. 
+                        Los valores del argumento  matriz_buscada se deben colocar en orden ascendente,
+                        por ejemplo: ...-2, -1, 0, 1, 2, ..., A-Z, <code>FALSO</code>, <code>VERDADERO</code>.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="nombre-funcion">0</td>
+                      <td>COINCIDIR encuentra el primer valor que es exactamente igual que el <code>valor_buscado</code>.
+                        Los valores del argumento matriz_buscada pueden estar en cualquier orden.
+                      </td>
+                    </tr>
+                    <tr>
+                        <td class="nombre-funcion">-1</td>
+                        <td>COINCIDIR encuentra el menor valor que sea mayor o igual que
+                          <code>valor_buscado</code>. Los valores del argumento matriz_buscada deben colocarse
+                          en orden descendente, por ejemplo: <code>VERDADERO</code>, <code>FALSO</code>, Z-A, ... 2, 1, 0, -1, -2, ..., 
+                          y así sucesivamente.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            </p>
+          </li><br>
+            <li>Use COINCIDIR en lugar de las funciones BUSCAR para conocer la posición de un elemento en un rango
+            en lugar del elemento en sí. Por ejemplo, puede usar la función COINCIDIR para proporcionar un valor
+            para el argumento fila de la función INDICE.
+            </li><br>
+            <li>Si tipo_de_coincidencia es 0 y <code>valor_buscado</code> es una cadena de texto, puede usar los caracteres comodín 
+              de signo de interrogación (?) y asterisco (*)  en el argumento <code>valor_buscado</code>. Un signo de interrogación 
+              coincide con cualquier carácter individual; un asterisco coincide con cualquier secuencia de caracteres. 
+              Si desea buscar un signo de interrogación o un asterisco real, escriba una tilde (~) antes del carácter.
+            </li><br>
+            <li>COINCIDIR devuelve la posición del valor coincidente dentro de matriz_buscada, no el valor en sí. 
+              <!-- Por ejemplo, COINCIDIR("b",{"a","b","c"},0) devuelve 2, la posición relativa de "b" dentro de la matriz {"a","b","c"} -->
+            </li><br>
+            <li>COINCIDIR no distingue entre mayúsculas y minúsculas cuando busca valores de texto.</li><br>
+            <li>Si COINCIDIR no puede encontrar una coincidencia, devuelve el valor de error #N/A.</li><br>
+            
+          </ol>
+        
+          
+    </div>
+    
+    </div>
+
+  </body>

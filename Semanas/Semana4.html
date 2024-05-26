@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+    
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+     <!-- This part is for using single $ for latex input, instead of \(\) -->
+     <script>
+      MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+          },
+      svg: {
+          fontCache: 'global'
+      }
+  };
+  </script>
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+    .lista
+        {
+            counter-reset: listaCounter 0 sublistaCounter 1 subsublistaCounter 1 subsubsublistaCounter 1;
+        }
+        /* .sublista{
+            counter-reset: sublistaCounter 1  SubsublistaCounter;
+        } */
+        </style>
+
+    <style>
+            /* body.number-title
+            {
+            counter-reset: temaCounter 1 subsectioncounter ;
+            } */
+            body.fondo-body{
+              counter-reset: temaCounter 8 sectionCounter;
+            }
+
+            /* h1.page-number-title
+            {
+            counter-reset: sectionCounter 0;
+            }  */
+
+            h1.tema-number-title
+                {
+                counter-reset: sectionCounter 0;
+                } 
+
+            h1.number-title
+            {
+            counter-reset: subsectionCounter;
+            /* counter-reset: subsectionCounter; */
+            }
+
+
+
+    </style>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+    <!-- Top Menu  -->
+    
+          
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Tecnologías de la Información y Comunicación II</div>
+          <div class="subtitle">Licenciatura en Administración Turística</div>
+          <div class="subsubtitle">Universidad del Mar, campus Huatulco </div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+
+      
+        </header>
+
+    <nav class="top-nav">
+        <ul>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Home.html"> Inicio  </a> </li>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Informacion_General.html"> Información</a> </li>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Notas.html"> Notas  </a> </li>
+        <!-- <li> <a href="https://pablojhh.github.io/TICDOS/Quizes.html"> Quizes  </a> </li>
+            <li> <a href="https://pablojhh.github.io/TICDOS/Practicas.html">Prácticas</a></li> -->
+            <li> <a href="https://pablojhh.github.io/TICDOS/Examenes.html"> Archivos  </a> </li>
+        </ul>
+    </nav>
+    
+    <title> Semana 4  </title>
+    
+    </head>
+
+  <body class="fondo-body" >
+    
+
+
+<!--######################################################################################################################## -->
+
+    <div class="nota-box"> <h1 class="page-number-title"> Semana 4</h1> 
+
+   <button class="respButton hvr-grow "> <h1 class="tema-number-title"> Funciones .SI.</h1>  </button>
+      <div class="resp-box flexbox">
+        <p>
+          <table class="tabla-funciones">
+            <thead>
+              <tr>
+                <th>Función</th>
+                <th>Sintaxis</th>
+                <th>Descripción</th>
+                <th>Ejemplo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="nombre-funcion">SI.CONJUNTO</td>
+                <td>SI.CONJUNTO(prueba_lógica1, valor_si_verdadero1, [prueba_lógica2, valor_si_verdadero2],...)</td>
+                <td>Evalúa múltiples condiciones y devuelve el valor correspondiente a la primera condición verdadera.</td>
+                <td>=SI.CONJUNTO(89 < A2, "A", A2>79, "B", VERDADERO, "D")</td>
+              </tr>
+              <tr>
+                <td class="nombre-funcion">SUMAR.SI</td>
+                <td>SUMAR.SI(rango, criterio, [rango_suma])</td>
+                <td>Suma los números en un rango que cumplan con criterio.
+                   El argumento rango_suma es opcional y  son las celdas que contienen los valores a sumar,
+                  según si se cumple la condición en el rango. Si omite el argumento rango_suma, Excel suma
+                  las celdas especificadas en el argumento rango (las mismas celdas a las que se aplica el
+                  criterio)
+                </td>
+                <td>=SUMAR.SI(A1:A10, ">10")</td>
+              </tr>
+              <tr>
+                <td class="nombre-funcion">SUMAR.SI.CONJUNTO</td>
+                <td>SUMAR.SI.CONJUNTO(rango_suma, rango_criterios1, criterio1, [rango_criterios2, criterio2], …)</td>
+                <td> La función SUMAR.SI.CONJUNTO nos permite sumar datos en Excel que cumplan con 2 o más condiciones.
+                  Es similar a SUMAR.SI, pero permite incluir diferentes condiciones para obtener un sólo resultado. 
+                  A diferencia de SUMAR SI, en este caso el rango_suma es obligatorio y va al principio. 
+                  El rango_criterio1 y criterio también son obligatorios
+                </td>
+                <td>=SUMAR.SI.CONJUNTO(F3:F7, D3:D7, "> 30", E3:E7, "=" $\mathrm{\&}$ A1, F3:F7, "= Profesor-Investigador" )</td>
+              </tr>
+              <tr>
+                <td class="nombre-funcion">PROMEDIO.SI</td>
+                <td>PROMEDIO.SI(rango, criterio, [rango_promedio])</td>
+                <td>Calcula el promedio de los números en un rango que cumplan con un solo criterio. El argumento
+                  Rango_promedio es opcional y determina el conjunto de celdas cuyo promedio se va a calcular. 
+                  Si se omite, se utiliza rango.
+                </td>
+                <td>=PROMEDIO.SI(A1:A10, ">10", B1:B10)</td>
+              </tr>
+              <tr>
+                <td class="nombre-funcion">PROMEDIO.SI.CONJUNTO</td>
+                <td>PROMEDIO.SI.CONJUNTO(rango_promedio, rango_criterio1, criterio1, [rango_criterio2, criterio2], ...)</td>
+                <td>Calcula el promedio de los números en un rango que cumplan con múltiples criterios.</td>
+                <td>=PROMEDIO.SI.CONJUNTO(C2:C5,C2:C5,">95")</td>
+              </tr>
+              <tr>
+                <td class="nombre-funcion">MAX.SI.CONJUNTO</td>
+                <td>MAX.SI.CONJUNTO(rango_máximo, rango_criterios1, criterios1, [rango_criterios2, criterios2],...)</td>
+                <td>Devuelve el valor máximo en un rango que cumple con múltiples criterios.</td>
+                <td>MAX.SI.CONJUNTO(A2:A7,B2:B7,1)</td>
+              </tr>
+              <tr>
+                <td class="nombre-funcion">MIN.SI.CONJUNTO</td>
+                <td>MIN.SI.CONJUNTO(rango_mínimo, rango_criterios1, criterios1, [rango_criterios2, criterios2],...)</td>
+                <td>Devuelve el valor mínimo en un rango que cumple con múltiples criterios.</td>
+                <td>=MIN.SI.CONJUNTO(A2:A7,B2:B7,1)</td>
+              </tr> 
+              <tr>
+                <td class="nombre-funcion">CONTAR.SI</td>
+                <td>CONTAR.SI(rango, criterio)</td>
+                <td>Cuenta las celdas en un rango que cumplan con un solo criterio.</td>
+                <td>=CONTAR.SI(A1:A10, ">10")</td>
+              </tr>
+              <tr>
+                <td class="nombre-funcion">CONTAR.SI.CONJUNTO</td>
+                <td>CONTAR.SI.CONJUNTO(rango_criterios1; criterios1; [rango_criterios2; criterios2];…)</td>
+                <td>Aplica criterios a las celdas de varios rangos y cuenta el número de veces que se 
+                  cumplen todos los criterios.</td>
+                <td>=CONTAR.SI.CONJUNTO(A2:A7, "<" $\mathrm{\&}$ A6, B2:B7, "<" $\mathrm{\&}$ B4)</td>
+              </tr>
+              <!-- <tr>
+                <td class="nombre-funcion">CONTARA</td>
+                <td>CONTARA(valor1, [valor2], ...)</td>
+                <td>Cuenta el número de celdas no vacías en un rango o una lista de argumentos.</td>
+                <td>=CONTARA(A1:A10)</td>
+              </tr> -->
+               
+          </table>
+        </p>
+
+        
+
+        <h1 class="number-title"> Caracteres Comodín </h1>
+          <p>Los comodines en Excel son caracteres o símbolos en Excel que remplazan uno o varios caracteres
+            con el fin de aplicar búsqueda o filtros, estos son más potentes en combinación de otras funciones de Excel.
+            Los comodines en Excel se pueden implementar en los argumentos de las funciones con el fin de 
+            buscar coincidencias a partir del dato ingresado.
+          </p>
+
+          <p> Hay tres caracteres comodín en Excel.</p>
+          </p>
+            <table class="tabla-funciones">
+              <thead>
+                <tr>
+                  <td>
+                    <p>
+                      <b>Caracter</b>
+                    </p>
+                  </td>
+                  <td>
+                    <p>
+                      <b>Resultado</b>
+                    </p>
+                  </td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <p> Signo de interrogación (<b>?</b>) </p>
+                  </td>
+                  <td>
+                    <p>Este comodín se utiliza para buscar cualquier carácter.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p> Asterisco (<b>*</b>) </p>
+                  </td>
+                  <td>
+                    <p>Este comodín se utiliza para buscar cualquier número de caracteres que precedan o sigan a cualquier carácter.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>  Tilde (<b>~</b>) </p>
+                  </td>
+                  <td>
+                    <p> Este comodín es un carácter de escape que se utiliza antes del signo de interrogación (?) O del asterisco (*). 
+                      Por ejemplo si quisiéramos buscar textos que contengan un signo de interrogación o un asterisco, entonces
+                      esta indicación se confundiría con el uso que ya tienen estos dos caracteres por ello es que este tercer
+                      carácter es útil, es decir permite identificar un signo de interrogación , asterisco o tilde como parte 
+                      del patrón de identificación de los textos.  Así, para buscar:<br>
+                    <ul>
+                      <li>Un asterisco *, deberás escribir ~*,</li>
+                      <li>Un signo de interrogación ?, escribe ~?,</li>
+                      <li>el signo de tilde ~, escribe ~~.</li>
+                    </ul>
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </p>
+
+          <h2 class="number-title">Observación</h2>
+          <p>No todas las funciones pueden ejecutar comodines con funciones de Excel.
+          Aquí hay una lista de funciones que aceptan comodines.
+        </p>
+          <!--
+          <ol>
+            <li>SUMAR.SI.CONJUNTO</li>
+            <li>CONTAR.SI.CONJUNTO</li>
+            <li></li>
+            <li></li>
+            <li></li> 
+          </ol> -->
+        </p>
+        
+        <h1 class="number-title">Observaciones</h1>
+        <p>
+          <h2 class="number-title">Función SI.CONJUNTO </h2>
+          <ol>
+              <li>Para especificar un resultado predeterminado, introduzca VERDADERO
+                para el argumento final prueba_logica. Si no se cumple ninguna de las demás condiciones, se devolverá el valor correspondiente
+              </li><br>
+              <li>Si se proporciona un argumento de prueba_logica sin un valor_si_verdadero correspondiente,
+                esta función muestra el mensaje de error "Ha introducido demasiados pocos argumentos para esta función".
+              </li><br>
+              <li>Si no se encuentran condiciones VERDADERO, esta función devuelve #N/A error.</li><br>
+          </ol>
+          <h2 class="number-title">Función SUMAR.SI </h2>
+              <ol>
+                <li>La función SUMAR.SI devuelve resultados incorrectos cuando se usa para comparar cadenas de más de 255 caracteres o con la cadena #¡VALOR!.</li><br>
+                <li>El argumento Rango_suma debe tener el mismo tamaño y forma que rango.</li><br>
+                <!-- <li></li><br>
+                <li></li><br> -->
+              </ol>
+          <h2 class="number-title">Función SUMAR.SI.CONJUNTO </h2>
+              <ol>
+                <li>El uso de <b>caracteres comodín</b>, como el signo de <i>interrogación</i> (<b>?</b>) y el <i>asterisco</i> (<b>*</b>) en <code>criterios1</code> 
+                  puede ayudarle a encontrar coincidencias similares pero no exactamente iguales. El signo de interrogación 
+                  reemplaza cualquier carácter individual. El asterisco reemplaza cualquier secuencia de caracteres.
+                  Si desea buscar un signo de interrogación o un asterisco reales, escriba una tilde (<b>~</b>) delante del carácter que desea buscar. 
+                  <!-- Por ejemplo, =SUMAR.SI.CONJUNTO(A2:A9; B2:B9; "=A*"; C2:C9; "To?") agregará todas las instancias cuyo nombre empiece con "To" y termine con una última letra que puede variar. -->
+                </li><br>
+                <li>El argumento rango_criterios debe contener el mismo número de filas y columnas que el argumento rango_suma.</li><br>
+                <li>El orden de los argumentos es diferente entre SUMAR.SI.CONJUNTO y SUMAR.SI. En particular, el argumento rango_suma es el primer argumento de SUMAR.SI.CONJUNTO,
+                  pero es el tercero de SUMAR.SI. Esta es un origen común de problemas cuando se usan estas funciones.</li><br>
+                <li>El resultado es incorrecto cuando rango_suma tiene los valores VERDADERO o FALSO.</li><br>
+              </ol>    
+          <h2 class="number-title">Función CONTAR.SI.CONJUNTO </h2>
+              <ol>
+                <li>Cada rango adicional debe tener la misma cantidad de filas y columnas que el argumento <code>rango_criterios1</code>.</li><br>
+                <li>No es necesario que los rangos sean adyacentes.</li><br>
+                <li>Los criterios de cada rango se aplican a una celda cada vez. Si todas las primeras celdas cumplen los criterios asociados, el número aumenta en 1. Si todas las segundas celdas cumplen los criterios asociados, el número aumenta en 1 nuevamente y así sucesivamente hasta evaluar todas las celdas.</li><br>
+                <li>Si el argumento de los criterios hace referencia a una celda vacía, la función CONTAR.SI.CONJUNTO trata dicha celda como un valor 0.</li><br>
+                <li>En los criterios se pueden usar <b>caracteres comodín</b>, el <i>signo de interrogación</i> (<b>?</b>) y el <i>asterisco</i> (<b>*</b>) . El signo de interrogación se corresponde con un solo carácter y el asterisco se corresponde con cualquier secuencia de caracteres. Si desea buscar un signo de interrogación o un asterisco reales, escriba una tilde (<b>~</b>) delante del carácter que desea buscar. </li><br>
+                <!-- <li></li><br> -->
+              </ol>
+        </p>
+
+      
+    
+  </div>
+
+    </div>
+  </body>

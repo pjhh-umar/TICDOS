@@ -1,0 +1,1037 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+    
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+    <!-- This part is for using single $ for latex input, instead of \(\) -->
+    <script>
+        MathJax = {
+        tex: {
+            inlineMath: [['\\(', '\\)']]
+            },
+        svg: {
+            fontCache: 'global'
+        }
+    };
+    </script>
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+    .lista
+        {
+            counter-reset: listaCounter 0 sublistaCounter 1 subsublistaCounter 1 subsubsublistaCounter 1;
+        }
+        /* .sublista{
+            counter-reset: sublistaCounter 1  SubsublistaCounter;
+        } */
+        </style>
+
+    <style>
+            /* body.number-title
+            {
+            counter-reset: temaCounter 1 subsectioncounter ;
+            } */
+            body.fondo-body{
+              counter-reset: temaCounter 7 sectionCounter;
+            }
+
+            /* h1.page-number-title
+            {
+            counter-reset: sectionCounter 0;
+            }  */
+
+            h1.tema-number-title
+                {
+                counter-reset: sectionCounter 0;
+                } 
+
+            h1.number-title
+            {
+            counter-reset: subsectionCounter;
+            /* counter-reset: subsectionCounter; */
+            }
+
+
+
+    </style>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+    <!-- Top Menu  -->
+    
+          
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Tecnologías de la Información y Comunicación II</div>
+          <div class="subtitle">Licenciatura en Administración Turística</div>
+          <div class="subsubtitle">Universidad del Mar, campus Huatulco </div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+
+      
+        </header>
+
+    <nav class="top-nav">
+        <ul>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Home.html"> Inicio  </a> </li>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Informacion_General.html"> Información</a> </li>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Notas.html"> Notas  </a> </li>
+        <!-- <li> <a href="https://pablojhh.github.io/TICDOS/Quizes.html"> Quizes  </a> </li>
+            <li> <a href="https://pablojhh.github.io/TICDOS/Practicas.html">Prácticas</a></li> -->
+            <li> <a href="https://pablojhh.github.io/TICDOS/Examenes.html"> Archivos  </a> </li>
+        </ul>
+    </nav>
+    
+    <title> Semana 3   </title>
+    
+    </head>
+
+  <body class="fondo-body" >
+    
+
+
+<!--######################################################################################################################## -->
+
+    <div class="nota-box"> <h1 class="page-number-title"> Semana 3</h1> 
+
+   <button class="respButton hvr-grow "> <h1 class="tema-number-title"> Funciones en Excel</h1>  </button>
+      <div class="resp-box flexbox">
+
+        <button class="respButton hvr-grow "><h1 class="number-title"> Funciones matem&aacute;ticas y trigonom&eacute;tricas </h1>  </button>
+        <div class="resp-box flexbox">
+        <p>
+          <table class="tabla-funciones">
+            <thead>
+              <tr>
+                  <th>Función</th>
+                  <th>Sintaxis</th>
+                  <th>Descripción</th>
+                  <th>Ejemplo</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td class="nombre-funcion"> SUMA</td>
+                  <td>SUMA(número1, [número2], ...)</td>
+                  <td>Suma todos los números dados como argumentos.</td>
+                  <td> =           SUMA(A1:A10)</td>
+              </tr>
+              <tr>
+                <td class="nombre-funcion">PROMEDIO</td>
+                  <td>PROMEDIO(número1, [número2], ...)</td>
+                  <td>Devuelve el promedio de los números dados como argumentos.</td>
+                  <td> =           PROMEDIO(A1:A10)</td>
+              </tr>
+              <tr>
+                <td class="nombre-funcion">MÁXIMO</td>
+                  <td>MAX(número1, [número2], ...)</td>
+                  <td>Devuelve el valor máximo de los números dados como argumentos.</td>
+                  <td> = MAX(A1:A10)</td>
+              </tr>
+              <tr>
+                <td class="nombre-funcion">MÍNIMO</td>
+                  <td>MIN(número1, [número2], ...)</td>
+                  <td>Devuelve el valor mínimo de los números dados como argumentos.</td>
+                  <td> = MIN(A1:A10)</td>
+              </tr>
+              <tr>
+                <td class="nombre-funcion">RAÍZ</td>
+                  <td>RAÍZ(número)</td>
+                  <td>Devuelve la raíz cuadrada de un número.</td>
+                  <td> =           RAÍZ(A1)</td>
+              </tr>
+              <tr>
+                <td class="nombre-funcion">PI</td>
+                  <td>PI()</td>
+                  <td>Devuelve el valor de Pi (3.14159265358979).</td>
+                  <td> =           PI()</td>
+              </tr>
+              <tr>
+                <td class="nombre-funcion">RADIANES</td>
+                <td>RADIANES(ángulo)</td>
+                <td>Convierte un ángulo expresado en  grados a radianes.</td>
+                <td>= RADIANES(270)</td>
+            </tr>
+              <tr>
+                  <td class="nombre-funcion">COS</td>
+                  <td>COS(número)</td>
+                  <td>Devuelve el coseno de un ángulo dado en radianes.</td>
+                  <td> =           COS(A1)</td>
+              </tr>
+              <tr>
+                  <td class="nombre-funcion">SEN</td>
+                  <td>SEN(número)</td>
+                  <td>Devuelve el seno de un ángulo dado en radianes.</td>
+                  <td> =           SEN(A1)</td>
+              </tr>
+              <tr>
+                  <td class="nombre-funcion">TAN</td>
+                  <td>TAN(número)</td>
+                  <td>Devuelve la tangente de un ángulo dado en radianes.</td>
+                  <td> =           TAN(A1)</td>
+              </tr>
+              <tr>
+                  <td class="nombre-funcion">ABS</td>
+                  <td>ABS(número)</td>
+                  <td>Devuelve el valor absoluto de un número.</td>
+                  <td> =           ABS(A1)</td>
+              </tr>
+              <tr>
+                  <td class="nombre-funcion">LOGARITMO</td>
+                  <td>LOG(número, [base])</td>
+                  <td>Devuelve el logaritmo de un número en una base dada. Si no se especifica la base, se utiliza el logaritmo base 10.</td>
+                  <td> = LOG(A1, 2)</td>
+              </tr>
+              <tr>
+                <td class="nombre-funcion">LOGARITMO BASE 10</td>
+                <td>LOG10(número)</td>
+                <td>Devuelve el logaritmo de un número en  la base 10</td>
+                <td> =           LOG10(A1, 10)</td>
+            </tr>
+              <tr>
+                  <td class="nombre-funcion">EXP</td>
+                  <td>EXP(número)</td>
+                  <td>Devuelve el número e elevado a la potencia de un número dado.</td>
+                  <td> =           EXP(A1)</td>
+              </tr>
+              <tr>
+                <td class="nombre-funcion">REDONDEAR</td>
+                <td>REDONDEAR(número, núm_decimales)</td>
+                <td>Redondea un número al entero más cercano o al múltiplo más cercano de núm_decimales.</td>
+                <td> =           REDONDEAR(A1, 2)</td>
+            </tr>
+              <tr>
+                  <td class="nombre-funcion">REDONDEAR.MENOS</td>
+                  <td>REDONDEAR.MENOS(número, núm_decimales)</td>
+                  <td>Redondea un número hacia abajo, hacia el entero más cercano o hacia el múltiplo más cercano de núm_decimales.</td>
+                  <td> =           REDONDEAR.MENOS(A1, 2)</td>
+              </tr>
+              <tr>
+                  <td class="nombre-funcion">REDONDEAR.MÁS</td>
+                  <td>REDONDEAR.MÁS(número, núm_decimales)</td>
+                  <td>Redondea un número hacia arriba, hacia el entero más cercano o hacia el múltiplo más cercano de núm_decimales.</td>
+                  <td> =           REDONDEAR.MÁS(A1, 2)</td>
+              </tr>
+              <tr>
+                  <td class="nombre-funcion">TRUNCAR</td>
+                  <td>TRUNCAR(número, [núm_decimales])</td>
+                  <td>Trunca un número a un número entero al eliminar los decimales.</td>
+                  <td> =           TRUNCAR(A1)</td>
+              </tr>
+              <tr>
+                  <td class="nombre-funcion">ALEATORIO</td>
+                  <td>ALEATORIO()</td>
+                  <td>Devuelve un número aleatorio entre 0 y 1.</td>
+                  <td> =           ALEATORIO()</td>
+              </tr>
+              <tr>
+                  <td class="nombre-funcion">ALEATORIO.ENTRE</td>
+                  <td>ALEATORIO.ENTRE(inferior, superior)</td>
+                  <td>Devuelve un número entero aleatorio entre los valores especificados (inclusive).</td>
+                  <td> =           ALEATORIO.ENTRE(1, 100)</td>
+              </tr>
+              <tr>
+                  <td class="nombre-funcion">COMBINATORIA</td>
+                  <td>COMBINATORIA(número, número_seleccionado)</td>
+                  <td>Devuelve el número de combinaciones de un conjunto de elementos.</td>
+                  <td> =           COMBINATORIA(10, 3)</td>
+              </tr>
+              <tr>
+                  <td class="nombre-funcion">FACT</td>
+                  <td>FACT(número)</td>
+                  <td>Devuelve el factorial de un número.</td>
+                  <td> =           FACT(5)</td>
+              </tr>
+              <tr>
+                  <td class="nombre-funcion">MCD</td>
+                  <td>MCD(número1, [número2], ...)</td>
+                  <td>Devuelve el máximo común divisor de los números dados.</td>
+                  <td> =           MCD(10, 15)</td>
+              </tr>
+              <tr>
+                  <td class="nombre-funcion">MCM</td>
+                  <td>MCM(número1, [número2], ...)</td>
+                  <td>Devuelve el mínimo común múltiplo de los números dados.</td>
+                  <td> =           MCM(3, 5)</td>
+              </tr>
+              <!-- <tr>
+                <td class="nombre-funcion">SUMAR.SI</td>
+                <td>SUMAR.SI(rango, criterio, [sumar_rango])</td>
+                <td>Suma los valores en un rango que cumplen con un único criterio.</td>
+                <td> =           SUMAR.SI(A1:A10, ">5")</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">SUMAR.SI.CONJUNTO</td>
+                <td>SUMAR.SI.CONJUNTO(rango_criterios1, criterio1, [rango_criterios2, criterio2], ...)</td>
+                <td>Suma los valores en un rango que cumplen con múltiples conjuntos de criterios.</td>
+                <td> =           SUMAR.SI.CONJUNTO(A1:A10, ">5", B1:B10, "<10")</td>
+            </tr> -->
+          </tbody>
+          </table>
+        </p>
+      </div> 
+      
+      <button class="respButton hvr-grow "><h1 class="number-title"> Funciones lógicas </h1>  </button>
+      <div class="resp-box flexbox">
+      <p>
+        <table class="tabla-funciones">
+          <thead>
+            <tr>
+                <th class="nombre-funcion">Función</th>
+                <th>Sintaxis</th>
+                <th>Descripción</th>
+                <th>Ejemplo</th>
+            </tr>
+        </thead>
+        <tbody>
+              <tr>
+                <td class="nombre-funcion">VERDADERO</td>
+                <td>VERDADERO()</td>
+                <td>Devuelve VERDADERO.</td>
+                <td> =           VERDADERO()</td>
+            </tr>
+            <tr>
+                <td class="nombre-funcion">FALSO</td>
+                <td>FALSO()</td>
+                <td>Devuelve FALSO.</td>
+                <td> =           FALSO()</td>
+            </tr>
+            <tr>
+                <td class="nombre-funcion">Y</td>
+                <td>Y(proposición1, [proposición2], ...)</td>
+                <td>Devuelve VERDADERO si todos los argumentos son VERDADERO.</td>
+                <td> = Y (VERDADERO, FALSO)</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">O</td>
+                <td>O(proposición1, [proposición2], ...)</td>
+                <td>Devuelve VERDADERO si al menos uno de los argumentos es VERDADERO.</td>
+                <td> = O(VERDADERO, FALSO)</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">NO</td>
+                <td>NO(proposición)</td>
+                <td>Invierte el valor lógico del argumento: VERDADERO se convierte en FALSO, y viceversa.</td>
+                <td> =           NOT(VERDADERO)</td>
+            </tr>
+            <!-- <tr>
+                  <td class="nombre-funcion">XOR</td>
+                <td>XOR(proposición1, [proposición2], ...)</td>
+                <td>Devuelve VERDADERO si un número impar de argumentos son VERDADEROS.</td>
+                <td> =           XOR(VERDADERO, FALSO)</td>
+            </tr> -->
+            <tr>
+              <td class="nombre-funcion">SI</td>
+                <td>SI (prueba_lógica, valor_si__VERDADERO, valor_si_FALSO)</td>
+                <td>Devuelve un valor si una condición es verdadera y otro valor si es falsa.</td>
+                <td> = SI(A1 > 10, "Aprobado", "Reprobado")</td>
+            </tr>
+            <tr>
+                <td class="nombre-funcion">SI.ERROR</td>
+                <td>SI.ERROR(valor, valor_si_error)</td>
+                <td>Devuelve un valor si una fórmula genera un error y otro valor si no.</td>
+                <td> =           SI.ERROR(1/0, "Error de división")</td>
+            </tr>
+            <!-- <tr>
+              <td class="nombre-funcion">IFNA</td>
+                <td>IFNA(value, value_if_na)</td>
+                <td>Devuelve un valor si el resultado de una fórmula es #N/A (no disponible).</td>
+                <td> =           IFNA(VLOOKUP("No existe", A1:A10, 1, FALSO), "No encontrado")</td>
+            </tr> -->
+            <!-- <tr>
+                  <td class="nombre-funcion">IFLOGICAL</td>
+                <td>IFLOGICAL(test, [value_if_VERDADERO], [value_if_FALSO])</td>
+                <td>Devuelve un valor si la prueba es lógicamente verdadera o falsa.</td>
+                <td> =           IFLOGICAL(A1>10, "Mayor que 10", "Menor o igual que 10")</td>
+            </tr> -->
+            <tr>
+                <td class="nombre-funcion">CAMBIAR</td>
+                <td>CAMBIAR(expresion, valor1, resultado1, [predeterminado_o_valor_dos, resultado2], ...)</td>
+                <td>Evalúa una lista de valores y devuelve el valor correspondiente al primer valor que coincide.</td>
+                <td> =           CAMBIAR(A1, 1, "Uno", 2, "Dos", 3, "Tres", "Otro")</td>
+            </tr>
+            
+        </tbody>
+          </table>
+        </p>
+    
+
+      <h2 class="number-title">Observaciones</h2>
+
+      <ol>
+        <li>La función <b>Y</b> evalúa varias condiciones y devuelve VERDADERO <b>si todas las condiciones son verdaderas</b>, y FALSO <b>si al menos una de las condiciones es falsa.</b>
+        </li><br>
+        <li>La función <b>O</b> devuelve VERDADERO <b>si al menos una de las condiciones es verdadera</b>, y devuelve FALSO <b>si todas las condiciones son falsas.</b>
+
+        </li>
+      </ol>
+      </div>
+
+
+        <button class="respButton hvr-grow "><h1 class="number-title"> Funciones de informaci&oacute;n </h1>  </button>
+      <div class="resp-box flexbox">
+      <p>
+        <table class="tabla-funciones">
+          <thead>
+            <tr>
+                <th class="nombre-funcion">Función</th>
+                <th>Sintaxis</th>
+                <th>Descripción</th>
+                <th>Ejemplo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                  <td class="nombre-funcion">ESBLANCO</td>
+                <td>ESBLANCO(valor)</td>
+                <td>Devuelve VERDADERO si el valor es blanco.</td>
+                <td> =           ESBLANCO(A1)</td>
+            </tr>
+            <tr>
+                  <td class="nombre-funcion">ESERROR</td>
+                <td>ESERROR(valor)</td>
+                <td>Devuelve VERDADERO si el valor es un error.</td>
+                <td> =           ESERROR(A1)</td>
+            </tr>
+            <tr>
+                  <td class="nombre-funcion">ESLOGICO</td>
+                <td>ESLOGICO(valor)</td>
+                <td>Devuelve VERDADERO si el valor es lógico.</td>
+                <td> =           ESLOGICO(A1)</td>
+            </tr>
+            <!-- <tr>
+                  <td class="nombre-funcion">ESNA</td>
+                <td>ESNA(valor)</td>
+                <td>Devuelve VERDADERO si el valor no es disponible.</td>
+                <td> =           ESNA(A1)</td>
+            </tr> -->
+            <tr>
+                  <td class="nombre-funcion">ES.NOD</td>
+                <td>ES.NOD(valor)</td>
+                <td>Devuelve VERDADERO si el valor es un error de referencia.</td>
+                <td> =           ES.NOD(A1)</td>
+            </tr>
+            <tr>
+                  <td class="nombre-funcion">ESNUMERO</td>
+                <td>ESNUMERO(valor)</td>
+                <td>Devuelve VERDADERO si el valor es un número.</td>
+                <td> =           ESNUMERO(A1)</td>
+            </tr>
+            <!-- <tr>
+                  <td class="nombre-funcion">ES.CERO</td>
+                <td>ES.CERO(valor)</td>
+                <td>Devuelve VERDADERO si el valor es cero.</td>
+                <td> =           ES.CERO(A1)</td>
+            </tr> -->
+            <tr>
+                  <td class="nombre-funcion">ES.IMPAR</td>
+                <td>ES.IMPAR(valor)</td>
+                <td>Devuelve VERDADERO si el valor es impar.</td>
+                <td> =           ES.IMPAR(A1)</td>
+            </tr>
+            <tr>
+                  <td class="nombre-funcion">ES.PAR</td>
+                <td>ES.PAR(valor)</td>
+                <td>Devuelve VERDADERO si el valor es par.</td>
+                <td> =           ES.PAR(A1)</td>
+            </tr>
+            <tr>
+                  <td class="nombre-funcion">ESREF</td>
+                <td>ESREF(valor)</td>
+                <td>Devuelve VERDADERO si el valor es una referencia.</td>
+                <td> =           ESREF(A1)</td>
+            </tr>
+            <tr>
+                  <td class="nombre-funcion">ESTEXTO</td>
+                <td>ESTEXTO(valor)</td>
+                <td>Devuelve VERDADERO si el valor es texto.</td>
+                <td> =           ESTEXTO(A1)</td>
+            </tr>
+            <tr>
+                  <td class="nombre-funcion">LARGO</td>
+                <td>LARGO(texto)</td>
+                <td>Devuelve el número de caracteres en una cadena de texto.</td>
+                <td> =           LARGO(A1)</td>
+            </tr>
+            <tr>
+                  <td class="nombre-funcion">MINUSC</td>
+                <td>MINUSC(texto)</td>
+                <td>Convierte todos los caracteres de un texto en minúsculas.</td>
+                <td> =           MINUSC(A1)</td>
+            </tr>
+            <tr>
+                  <td class="nombre-funcion">MAYUSC</td>
+                <td>MAYUSC(texto)</td>
+                <td>Convierte todos los caracteres de un texto en mayúsculas.</td>
+                <td> =           MAYUSC(A1)</td>
+            </tr>
+            <!-- <tr>
+                  <td class="nombre-funcion">NUM.DE.CARACTERES</td>
+                <td>NUM.DE.CARACTERES(valor)</td>
+                <td>Devuelve el número de caracteres en un valor.</td>
+                <td> =           NUM.DE.CARACTERES(A1)</td>
+            </tr> -->
+            <tr>
+                  <td class="nombre-funcion">TIPO</td>
+                <td>TIPO(valor)</td>
+                <td>Devuelve el tipo de valor.</td>
+                <td> =           TIPO(A1)</td>
+            </tr>
+            <!-- <tr>
+                  <td class="nombre-funcion">VALOR</td>
+                <td>VALOR(texto)</td>
+                <td>Convierte un texto que parece un número en un número.</td>
+                <td> =           VALOR(A1)</td>
+            </tr> -->
+            <!-- <tr>
+                  <td class="nombre-funcion">VALOR.ERROR</td>
+                <td>VALOR.ERROR(valor, [valor_si_error])</td>
+                <td>Devuelve el valor si no hay error; de lo contrario, devuelve el valor_si_error.</td>
+                <td> =           VALOR.ERROR(A1, "Error")</td>
+            </tr> -->
+            <tr>
+              <td class="nombre-funcion"> CELDA</td>
+                  <!-- <td class="nombre-funcion"> <a href="https://support.microsoft.com/es-es/office/funci%C3%B3n-celda-51bd39a5-f338-4dbe-a33f-955d67c2b2cf" target="_blank">CELDA</a></td> -->
+                <td>CELDA(tipo_información, [referencia])</td>
+                <td>Devuelve información sobre la celda especificada.</td>
+                <td> =           CELDA("contenido", A1)</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion"> TIPO.DE.ERROR </td>
+                  <!-- <td class="nombre-funcion"> <a href="https://support.microsoft.com/es-es/office/funci%C3%B3n-celda-51bd39a5-f338-4dbe-a33f-955d67c2b2cf" target="_blank">CELDA</a></td> -->
+                <td>TIPO.DE.ERROR(referencia)</td>
+                <td>Muestra el número correspondiente al valor de error en una referencia.</td>
+                <td> =           CELDA("contenido", A1)</td>
+            </tr>
+
+        </tbody>
+        </table>
+      </p>
+
+        <h2 class="number-title">Observaciones</h2>
+        <p>
+          <ol>
+            <li><p>En el caso de la función <b>TIPO</b>, muestra los siguientes números para los valores de error correspondientes:</p>
+              <p>
+                <table  class="tabla-funciones">
+                  <thead>
+                    <tr>
+                      <th>
+                        <p>
+                          <b class="ocpLegacyBold"> Valor</b>
+                        </p>
+                      </th>
+                      <th>
+                        <p>
+                          <b class="ocpLegacyBold"> Resultado</b>
+                        </p>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                  <td class="nombre-funcion">
+                        <p>Número</p>
+                      </td>
+                      <td>
+                        <p>1</p>
+                      </td>
+                    </tr>
+                     <tr>
+                  <td class="nombre-funcion">
+                        <p>Texto</p>
+                      </td>
+                      <td>
+                        <p>2</p>
+                      </td>
+                    </tr>
+                     <tr>
+                  <td class="nombre-funcion">
+                        <p>Un valor lógico</p>
+                      </td>
+                      <td>
+                        <p>4</p>
+                      </td>
+                    </tr>
+                     <tr>
+                  <td class="nombre-funcion">
+                        <p>Un valor de error</p>
+                      </td>
+                      <td>
+                        <p>16</p>
+                      </td>
+                    </tr>
+                     <tr>
+                  <td class="nombre-funcion">
+                        <p>Matriz</p>
+                      </td>
+                      <td>
+                        <p>64</p>
+                      </td>
+                    </tr>
+                     <tr>
+                  <td class="nombre-funcion">
+                        <p>Datos compuestos</p>
+                      </td>
+                      <td>
+                        <p>128</p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                
+              </p>
+            </li>
+
+            <li>Para la la función <b>CELDA</b>, el argumento  tipo_información  puede ser uno de los siguientes valores:<br>
+              <p>
+  
+                <table  class="tabla-funciones">
+                  <thead>
+                    <tr>
+                      <th>
+                        <p>
+                          <b class="ocpLegacyBold">tipo_información</b>
+                        </p>
+                      </th>
+                      <th>
+                        <p>
+                          <b class="ocpLegacyBold">Resultado</b>
+                        </p>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="nombre-funcion">
+                        <p>"dirección"</p>
+                      </td>
+                      <td>
+                        <p>Muestra una referencia absoluta como texto sin formato de la celda superior izquierda de  referencia .</p>
+                      </td>
+                    </tr>
+                    
+                    <tr>
+                      <td class="nombre-funcion">
+                        <p>"columna"</p>
+                      </td>
+                      <td>
+                        <p>Muestra el número de columna de la celda de referencia</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="nombre-funcion">
+                        <p>"color"</p>
+                      </td>
+                      <td>
+                        <p>Muestra 1 si la celda superior izquierda de  referencia  tiene un formato rojo para los valores negativos. Por ejemplo, cuando el formato de número personalizado es #,##0_);[Red](#,##0), de lo contrario, muestra 0.
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="nombre-funcion">
+                        <p>"contenido"</p>
+                      </td>
+                      <td>
+                        <p>Muestra el valor que aparece en la celda superior izquierda de referencia.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="nombre-funcion">
+                        <p>"prefijo"</p>
+                      </td>
+                      <td>
+                        <p>Muestra un valor de texto basado en la alineación horizontal del texto en la celda de  referencia . Las comillas simples (') se utilizan para el texto alineado a la izquierda, las comillas dobles (") para el texto alineado a la derecha, el signo de intercalación (^) para el texto centrado y, para todo lo demás, se deja el espacio vacío.
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="nombre-funcion">
+                        <p>"fila"</p>
+                      </td>
+                      <td>
+                        <p>Muestra el número de fila de la celda superior izquierda de referencia.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="nombre-funcion">
+                        <p>"tipo"</p>
+                      </td>
+                      <td>
+                        <p>Muestra el tipo de datos de la celda de  referencia . Se muestran los siguientes valores: "b" para las celdas vacías, "l" (por "label", que significa "etiqueta" en inglés) para las celdas que contienen texto sin formato y "v" (por valor) para las celdas que contienen cualquier otro tipo de dato.
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="nombre-funcion">
+                        <p>"ancho"</p>
+                      </td>
+                      <td>
+                        <p>Muestra el ancho de la columna en términos de la cantidad de caracteres que pueden caber en la celda de  referencia . El número que se muestra se determina en función del ancho del carácter cero (0) en el tamaño de fuente predeterminado. Ten en cuenta que este ancho es diferente al ancho de celda que utiliza Hojas&nbsp;de&nbsp;cálculo&nbsp;de&nbsp;Google en otros contextos, ya que ese ancho se define en términos de píxeles.</p>
+                      </td>
+                    </tr>
+                  <!-- 
+                    <tr>
+                      <td class="nombre-funcion">
+                        <p></p>
+                      </td>
+                      <td>
+                        <p> .</p>
+                      </td>
+                    </tr>
+      -->
+  
+                  </tbody>
+                </table>
+  
+              </p>
+              </li><br>
+  
+              <li><p><b>Códigos de formato de CELDA</b></p>
+            <p> La siguiente lista describe los valores de texto que devuelve la función CELDA cuando el argumento tipo_de_info es "formato" y el argumento referencia es una celda con formato para números integrados.</p>
+            <p>
+              <table class="tabla-funciones">
+                  <thead>
+                    <tr>
+                      <th>
+                        <p>
+                          <b class="ocpLegacyBold">Codigo de formato</b>
+                        </p>
+                      </th>
+                      <!-- <th>
+                        <p>
+                          <b class="ocpLegacyBold">Descripción</b>
+                        </p>
+                      </th> -->
+                      <th>
+                        <p>
+                          <b class="ocpLegacyBold">La función CELDA devuelve</b>
+                        </p>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <p>Estándar</p>
+                      </td>
+                      <td>
+                        <p>"G"</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>0</p>
+                      </td>
+                      <!-- <td>
+                        <p>Muestra un número como un dígito, muestra un cero si no hay valor.</p>
+                      </td> -->
+                      <td>
+                        <p>"F0"</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>#.##0</p>
+                      </td>
+                      <td>
+                        <p>".0"</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>0,00</p>
+                      </td>
+                      <td>
+                        <p>"F2"</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>#.##0,00</p>
+                      </td>
+                      <td>
+                        <p>".2"</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>$#.##0_);($#.##0)</p>
+                      </td>
+                      <td>
+                        <p>"C0"</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>$#.##0;(rojo)-$#.##0</p>
+                      </td>
+                      <td>
+                        <p>"C0-"</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>$#.##0,00_);($#.##0,00)</p>
+                      </td>
+                      <td>
+                        <p>"C2"</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>$#.##0,00;(rojo)-$#.##0,00</p>
+                      </td>
+                      <td>
+                        <p>"C2-"</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>0%</p>
+                      </td>
+                      <td>
+                        <p>"P0"</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>0,00%</p>
+                      </td>
+                      <td>
+                        <p>"P2"</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>0,00E+00</p>
+                      </td>
+                      <td>
+                        <p>"C2"</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p># ?/? o # ??/??</p>
+                      </td>
+                      <td>
+                        <p>"G"</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>d/m/aa o d/m/aa h:mm o dd/mm/aa</p>
+                      </td>
+                      <td>
+                        <p>"D4"</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>d-mmm-aa o dd-mm-aa</p>
+                      </td>
+                      <td>
+                        <p>"D1"</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>d-mmm</p>
+                      </td>
+                      <td>
+                        <p>"D2"</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>mmm-aa</p>
+                      </td>
+                      <td>
+                        <p>"D3"</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>mm/dd</p>
+                      </td>
+                      <td>
+                        <p>"D5"</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>h:mm a.m./p.m.</p>
+                      </td>
+                      <td>
+                        <p>"D7"</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>h:mm:ss a.m./p.m.</p>
+                      </td>
+                      <td>
+                        <p>"D6"</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>h:mm</p>
+                      </td>
+                      <td>
+                        <p>"D9"</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>h:mm:ss</p>
+                      </td>
+                      <td>
+                        <p>"D8"</p>
+                      </td>
+                    </tr>
+                  </tbody>
+              </table>
+            </p>
+              </li><br>
+
+
+            <li>En el caso de la función <b>TIPO.DE.Error</b>
+            <p>
+              <table class="tabla-funciones">
+                <thead>
+                  <tr>
+                    <th>
+                      <p>
+                        <b class="ocpLegacyBold">Número</b>
+                      </p>
+                    </th>
+                    <th>
+                      <p>
+                        <b class="ocpLegacyBold">Tipo de error</b>
+                      </p>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                <td class="nombre-funcion">
+                      <p>1</p>
+                    </td>
+                    <td>
+                      <p>#NULL!</p>
+                    </td>
+                  </tr>
+                  <tr>
+                <td class="nombre-funcion">
+                      <p>2</p>
+                    </td>
+                    <td>
+                      <p>#DIV/0!</p>
+                    </td>
+                  </tr>
+                  <tr>
+                <td class="nombre-funcion">
+                      <p>3</p>
+                    </td>
+                    <td>
+                      <p>#VALUE!</p>
+                    </td>
+                  </tr>
+                  <tr>
+                <td class="nombre-funcion">
+                      <p>4</p>
+                    </td>
+                    <td>
+                      <p>#REF!</p>
+                    </td>
+                  </tr>
+                  <tr>
+                <td class="nombre-funcion">
+                      <p>5</p>
+                    </td>
+                    <td>
+                      <p> #NAME?</p>
+                    </td>
+                  </tr>
+                  <tr>
+                <td class="nombre-funcion">
+                      <p>6</p>
+                    </td>
+                    <td>
+                      <p> #NUM!</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="nombre-funcion">
+                          <p>6</p>
+                        </td>
+                        <td>
+                          <p> #N/A</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="nombre-funcion">
+                              <p>8</p>
+                            </td>
+                            <td>
+                              <p>Para todos los demás errores</p>
+                            </td>
+                          </tr>
+                </tbody>
+              </table>
+             </p>
+              <p>No puede usar TIPO para determinar si una celda contiene una fórmula. TIPO solo determina el tipo del valor resultante o mostrado. Si el valor es una referencia a una celda que contiene una fórmula, TIPO devuelve el tipo del valor resultante de la fórmula.
+            </p>
+            </li><br>
+
+            
+
+          
+          </ol>
+        
+      </div>
+
+     
+
+
+
+
+  </div>
+    
+  </div>
+    
+  </body>

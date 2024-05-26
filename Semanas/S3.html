@@ -1,0 +1,2188 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+    
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+    <!-- This part is for using single $ for latex input, instead of \(\) -->
+    <script>
+        MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+        svg: {
+            fontCache: 'global'
+        }
+    };
+    </script>
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+    .lista
+        {
+            counter-reset: listaCounter 0 sublistaCounter 1 subsublistaCounter 1 subsubsublistaCounter 1;
+        }
+        /* .sublista{
+            counter-reset: sublistaCounter 1  SubsublistaCounter;
+        } */
+        </style>
+
+    <style>
+            /* body.number-title
+            {
+            counter-reset: temaCounter 1 subsectioncounter ;
+            } */
+        h1.page-title
+            {
+            counter-reset: temaCounter 1 sectionCounter  subsectionCounter;
+            }
+    </style>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+    <!-- Top Menu  -->
+    
+          
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Tecnologías de la Información y Comunicación II</div>
+          <div class="subtitle">Licenciatura en Administración Turística</div>
+          <div class="subsubtitle">Universidad del Mar, campus Huatulco </div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+
+      
+        </header>
+
+    <nav class="top-nav">
+        <ul>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Home.html"> Inicio  </a> </li>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Informacion_General.html"> Información</a> </li>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Notas.html"> Notas  </a> </li>
+        <!-- <li> <a href="https://pablojhh.github.io/TICDOS/Quizes.html"> Quizes  </a> </li>
+            <li> <a href="https://pablojhh.github.io/TICDOS/Practicas.html">Prácticas</a></li> -->
+            <li> <a href="https://pablojhh.github.io/TICDOS/Examenes.html"> Archivos  </a> </li>
+        </ul>
+    </nav>
+    
+    <title> §   </title>
+    
+    </head>
+
+
+<body class="fondo-body" >
+
+<h1 class="number-title flexbox">Semana del 1 de mayo</h1>
+
+    <div class="nota-box">
+    <h2 class="number-title"> Propiedades de campo: Regla de validación de campo </h2>
+
+
+    <p>
+      Access ofrece varias formas de restringir la entrada de datos:
+     
+    </p>
+
+    <ol> 
+        <b><li>Tipos de datos:</li></b>
+        <p>
+            Todos los campos de una tabla tienen un tipo de datos que restringe lo que pueden escribir los usuarios.
+            Por ejemplo, un campo de fecha y hora solo acepta valores de fecha y hora, un campo de moneda solo acepta
+            datos de moneda, etc.Los tipos de datos no son opcionales y reportan la validación de tipo de datos más
+            básica. 
+        </p>
+        <b><li>Propiedades de campo:</li></b>
+
+        <p>Algunas propiedades de campo restringen la entrada de datos.</p>
+        <ul>
+        <b><li> Tamaño de campo </li></b>
+            La propiedad Tamaño del campo restringe la entrada al limitar la cantidad de caracteres a recibir.
+        
+        <b><li>Mascara de entrada</li></b>
+            La propiedad de campo Mascara de entrada se puede usar también para validar los datos, lo que obliga
+            a los usuarios a escribir los valores de una manera específica. Por ejemplo, una máscara de entrada permite obligar a los usuarios a escribir las
+             fechas en un formato como 14/04/2007
+        
+
+        <b><li>Regla de validación</b></li> 
+          Las reglas de validacion permiten establecer las condiciones que deben cumplir 
+          los datos para ser aceptados o no en un campo. Esto es, puede prohibir o validar datos mediante reglas de
+          validación al escribirlos en bases de datos de Access. Puede usar el generador de expresiones para ayudarle 
+          a dar formato a la regla correctamente. Las regllas de validacion se usan conjuntamente con 
+          la propiedad <b>texto de validación</b> para informar de errores a los usuarios. 
+          <p>
+            Cuando se escriben datos, Access comprueba si se ha infringido alguna regla de validación y, si así es,
+             los datos escritos no se aceptan y Access muestra un mensaje (<b>Mensaje de validacion</b>).
+        </p>
+    
+        
+        </ol>
+
+    <p>
+      Estos métodos de validación de datos se pueden usar de forma aislada o combinados entre sí. En Access puede
+      establecer reglas de validación en la vista de diseño de  tabla o en la de hoja de datos de tabla.
+      Puede añadir una regla de validación de campo o una regla de validación de registro. 
+      Una regla de validación de campo comprueba la entrada de un campo y se aplica cuando el foco deja el campo. 
+      Una regla de validación de registro comprueba la entrada de uno o más campos y se aplica cuando el foco deja 
+      el registro. Habitualmente, una regla de validación de registro compara los valores de dos o más campos.
+    
+    </p>
+    <p>
+    </p>Observación:<b> Los siguientes tipo de campo no admiten reglas de validación:
+    <ul>
+      <li>Autonumeración</li>
+      <li>Objeto OLE</li>
+      <li>Datos adjuntos</li>
+      <li></li>
+    </ul>
+
+    </b>
+
+    
+
+<h2 class="number-title"> Regla de validación de campo:</h2>
+
+
+    <p>
+      Puede usar una <b>regla de validación de campo</b> para especificar un criterio que deben cumplir
+      todos los valores de campo válidos. En principio en una regla de validación de campo no se deberían tener que especificar el campo actual
+      como parte de la regla a no ser que use el campo en una función. Las restricciones sobre los tipos de caracteres que se 
+      escriban en un campo pueden aplicarse más fácilmente con una máscara de entrada. 
+    </p>
+     
+    <p>
+      Use una regla de validación de campo para comprobar el valor especificado en un campo al salir de él. 
+      Por ejemplo, imagine que tiene un campo Fecha y escribe >=#01/01/2010# en la propiedad Regla de validación 
+      de ese campo. La regla obligará a los usuarios a escribir fechas que coincidan con el 1 de enero de 2010 o
+      sean posteriores. Si especifica una fecha anterior a 2010 e intenta colocar el foco en otro campo,
+      Access no le permitirá abandonar el campo actual hasta que corrija el problema.
+    </p>
+ 
+    <!--
+    <p>
+      <h4>Ejemplos:</h4>
+        <ul>
+        <li>Impedir valores de fecha del pasado: >=Fecha()</li>
+        <li>Número inferior o igual a cinco: <=5</li>
+        <li>Restringir la longitud de caracteres de una cadena: Len([NombreCampoCadena])<100 </li>
+        <li> Escribir fechas que coincidan con el 1 de enero de 2010 o sean posteriores:  >=#01/01/2010# </li>
+        <p> Si especifica una fecha anterior a 2010 e intenta colocar el foco en otro campo, 
+            Access no le permitirá abandonar el campo actual hasta que corrija el problema.</p>
+
+         
+        </ul>
+    </p>
+    -->
+
+<!--
+    <p>
+        Una regla de validación es una forma de limitar la información que se escribe en un campo de tabla
+       o en un control (como un cuadro de texto) de un formulario. Con el texto de validación se puede
+        incluir un mensaje que sirva de ayuda a los usuarios que escriben datos no válidos.
+    </p>
+-->
+
+    
+
+    <button class="respButton hvr-grow ">  Ejemplos basicos de reglas de validación</button>
+    <div class="resp-box flexbox">
+    <div class="flexbox">   
+
+        <table width="0">
+            <thead>
+            <tr>
+            <td><strong>Regla de validación</strong></td>
+            <td><strong>Descripción</strong></td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>&lt;100</td>
+            <td>Debe ser inferior a 100.</td>
+            </tr>
+            <tr>
+            <td>&lt;= 100</td>
+            <td>Debe ser menor o igual a 100.</td>
+            </tr>
+            <tr>
+            <td>Entre 1 y 10</td>
+            <td>Debe estar entre 1 y 10.</td>
+            </tr>
+            <tr>
+           <!--  <td>0 0</td>
+            <td>No debe ser igual a 0.</td>
+            </tr>
+            <tr>
+            <td>&lt;1/1/95</td>
+            <td>Debe ser una fecha anterior al 1/1/95.</td>
+            </tr>
+            -->
+            <tr>
+            <td>&gt; = Fecha ()</td>
+            <td>Debe ser la fecha de hoy o más tarde.</td>
+            </tr>
+            <tr>
+            <td>&lt;= Fecha ()</td>
+            <td>Debe ser la fecha de hoy o antes.</td>
+            </tr>
+            <tr>
+            <td>&#8220;Hombre&#8221; o &#8220;Mujer&#8221;</td>
+            <td>Debe ser &#8220;Hombre&#8221; o &#8220;Mujer&#8221;.</td>
+            </tr>
+            <tr>
+            <td>Como &#8220;??&#8221;</td>
+            <td>Debe tener dos caracteres.</td>
+            </tr>
+            <tr>
+            <td>Como &#8220;####&#8221;</td>
+            <td>Debe tener cuatro números.</td>
+            </tr>
+            </tbody>
+            </table>
+
+            
+    </div>
+    </div>
+    
+    <button class="respButton hvr-grow "> Ejemplos de sintaxis de operadores de regla de validación comunes</button>
+    <div class="resp-box flexbox">
+    <div class="flexbox"> 
+
+            
+          <table>
+            <thead>
+              <tr>
+                <td>
+                  <p>
+                    <b class="ocpLegacyBold">Operador</b>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    <b class="ocpLegacyBold">Función</b>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    <b class="ocpLegacyBold">Ejemplo</b>
+                  </p>
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                      <p>
+                        <b class="ocpLegacyBold">Y</b>
+                      </p>
+                    </td>
+                    <td>
+                      <p>Especifica que todas las partes de la regla de validación deben cumplirse.</p>
+                    </td>
+                    <td>
+                      <p>
+                        <b class="ocpLegacyBold">&gt;= #01/01/2007# Y &lt;=#06/03/2008#</b>
+                      </p>
+                      <div class="ocpAlert">
+              <p class="ocpAlertSection"><b class="ocpNote">Nota: </b>Se puede usar <b class="ocpLegacyBold">Y</b> también para combinar reglas de validación. Por ejemplo: <b class="ocpLegacyBold">NO "Reino Unido" Y COMO "R*"</b>.</p>
+            </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>
+                        <b class="ocpLegacyBold">O</b>
+                      </p>
+                    </td>
+                    <td>
+                      <p>Especifica que algunas partes (no todas) de la regla de validación deben cumplirse.</p>
+                    </td>
+                    <td>
+                      <p>
+                        <b class="ocpLegacyBold">enero O febrero</b>
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>
+                        <b class="ocpLegacyBold">&lt;</b>
+                      </p>
+                    </td>
+                    <td>
+                      <p>Menor que.</p>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>
+                        <b class="ocpLegacyBold">&lt;=</b>
+                      </p>
+                    </td>
+                    <td>
+                      <p>Menor o igual que.</p>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>
+                        <b class="ocpLegacyBold">&gt;</b>
+                      </p>
+                    </td>
+                    <td>
+                      <p>Mayor que.</p>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>
+                        <b class="ocpLegacyBold">&gt;=</b>
+                      </p>
+                    </td>
+                    <td>
+                      <p>Mayor o igual que.</p>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>
+                        <b class="ocpLegacyBold">=</b>
+                      </p>
+                    </td>
+                    <td>
+                      <p>Igual que.</p>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>
+                        <b class="ocpLegacyBold">&lt;&gt;</b>
+                      </p>
+                    </td>
+                    <td>
+                      <p>Distinto de.</p>
+                    </td>
+                    <td></td>
+                  </tr>
+              <tr>
+                <td>
+                  <p>
+                    <b class="ocpLegacyBold">NO</b>
+                  </p>
+                </td>
+                <td>
+                  <p>Comprueba si hay valores opuestos. Se puede usar delante de cualquier operador de comparación, salvo NO ES NULO.</p>
+                </td>
+                <td>
+                  <p>
+                    <b class="ocpLegacyBold">NO &gt; 10</b> (es lo mismo que <b class="ocpLegacyBold">&lt;=10</b>).</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p><b class="ocpLegacyBold">EN</b></p>
+                </td>
+                <td>
+                  <p>Comprueba si hay valores iguales a los elementos de una lista. El valor de comparación debe ser una lista de valores separados por comas que aparece entre paréntesis.</p>
+                </td>
+                <td>
+                  <p>
+                    <b class="ocpLegacyBold">EN ("Tokio","París","Moscú")</b>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <b class="ocpLegacyBold">ENTRE</b>
+                  </p>
+                </td>
+                <td>
+                  <p>Comprueba si hay un intervalo de valores. Debe haber dos valores de comparación (un valor alto y un valor bajo) y esos valores deben ir separados por el separador Y.</p>
+                </td>
+                <td>
+                  <p>
+                    <b class="ocpLegacyBold">ENTRE 100 Y 1000</b> (es lo mismo que <b class="ocpLegacyBold">&gt;=100 Y &lt;=1000</b>)</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <b class="ocpLegacyBold">COMO</b>
+                  </p>
+                </td>
+                <td>
+                  <p>Busca cadenas modelo coincidentes en los campos de tipo Texto y Memo.</p>
+                </td>
+                <td>
+                  <p>
+                    <b class="ocpLegacyBold">COMO "Geo*"</b>
+                  </p>
+                </td>
+              </tr>
+              <!-- <tr>
+                <td>
+                  <p>
+                    <b class="ocpLegacyBold">NO ES NULO</b>
+                  </p>
+                </td>
+                <td>
+                  <p>Obliga a los usuarios a escribir valores en el campo. Equivale a establecer el valor de la propiedad de campo <b class="ocpLegacyBold">Requerido</b> en <b class="ocpLegacyBold">Sí</b>. Sin embargo, cuando se habilita la propiedad <b class="ocpLegacyBold">Requerido</b> y un usuario no especifica un valor, Access muestra un mensaje de error poco descriptivo. En general, el uso de las bases de datos resulta más fácil si se utiliza NO ES NULO y se escribe un mensaje descriptivo en la propiedad <b class="ocpLegacyBold">Texto de validación</b>.</p>
+                </td>
+                <td>
+                  <p>
+                    <b class="ocpLegacyBold">NO ES NULO</b>
+                  </p>
+                </td>
+              </tr>
+            -->
+            </tbody>
+          </table>
+            
+    </div>
+    </div>
+
+
+    
+    
+    <button class="respButton hvr-grow ">  Ejemplos de regla de validación y texto de validación</button>
+    <div class="resp-box flexbox">
+    <div class="flexbox">   
+
+        <table >
+            <thead>
+              <tr>
+                <td>
+                  <p>
+                    <b class="ocpLegacyBold">Regla de validación</b>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    <b class="ocpLegacyBold">Texto de validación</b>
+                  </p>
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <p>&lt;&gt; 0</p>
+                </td>
+                <td>
+                  <p>Especifique un valor que no sea cero.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>&gt;=0</p>
+                </td>
+                <td>
+                  <p>El valor debe ser igual o mayor que cero.</p>
+                  <p>-o bien-</p>
+                  <p>Especifique un número positivo.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>0 o &gt;100</p>
+                </td>
+                <td>
+                  <p>El valor debe ser igual que cero o mayor que 100.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>ENTRE 0 Y 1</p>
+                </td>
+                <td>
+                  <p>Especifique un valor con un signo de porcentaje. (Se usa con los campos que almacenan los valores numéricos como porcentajes).</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>&lt;#01/01/2007#</p>
+                </td>
+                <td>
+                  <p>Especifique una fecha anterior a 2007.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>&gt;=#01/01/2007# Y &lt;#01/01/2008#</p>
+                </td>
+                <td>
+                  <p>La fecha debe ser del año 2007.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>&lt;Fecha()</p>
+                </td>
+                <td>
+                  <p>La fecha de nacimiento no puede ser una fecha futura.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>CompCadena(Mayús([Apellidos]),<br>
+        [Apellidos],0) = 0</p>
+                </td>
+                <td>
+                  <p>Los datos del campo Apellidos deben escribirse en mayúsculas.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>&gt;=Ahora()
+
+                  </p>
+                </td>
+                <td>
+                  <p>Especifique la fecha de hoy.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>H O M</p>
+                </td>
+                <td>
+                  <p>Escriba H para hombre o M para mujer.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>COMO "S*"</p>
+                </td>
+                <td>
+                  <p>El dato introducido debe comenzar con S</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>COMO "[A-Z]*@[A-Z].com" O "[A-Z]*@[A-Z].net" O "[A-Z]*@[A-Z].org"</p>
+                </td>
+                <td>
+                  <p>Escriba una dirección de correo electrónico válida que termine en .com, .net u .org.</p>
+                </td>
+              </tr>
+              
+            
+            </tbody>
+          </table>
+    </div>
+    </div>
+
+    <button class="respButton hvr-grow ">  Ejemplo: Validación por longitud </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">   
+          <p>Supongamos que tenemmos un campo <b>Contraseña</b> y queremos que este tenga una 
+           longitud mínima de 8 caracteres. Entonces podemos usar: </p>
+<p>
+    <b>Como "????????*""
+
+    </b>
+</p>
+Cuando ingrese la información, cada ? representa una posición que deberá rellenarse obligatoriamente,
+ y el * del final, nos indica que una vez cumplida la longitud mínima, ya se pueden indicar los caracteres 
+ que se consideren conveniente
+
+        </div>
+    </div>
+
+    
+    <button class="respButton hvr-grow ">  Ejemplo: Validación de Correo electrónico </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">   
+
+        Supongamos que el formato requerido del campo correo electrónico es:
+
+        <ul>
+        <li>Más de 1 caracter(podemos suponer mas de tres, y empezando por letra)</li>
+        <li>el símbolo @</li>
+        <li>más de un carácter(y más de tres)</li>
+        <li>un punto (.)</li>
+        <li>varios caracteres alfabéticos (como mínimo 2)</li>
+        </ul>
+        Para comprobar esas condiciones, podríamos escribir en la «Regla de validación de ese campo:
+
+        <p><b>Como "[A-Z]??*@???*.??*"</b></p>
+      </div>
+    </div>
+    
+
+    <h2 class="number-title"> Regla de validación de registro  :</h2>
+
+    <p>
+     Puede usar una regla de validación de registro para especificar una condición que necesitan cumplir todos los 
+     registros válidos. Puede comparar valores de distintos campos con una regla de validación de registro.
+     Por ejemplo, un registro con dos campos de fecha puede necesitar que los valores de un campo siempre sean anteriores a los del otro (por ejemplo, que FechaDeInicio sea anterior a FechaDeFinalización).
+    </p>
+    
+    <p>
+      Use una regla de validación de registro para controlar cuándo puede guardar un registro (una fila de una tabla).
+      A diferencia de una regla de validación de campo, la regla de validación de registro hace referencia a otros campos
+      de la misma tabla. Las reglas de validación de registro se crean cuando es necesario comprobar los valores de un 
+      campo en relación con los valores de otro campo. Por ejemplo, imagine que su empresa le obliga a enviar los
+      productos en un plazo de 30 días y, si no lo hace, tendrá que reembolsar al cliente parte del precio de compra.
+      Puede definir una regla de validación de registro como [FechaObligatoria]<=[FechaPedido]+30 para evitar que un
+       usuario especifique una fecha de envío (el valor del campo FechaObligatoria) demasiado lejana en el futuro.
+    </p>
+
+
+    <button class="respButton hvr-grow ">  Ejemplos de regla de validación y texto de validación</button>
+    <div class="resp-box flexbox">
+    <div class="flexbox">   
+
+        <table >
+            <thead>
+              <tr>
+                <td style="width:400px">
+                  <p>
+                    <b class="ocpLegacyBold">Regla de validación</b>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    <b class="ocpLegacyBold">Texto de validación</b>
+                  </p>
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+           
+              <tr>
+                <td>
+                  <p>[FechaObligatoria]&lt;=[FechaPedido]+30</p>
+                </td>
+                <td>
+                  <p>Escriba una fecha obligatoria que no sea posterior a un plazo de 30 días a partir de la fecha de pedido.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>[FechaFin]&gt;=[FechaInicio]</p>
+                </td>
+                <td>
+                  <p>Escriba una fecha de fin que sea igual o posterior a la fecha de inicio.</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    </div>
+
+
+<h2 class="number-title"> Validación en un formulario </h2>
+
+
+  <p>
+       Puede usar la propiedad Regla de validación de un control de un formulario para especificar un
+        criterio que deben cumplir todos los valores indicados para ese control. La propiedad de control 
+        Regla de validación funciona como una regla de validación de campo. Normalmente, se usa una regla de validación
+        de formulario en lugar de una regla de validación de campo si se trata de una regla específica del formulario
+        y no de la tabla, sin importar donde se use.
+      </p>
+  </div>
+    <!--
+    
+    <p>
+        En esta sección presentaremos la definición formal de la integral de Riemann. Pero antes 
+        recordemos el ejemplo de Arquímides para tratar de ver qué se recupera de éste.
+    </p>
+    <p>
+        En el ejemplo tenemos la parábola \(f:[0,b]\to \mathbb{R}\), \(f(x)=x^2\), y aproximamos 
+        el área bajo la curva mediante sumas inferiores y superiores sobre particiones 
+        homogeneas. Directamente calculamos que si \(P_n\) nota la partición homogenea 
+        en \([0,b]\) con longitud \(n\) entonces 
+        \begin{eqnarray*}
+        \underline{S}(f,P_n)=\frac{b^3}{n^3}\sum_{i=1}^{n-1}i^2 \\ 
+        \overline{S}(f,P_n)=\frac{b^3}{n^3}\sum_{i=1}^{n}i^2 
+        \end{eqnarray*}
+    </p>
+    <p>
+        Es más probamos que 
+        \[
+        \underline{S}(f,P_n)\leq \frac{b^3}{3} \leq \overline{S}(f,P_n)
+        \]
+        y que 
+        \[
+            \lim_{n\to \infty}\underline{S}(f,P_n)=\lim_{n\to \infty}\overline{S}(f,P_n)=\frac{b^3}{3}
+        \]
+        De lo cual concluimos que el área bajo la curva es \(\frac{b^3}{3}\) 
+        (ver <a href="./S1.html#Ejer:SumasSupInfParabloa">Ejercicio 1.6</a>).
+    </p>
+    <p>
+        Una crítica que surge con éste métodos es la siguiente: ¿ qué pasa si se usan otras 
+        particiones no necesariamente homogeneas? Es una pregunta muy válida pues al parecer
+        el uso de las particiones homogeneas facilita muchas cuentas y tal vez no captan toda la 
+        complejidad del problema (el diablo está en los detalles). Una de las grandes contribuciones 
+        de Riemann es su método para tratar de generalizar el ejemplo de Arquímides usando 
+        cualquier partición y para abarcar una cantidad más grande de funciones. 
+    </p>
+    <p>
+        Un aspecto técnico importante de las particiones homogeneas es que vienen con una manera 
+        sencilla de "hacerlas crecer" o comparar. Nos referimos a la longitud de la partición. Intuitivamente 
+        si la partición es homogenea y con longitud cada vez más grande las sumas inferiores y 
+        superiores aproximan cada vez mejor al área bajo la curva. Otra aspecto también importante 
+        es que este tipo de manera de comparar las particiones es compatible con el refinamiento 
+        de particiones, por ejemplo \(P_{2n}\) es más fina que \(P_n\) y en general 
+        \(P_{kn}\) es más fina que \(P_n\) para todo natural \(k \geq 1\). Por lo tanto la longitud
+        de una partición homogenea es una muy buena mandera de comparar particiones y tiene la 
+        ventaja de que es parecida al como comparamos naturales, tanto que los límites que se 
+        toman son cuando la longitud de la partición tiende a infinito. 
+    </p>
+    <p>
+        Desafortunadamente para particiones en general se pierde esta manera directa de compararlas
+        usando longitud pues para particiones homogeneas longitud más grande no se traduce en 
+        mejor aproximación.
+    </p>
+
+    <p>
+        Hay varias formas de solucionar éste problema y la que presentamos recurre al uso de 
+        ínfimos  y supremos. El método también tiene ventaja de que captura la información de 
+        TODAS las psibles particiones que ayudan a aproximar .
+    </p>
+</div>
+
+<div class="definicion-box">
+    <h2 class="number-title" id="Def:Integral"> Definición </h2>
+    <p>
+        Sea $f:[a,b]\to \mathbb{R}$ una función acotada. 
+    </p>
+    <p>
+        La integral inferior de $f$ en 
+        $[a,b]$, denotada $\underline{\int}_{a}^b f(x)dx$, se define como
+        $$
+        \underline{\int}_{a}^b f(x)dx=\sup \left\{ \int_a^b s(x)dx \quad \big| s:[a,b]\to 
+            \mathbb{R}, \textrm{es una función escalonada y $s\leq f$}  
+            \right\}
+        $$
+        La integral superior de $f$, en $[a,b]$, denotada $\overline{\int}_{a}^b f(x)dx$, 
+        se define como
+        $$
+        \overline{\int}_{a}^b f(x)dx= \inf \left\{ \int_a^b t(x)dx \quad \big|  t:[a,b]\to 
+            \mathbb{R},\textrm{es una función escalonada  y $f\leq t$}  \right\}
+        $$
+        
+    </p>
+    <p>
+        Decimos que una función es  Riemann integrable sii  
+        \[
+        \underline{\int}_{a}^b f(x)dx =\overline{\int}_{a}^b f(x)dx.
+        \] 
+        A este número lo llamamos la integral de Riemann definida de $f$, 
+        en $[a,b]$, y se denota 
+        \[
+        \int_a^bf(x)dx.
+        \]
+    </p>
+    <p>
+        Notas.
+    </p>
+    <ol>
+        <li>
+            Se pide que $f$ sea acotada para que existan funciones escalonadas 
+            cuya gráfica este por arriba de la de $f$ y otras que estén por abajo.
+        </li>
+        <li>
+            Dada \(P_n=\{x_0< \cdots < x_n \}\)  una partición homogenea podemos asociarle dos 
+            funciones escalonadas 
+            \begin{eqnarray*}
+            \underline{s}_n(s)=\sum_{i=1}^n m_i\chi_{[x_{i-1},x_i)}\\
+            \overline{s}_n(s)=\sum_{i=1}^n M_i\chi_{[x_{i-1},x_i)}
+            \end{eqnarray*}
+            donde \(m_i=\inf_{x\in (x_{i-1},x_i)}\{f(x)\} , M_i=\sup_{x\in (x_{i-1},x_i)}\{f(x)\}\).
+            Notamos que \(\underline{s}_n \leq f \leq \overline{s}_n\) y por la 
+            <a href="./S2.html#Def:IntegralEscalonadas">Definición 2.2</a> tenemos 
+            \begin{eqnarray*}
+            \int_a^b \underline{s}_n(x)dx=\underline{S}(f,P_n) \\
+            \int_a^b \overline{s}_n(x)dx=\overline{S}(f,P_n)
+            \end{eqnarray*}
+            Por lo que 
+            \[
+                \underline{S}(f,P_n)\leq \int_a^b f(x)dx \leq \overline{S}(f,P_n)
+            \]
+        </li>
+    </ol>
+    
+</div>
+
+
+
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Demuestra que toda función escalonada es integrable. 
+    </p>
+    <p>
+        Es más, si fijamos una función escalonada $s_0:[a,b] \to \mathbb{R}$, 
+        con partición $P=\{x_i\}_{i=1}^n$,  y con $s=s_i$ en el intervalo $(x_{i-1}, x_i)$, 
+        prueba que 
+        $$
+        \underline{\int}_a^b s(x)dx=\overline{\int}_a^b s(x)dx=\sum_{i=1}^n s_j(x_i-x_{i-1}).
+        $$
+    </p>
+    <button class="respButton hvr-grow "> Solución  escrita </button>
+    <div class="resp-box flexbox">
+      <div >
+        <p>
+            Usando directamente la <a href="#Def:Integral">Definición 3.2</a> debemos de 
+            probar 
+            \begin{eqnarray}
+            \sup_{s \leq s_0} \left\{\int_a^b s(x)dx \right\} =\sum_{i=1}^ns_i(x_i-x_{i-1}) \label{EqnAux1Ejer3-3} 
+            \\
+            \inf_{s_0 \leq t} \left\{\int_a^b t(x)dx \right\} =\sum_{i=1}^ns_i(x_i-x_{i-1})\label{EqnAux2Ejer3-3}
+            \end{eqnarray}
+            donde las \(s\) y \(t\) que aparecen en el supremo e ínfirmo respectivamente son funciones 
+            escalonadas.
+        </p>
+        <p>
+            Para \eqref{EqnAux1Ejer3-3}.
+        </p> 
+        <p> \(\geq ] \)     ya que \(s_0\) es escalonada y \(s_0 \leq s_0\) se sigue 
+            directamente 
+            \[
+            \sup_{s \leq s_0} \left\{\int_a^b s(x)dx \right\} \geq \int_a^b s_0dx = \sum_{i=1}^ns_i(x_i-x_{i-1}).\\
+            \]
+         </p>
+         <p>
+             \(\leq ]\) Si  \(s\leq s_0\) y \(s\) es escalonada entonces aplicando el 
+             <a href="./S2.html#Ejer:MonotoniaIntegralEscalonadas">Ejercicio 2.13</a>
+             \[
+             \int_a^b sdx \leq \int_a^b s_0dx =\sum_{i=1}^n s_i(x_i-x_{i-1}).
+             \]
+             Por lo que \(\sum_{i=1}^ns_i(x_i-x_{i-1})\) es una cota superior del contjunto
+             \[
+                \left\{\int_a^b sdx: s\leq s_0 \right\}
+             \]
+             de lo que se concluye 
+             \[
+             \sup_{s \leq s_0} \left\{\int_a^b s(x)dx \right\}\leq \sum_{i=1}^n s_i(x_i-x_{i-1}).
+             \]
+         </p>
+         <p>
+            La prueba de \eqref{EqnAux2Ejer3-3} es similar.
+        </p>           
+      </div>
+    </div>
+     
+    <a href="https://youtu.be/2P6QvCa6vqQ?t=2283" target="_blank" >
+        <button class="respButton hvr-grow " > Solución en video </button>     
+    </a>
+
+    
+</div> 
+
+
+<div class="ejercicio-box">
+    <h2 class="number-title" id="Ejer:IntegInfMenorIgualIntegSup"> Ejercicio</h2> 
+    <p>
+        Demuestra que, para cualquier función acotada, $f:[a,b]\to \mathbb{R}$ 
+    $$\underline{\int}_a^b f(x)dx \leq \overline{\int}_a^bf(x)dx$$
+
+    </p>
+    <p>
+        En consecuencia, una función NO es integrable si 
+        $\underline{\int}_a^b f(x)dx < \overline{\int}_a^bf(x)dx$
+    </p>
+
+
+    <button class="respButton hvr-grow "> Solución escrita  </button>
+    <div class="resp-box flexbox">
+      <div >
+    <p>
+        Directamente de la <a href="#Def:Integral">Definición 3.2</a> debemos de probar 
+        \[
+        \sup_{s\leq f} \left\{ \int_a^b s(x)dx \right\}  
+            \leq 
+        \inf_{f\leq t} \left\{ \int_a^b t(x)dx  \right\}
+        \]
+        donde recordemos que tanto \(s\) como \(t\) son funciones escalonadas.
+    </p>
+    <p>
+        Pero si \(s\leq f \leq t\) se sigue que \(s\leq t\) y del 
+        <a href="./S2.html#Ejer:MonotoniaIntegralEscalonadas">Ejercicio 2.13</a> obtenemos 
+        \[
+            \int_a^b sdx \leq \int_a^b tdx 
+        \]
+        Pensando a la función  \(t\) como  fija y haciendo variar la \(s\) sobre todas 
+        las funciones escalonadas \(s\) con \(s\leq f\) obtenemos del a 
+        ecuación anterior que \(\int_a^b tdx\) es cota superior de 
+        \[
+            \left\{\int_a^bsdx: s\leq f \right\}
+        \]
+        por lo que 
+        \[
+            \underline{\int}_a^b fdx = \sup_{s\leq f}\left\{ \int_a^b sdx\right\} \leq \int_a^b tdx
+        \]
+        Ya que \(t\) es una función escalonada arbitraria que satisface \(f\leq t\) de la 
+        ecuación anterior resulta que \(\underline{\int}_a^bfdx\) es conta inferior del conjunto 
+        \[
+            \left\{ \int_a^b tdx: f\leq t \right\}
+        \]
+        por lo que concluimos 
+        \[
+            \underline{\int}_a^bfdx \leq \sup_{f\leq t}\left\{ \int_a^btdx \right\}=
+            \overline{\int}_a^b fdx.
+        \]
+    </p>
+    </div>
+    </div>
+
+    <a href="https://youtu.be/2P6QvCa6vqQ?t=3181" target="_blank" >
+        <button class="respButton hvr-grow " > Solución en video </button>     
+    </a>
+</div>
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Considera la función de Dirichlet $D:[0,1]\to \mathbb{R}$ tal que
+        $$  
+        D(x)=\left\{
+        \begin{array}{cc}
+        1 & x\in \mathbb{Q}\\
+        0 & x \notin \mathbb{Q}
+        \end{array}
+        \right.
+        $$
+
+        Demuestra que $D$ no es integrable.
+    </p>
+    <button class="respButton hvr-grow "> Demostración  </button>
+    <div class="resp-box flexbox">
+      <div >
+    <p>
+        Primero demostremos que \(\int_{\underline{0}}^1D(x)dx \leq 0\).  
+        Basta demostrar que \(0\) es una cota superior del conjunto 
+        \[A:= \left\lbrace \int_0^1s(x)dx \hspace{4pt}  
+        \vert \hspace{4pt} s: [0, 1] \rightarrow \mathbb{R}, 
+        \text{ es una función escalonada y } s 
+        \leq D \right\rbrace.\]
+    </p>
+    <p>
+        Sea \(s: [0, 1] \rightarrow \mathbb{R}\) una función 
+        escalonada tal que \(s \leq D\) y sea 
+        \(\textbf{P} = \lbrace x_0=0 < x_1 < \cdot 
+        \cdot \cdot < x_n = 1 \rbrace\) 
+        la partición asociada a \(s\). 
+        Afirmamos que \(\int_0^1s(x)dx \leq 0\). 
+    </p>
+    <p>
+        Como  \(s \leq D\), esto implica que \(s(x) \leq D(x) \) 
+        para toda \(x \in (x_{i-1}, x_i)\) con \(i =1, . . ., n \). 
+        Sea \( j \in \lbrace 1, . . . , n \rbrace \) arbitraria, por 
+        la densidad de \(\mathbb{Q}\) existe 
+        \(z_0 \in  (x_{j-1}, x_j) \cap \mathbb{Q}\), entonces 
+        \( s(z_0)\leq D(z_0) = 0\), es decir \(s(z_0)\leq  0\), 
+        y como \(s\) es constante en \((x_{j-1}, x_j)\) implica 
+        que \( s(x) = s(z_0) \leq 0\) para cada \(x \in (x_{j-1}, x_j)\). 
+        Como \(j\) fue arbitraria, se tiene que \( s(x) \leq 0\) para 
+        cada \(x \in (x_{i-1}, x_i)\) con \(i =1, . . ., n \). 
+    </p>
+
+    <p>
+        Por otro lado, si consideramos \(h : [0, 1] \rightarrow \mathbb{R}\) la función 
+        constante cero, \(h(x) = 0\) para cada \(x \in [0,1]\), 
+        tenemos que \(s \leq h\) excepto por una cantidad finita de puntos 
+        y es claro que \(h \) es una función escalonada, entonces por el 
+        <a href="./S2.html#Ejer:MonotoniaIntegralEscalonadas">Ejercicio 2.13</a>, \[\int_0^1s(x) dx \leq \int_0^1h(x)dx = 0.\]
+
+        Es decir, \(\int_0^1s(x)dx \leq 0\).  Como \(s\) fue arbitraria, 
+        se tiene que \(0\) es una cota superior de \(A\). Por lo tanto, 
+        \( \int_{\underline{0}}^1D(x)dx = \sup A \leq 0\), es decir 
+        \(\int_{\underline{0}}^1D(x)dx \leq 0\).
+    </p>
+
+    <p>
+        Lo siguiente es demostrar que 
+        \(1 \leq \int_0^{\overline{1}}D(x) dx\).  
+        Basta demostrar que \(1\) es una cota inferior del 
+        conjunto 
+        \[B:= \left\lbrace \int_0^1t(x)dx \hspace{4pt}  
+        \vert \hspace{4pt} t: [0, 1] \rightarrow \mathbb{R}, 
+        \text{ es una función escalonada y } D \leq t \right\rbrace.\] 
+    </p>
+    <p>
+        Sea \(t: [0, 1] \rightarrow \mathbb{R}\) una función escalonada 
+        tal que \(D \leq t\) y sea 
+        \(\textbf{Q} = \lbrace x_0=0 < x_1 < \cdot \cdot \cdot < x_n 
+        = 1 \rbrace\) 
+        la partición asociada a \(t\). 
+        Afirmamos que \(1 \leq \int_0^1t(x)dx\). 
+    </p>
+    <p>
+        Como  \(D \leq t\), esto implica que \(D(x) \leq t(x) \) para 
+        toda \(x \in (x_{i-1}, x_i)\) con \(i =1, . . ., n \). 
+        Sea \( j \in \lbrace 1, . . . , n \rbrace \) arbitraria, por 
+        la densidad de \(\mathbb{Q}\) existe 
+        \(z_0 \in  (x_{j-1}, x_j) \cap \mathbb{Q}\), entonces 
+        \( 1 = D(z_0) \leq t(z_0)\), es decir \(1 \leq t(z_0)\), 
+        y como \(t\) es constante en \((x_{j-1}, x_j)\) implica que 
+        \( 1 \leq t(x) = t(z_0)\) para cada \(x \in (x_{j-1}, x_j)\). 
+        Como \(j\) fue arbitraria, se tiene que \( 1 \leq t(x)\) para 
+        cada \(x \in (x_{i-1}, x_i)\) con \(i =1, . . ., n \). 
+    </p>
+
+    <p>
+        Sea \(g : [0, 1] \rightarrow \mathbb{R}\) la función constante \(1\), tenemos que \(g \leq t\) 
+        excepto por una cantidad finita de puntos y es claro que 
+        \(g \) es una función escalonada, entonces por el 
+        <a href="./S2.html#Ejer:MonotoniaIntegralEscalonadas">Ejercicio 2.13</a>, 
+        \[1 = \int_0^1g(x) dx \leq \int_0^1t(x)dx .\]
+    </p>
+
+    <p>
+        Es decir, \(1 \leq \int_0^1s(x)dx \).  Como \(t\) fue arbitraria, se tiene que \(1\) 
+        es cota inferior de \(B\). Por lo tanto,  
+        \( 1\leq \inf B = \int_0^{\overline{1}}D(x) dx\), 
+        es decir \(1 \leq \int_0^{\overline{1}}D(x) dx\).
+    </p>
+    <p>
+        Por lo tanto, \(\int_{\underline{0}}^1D(x)dx  <  \int_0^{\overline{1}}D(x) dx\). 
+        Con esto concluimos que \(D\) no es integrable.
+    </p>
+</div>
+</div>
+
+
+
+</div>
+
+
+
+<div class="teorema-box">
+    <h2 class="number-title" id="Ejer:MonotoniaIntegral"> Teorema </h2>
+    <h3>Monotonía de la integral</h3>  
+    <p>
+        Sean $f,g:[a,b]\to \mathbb{R}$ dos funciones integrables.  
+        Si $f(x)\leq g(x)$  para todos \(x\in [a,b]\) demuestra que:
+        $$\int_a^b f(x)dx\leq \int_a^bg(x)dx .$$
+        Sugerencia: usa el ejercicio 
+        <a href="./S2.html#Ejer:MonotoniaIntegralEscalonadas">Ejercicio 2.13</a>
+    </p>
+
+    <button class="respButton hvr-grow "> Demostración  </button>
+    <div class="resp-box flexbox">
+    <div >
+    <p>
+        Ya que las funciones \(f\) y \(g\) son integrables sabemos que 
+        \[
+            \int_a^b fdx = \underline{\int}_a^bfdx=\sup_{s\leq f}\left\{\int_a^b sdx \right\},
+        \]
+        \[
+           \int_a^b gdx = \overline{\int}_a^b gdx = \inf_{g \leq t}\left\{ \int_a^b tdx \right\}. 
+        \]
+    </p>
+    <p>
+        Por lo que es suficiente probar 
+        \[
+        \sup_{s\leq f}\left\{\int_a^b sdx \right\} \leq \inf_{g \leq t}\left\{ \int_a^b tdx \right\} 
+        \]
+        donde enfarizamos que tanto \(s\) como \(t\) se toman como  funciones escalonadas.
+    </p>
+    <p>
+        Notamos que si  \(s\leq f\) y \(g\leq t\) entonces \(s\leq t\) así que por 
+        el <a href="./S2.html#Ejer:MonotoniaIntegralEscalonadas">Ejercicio 2.13</a>
+        \[
+            \int_a^b sdx \leq \int_a^b tdx.
+        \]
+        Pensando a \(t\) como fija y haciendo variar \(s\) sobre las funciones 
+        escalonadas que satisfacen \(s\leq f\) obtenemos 
+        \[
+            \sup_{s\leq f}\left\{ \int_a^b sdx \right\} \leq \int_a^b tdx. 
+        \]
+        Ahora, pensando a \(t\) como variando sobre las funciones acotadas 
+        que satisfacen \(g \leq t\) la desigualdad anterior nos dice que el número 
+        \(\sup_{s\leq f}\left\{ \int_a^b sdx \right\}\) es cota inferior del conjunto 
+        \[
+            \left\{ \int_a^b tdx: g \leq t\right\}.
+        \]
+        De la definición del ínfimo concluimos 
+        \[
+        \sup_{s\leq f}\left\{\int_a^b sdx \right\} \leq \inf_{g \leq t}\left\{ \int_a^b tdx\right\}.
+        \]
+    </p>
+    </div>
+    </div>
+
+    <a href="https://youtu.be/2P6QvCa6vqQ?t=3963" target="_blank" >
+        <button class="respButton hvr-grow " > Demostración en video </button>     
+    </a>
+    
+</div>
+
+
+
+<div class="ejercicio-box">
+    <h2 class="number-title" id="Ejer:CotasFacilesIntegral"> Ejercicio</h2> 
+    <p>
+        Sea $f:[a,b]\to \mathbb{R}$ integrable. Supon que existen 
+        constantes $m$ y $M$ tales que 
+        $m\leq f(x)\leq M$, para todo $x\in [a,b]$. Demuestra que:
+        $$
+        m(a-b)\leq \int_a^bf(x)dx\leq M(b-a).
+        $$
+    </p>
+    
+    <button class="respButton hvr-grow "> Demostración  </button>
+    <div class="resp-box flexbox">
+    <div >
+    <p>
+        Empecemos por definir los siguientes conjuntos, 
+        \begin{equation*}
+        \begin{split}
+        A & := \left\lbrace \int_a^bs(x)dx \hspace{4pt} \vert \hspace{4pt} 
+        s: [a, b] \rightarrow \mathbb{R}, \text{ es una función escalonada y } s \leq f \right\rbrace \\
+        B & := \left\lbrace \int_a^bt(x)dx \hspace{4pt}  \vert \hspace{4pt} 
+        t: [a, b] \rightarrow \mathbb{R}, \text{ es una función escalonada y 
+        } f \leq t \right\rbrace.
+        \end{split}
+        \end{equation*}
+        
+     
+        La estrategia a seguir es demostrar que \(m(b-a)\) es cota 
+        inferior del conjunto \(B\) y \(M(b-a)\) es cota superior 
+        del conjunto \(A\). 
+    </p>
+    
+    <p>
+        Empecemos por demostrar que \(M(b-a)\) es cota superior del 
+        conjunto \(A\). 
+    </p>
+    <p>
+        Sea \(s: [a, b] \rightarrow \mathbb{R}\) una función escalonada 
+        arbitraria tal que \(s \leq f\). Afirmamos que 
+        \(\int_a^bs(x)dx \leq M(b-a)\). 
+    </p>
+    
+    <p>
+        Consideremos \(g: [a, b] \rightarrow \mathbb{R}\) dada por 
+        \(g(x) = M\) con \(x\in [a,b]\), es claro que \(g\) es una 
+        función escalonada. Por hipótesis tenemos que \(f(x) \leq M\) 
+        para todo \( x \in [a, b]\), es decir \(f\leq g\), y dado que 
+        \(s \leq f\) obtenemos \(s \leq g\). Entonces por 
+        el <a href="./S2.html#Ejer:MonotoniaIntegralEscalonadas">Ejercicio 2.13</a>
+        \[\int_a^bs(x) dx \leq \int_a^bg(x)dx = M(b-a).\]
+    </p>
+    
+    <p>
+        Por lo tanto \(\int_a^bs(x)dx \leq M(b-a)\). Como \(s\) 
+        fue arbitraría, se tiene que \(M(b-a)\) es una cota superior 
+        de \(A\). Por lo tanto, 
+        \(\int_{\underline{a}}^bf(x)dx = \sup A \leq M(b-a)\), 
+        es decir 
+        \[\int_{\underline{a}}^bf(x)dx \leq M(b-a).\]
+    </p>
+    <p>
+        Lo siguiente es demostrar que \(m(b-a)\) es cota 
+        inferior del conjunto \(B\).
+    </p>
+    
+    <p>
+        Sea \(t: [a, b] \rightarrow \mathbb{R}\) una función 
+        escalonada arbitraria tal que \(f \leq t\). Afirmamos 
+        que \(m(b-a) \leq\int_a^bt(x)dx\). 
+    </p>
+    
+    <p>
+        Consideremos \(h: [a, b] \rightarrow \mathbb{R}\) dada por 
+        \(h(x) = m\) con \(x\in [a,b]\), es claro que \(h\) es una 
+        función escalonada. Por hipótesis tenemos que 
+        \(m \leq f(x)\) para todo \( x \in [a, b]\), es decir 
+        \(h \leq f\), y dado que \(f \leq t\) obtenemos \(h \leq t\). 
+        Entonces por el <a href="./S2.html#Ejer:MonotoniaIntegralEscalonadas">Ejercicio 2.13</a>
+        \[m(b-a) = \int_a^bh(x) dx \leq \int_a^bt(x)dx .\]
+    </p>
+    <p>
+        Por lo tanto \(m(b-a) \leq\int_a^bt(x)dx\). Como \(t\) fue 
+        arbitraría, se tiene que \(m(b-a)\) es una cota inferior de \(B\). 
+        Por lo tanto, 
+        \(m(b-a)\leq \inf B = \int_a^{\overline{b}}f(x)dx \), 
+        es decir 
+        \[m(b-a) \leq \int_a^{\overline{b}}f(x)dx.\]
+    </p>
+    <p>
+        Por lo tanto 
+        \[ m(b-a) \leq \int_a^{\overline{b}}f(x)dx 
+        \leq \int_{\underline{a}}^bf(x)dx \leq M(b-a) \]
+    </p>
+    <p>
+        Como \(f\) es integrable, 
+        \(\int_a^bf(x)dx = \int_a^{\overline{b}}f(x)dx = 
+        \int_{\underline{a}}^bf(x)dx\).  Por lo tanto 
+        \[ m(b-a) \leq \int_a^b f(x) dx \leq M(b-a) .\]
+    </p>
+    </div>
+    </div>
+    
+ </div>   
+
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio </h2> 
+    <p>
+        Sea $s:[a,b] \to \mathbb{R}$, una función escalonada. La 
+        parte positiva de \(s\) es la función \(s^+:[a,b]\to \mathbb{R}\)
+        dada por 
+        $$
+        s^+(x):= \left\{
+        \begin{array}{cc}
+        s(x) & \textrm{si $s(x) \geq 0$} \\
+        0 & \textrm{si $s(x) < 0$}
+        \end{array}
+        \right.
+    $$
+    </p>
+    <p>
+        Prueba que $s^+$ es escalonada y que 
+        $\int_a^b s(x)dx \leq \int_a^b s^+(x)dx$.
+    </p>
+    <button class="respButton hvr-grow "> Demostración  </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">
+        <a href="https://youtu.be/FuaaSSky8RI" target="_blank" > Video </a>
+      </div>
+    </div>
+    
+</div>
+
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    Sea $f:[a,b]\to \mathbb{R}$ con $f\geq 0$.  En este caso demuestra que:
+    $$
+    \underline{\int}_a^b f(x) dx= \sup\left\{ \int_a^b s(x)dx : 
+    0\leq s \leq f, \textrm{ \(s:[a,b] \to \mathbb{R}\) escalonada} \right\}
+    $$
+    <button class="respButton hvr-grow "> Demostración  </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">
+        <a href="https://youtu.be/dI2X4QW1M5o" target="_blank" > Video </a>
+      </div>
+    </div>
+</div>
+
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Demuestra las siguientes desigualdades. Puedes suponer que todas las 
+        funciones involucradas
+        son integrables.
+    </p>
+    <ol>
+        <li>$\int_0^1\sqrt{1+x^2}dx\leq \int_0^1 \sqrt{1+x}$.</li> 
+        <li>$\int_0^4  x^2-4x+4 dx \geq 0$.</li> 
+        <li>$2\leq \int_{-1}^1 \sqrt{1+x^2}\leq 2\sqrt{2}$.</li> 
+        <li>
+            $\frac{\sqrt{2}\pi}{24}\leq \int_{\pi/6}^{\pi/4}\cos(x)dx\leq 
+            \frac{\sqrt{3}\pi}{24}$.
+        </li> 
+    </ol>
+
+    <button class="respButton hvr-grow "> Solución inciso 2  </button>
+    <div class="resp-box flexbox">
+    <div >
+    <p>
+        Demostrar
+        \[ \int_0^4x^2 -4x + 4 dx \geq 0.\]
+    </p>
+
+    <p>
+        Suponiendo que la función \(x^2 -4x + 4 dx \) es integrable en 
+        \([0, 4]\), tenemos que 
+        \(x^2 -4x + 4 = (x-2)^2 \geq 0 \) para toda 
+        \(x \in [0, 4]\), entonces por el 
+        <a href="#Ejer:CotasFacilesIntegral">Ejercicio 3.7</a> 
+        tenemos que 
+        \[ 0(4 - 0)  \leq \int_0^4x^2 -4x + 4 dx.\]
+        Por lo tanto, \( \int_0^4x^2 -4x + 4 dx \geq 0\).
+    </p>
+    </div>
+    </div>
+    <button class="respButton hvr-grow "> Solución inciso 4  </button>
+    <div class="resp-box flexbox">
+    <div >
+    <p>
+        Demostrar
+        \[ \frac{\sqrt{2}\pi}{24} 
+        \leq \int_{\pi/6}^{\pi/4}\cos(x)dx \leq \frac{\sqrt{3}\pi}{24}.
+        \]
+    </p>
+    <p>
+        Sea \(g: [\frac{\pi}{6}, \frac{\pi}{4}] \rightarrow \mathbb{R} \) 
+        dada por \(g(x) = \cos(x)\) con \(x \in [\frac{\pi}{6}, \frac{\pi}{4}]\). 
+        Notemos que \(g\) es una función decreciente y continua en 
+        \([\frac{\pi}{6}, \frac{\pi}{4}]\). Por lo 
+        que \(g(\frac{\pi}{4}) \leq g(x) 
+        \leq g(\frac{\pi}{6})\) para toda \(x \in [\frac{\pi}{6}, 
+        \frac{\pi}{4}]\) donde \(g(\frac{\pi}{4}) = \cos(\frac{\pi}{4}) 
+        = \frac{\sqrt{2}}{2}\) y \(g(\frac{\pi}{6}) = \cos (\frac{\pi}{6}) 
+        = \frac{\sqrt{3}}{2}\), lo cual implica \(\frac{\sqrt{2}}{2} \leq g(x) 
+        \leq  \frac{\sqrt{3}}{2}\) para toda \(x \in [\frac{\pi}{6}, 
+        \frac{\pi}{4}]\). Entonces por el 
+        <a href="#Ejer:CotasFacilesIntegral">Ejercicio 3.7</a>
+        \[ \frac{\sqrt{2}}{2}\left(\frac{\pi}{4} - \frac{\pi}{6}\right) 
+        \leq  \int_{\pi/6}^{\pi/4}\cos(x)dx 
+        \leq \frac{\sqrt{3}}{2}\left(\frac{\pi}{4} - \frac{\pi}{6}\right) .\]
+    </p>
+    <p>
+        Y dado que \(\frac{\sqrt{2}}{2}\left(\frac{\pi}{4} 
+        - \frac{\pi}{6}\right) = \frac{\sqrt{2}\pi}{24} \) y 
+        \(  \frac{\sqrt{3}}{2}\left(\frac{\pi}{4} - \frac{\pi}{6}\right) 
+        = \frac{\sqrt{3}\pi}{24}\). 
+        Por lo tanto 
+        \[\frac{\sqrt{2}\pi}{24} \leq \int_{\pi/6}^{\pi/4}\cos(x)dx 
+        \leq \frac{\sqrt{3}\pi}{24} .\]
+    </p>
+
+    </div>
+    </div>
+
+</div>
+
+
+
+<div class="ejercicio-box">
+    <h2 class="number-title" id="Ejer:CriterioCauchyIntegrabilidad"> Ejercicio</h2> 
+    <h3>Criterio de Cauchy</h3>
+    <p>
+        Este ejercicio es el primer criterio que presentamos 
+        para probar que una  función  sea integrable.
+    </p>
+
+    <p>
+        Sea $f:[a,b]\to \mathbb{R}$ una función acotada. \(f\) es integrable si y sólo si  
+        para toda $\varepsilon >0$ 
+        existen $s,t:[a,b]\to \mathbb{R}$ funciones escalonadas con: 
+        <ol>
+            <li>
+                \begin{eqnarray*}
+                s(x) \leq &f(x) & \leq t(x), \forall x\in [a,b],
+                \end{eqnarray*}
+            </li>
+            <li>
+                \begin{eqnarray*}
+                \int_a^b t(x)dx &-& \int_a^b s(x)dx < \varepsilon
+                \end{eqnarray*}
+            </li>
+        </ol>
+    </p>
+    <p>
+        Sugerencia para el regreso: proceder por contradicción; suponer que 
+        $$
+        \underline{\int}_a^b f dx =: \alpha < \beta  := \overline{\int}_a^b fx
+        $$
+        luego tomar $\varepsilon=\beta-\alpha$ y $s\leq f \leq t$ con
+        $$
+        \int_a^b t - \int_a^b s < \varepsilon
+        $$
+    </p>
+    <button class="respButton hvr-grow "> Demostración escrita </button>
+    <div class="resp-box flexbox">
+    <div>
+    <p>
+        Denotemos 
+        \[
+        \alpha: = \underline{\int}_a^b f dx, \beta:= \overline{\int}_a^b fx
+        \]
+        Por el <a href="#Ejer:IntegInfMenorIgualIntegSup">Ejercicio 3.4</a> tenemos 
+        \(\alpha \leq \beta\).
+    </p>
+    <p>
+        \(\Leftarrow ] \)
+    </p>
+    <p>
+       
+        Si suponemos que \(f\) no es integrable entones \(\alpha < \beta\). 
+        Tomemos \(\varepsilon = \beta - \alpha\).
+    </p>
+    <p>
+       Usando las suposiciones del ejercicios aplicado a \(\frac{\varepsilon}{2}\)
+       existen funciones escalonadas \(s_0,t_0:[a,b]\to \mathbb{R}\) tal que 
+       \(s_0\leq f \leq t_0\) y con 
+       \[
+        \int_a^b t_0dx - \int_a^b s_0dx < \frac{\varepsilon}{2}
+       \]
+    </p>
+    <p>
+        Por la definición de \(\alpha\) y \(\beta\) obtenemos 
+        \[
+          \int_a^b s_0dx \leq \alpha < \beta \leq \int_a^bt_0dx  
+        \]
+        de lo que se sigue que 
+        \[
+            \varepsilon= \beta - \alpha \leq \int_a^b t_0 dx -\int_a^b s_0dx < \frac{\varepsilon}{2}
+        \]
+        una contradicción. Por lo tanto \(\alpha = \beta\) lo cual dice que 
+        \(f\) es integrable.
+    </p>
+    <p>
+        \(\Rightarrow ]\)
+    </p>
+    <p>
+        Supongamos que \(f\) es integrable. Esto implica que \(\alpha = \beta\).
+    </p>
+    <p>
+        Dado \(\varepsilon > 0\), usando las propiedades fundamentales del ínfirmo y 
+        del supremo aseguramos la existencia de \(s,t:[a,b]\to \mathbb{R}\) funciones 
+        escalonadas tales que 
+        \begin{eqnarray*}
+        \alpha- \frac{\varepsilon}{2}< \int_a^b sdx \leq \alpha \leq 
+        \beta \leq \int_a^b tdx < \beta+\frac{\varepsilon}{2}
+        \end{eqnarray*}
+        lo cual implica 
+        \[
+            \int_a^btdx - \int_a^b sdx < \beta+\frac{\varepsilon}{2}-(\alpha-\frac{\varepsilon}{2} )
+            = \beta-\alpha+ \varepsilon \leq \varepsilon.
+        \]
+    </p>
+</div>
+</div>
+
+
+<a href="https://youtu.be/RiWUazaNAkE?t=0" target="_blank" >
+    <button class="respButton hvr-grow " > Demostración  en video </button>     
+</a>
+
+</div>
+
+
+
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2>
+    <p>
+        Considera la parábola \(f:[0,b]\to \mathbb{R}\), \(f(x)=x^2\) ,donde \(b>0\).
+    </p>
+    <ol>
+        <li>
+            Prueba que existen funciones escalonadas \(s_n,t_n:[0,b]\to \mathbb{R}\)
+            tales que
+            \begin{eqnarray*}
+                s_n(x)\leq f(x)\leq t_n(x), \forall x\in [0,b],\\
+                \int_0^b t_n(x)dx - \int_0^b s_n(x)dx  \leq \frac{b^3}{n},\\
+                \int_0^b s_n(x)dx \leq \frac{b^3}{3} \leq \int_0^b t_n(x)dx
+            \end{eqnarray*}
+            Sugerencia: usa el <a href="./S1.html#Ejer:SumasSupInfParabloa">Ejercicio 1.6</a>
+        </li>
+        <li>
+            Usa el criterio de Cauchy para concluir que \(f\) es integrable en \([a,b]\).
+        </li>
+        <li>
+            Ya que sabemos que \(f\) es integrable podemos tomar \(\int_0^bfdx\) y usar 
+            monotonía para obtener 
+            \[
+                \int_0^b s_n(x)dx \leq \int_0^b f(x)dx \leq \int_0^b t_n(x)dx 
+            \]
+            Usa las desigualdades del inciso 1 para concluir
+            \[
+                \int_0^b x^2 dx =\frac{b^3}{3}
+            \]
+        </li>
+    </ol>
+    <p>
+        Nota: de manera similar y utilizando el <a href="./S1.html#Ejer:SumasSupInfCubica">Ejercicio 1.8</a> 
+        se puede probar 
+        \[
+            \int_0^b x^3dx =\frac{b^4}{4}.
+        \]
+    </p>
+
+    <button class="respButton hvr-grow "> Demostración  </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">
+        <a href="https://youtu.be/qHy2XeG2Dqw" target="_blank" > Video </a>
+      </div>
+    </div>
+</div>
+
+
+
+<div class="ejercicio-box">
+    <h2 class="number-title" id="Ejer:IntegralAbreSumas"> Ejercicio</h2> 
+
+    <p>
+        Sean \(f,g:[a,b]\to \mathbb{R}\) dos funciones integrables. Entonces 
+        la función suma \(f+g\) es integrable y 
+        \[
+            \int_a^b (f(x)+g(x))dx = \int_a^bf(x)dx+\int_a^bg(x)dx
+        \]
+    </p>
+    
+    <button class="respButton hvr-grow "> Demostración  escrita </button>
+    <div class="resp-box flexbox">
+    <div>
+    <p>
+        Primero vamos a probar que \(f+g\) es integrable usando el
+        <a href="#Ejer:CriterioCauchyIntegrabilidad">Criterio de Cauchy</a>
+        (ejercicio 3.11).
+    </p>
+    <p>
+        Fija un número positivo $\varepsilon >0$.
+    </p>
+
+
+<p>Aplicando el criterio de Cauhcy para las funciones \(f\) 
+    y \(g\) podemos asegurar la exsitencia de 
+    $s_f,s_g, t_f, t_g:[a,b]\to \mathbb{R}$ funciones escalonadas tales que
+    $s_f \leq f \leq t_f$, $s_g \leq g \leq t_g$ y tal que
+    \begin{equation}\label{Eqn:Aux1IntegralAbreSumas}
+    \int_a^b t_f(x)dx - \int_a^bs_f(x)dx <\varepsilon/2,
+    \end{equation}
+    y 
+    \begin{equation}\label{Eqn:Aux2IntegralAbreSumas}
+    \int_a^b t_g(x)dx - \int_a^bs_g(x)dx <\varepsilon/2.
+    \end{equation}
+</p> 
+
+<p>
+    Vamos a definir  $s:=s_f+s_g$ y $t:=t_f+t_g$. Por el 
+    <a href="./S2.html#Ejer:EscalonadasEspacioVectorial">Ejercicio 2.14</a> 
+    las funciones \(s\) y \(t\) son escalonadas. Además se tiene que 
+    $s\leq f+g \leq t$ y usando el <a href="./S2.html#Ejer:LinealidadEscalonadas">Ejercicio 2.15</a>
+    también resulta 
+    \begin{eqnarray*}\label{Eqn:Linealidad1}
+    \int_a^b t dx - \int_a^b sdx  &=&  \int_a^b t_fdx+\int_a^bt_gdx -\left(\int_a^b s_fdx + \int_a^b s_gdx \right)  \\
+     &=&\int_a^bt_fdx-\int_a^bs_fdx + \int_a^bt_gdx-\int_a^bs_gdx < \varepsilon.
+    \end{eqnarray*}
+    donde en la última desigualdad usamos \eqref{Eqn:Aux1IntegralAbreSumas}
+    y \eqref{Eqn:Aux2IntegralAbreSumas}.
+</p> 
+
+<p>
+    Lo anterior junto con el criterio de Cauchy implica que la función \(f+g\) es integrable.
+</p> 
+<p>
+    Ahora vamos a probar la fórmula \(\int_a^b (f+g)dx=\int_a^bfdx+\int_a^bgdx\).
+</p>
+
+<p>
+    Vamos a volver a usar las funciones escalonadas \(s_f,t_f,s_g,t_g\). Primero, tomando en cuenta 
+    que \(s_f \leq f \leq t_f\) y el <a href="#Ejer:MonotoniaIntegral">Teorema 3.6 </a> (monotonía de la integral)
+    obtenemos 
+    \begin{eqnarray*}
+        \int_a^b s_fdx \leq \int_a^b fdx \leq  \int_a^b t_fdx \\
+        \int_a^b s_gdx \leq \int_a^b gdx \leq  \int_a^b g_fdx 
+    \end{eqnarray*}
+    así que sumando las desigualdades llegamos a 
+    \[
+    \int_a^bs_fdx+\int_a^bs_gdx \leq \int_a^b fdx+\int_a^b gdx \leq \int_a^bt_sdx+\int_a^bs_gdx
+    \]
+    Utilizando que \(s=s_f+s_g, t=t_f+t_g\) y el <a href="./S2.html#Ejer:LinealidadEscalonadas">Ejercicio 2.15</a> (linealidad 
+    de la integral para las funciones escalonadas) podemos reescribir lo anterior como
+    \begin{equation}\label{Eqn:Linealidad2}
+    \int_a^b  sdx \leq \int_a^b fdx+ \int_a^b gdx \leq \int_a^b tdx.
+    \end{equation}
+</p> 
+
+<p>
+    Por otro lado usando que \(s\leq f+g\leq t\) la monotonía de la integral implica que:
+    \begin{equation}\label{Eqn:Linealidad3}
+    \int_a^b sdx \leq  \int_a^b (f+g)dx \leq \int_a^b tdx.
+    \end{equation}
+</p> 
+
+<p>
+    Finalmente uando \eqref{Eqn:Linealidad2} y \eqref{Eqn:Linealidad3} obtenemos 
+    $$
+    \left|  \int_a^b fdx+ \int_a^b gdx - \int_a^b( f+g)dx \right| 
+    \leq \int_a^b tdx - \int_a^b sdx < \varepsilon
+    $$
+</p> 
+
+<p>
+    Ya que $\varepsilon$ es arbitrario concluimos
+    $$
+    \int_a^b (f+g)dx=\int_a^bfdx+\int_a^bgdx.   
+    $$
+</p> 
+
+
+</div>
+</div>
+
+<a href="https://youtu.be/RiWUazaNAkE?t=1751" target="_blank" >
+    <button class="respButton hvr-grow " > Demostración  en video </button>     
+</a>
+
+
+</div>
+
+
+<div class="ejercicio-box">
+    <h2 class="number-title" id="Ejer:SacaEscalares"> Ejercicio</h2> 
+
+    <p>
+        Sea $f:[a,b] \to \mathbb{R}$ integrable y $\alpha\in \mathbb{R}$, 
+        $\alpha\ne 0$, un escalar fijo y arbitrario. 
+    </p>
+    <p>
+        Este ejercicio prueba que la función  \(\alpha f\) es integrable y que 
+        \[
+            \int_a^b \alpha f(x)dx=\alpha\int_a^bf(x)dx
+        \]
+    </p>
+
+<p>
+    Fija $\varepsilon >0$. 
+</p>
+
+<ol>
+    <li>
+        Demuestra que existen funciones escalonadas $s_f,t_f :[a,b] \to \mathbb{R}$ tales que
+        $s_f \leq f \leq t_f$ y tal que
+        $$
+        \int_a^b t_f(x)dx -\int_a^bs_f(x)dx < \frac{\varepsilon}{|\alpha|}.
+        $$
+    </li> 
+
+    <li>
+        Si $\alpha >0$ define $s:=\alpha s_f$, $t:=\alpha t_f$; si $\alpha < 0$ define 
+        $s=\alpha t_f$, $t=\alpha s_f$. 
+        Demuestra que $s$ y $t$ son funciones escalonadas, que $s\leq \alpha f \leq t$ y que
+        \begin{equation}\label{Eqn:SacaEscalares1}
+        \int_a^b t(x)dx -\int_a^b s(x)dx  < \varepsilon.
+        \end{equation}
+    </li> 
+    <li>
+        Usa el inciso anterior y el criterio de Cauchy 
+        (<a href="#Ejer:CriterioCauchyIntegrabilidad">Ejercicio 3.11</a>)  
+        para concluir que la función 
+        $\alpha f$ es integrable.
+    </li> 
+
+    <li>
+        Usando la monotonía de la integral demuestra que:
+        \begin{equation}\label{Eqn:SacaEscalares2}
+        \int_a^b s(x)dx \leq \int_a^b \alpha f(x)dx \leq \int_a^b t(x)dx.
+        \end{equation}
+    </li> 
+
+    <li>
+        Recuerda que, por definición de $t_f$ y $s_f$:
+        $$
+        \int_a^b s_f(x)dx \leq \int_a^b f(x)dx \leq \int_a^b t_f(x)dx.
+        $$
+        Multiplica las desigualdades anteriores por $\alpha$  y usa la linealidad de la 
+        integral de las
+        funciones escalonadas para demostrar que:
+
+        \begin{equation}\label{Eqn:SacaEscalares3}
+        \int_a^b s(x)dx \leq \alpha \int_a^b f(x)dx \leq \int_a^b t(x)dx
+        \end{equation}
+
+    </li> 
+    <li>
+        Usando \eqref{Eqn:SacaEscalares1}, \eqref{Eqn:SacaEscalares2} y 
+        \eqref{Eqn:SacaEscalares3} demuestra que
+        $$
+        \left| \alpha \int_a^b f(x)dx -\int_a^b \alpha f(x)dx \right| <\varepsilon.
+        $$
+    </li> 
+    <li>
+        Ya que $\varepsilon$ es arbitrario, concluye del inciso anterior que
+        $$
+        \int_a^b \alpha f(x)dx=\alpha\int_a^b f(x)dx.
+        $$
+    </li> 
+
+</ol>
+</div>
+
+ 
+<div class="teorema-box">
+<h2 class="number-title" id="Ejer:LinealidadIntegral"> Teorema </h2>
+<h3>Linealidad de la Integral</h3> 
+<p>
+    Sean $f,g: [a,b]\to \mathbb{R}$ funciones integrables y $\alpha$ un real.  Entonces 
+    $\alpha f +g$ es integrable y
+    $$
+    \int_a^b (\alpha f(x) + g(x))dx=\alpha\int_a^bf(x)dx+\int_a^b g(x)dx
+    $$
+</p>
+<p>
+    La demostración se sigue directamente de los dos ejercicios anteriores.
+</p>
+</div>
+
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    Supon que $\int_{-1}^7f(x)dx=4, \int_{-1}^7f(x)dx=-9, \int_{-1}^7 h(x)dx=10$. Calcula:
+<ol>
+    <li>$\int_{-1}^7 3f(x)+2g(x)dx.$</li> 
+    <li>$\int_{-1}^7 \frac{1}{2}f(x)+g(x)-h(x)dx.$</li> 
+    <li>$\frac{\int_{-1}^7 f(x)+g(x)+h(x)dx}{\int_{-1}^7f(x)+h(x)dx}$.</li> 
+</ol>
+</div>
+
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Define la función $F(x,y)=1+x+xy+x^2y^3$, $x,y\in \mathbb{R}$. 
+        Calcula las siguientes integrales:
+    </p>
+<ol>
+    <li>$\int_0^2 F(x,y)dx$.</li> 
+    <li>$\int_0^2 F(x,y)dy$.</li> 
+    <li>$\int_0^5 F(x,y)dx$ </li>
+    <li>$\int_0^7 F(x,y)dy$</li>
+</ol>
+    <p>
+        En este ejercicio puedes usar las fórmulas 
+        \begin{eqnarray*}
+            \int_0^b xdx = \frac{b^2}{2} \\
+            \int_0^b x^2dx = \frac{b^3}{3}\\
+            \int_0^b x^3dx = \frac{b^4}{4}
+        \end{eqnarray*}
+    </p>
+    <button class="respButton hvr-grow "> Solución  </button>
+    <div class="resp-box flexbox">
+    <div>
+    <p>
+        Inciso 1.
+    </p>
+    <p>
+        Sea \(y \in \mathbb{R}\) arbitrario. Definimos 
+        \(f: [0,2] \rightarrow \mathbb{R}\) dada por 
+        \(f(x) = F(x,y)\). 
+        Por el <a href="#Ejer:LinealidadIntegral">Teorema 3.15</a> tenemos que 
+        \(f\) es integrable ya que es la suma finita de 
+        funciones integrables y, 
+        \begin{equation*}
+        \begin{split}
+        \int_0^2f(x) dx & = \int_0^2(1 + x + xy + x^2y^3) dx 
+        = \int_0^21 dx + \int_0^2x dx + \int_0^2 xy dx 
+        + \int_0^2x^2y^3 dx  \\
+        & = \int_0^21 dx + \int_0^2x dx + y\int_0^2 x dx 
+        + y^3\int_0^2x^2 dx \\
+        & = 1(2-0) + \frac{2^2}{2} + y\left(\frac{2^2}{2}\right) 
+        + y^3\left(\frac{2^3}{3}\right) \\
+        & = 4 + 2y + \frac{8}{3}y^3
+        \end{split}
+        \end{equation*}
+    </p>
+    <p>
+        Como  \(\int_0^2F(x,y)dx = \int_0^2f(x) dx. \) 
+        Por lo tanto, \[ \int_0^2F(x,y)dx = 4 + 2y + \frac{8}{3}y^3.\]   
+    </p>
+    <p>
+        Inciso 2.
+    </p>
+    <p>
+        Sea \(x \in \mathbb{R}\) arbitrario. Definimos 
+        \(g: [0,2] \rightarrow \mathbb{R}\) dada por 
+        \(g(y) = F(x,y)\). Por el <a href="#Ejer:LinealidadIntegral">Teorema 3.15</a>
+        tenemos que \(g\) es integrable y, 
+        \begin{equation*}
+        \begin{split}
+        \int_0^2g(y) dy & = \int_0^2(1 + x + xy + x^2y^3) dy 
+        = \int_0^21 dy + \int_0^2x dy + \int_0^2 xy dy 
+        + \int_0^2x^2y^3 dy  \\
+        & = \int_0^21 dy + \int_0^2x dy + x\int_0^2 y dy 
+        + x^2\int_0^2  y^3dy \\
+        & = 1(2-0) + x(2 -0) + x\left(\frac{2^2}{2}\right) 
+        + x^2\left(\frac{2^4}{4}\right) \\
+        & = 2 + 4x + 4x^2
+        \end{split}
+        \end{equation*}
+    </p>
+    <p>
+        Como  \(\int_0^2F(x,y)dy = \int_0^2g(y) dy. \) 
+        Por lo tanto, \[ \int_0^2F(x,y)dy =  2 + 4x + 4x^2.\]
+    </p>
+    <p>
+        Inciso 3.
+    </p>
+
+    <p> 
+        Sea \(y \in \mathbb{R}\) arbitrario. Definimos 
+        \(h: [0,5] \rightarrow \mathbb{R}\) dada por 
+        \(h(x) = F(x,y)\). Por el <a href="#Ejer:LinealidadIntegral">Teorema 3.15</a>
+        tenemos que \(h\) es integrable  y, 
+        \begin{equation*}
+        \begin{split}
+        \int_0^5h(x) dx & = \int_0^5(1 + x + xy + x^2y^3) dx \\
+        & = \int_0^51 dx + \int_0^5x dx + y\int_0^5 x dx 
+        + y^3\int_0^5x^2 dx \\
+        & = 1(5-0) + \frac{5^2}{2} + y\left(\frac{5^2}{2}\right) 
+        + y^3\left(\frac{5^3}{3}\right) \\
+        & = \frac{35}{2} + \frac{25}{2}y + \frac{125}{2}y^3
+        \end{split}
+        \end{equation*}
+    </p>
+    <p>
+        Como  \(\int_0^5F(x,y)dx = \int_0^5h(x) dx. \) Por 
+        lo tanto, \[ \int_0^5F(x,y)dx = \frac{35}{2} + \frac{25}{2}y 
+        + \frac{125}{2}y^3.\]
+    </p>
+
+
+    <p>
+        Inciso 4.
+    </p>
+    <p>
+        Sea \(x \in \mathbb{R}\) arbitrario. Definimos 
+        \(k: [0,7] \rightarrow \mathbb{R}\) dada por 
+        \(k(y) = F(x,y)\). Por el <a href="#Ejer:LinealidadIntegral">Teorema 3.15</a>
+        tenemos que \(k\) es integrable  y, 
+        \begin{equation*}
+        \begin{split}
+        \int_0^7k(y) dy & = \int_0^7(1 + x + xy + x^2y^3) dy \\
+        & = \int_0^71 dy + \int_0^7x dy + x\int_0^7 y dy + x^2\int_0^7  y^3dy \\
+        & = 1(7-0) + x(7 -0) + x\left(\frac{7^2}{2}\right) + x^2\left(\frac{7^4}{4}\right) \\
+        & = 7 + \frac{63}{2}x + \frac{2401}{4}x^2
+        \end{split}
+        \end{equation*}
+    </p>
+    <p>
+        Como  \(\int_0^7F(x,y)dy = \int_0^7k(y) dy. \) 
+        Por lo tanto, \[ \int_0^7F(x,y)dy =  7 + \frac{63}{2}x 
+        + \frac{2401}{4}x^2.\]
+    </p>
+    </div>
+    </div>
+
+</div>
+
+
+
+    
+    
+
+<div class="teorema-box">
+    <h2 class="number-title" id="Ejer:LinealidadIntervalos"> Teorema</h2>     
+    <h3> Linealidad con respecto a  intervalos</h3>
+    <p>
+        Sea $f:[a,b]\to \mathbb{R}$ acotada e integrable en $[a,b]$ y sea  $c\in (a,b)$.       
+        Entonces $f$ es integrable en $[a,c]$, $f$ es integrable en $[c,d]$ y:
+        $$
+        \int_a^c f +\int_c^b f =\int_a^b f
+        $$
+    </p>
+
+    <button class="respButton hvr-grow "> Demostración escrita   </button>
+    <div class="resp-box flexbox">
+      <div >
+
+        Fija $\varepsilon>0$.
+
+        <ol>
+    
+        <li>
+            Demuestra que existen funciones escalonadas, $s$ y $t$, tales que 
+            $s(x)\leq f(x) \leq t(x)$ en para todo $x\in [a,b]$ y
+            \begin{equation}\label{Eqn:LinealidadIntervalos1}
+            \int_a^b t(x)dx - \int_a^b s(x)dx  <\varepsilon.
+            \end{equation}
+            </li> 
+
+        <li>
+           Define  las funciones $s_1:=s \chi_{[a,c]}, t_1:=t\chi_{[a,c]}, s_2=s\chi_{[c,b]}, 
+            t_2=t\chi_{[c,b]}$. Demuestra que $s_1,s_2,t_1$ y $t_2$ son escalondas, 
+            $s_1(x) \leq f(x) \leq t_1(x)$ para todo  $x\in [a,c]$, $s_2(x) \leq f(x) \leq t_2(x)$ 
+            para todo $x\in [c,b]$ y 
+            $$
+            \int_a^c t_i(x)dx - \int_a^c s_i(x) dx  < \varepsilon, \quad i=1,2.
+            $$
+        </li> 
+
+        <li>
+            Usando el criterio de Cauchy concluye que $f$ es integrable en $[a,c]$ y 
+            $f$ es integrable en $[c,b]$.
+        </li> 
+
+        <li>
+            Demuestra que
+            $$
+            \int_a^c s_1(x)dx \leq \int_a^c f(x)dx \leq \int_a^c t_1(x)dx
+            $$
+            y
+            $$
+            \int_c^b s_2(x)dx \leq \int_c^b f(x)dx \leq \int_c^b t_2(x)dx
+            $$
+        </li> 
+
+        <li>
+            Sumando las desigualdades de anteriores y usando el  
+            <a href="./S2.html#Ejer:LemaAditividadIntervalosEscalonadas">Ejercicio 2.7</a> demuestra
+            \begin{equation}\label{Eqn:LinealidadIntervalos2}
+            \int_a^b s(x)dx \leq \int_a^c f(x)dx+\int_c^b f(x)dx \leq \int_a^b t(x)dx.
+            \end{equation}
+        </li> 
+
+        <li>
+            Demuestra
+            \begin{equation}\label{Eqn:LinealidadIntervalos3}
+            \int_a^b s(x)dx \leq \int_a^b f(x)dx  \leq \int_a^b t(x)dx.
+            \end{equation}
+        </li> 
+
+        <li>
+            Usando \eqref{Eqn:LinealidadIntervalos1}, \eqref{Eqn:LinealidadIntervalos2} 
+            y \eqref{Eqn:LinealidadIntervalos3}
+            demuestra:
+            $$
+            \left|  \int_a^cf(x)dx + \int_c^bf(x)dx - \int_a^b f(x)dx \right| <\varepsilon
+            $$
+        </li> 
+
+        <li>
+            Ya que $\varepsilon$ es arbitrario concluye que:
+            $$
+            \int_a^c f(x)dx + \int_c^b f(x)dx=\int_a^b f(x)dx. 
+            $$
+        </li> 
+    </ol>
+</div>
+</div>
+
+<a href="https://youtu.be/RiWUazaNAkE?t=3824" target="_blank" >
+    <button class="respButton hvr-grow " > Demostración  en video </button>     
+</a>
+
+
+
+</div>
+
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Sean $a,b,c \in \mathbb{R}$ con $a< c < b$ y $f:[a,b] \to \mathbb{R}$ acotada. 
+        Demuestra que si  $f$ es integrable
+        en $[a,c]$ y $f$ es integrable en $[c,d]$, entonces $f$ es integrable en $[a,b]$.
+
+        Sugerencia: demuestra que existen funciones escalonadas 
+        $s_a,t_a:[a,c] \to \mathbb{R}$ y $s_b,t_b [c,b]\to \mathbb{R}$ tales que:
+        \begin{eqnarray*}
+        s_a \leq f \leq t_a \quad \textrm{en $[a,c]$} \\
+        s_b \leq f \leq t_b \quad \textrm{en $[c,b]$} 
+        \end{eqnarray*}
+        con
+        \begin{eqnarray*}
+        \int_a^c (t_a-s_a) dx < \varepsilon/2\\
+        \int_c^b (t_b-s_b) dx < \varepsilon/2
+        \end{eqnarray*}
+
+        Considerar $s=s_a\chi_{[a,c]}+ s_b\chi_{(c,b]}$, $t=t_a\chi_{[a,c]}+ t_b\chi_{(c,b]}$.
+    </p>
+    <button class="respButton hvr-grow "> Demostración  </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">
+        <a href="https://youtu.be/AT6M9TNl4JQ" target="_blank" > Video </a>
+      </div>
+    </div>
+</div>   
+
+<div class="ejercicio-box">
+    <h2 class="number-title" id="Ejer:CoroLinealidadIntervalos"> Ejercicio</h2> 
+    <p>
+        Sea $f:[a,b] \to \mathbb{R}$ integrable. Sea $c\in (a,b)$ fijo y arbitrario. Demuestra
+        $$
+        \int_c^bf(x)dx=\int_a^b f(x)dx-\int_a^cf(x)dx.
+        $$
+        Sugerencia: sale inmediatamente usando el 
+        <a href="#Ejer:LinealidadIntervalos">Teorema 3.18</a>.
+    </p>
+    <p>
+        Usando la propiedad anterior resulve los siguientes ejercicios.
+        <ol>
+            <li>
+                Calcula \(\int_1^2 x^2 dx\).
+            </li>
+            <li>
+                Encuentra un número \(b>2\) tal que \(\int_1^2x^2dx=\int_2^b x^2dx\).
+            </li>
+        </ol> 
+    </p>
+</div>
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Supon que $f:[0,\infty) \to \mathbb{R}$ es una función que satisface 
+        $\int_0^b f(x)dx=3b^2+2b+1$, para todo
+        $b>0$. Calcula
+        <ol>
+            <li>$\int_0^5 f(x)dx$.</li> 
+            <li>$\int_1^7 f(x)dx$.</li> 
+        </ol>
+    </p>
+
+</div>
+
+
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Define la función $F(x,y)=2-x+3x^2y+x^2y^3$, $x,y\in \mathbb{R}$. 
+        Calcula las siguientes integrales:
+    </p>
+<ol>
+    <li>$\int_0^1 F(x,y)dx$.</li> 
+    <li>$\int_0^2 F(x,y)dx$.</li> 
+    <li>$\int_1^2 F(x,y)dx$ </li>
+    <li>$\int_0^1 F(x,y)dy$</li>
+    <li>$\int_0^2 F(x,y)dy$.</li> 
+    <li>$\int_1^2 F(x,y)dy$ </li>
+</ol>
+    <p>
+        En este ejercicio puedes usar las fórmulas 
+        \begin{eqnarray*}
+            \int_0^b xdx = \frac{b^2}{2} \\
+            \int_0^b x^2dx = \frac{b^3}{3}\\
+            \int_0^b x^3dx = \frac{b^4}{4}
+        \end{eqnarray*}
+    </p>
+
+    <button class="respButton hvr-grow "> Solución 1,2,3.  </button>
+    <div class="resp-box flexbox">
+    <div >        
+    <p>
+        Inciso 1.
+    </p>
+    <p>
+        Sea \(y \in \mathbb{R}\) arbitrario. Definimos 
+        \(f: [0,1] \rightarrow \mathbb{R}\) dada por \(f(x) 
+        = F(x,y)\). Por el 
+        <a href="#Ejer:LinealidadIntegral">Teorema 3.15</a> 
+        tenemos que \(f\) es integrable  y, 
+        \begin{equation*}
+        \begin{split}
+        \int_0^1f(x) dx & = \int_0^1(2 - x + 3x^2y + x^2y^3) dx \\
+        & = \int_0^12 dx - \int_0^1x dx + \int_0^1 3x^2y dx 
+        + \int_0^1x^2y^3 dx  \\
+        & = \int_0^12 dx - \int_0^1x dx + 3y\int_0^1 x^2 dx 
+        + y^3\int_0^1x^2 dx \\
+        & = 2(1-0) -\frac{1^2}{2} + 3y\left(\frac{1^3}{3}\right) 
+        + y^3\left(\frac{1^3}{3}\right) \\
+        & = \frac{3}{2} + y + \frac{y^3}{3}
+        \end{split}
+        \end{equation*}
+        Como  \(\int_0^1F(x,y)dx = \int_0^1f(x) dx. \) 
+        Por lo tanto, \[ \int_0^1F(x,y)dx =  \frac{3}{2} + y 
+        + \frac{y^3}{3}.\]
+    </p>
+
+
+    <p>
+        Inciso 2.
+    </p>
+    <p>
+        Sea \(y \in \mathbb{R}\) arbitrario. Definimos 
+        \(g: [0,2] \rightarrow \mathbb{R}\) dada por \(g(x) 
+        = F(x,y)\). Por el  <a href="#Ejer:LinealidadIntegral">Teorema 3.15</a> tenemos que 
+        \(g\) es integrable  y, 
+        \begin{equation*}
+        \begin{split}
+        \int_0^2g(x) dx & = \int_0^2(2 - x + 3x^2y + x^2y^3) dx  \\
+        & = \int_0^22 dx - \int_0^2x dx + 3y\int_0^2 x^2 dx 
+        + y^3\int_0^2x^2 dx \\
+        & = 2(2-0) -\frac{2^2}{2} + 3y\left(\frac{2^3}{3}\right) 
+        + y^3\left(\frac{2^3}{3}\right) \\
+        & = 2  + 8y +\frac{8}{3}y^3
+        \end{split}
+        \end{equation*}
+        
+
+        Como  \(\int_0^2F(x,y)dx = \int_0^2g(x) dx. \) 
+        Por lo tanto, \[ \int_0^2F(x,y)dx = 2  + 8y +\frac{8}{3}y^3.\]
+
+    </p>
+
+
+    <p>
+        Inciso 3.
+    </p>
+    <p>
+        Por el <a href="#Ejer:CoroLinealidadIntervalos">Ejercicio 3.20</a> 
+        tenemos que
+        \begin{equation*}
+        \begin{split}
+        \int_1^2F(x,y)dx & = \int_0^2F(x,y)dx -\int_0^1F(x,y)dx \\
+        & = \left(2  + 8y +\frac{8}{3}y^3\right) - \left( \frac{3}{2} 
+        + y + \frac{y^3}{3}\right)\\
+        & = \frac{1}{2} +7y + \frac{7}{3}y^3
+        \end{split}
+        \end{equation*}
+        Por lo tanto, \[ \int_1^2F(x,y)dx = \frac{1}{2} +7y + \frac{7}{3}y^3. \]
+    </p>
+</div>
+</div>
+
+</div>
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Sea $s:[c,d]\to \mathbb{R}$ escalonada. Define $\tilde{s}:[-d,-c] 
+        \to \mathbb{R}$ por $\tilde{s}(x)=s(-x)$. Demuestra: 
+        $$
+        \int_{-d}^{-c}\tilde{s}(x)dx=\int_{c}^d s(x)dx.
+        $$
+    </p>
+    
+</div>
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Sea $f:[c,d]\to \mathbb{R}$ una función integrable. 
+        Define $\tilde{f}:[-d,-c]\to \mathbb{R}$  por
+        $\tilde{f}(x)=f(-x)$ (la función reflejada). Demuestra que $\tilde{f}$ es integrable y que:
+    
+        $$
+        \int_{-d}^{-c}\tilde{f}(x)dx= \int_c^d f(x)dx
+        $$
+    </p>
+</div>
+-->
+<!--<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    Demuestra que se  puede cambiar funciones escalonadas por 
+    funciones lineales a trozos en la definicion de la integral.
+</div>
+-->
+</body>

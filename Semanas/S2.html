@@ -1,0 +1,2708 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+    
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+    <!-- This part is for using single $ for latex input, instead of \(\) -->
+    <script>
+        MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+        svg: {
+            fontCache: 'global'
+        }
+    };
+    </script>
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+    .lista
+        {
+            counter-reset: listaCounter 0 sublistaCounter 1 subsublistaCounter 1 subsubsublistaCounter 1;
+        }
+        /* .sublista{
+            counter-reset: sublistaCounter 1  SubsublistaCounter;
+        } */
+        </style>
+
+    <style>
+            /* body.number-title
+            {
+            counter-reset: temaCounter 1 subsectioncounter ;
+            } */
+        h1.page-title
+            {
+            counter-reset: temaCounter 1 sectionCounter  subsectionCounter;
+            }
+    </style>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+    <!-- Top Menu  -->
+    
+          
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Tecnologías de la Información y Comunicación II</div>
+          <div class="subtitle">Licenciatura en Administración Turística</div>
+          <div class="subsubtitle">Universidad del Mar, campus Huatulco </div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+
+      
+        </header>
+
+    <nav class="top-nav">
+        <ul>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Home.html"> Inicio  </a> </li>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Informacion_General.html"> Información</a> </li>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Notas.html"> Notas  </a> </li>
+        <!-- <li> <a href="https://pablojhh.github.io/TICDOS/Quizes.html"> Quizes  </a> </li>
+            <li> <a href="https://pablojhh.github.io/TICDOS/Practicas.html">Prácticas</a></li> -->
+            <li> <a href="https://pablojhh.github.io/TICDOS/Examenes.html"> Archivos  </a> </li>
+        </ul>
+    </nav>
+    
+    <title> §   </title>
+    
+    </head>
+
+  <body class="fondo-body" >
+    <h1 class="number-title flexbox">Semana del 25 de abril</h1>
+
+    
+  <div class="ejercicio-box"> 
+    <h2 class="number-title"> Ejercicio. Tabla Alumnos</h2>
+    <p>Supongamos que se desea almacenar información sobre estudiantes en una universidad pequeña.
+     Se desea almacenar y administar  la información mas relevante  de los alumnos</p>
+    
+        
+     <button class="respButton hvr-grow ">   Construya una tabla en Access de nombre Alumnos con la siguiente estructura 
+    </button>
+<div class="resp-box flexbox">
+  <div class="flexbox">
+        <p>
+           
+            <ol>
+                <li>Matrícula </li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 10</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (sin duplicados)</li>
+                </ul>
+                <li>Nombre(s)</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 20</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Primer apellido.</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 25</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Segundo apellido.</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 25</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Fecha de nacimiento</li>
+                <ul>
+                    <li>Tipo de dato: Fecha/Hora</li>
+                    <li>Formato: Fecha corta </li>
+                    <li>Mascara de entrada: Aspecto 26/01/1990</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Genero</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 1</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>CURP</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 18</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (sin duplicados)</li>
+                </ul>
+                <li>NSS</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 12</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (sin duplicados)</li>
+                </ul>
+                <li>Tipo de Sangre</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 4</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Calle</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 30</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                
+                <li>Número interior</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 4</li>
+                    <li>Requerido: No</li>
+                    <li>Indexado: No</li>
+                </ul>
+                <li>Número exterior</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 10</li>
+                    <li>Requerido: No</li>
+                    <li>Indexado: No</li>
+                </ul>
+                <li>Colonia</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 50</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                  <li>Municipio</li>
+                  <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 30</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                   <li>Código postal</li>
+                   <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 10</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Estado</li>
+                <ul>
+                <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 20</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Carrera</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                        <li>Tamaño de campo: 30</li>
+                        <li>Requerido: Si</li>
+                        <li>Indexado: Si (con duplicados)</li>
+                    </ul>
+                <li>Tutor académico</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                        <li>Tamaño de campo: 60</li>
+                        <li>Requerido: Si</li>
+                        <li>Indexado: Si (con duplicados)</li>
+                    </ul>
+                <li>Alumno regular</li>
+                <ul>
+                    <li>Tipo de dato: Si/No</li>
+                    <li>Formato: Si/No</li>
+                        <li>Indexado: Si (con duplicados)</li>
+                    </ul>
+                <li>Creditos acumulados</li>
+                <ul>
+                    <li>Tipo de dato: Número</li>
+                        <li>Requerido: Si</li>
+                    </ul>
+                <li>Becas de Alimentos</li>
+                <ul>
+                    <li>Tipo de dato: Si/No</li>
+                    <li>Formato: Si/No</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                    </ul>
+                <li>Beca de  Colegiatura</li>
+                <ul>
+                    <li>Tipo de dato: Si/No</li>
+                    <li>Formato: Si/No</li>
+
+                        <li>Indexado: Si (con duplicados)</li>
+                    </ul>
+                </ul>
+
+                <li>Correo electrónico</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                        <li>Tamaño de campo: 50</li>
+                        <li>Requerido: Si</li>
+                        <li>Indexado: Si (sin duplicados)</li>
+                    </ul>
+                <li>Numero celular</li>
+                <ul>
+                <li>Tipo de dato: Texto</li>
+                <li>Tamaño de campo: 10</li>
+                <li>Requerido: Si</li>
+                <li>Indexado: Si (sin duplicados)</li>
+            </ul>
+            
+                
+                
+                
+            </ol>
+        </p>
+
+       <!-- 
+<button class="respButton hvr-grow "> Procedamos ahora con el diseño de nuestra base de datos  
+        </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">
+        <ol>
+            <li> Access ya proporcionó un campo llamado "ID", de acuerdo con el procedimiento estándar de cada tabla,
+                 que incluye un atributo de clave principal cuyo valor identifica de 
+                 manera única cada fila de una tabla.</li>
+            </ol>
+      </div>
+      </div>
+    -->
+
+  </div>
+</div>
+    </div>
+
+    
+    <div class="ejercicio-box"> 
+        <h2 class="number-title"> Ejercicio. Tabla Profesores</h2>
+        <p>Dentro de la misma pequeña universidad se desea almacenar y administrar  la información más relevante de los profesores:</p>
+
+        <button class="respButton hvr-grow ">   Crea una tabla con el nombre Profesores  que tenga  la siguiente estructura: 
+        </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">       
+        <p>
+               
+            <ol>
+                <li>Número de trabajador </li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 5</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (sin duplicados)</li>
+                </ul>
+
+                <li>Nombre(s)</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 20</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Primer apellido.</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 25</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Segundo apellido.</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 25</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Fecha de nacimiento</li>
+                <ul>
+                    <li>Tipo de dato: Fecha/Hora</li>
+                    <li>Formato: Fecha corta </li>
+                    <li>Mascara de entrada: Aspecto 26/01/1990</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Genero</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 1</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>CURP</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 18</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (sin duplicados)</li>
+                </ul>
+                <li>NSS</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 12</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (sin duplicados)</li>
+                </ul>
+                <li>Tipo de Sangre</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 4</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Calle</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 30</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                
+                <li>Número interior</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 4</li>
+                    <li>Requerido: No</li>
+                    <li>Indexado: No</li>
+                </ul>
+                <li>Número exterior</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 10</li>
+                    <li>Requerido: No</li>
+                    <li>Indexado: No</li>
+                </ul>
+                <li>Colonia</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 50</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                  <li>Municipio</li>
+                  <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 30</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                   <li>Código postal</li>
+                   <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 5</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Estado</li>
+                <ul>
+                <li>Tipo de dato: Texto</li>
+                
+                    <li>Tamaño de campo: 20</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Instituto de adscripción</li>
+                <ul>
+                <li>Tipo de dato: Texto</li>
+                <li>Tamaño de campo: 50</li>
+                <li>Requerido: Si</li>
+                <li>Indexado: Si (con duplicados)</li>
+                 </ul>
+                <li>Correo electrónico</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                        <li>Tamaño de campo: 50</li>
+                        <li>Requerido: Si</li>
+                        <li>Indexado: Si (con duplicados)</li>
+                    </ul>
+                <li>Página web</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                        <li>Tamaño de campo: 100</li>
+                        <li>Requerido: No</li>
+                        <li>Indexado: No</li>
+                    </ul>
+
+                <li>Número celular</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 10</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (sin duplicados)</li>
+                </ul>
+                
+                <li>Grado académico</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 30</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+
+                
+                <li>Fecha de ingreso</li>
+                <ul>
+                    <li>Tipo de dato: Fecha/Hora</li>
+                    <li>Formato: Fecha corta </li>
+                    <li>Mascara de entrada: Aspecto 26/01/1990</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                
+                
+        
+            </ol>
+        </p>
+      </div>
+    </div>
+    </div>
+
+
+
+    <div class="ejercicio-box"> 
+        <h2 class="number-title"> Ejercicio. Tabla Cursos</h2>
+        <p>Así tambien se desea almacenar y administrar  la  información histórica de los cursos impartidos en la universidad</p>
+        <button class="respButton hvr-grow ">   Crea una tabla con el nombre Cursos que tenga  la siguiente estructura: 
+        </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">       
+        <p>
+<ol>
+                <li>ID del curso </li>
+                <ul>
+                    <li>Nombre del curso:Autonumeracion</li>
+                    <li>Tamaño de campo: Entero largo</li>
+                    <li>Indexado: Si (sin duplicados)</li>
+                </ul>
+
+                <li>Nombre del curso</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 30</li>
+                    <li>Requerido: Si </li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>ID de  Profesor</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 5</li>
+                    <li>Requerido: Si </li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Fecha de  inicio</li>
+                <ul>
+                    <li>Tipo de dato: Fecha/Hora</li>
+                    <li>Formato: Fecha corta </li>
+                    <li>Mascara de entrada: Aspecto  26/01/1990</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Fecha de fin</li>
+                <ul>
+                    <li>Tipo de dato: Fecha/Hora</li>
+                    <li>Formato: Fecha corta </li>
+                    <li>Mascara de entrada: Aspecto  26/01/1990</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Hora de inicio</li>
+                <ul>
+                    <li>Tipo de dato: Fecha/Hora</li>
+                    <li>Formato: Hora corta </li>
+                    <li>Mascara de entrada: Aspecto 00:00</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Hora de fin</li>
+                <ul>
+                    <li>Tipo de dato: Fecha/Hora</li>
+                    <li>Formato: Hora corta </li>
+                    <li>Mascara de entrada: Aspecto 00:00</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+               
+        </p>
+        </ol>
+      </div>
+    </div>
+    </div>
+
+    <div class="info-box"> 
+    <h2 class="number-title"> Tipos de datos y  propiedades de  campo en  Access</h2>
+        <p>
+            Cuando se diseña y crea una base de datos, tenemos que planificar una o más tablas 
+            así como los campos (columnas) para cada tabla (recordemos que todas las tablas 
+            de Access se componen de campos), y ademas es necesario  elegir un tipo de
+            datos para cada campo.
+        </p>
+    </div>
+
+
+    <div class="nota-box">
+        <h2 class="number-title"> Tipos de datos en  Access </h2>
+        <p>
+            El tipo de datos de un campo es la propiedad más importante porque determina qué tipo de
+            datos puede almacenar el campo, como puede ser una gran cantidad de texto o archivos adjuntos.
+            Luego, una vez elegido el tipo de datos adecuado a la informacion 
+            que almacenaremos en dicho campo. Las propiedades de un campo  describen las 
+            características y el comportamiento de los datos agregados a dicho campo. 
+        </p>
+        Cada campo tiene un tipo de datos. El tipo de datos de un campo indica el tipo de datos que
+         almacena el campo, como una gran cantidad de texto o archivos adjuntos.
+            
+        <p>
+            Por ejemplo, si necesita almacenar fechas y horas, establezca un campo cuyo tipo  de dato sea
+            Fecha y Hora. Si necesita almacenar nombres y direcciones, establezca uno o varios
+            campos en el tipo de datos Texto y así respectivamente. Access ofrece muchos tipos de datos diferentes
+            y cada tipo tiene una finalidad concreta. 
+        </p>
+        
+        <p>
+            Por último, los tipos de datos proporcionan una forma básica de validación de datos porque ayudan a garantizar 
+            que los usuarios escriben los tipos de datos adecuados en los campos de tabla. Por ejemplo, no se puede escribir 
+            texto en un campo configurado para aceptar solo números.
+        </p>
+    
+    <p> 
+        El tipo de datos de un campo determina  multiples cualidades importantes del mismo,
+        como las siguientes:
+    <ol>
+    <li>Los formatos que se pueden usar con el campo.</li>
+    <li>El tamaño máximo de un valor del campo.</li>
+    <li>Cómo se puede usar el campo en expresiones.</li>
+    <li>Si el campo se puede indizar.</li>
+    </ol>
+    </p>
+        <p>
+        El tipo de datos Texto  permite escribir/almacenar casi cualquier carácter (letra, símbolo o número).
+        Pero un campo cuyo tipo de datos es número solo puede almacenar datos numéricos.
+        Sin embargo, una cuidada selección de tipos de datos puede ayudarle a aprovecharse de características
+        adicionales de Access (como la validación de datos y las funciones) y a mejorar la precisión de la información 
+        que está almacenando.
+        </p>
+
+        <button class="respButton hvr-grow ">  Tipos de datos en Access </button>
+        <div class="resp-box flexbox">
+        <div class="flexbox">   
+            <h3>Tipos de datos en Access </h3>
+            <table>
+            <thead>
+    <tr>
+                </tr>
+                <tr>
+                  <th style="width:120px">Tipo de datos</th>
+                  <th style="width:500px" >Uso</th>
+                  <th style="width:300px">Tamaño</th>
+                </tr>
+            </thead>
+    
+            <tbody>
+                
+                <tr>
+                  <td >Texto</td>
+                  <td  > Datos alfanuméricos cortos como nombres, apellidos, títulos,  
+                      una dirección, etc. En general se utiliza para introducir datos que incluyan
+                       texto y/o valores numéricos que no requieran cálculos matemáticos.
+                     <p> Nota: Desde Access 2013, se ha cambiado el nombre del tipo de datos Texto por Texto corto.</p>
+
+                      </td>
+                  <td>Hasta 255 caracteres.</td>
+                </tr>
+              
+                <tr>
+                  <td>Memo</td>
+                  <td>Grandes cantidades de datos alfanuméricos: oraciones y párrafos.
+                      Un uso típico de un campo Memo sería  una descripción detallada de un producto.
+                     <p>Nota: Desde Access 2013, se ha cambiado el nombre de los tipos de datos Memo por Texto largo.</p>
+                  </td>
+                  <td>Hasta 1 gigabyte (GB) aproximadamente, pero los controles para mostrar un texto largo se limitan a los primeros 64 000 caracteres.</td>
+                </tr>
+              
+                
+                <tr>
+                    <td>Número</td>
+                    <td>Datos numéricos que vayan a ser utilizados para realizar cálculos matemáticos. 
+                       <p> Nota: Hay un tipo de datos independiente para moneda. </p>
+                       </td>
+                    <td>1, 2, 4, 8 o 16 bytes.</td>
+                  </tr>
+    
+                  
+                <tr>
+                    <td>Fecha y hora</td>
+                    <td>Se utiliza este tipo de dato para introducir datos de fechas y horas.
+
+                        <p>Nota: Se recomienda utilizar en formato (propiedades del campo) la fecha corta. 
+                            Y  una mascara de entrada (propiedades del campo).</p>
+                    </td>
+                    <td>8 bytes.</td>
+                  </tr>
+    
+                  
+                <tr>
+                    <td>Moneda</td>
+                    <td>Ideal para almacenar datos numéricos que representen valores monetarios, 
+                        que vayan a utilizarse para cálculos matemáticos 
+                        y que necesitemos que lo preceda el signo de moneda. 
+                        
+                        <p>Nota:Acepta hasta 15 dígitos para la parte entera del número y hasta 4 dígitos en su parte decima </p>
+                    </td>
+                    <td>8 bytes</td>
+                  </tr>
+    
+                  <tr>
+                      <td>Autonumeración</td>
+                      <td>Valor único generado por Access para cada registro nuevo. 
+                          El valor que contenga este campo se va a ir incrementando
+                          cada vez que se agregue un registro a la tabla, este tipo de datos es utilizado para llevar una secuencia 
+                          de los registros ingresados a una tabla. </td>
+                      <td>4 bytes (16 bytes para el Id. de replicación).</td>
+                  </tr>
+    
+    
+                  <tr>
+                    <td>Sí/no</td>
+                    <td>Util para almacena  datos booleanos (verdadero/falso); 
+                        Access almacena el valor numérico cero (0) para Falso 
+                        y -1 para Verdadero. Los valores y los campos Sí y No
+                        solo pueden contener uno de los dos valores.</td>
+                    <td>1 byte.</td>
+                </tr>
+    
+    
+                <tr>
+                    <td>Objeto OLE</td>
+                    <td> Este tipo de datos es usado para enlazar o adjuntar archivos 
+                        creados en otros programas, como pueden ser archivos word, excel, etc.
+                        Solo admite un sólo archivo y el archivo ocupa espacio en la base de datos.</td>
+                    <td>Hasta unos 2 GB.</td>
+                </tr>
+    
+                <tr>
+                    <td>Hipervínculo</td>
+                    <td>Es usado para campos que contienen enlaces a páginas web, direcciones de correo, o archivos que abren con un navegador web. </td>
+                    <td>Hasta 8192 (cada parte de un tipo de datos Hipervínculo 
+                        puede contener un máximo de 2048 caracteres).</td>
+                </tr>
+    
+                <tr>
+                    <td>Datos adjuntos</td>
+                    <td>
+                        <p> Se usa en un campo que permita adjuntar archivos o imágenes a un registro. 
+                            Por ejemplo, si tiene una base de datos de contactos de trabajo, puede usar 
+                            un campo de datos adjuntos para adjuntar una foto del contacto, 
+                            o adjuntar documentos como un currículo.
+                        </p>
+                        
+                        <p>A diferencia del tipo Objeto OLE, cada documento, gráfico, hoja de cálculo, etc 
+                        que se adjunte a un campo de este tipo se ejecutará en el programa que fue creado, 
+                        sin requerir más espacio adicional en la base de datos del que necesita el solo enlace. 
+                        Admite varios archivos. 
+                    </p>
+                        <p>El tipo de datos Datos adjuntos no está disponible 
+                        en los formatos de archivo MDB.
+                        </p>
+                </td>
+                    <td>Hasta unos 2 GB.</td>
+                </tr>
+    
+                <tr>
+                    <td>Calculado</td>
+                    <td>Este tipo de datos usa datos de  la misma tabla para hacer cálculos. Practicamente puede ser de
+                        cualquiera de los formatos indicados anteriormente, ya que el cálculo puede ser tanto sobre
+                        fechas, como sobre valores monetarios u operaciones lógicas de verdadero/falso.
+                        
+                        <p>Nota: Los campos calculados aparecieron por primera vez en Access 2010.</p>
+                    </td>
+                    <td>Depende del tipo de datos de la propiedad Tipo de resultado.
+                        El resultado de tipo de datos de texto corto puede tener hasta 243 caracteres.
+                         Texto largo, número, Sí/No y la fecha y hora debe coincidir con sus
+                        respectivos tipos de datos.</td>
+                </tr>
+    
+                <tr>
+                    <td>Asistente para búsquedas</td>
+                    <td>La entrada del Asistente para búsquedas en la columna de tipo de datos en la vista
+                        Diseño no es realmente un tipo de datos.el cual usa datos en la misma tabla para hacer cálculos.
+                
+                    </td>
+    
+                    <td>Depende del tipo de datos del campo de búsqueda.</td>
+                </tr>
+            </tbody>
+              
+            </table>
+        </div>
+        </div>
+
+        
+
+    <p>
+     Después de crear un campo y establecer su tipo de datos, se pueden establecer otras propiedades del campo.
+     Por ejemplo, se puede controlar el tamaño de un campo de texto estableciendo su propiedad Tamaño del campo,
+    entre otras muchas propiedades.
+    </p>
+
+    <p>Enseguida se describen  algunas  propiedades de campo y su uso para  distintos tipos de datos:  </p>
+
+        
+
+    <button class="respButton hvr-grow ">   Propiedades de  campo  </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">   
+        <h3>Propiedades comunes en algunos tipos de datos</h3>
+        <table>
+           <thead>    
+              <tr>
+              </tr>
+          
+              <tr>
+                <th style="width:110px"> Propiedad</th>
+                <th style="width:800px"> Uso </th>
+              </tr>
+            </thead>
+            <tbody>
+               <tr>
+                <td> Formato</td>
+              <td>Determina la forma en que aparece el campo cuando se visualiza o imprime en hojas de datos o en formularios 
+                  o informes enlazados al campo. Se puede definir un formato personalizado para un campo de hipervínculo.
+                </td>
+            </tr>
+    
+          
+              <tr>
+                <td>Si/No</td>
+                <td>Opciones de Sí o No. </td>
+              </tr>
+          
+              <tr>
+                <td>Titulo</td>
+                <td> Se utiliza esta propiedad para indicar cómo queremos que se visualice la cabecera del campo.
+                    Por ejemplo, si un campo se llama Fecha_nac e indicamos Fecha de nacimiento como valor 
+                    en la propiedad Título, en la cabecera del campo Fecha_nac veremos Fecha de nacimiento. Es tambien eñ
+                    el texto de etiqueta que se muestra para este campo de forma predeterminada en formularios,
+                     informes y consultas. Si esta propiedad está vacía, se usa como vaalor predeterminado 
+                     el nombre del campo. Se permite cualquier cadena de texto. Un título eficaz suele ser breve.
+                </td>
+              </tr>
+          
+              <tr>
+                <td>Valor predeterminado</td>
+                <td>El valor predeterminado es el valor que se almacenará automáticamente en el campo si no introducimos 
+                    ningún valor. Se suele emplear cuando se sabe que un determinado campo va a tener la mayoría de las
+                    veces el mismo valor, se utiliza esta propiedad para indicar o especificar cuál va a ser ese valor 
+                    y así que se introduzca automáticamente en el campo a la hora de introducir los datos de la tabla.
+                </td>
+              </tr>
+          
+              <tr>
+                  <td>Regla de validación</td>
+                  <td>Proporciona una expresión que debe ser verdadera al agregar o cambiar el valor en este campo. 
+                      Se usa junto con la propiedad Texto de validación. Esta propiedad nos permite controlar 
+                      la entrada de datos según el criterio que se especifique.
+                 </td>
+              </tr>
+    
+              <tr>
+                  <td>Texto de validación</td>
+                  <td>Escribir un mensaje que aparezca cuando un valor especificado infrinja la expresión en la propiedad Regla de validación.</td>
+              </tr>
+             
+    
+              <tr>
+                <td>Requerido</td>
+                <td>Requiere que los datos se introduzcan en un campo.</td>
+            </tr>
+    
+              <tr>
+                <td>Permitir longitud cero</td>
+                <td>Permite escribir (al establecerla en Sí) una cadena de longitud cero ("") en un campo Hipervínculo, Texto o Memo.</td>
+              </tr>
+    
+              <tr>
+               <td>Indexado</td>
+               <td>
+                   <p>Especifica si el campo tiene un índice. Hay tres valores disponibles:</p>
+                   <ol>
+                       <li>Sí (sin duplicados)   Crea un índice exclusivo en el campo.</li>
+                       <li>Sí (con duplicados)   Crea un índice no exclusivo en el campo. </li>
+                       <li>No,   quita cualquier índice del campo. </li>
+                    
+                   </ol>
+                <p>Nota: No cambie esta propiedad en un campo que se use como clave principal.</p>
+            </td>
+              </tr>
+    <tr>
+        <td>Compresión Unicode</td>
+        <td>Comprime el texto que se almacena en este campo cuando se almacenan menos de 4.096 caracteres.</td>
+    </tr>
+    
+              <tr>
+                <td>Modo IME</td>
+                <td>Controla la conversión de caracteres en las versiones asiáticas de Windows.</td>
+              </tr>
+            
+             
+    
+              <tr>
+                  <td>Alinear texto</td>
+                  <td>Especifica la alineación de texto predeterminada dentro de un control.</td>
+              </tr>
+          
+            </tbody>    
+          </table>
+        </div>
+        </div>
+    
+
+    <h2 class="number-title"> Propiedades de campo: Permitir longitud cero y requerido  </h2>
+
+    Cuando creamos nuevas tablas en Access, es mucho mas fácil  realizarlo a través de la vista diseño de la tabla.
+    Para modificar y/o agregar información también podemos acceder a dicha vista.
+    <ol>
+        <b><li>Permitir longitud cero</li></b>
+        <p>Permitir longitud cero admite dos posibles valores, Sí y No. Si está con valor Sí significa que podemos
+         introducir una cadena de longitud cero en el campo. Esta cadena se puede puede representar como "" 
+         sin nada dentro de las comillas. Con el valor No no se admitiría esta cadena.
+        </p>
+        
+    <b><li>Requerido</li></b>
+        <p>
+         La propiedad Requerido indica que ese campo no se puede dejar en blanco, sin datos. 
+        </p>
+         <p>Observación: Todos los campos pertenecientes a la clave principal de una tabla tienen 
+             la obligación de poseer datos, no pueden estar vacíos. 
+         </p>    
+         <p>
+              El resto de campos no tienen, en principio, porque ser requerido.
+               Pero si la propiedad Requerido de un campo está a Sí, significa que no podemos dejar de introducir datos
+               en ese campo. Necesariamente introduciremos información para cumplir con la exigencia de esta propiedad.
+            </p>
+            
+    </ol>
+    
+    <p>Sin embargo, puede ocurrir que, en ciertas ocasiones, no tenemos el dato para ese campo y 
+        resulta que con Requerido activado, Access nos obliga a introducir información en el mismo.
+         ¿Qué podemos hacer? Si la propiedad permitir longitud cero está activada (valor Sí), que hacemos es pulsar la barra espaciadora, y de esta forma podemos pasar a otro campo sin problemas. Más tarde, con la información en nuestras manos, introducimos el dato sin problemas.
+    </p>
+    
+    <p>
+        <b> En resumen: </b>Con permitir longitud cero y requerido a sí podemos dejar la introducción de datos para más tarde. Si tuviésemos requerido a si y permitir longitud cero a no, entonces Access no permite introducir una cadena de longitud cero en el campo,
+         y estaremos obligados a introducir información, dar a la barra espaciadora no se permite.
+    </b>
+    
+
+
+
+
+    <h2 class="number-title"> Propiedades de campo: Formato </h2>
+    <p> 
+    Entre estas propiedades de campo, una de las más importantes es la propiedad de campo formato.
+    Esta propiedad se utiliza para personalizar la forma de presentar los datos en pantalla o en un informe. 
+    Enseguida se presentan los propiedeades de campo para algunos los tipos de dato usados mas
+     frecuentemente durante el diseño de una base de datos:
+    </p>
+
+    <button class="respButton hvr-grow ">  Número </button>
+<div class="resp-box flexbox">
+  <div class="flexbox">      
+        <h3>Número</h3>
+        <table>
+            <thead>
+              <tr>
+              <th style="width:110px"> Formato</th>
+              <th style="width:800px"> Se usa para mostrar</th>
+              </tr>
+            </thead>
+          
+            <tbody>
+              <tr>
+                <td>General</td>
+                <td>Números sin formato adicional exactamente como se almacenan.</td>
+              </tr>
+          
+              <tr>
+                <td>Moneda</td>
+                <td>Valores monetarios generales. </td>
+              </tr>
+          
+              <tr>
+                <td>Euro</td>
+                <td>Valores monetarios generales almacenados en el formato de la UE.
+                </td>
+          
+              </tr>
+          
+              <tr>
+                <td>Estandar    </td>
+                <td>Datos numéricos con decimales.</td>
+          
+              </tr>
+          
+              <tr>
+                <td>Porcentaje</td>
+                <td>Porcentajes.</td>
+              </tr>
+    
+              <tr>
+               <td>Científico</td>
+               <td>Cálculos.</td>
+              </tr>
+          
+            </tbody>
+          
+         
+          
+          </table>
+         </div>
+</div>
+
+<button class="respButton hvr-grow ">  Fecha y hora </button>
+<div class="resp-box flexbox">
+  <div class="flexbox">   
+        <h3>Fecha y hora</h3>
+        <table>
+    
+            <thead>        
+              <tr>
+              <th style="width:110px"> Formato</th>
+                <th style="width:800px"> Se usa para mostrar</th>
+              </tr>
+            </thead>
+          
+            <tbody>
+              <tr>
+                <td>Fecha corta</td>
+                <td>Mostrar la fecha en un formato corto. Por ejemplo, 26/04/2022</td>
+              </tr>
+          
+              <tr>
+                <td>Fecha Mediana</td>
+                <td>Mostrar la fecha en un formato mediano. Por ejemplo, 3-Abr-09 </td>
+              </tr>
+          
+              <tr>
+                <td>Fecha larga</td>
+                <td>Mostrar la fecha en un formato largo. Por ejemplo, Miércoles 14 de marzo.
+                </td>
+              </tr>
+          
+              <tr>
+                <td>Hora a.m. o p.m.</td>
+                <td>Mostrar la hora solo con un formato de 12 horas que responderá a 
+                    los cambios en la configuración regional de fecha y hora.</td>
+              </tr>
+          
+              <tr>
+                <td>Hora mediana</td>
+                <td>Mostrar la hora seguida A.M. o P.M.</td>
+              </tr>
+    
+
+              <tr>
+                <td>Hora de 24 horas</td>
+                <td>Mostrar la hora solo con un formato de 24 horas que responderá a los cambios
+                     en la configuración regional de fecha y hora.</td>
+              </tr>
+            </tbody>
+          </table>
+  </div>
+  </div>
+
+<button class="respButton hvr-grow ">  Si/No </button>
+<div class="resp-box flexbox">
+  <div class="flexbox">   
+    <h3>Si/No</h3>
+    <table>
+
+        <thead>    
+         
+      
+          <tr>
+            <th style="width:110px"> Formato</th>
+            <th style="width:800px"> Se usa para mostrar</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <tr>
+            <td>Casilla</td>
+            <td>Introducción a los tipos de datos y las propiedades de los campos</td>
+          </tr>
+      
+          <tr>
+            <td>Si/No</td>
+            <td>Opciones de Sí o No. </td>
+          </tr>
+      
+          <tr>
+            <td>Verdader/Falso</td>
+            <td>Opciones de Verdadero o Falso.
+            </td>
+          </tr>
+      
+          <tr>
+            <td>Activar/Desactivar</td>
+            <td>Opciones de Activar o Desactivar</td>
+          </tr>
+      
+          <tr>
+            <td>Porcentaje</td>
+            <td>Porcentajes.</td>
+          </tr>
+
+          <tr>
+           <td>Científico</td>
+           <td>Cálculos.</td>
+          </tr>
+      
+        </tbody>    
+      </table>
+    
+  </div>
+</div>
+ 
+   
+
+
+
+
+<h2 class="number-title"> Propiedades de campo: Mascara de entrada </h2> 
+ 
+<p>Se puede usar una máscara de entrada para validar los datos, lo que obliga a los usuarios a escribir los valores
+    de una manera específica. Por ejemplo, una máscara de entrada permite obligar a los usuarios a escribir las
+     fechas en un formato como 14/04/2007.</p>
+
+<p>Una máscara de entrada está formada por caracteres literales (como espacios, puntos, guiones y
+ paréntesis) que separan los espacios en blanco para rellenar. La configuración de la
+ propiedad Máscara de entrada (InputMask) está formada por caracteres literales
+ junto con caracteres especiales que determinan el tipo de valor que puede introducirse
+ en un espacio en blanco en esa posición. Una buena pratica es configurar  máscaras de entrada
+ para los campos que contienen datos cuyo formato siempre es el mismo,  
+ permite que los usuarios escriban datos correctamente en la base de datos de Access.
+</p>
+
+<p>
+   <b>Observacion:</b> Una máscara de entrada solo determina si Access acepta los datos o no; es decir, 
+    no altera la manera en  la que los datos se almacenan, que se controla mediante el tipo de datos del campo
+    y otras propiedades. 
+</p>
+
+<p>
+    Las máscaras de entrada se utilizan principalmente en campos de Texto y de Fecha/Hora,
+    pero también pueden utilizarse en campos Numéricos o de Moneda. Por ejemplo, podemos usar 
+    una máscara de entrada para asegurarnos que los números de teléfono introducidos en un campo
+    de número de teléfono van a tener el formato adecuado.
+</p>
+ 
+<!--
+<p>
+ Una máscara de entrada es una cadena de caracteres que define el formato de los valores de entrada válidos.
+ Las máscaras de entrada se almacenan como una propiedad de objeto. Las máscaras de entrada son de utilidad 
+ cuando es importante que el formato de los valores de entrada sea uniforme. Por ejemplo, se puede usar una 
+ máscara de entrada con un campo donde se almacenan números de teléfono, de modo que Access obligue a que se 
+ escriban diez dígitos. Si alguien escribe un número de teléfono sin el código de área, Access no registrará 
+ los datos hasta que dicho código se incluya.
+</p>
+-->
+
+<button class="respButton hvr-grow ">  Composición de las mascaras de entrada </button>
+ <div class="resp-box flexbox">
+   <div class="flexbox">   
+
+    <p>
+ Las máscaras de entrada están compuestas de una sección obligatoria y dos secciones opcionales,  
+  cada una de ellas se separa con punto y coma. El propósito de cada sección es el siguiente:
+   </p>
+ 
+ 
+     <ul>
+         <li>
+            <b> La primera sección es obligatoria.</b> Incluye los caracteres o la cadena de caracteres 
+             que especifican propiamente a la mascara de entrada junto con marcadores de posición tales como 
+              como paréntesis, puntos y guiones. Para ver una lista de los caracteres que puedes utilizar 
+              para definir la máscara de entrada, mira la tabla que aparece a continuación.
+         </li>
+
+         <li>
+             <b>La segunda sección</b> es opcional y hace referencia a los caracteres de máscara insertados y
+              al modo en que se almacenan dentro del campo, esto es, en esta seccion se  especifica
+              si Access 2016 almacena los caracteres de visualización literales en la tabla al introducir datos.
+              Si utilizas 0 para esta sección, todos los caracteres de visualización literales (por ejemplo, 
+              el paréntesis de una máscara de entrada de un número de teléfono) se almacenan con el valor; 
+              si introduces 1 o dejas esta sección en blanco, sólo se almacenan los caracteres introducidos.
+         </li>
+
+         <li>
+             <b>La tercera sección</b> también es opcional e indica un solo carácter o espacio que se usa como marcador de posición. 
+             De forma predeterminada, Access usa el carácter de subrayado (_). Si desea usar otro carácter, escríbalo en la 
+             tercera sección de la máscara. En otras palabras, en esta sección se especifica el carácter que Access 
+              muestra para el espacio en el que el usuario debe escribir un carácter en la máscara de entrada.
+             Para esta sección puedes utilizar casi cualquier  carácter; para mostrar una cadena en blanco, utiliza 
+             un espacio entre comillas (" ").
+         </li>
+     </ul>
+ 
+   </div>
+ </div>
+
+
+<p>En la siguiente lista, se enumeran los caracteres literales y marcadores de posición de una máscara de entrada
+ y se explica cómo esta controla la entrada de datos:
+ </p>
+
+ <button class="respButton hvr-grow ">Caracteres que definen máscaras de entrada</button>
+ <div class="resp-box flexbox">
+   <div class="flexbox">   
+
+
+
+<table>
+ <thead>
+   <tr>
+     <td>
+       <p>
+         <b >Carácter</b>
+       </p>
+     </td>
+     <td>
+       <p>
+         <b >Explicación</b>
+       </p>
+     </td>
+   </tr>
+ </thead>
+ <tbody>
+   <tr>
+     <td>
+       <p>0</p>
+     </td>
+     <td>
+       <p>El usuario debe escribir un dígito (0 a 9).</p>
+     </td>
+   </tr>
+   <tr>
+     <td>
+       <p>9</p>
+     </td>
+     <td>
+       <p>El usuario puede escribir un dígito (0 a 9).</p>
+     </td>
+   </tr>
+   <tr>
+     <td>
+       <p>#</p>
+     </td>
+     <td>
+       <p>El usuario puede escribir un dígito, espacio, signo más o menos. Si se omite, Access escribe un espacio en blanco.</p>
+     </td>
+   </tr>
+   <tr>
+     <td>
+       <p>L</p>
+     </td>
+     <td>
+       <p>El usuario debe escribir una letra.</p>
+     </td>
+   </tr>
+   <tr>
+     <td>
+       <p>?</p>
+     </td>
+     <td>
+       <p>El usuario puede escribir una letra.</p>
+     </td>
+   </tr>
+   <tr>
+     <td>
+       <p>A</p>
+     </td>
+     <td>
+       <p>El usuario debe escribir una letra o un dígito.</p>
+     </td>
+   </tr>
+   <tr>
+     <td>
+       <p>a</p>
+     </td>
+     <td>
+       <p>El usuario puede escribir una letra o un dígito.</p>
+     </td>
+   </tr>
+   <tr>
+     <td>
+       <p>&amp;</p>
+     </td>
+     <td>
+       <p>El usuario debe escribir un carácter o un espacio.</p>
+     </td>
+   </tr>
+   <tr>
+     <td>
+       <p>C</p>
+     </td>
+     <td>
+       <p>El usuario puede escribir caracteres o espacios. </p>
+     </td>
+   </tr>
+   <tr>
+     <td>
+       <p>. , : ; - /</p>
+     </td>
+     <td>
+       <p>Marcadores de posición de decimales y millares, separadores de fecha y hora. El carácter que seleccione dependerá de la configuración regional de Microsoft Windows. </p>
+     </td>
+   </tr>
+   <tr>
+     <td>
+       <p>&gt;</p>
+     </td>
+     <td>
+       <p>Convierte todos los caracteres que le siguen a mayúscula.</p>
+     </td>
+   </tr>
+   <tr>
+     <td>
+       <p>&lt;</p>
+     </td>
+     <td>
+       <p>Convierte todos los caracteres que le siguen a minúscula.</p>
+     </td>
+   </tr>
+   <tr>
+     <td>
+       <p>!</p>
+     </td>
+     <td>
+       <p>Hace que la máscara de entrada se rellene de izquierda a derecha y no de derecha a izquierda.</p>
+     </td>
+   </tr>
+   <tr>
+     <td>
+       <p>\</p>
+     </td>
+     <td>
+       <p>Los caracteres que le siguen inmediatamente se mostrarán literalmente. </p>
+     </td>
+   </tr>
+   <tr>
+     <td>
+       <p>""</p>
+     </td>
+     <td>
+       <p>Los caracteres que están entre comillas dobles se mostrarán literalmente.</p>
+     </td>
+   </tr>
+ </tbody>
+</table>
+<p>
+Microsoft Access interpreta los caracteres de la primera sección de la definición de la
+propiedad Máscara de entrada (InputMask) tal como se muestra en la tabla siguiente.
+Para definir un carácter literal deberá introducirse cualquier otro carácter no incluido en
+la tabla, incluidos espacios y símbolos. Para definir uno de los siguientes caracteres
+</p>
+</div>
+
+ </div>
+
+ <button class="respButton hvr-grow "> Ejemplos </button>
+ <div class="resp-box flexbox">
+   <div class="flexbox">   
+
+ <b>Describe algunos ejemplos de datos que podrias almacenar bajo las siguientes mascaras de entrada:</b>
+
+     <ol>
+         <li>
+             La siguiente máscara de entrada para números de teléfono: (999) 000-0000;0;-:
+         </li>
+     <ul>
+         <li>La máscara usa dos caracteres de marcador de posición: 9 y 0. El 9 indica un dígito opcional
+             (que hace que sea opcional escribir el código de área) y el 0 indica un dígito obligatorio.
+         </li>
+         <li>
+             El 0 de la segunda sección de la máscara de entrada indica que los caracteres 
+             de máscara se almacenarán con los datos.
+         </li>
+         <li>
+             La tercera sección de la máscara de entrada especifica que se debe usar un guión
+              (-) en vez del carácter de subrayado (_) como carácter de marcador de posición.
+         </li>
+     </ul>
+     <li>L0000 </li>
+     <li>0 </li>
+     <li>#0 </li>
+     <li>000 </li>
+     <li>L0L0</li>
+     <li>>L0L 0L0</li>
+     <li>00000-9999</li>
+     <li>ISBN 0-&&&&&&&&&-0</li>
+ </ol>
+   </div>
+ </div>
+    </div>
+
+    
+<div class="nota-box">
+    
+ 
+ </div>
+ 
+<!--
+    
+<div class="nota-box">
+    <h2 class="number-title"> Propiedades comunes de algunos  tipos de datos en  Access </h2> 
+    
+</div>
+
+-->
+<!--
+    <div class="ejercicio-box"> 
+        <h2 class="number-title"> Ejercicio. Tabla Calificaciones</h2>
+        <p>Así tambien se desea almacenar y administrar  la  información histórica de los cursos impartidos</p>
+        <button class="respButton hvr-grow ">   Crea una tabla con el nombre Institutos  que tenga  la siguiente estructura: 
+        </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">       
+        <p>
+
+        </p>
+      </div>
+    </div>
+    </div>
+-->
+
+<!--
+    <div class="ejercicio-box"> 
+        <h2 class="number-title"> Ejercicio</h2>
+        <p>Así tambien se desea almacenar y administrar  la información de los Intitutos</p>
+
+        <button class="respButton hvr-grow ">   Crea una tabla con el nombre Institutos  que tenga  la siguiente estructura: 
+        </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">       
+        <p>
+               
+            <ol>
+                <li>ID instituto </li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 50</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (sin duplicados)</li>
+                </ul>
+
+                <li>Nombre instituto</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 20</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Primer apellido.</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 25</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Segundo apellido.</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 10</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Fecha de nacimiento</li>
+                <ul>
+                    <li>Tipo de dato: Fecha/Hora</li>
+                    <li>Formato: Fecha corta </li>
+                    <li>Mascara de entrada: Aspecto 26/01/1990</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (sin duplicados)</li>
+                </ul>
+                <li>Genero</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 1</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>CURP</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 18</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (sin duplicados)</li>
+                </ul>
+                <li>NSS</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 12</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (sin duplicados)</li>
+                </ul>
+                <li>Tipo de Sangre</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 4</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Calle</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 30</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                
+                <li>Número interior</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 4</li>
+                    <li>Requerido: No</li>
+                    <li>Indexado: No</li>
+                </ul>
+                <li>Número exterior</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 10</li>
+                    <li>Requerido: No</li>
+                    <li>Indexado: No</li>
+                </ul>
+                <li>Colonia</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 50</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                  <li>Municipio</li>
+                  <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 30</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                   <li>código postal</li>
+                   <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 10</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Estado</li>
+                <ul>
+                <li>Tipo de dato: Texto</li>
+                
+                    <li>Tamaño de campo: 20</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Instituto de adscripcion</li>
+                <ul>
+                <li>Tipo de dato: Texto</li>
+                <li>Tamaño de campo: 50</li>
+                <li>Requerido: Si</li>
+                <li>Indexado: Si (con duplicados)</li>
+                 </ul>
+                <li>Correo electrónico</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                        <li>Tamaño de campo: 50</li>
+                        <li>Requerido: Si</li>
+                        <li>Indexado: Si (con duplicados)</li>
+                    </ul>
+                <li>Página web</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                        <li>Tamaño de campo: 100</li>
+                        <li>Requerido: No</li>
+                        <li>Indexado: No</li>
+                    </ul>
+
+                <li>Número celular</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 10</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (sin duplicados)</li>
+                </ul>
+        
+            </ol>
+        </p>
+    
+    
+      </div>
+    </div>
+    
+    
+    </div>
+
+
+-->
+
+
+
+
+
+
+
+    <!--
+
+            <div class="ejercicio-box"> 
+                <h2 class="number-title"> Tarea</h2>
+                <p>Crea una tabla con el nombre Profesores  que tenga  la siguiente estructura:</p>
+                    
+                <p>
+                       
+                    <ol>
+                        <li>Número de trabajador </li>
+                        <ul>
+                            <li>Tipo de dato: Texto</li>
+                            <li>Tamaño de campo: 5</li>
+                            <li>Requerido: Si</li>
+                            <li>Indexado: Si (sin duplicados)</li>
+                        </ul>
+        
+                        <li>Nombre(s)</li>
+                        <ul>
+                            <li>Tipo de dato: Texto</li>
+                            <li>Tamaño de campo: 20</li>
+                            <li>Requerido: Si</li>
+                            <li>Indexado: Si (con duplicados)</li>
+                        </ul>
+                        <li>Primer apellido.</li>
+                        <ul>
+                            <li>Tipo de dato: Texto</li>
+                            <li>Tamaño de campo: 25</li>
+                            <li>Requerido: Si</li>
+                            <li>Indexado: Si (con duplicados)</li>
+                        </ul>
+                        <li>Segundo apellido.</li>
+                        <ul>
+                            <li>Tipo de dato: Texto</li>
+                            <li>Tamaño de campo: 10</li>
+                            <li>Requerido: Si</li>
+                            <li>Indexado: Si (con duplicados)</li>
+                        </ul>
+                        <li>Fecha de nacimiento</li>
+                        <ul>
+                            <li>Tipo de dato: Fecha/Hora</li>
+                            <li>Formato: Fecha corta </li>
+                            <li>Mascara de entrada: Aspecto 26/01/1990</li>
+                            <li>Requerido: Si</li>
+                            <li>Indexado: Si (sin duplicados)</li>
+                        </ul>
+                        <li>Genero</li>
+                        <ul>
+                            <li>Tipo de dato: Texto</li>
+                            <li>Tamaño de campo: 1</li>
+                            <li>Requerido: Si</li>
+                            <li>Indexado: Si (con duplicados)</li>
+                        </ul>
+                        <li>CURP</li>
+                        <ul>
+                            <li>Tipo de dato: Texto</li>
+                            <li>Tamaño de campo: 18</li>
+                            <li>Requerido: Si</li>
+                            <li>Indexado: Si (sin duplicados)</li>
+                        </ul>
+                        <li>NSS</li>
+                        <ul>
+                            <li>Tipo de dato: Texto</li>
+                            <li>Tamaño de campo: 12</li>
+                            <li>Requerido: Si</li>
+                            <li>Indexado: Si (sin duplicados)</li>
+                        </ul>
+                        <li>Tipo de Sangre</li>
+                        <ul>
+                            <li>Tipo de dato: Texto</li>
+                            <li>Tamaño de campo: 4</li>
+                            <li>Requerido: Si</li>
+                            <li>Indexado: Si (con duplicados)</li>
+                        </ul>
+                        <li>Calle</li>
+                        <ul>
+                            <li>Tipo de dato: Texto</li>
+                            <li>Tamaño de campo: 30</li>
+                            <li>Requerido: Si</li>
+                            <li>Indexado: Si (con duplicados)</li>
+                        </ul>
+                        
+                        <li>Número interior</li>
+                        <ul>
+                            <li>Tipo de dato: Texto</li>
+                            <li>Tamaño de campo: 4</li>
+                            <li>Requerido: No</li>
+                            <li>Indexado: No</li>
+                        </ul>
+                        <li>Número exterior</li>
+                        <ul>
+                            <li>Tipo de dato: Texto</li>
+                            <li>Tamaño de campo: 10</li>
+                            <li>Requerido: No</li>
+                            <li>Indexado: No</li>
+                        </ul>
+                        <li>Colonia</li>
+                        <ul>
+                            <li>Tipo de dato: Texto</li>
+                            <li>Tamaño de campo: 50</li>
+                            <li>Requerido: Si</li>
+                            <li>Indexado: Si (con duplicados)</li>
+                        </ul>
+                          <li>Municipio</li>
+                          <ul>
+                            <li>Tipo de dato: Texto</li>
+                            <li>Tamaño de campo: 30</li>
+                            <li>Requerido: Si</li>
+                            <li>Indexado: Si (con duplicados)</li>
+                        </ul>
+                           <li>código postal</li>
+                           <ul>
+                            <li>Tipo de dato: Texto</li>
+                            <li>Tamaño de campo: 10</li>
+                            <li>Requerido: Si</li>
+                            <li>Indexado: Si (con duplicados)</li>
+                        </ul>
+                        <li>Estado</li>
+                        <ul>
+                        <li>Tipo de dato: Texto</li>
+                        
+                            <li>Tamaño de campo: 20</li>
+                            <li>Requerido: Si</li>
+                            <li>Indexado: Si (con duplicados)</li>
+                        </ul>
+                        <li>Instituto de adscripcion</li>
+                        <ul>
+                        <li>Tipo de dato: Texto</li>
+                        <li>Tamaño de campo: 50</li>
+                        <li>Requerido: Si</li>
+                        <li>Indexado: Si (con duplicados)</li>
+                         </ul>
+                        <li>Correo electrónico</li>
+                        <ul>
+                            <li>Tipo de dato: Texto</li>
+                                <li>Tamaño de campo: 50</li>
+                                <li>Requerido: Si</li>
+                                <li>Indexado: Si (con duplicados)</li>
+                            </ul>
+                        <li>Página web</li>
+                        <ul>
+                            <li>Tipo de dato: Texto</li>
+                                <li>Tamaño de campo: 100</li>
+                                <li>Requerido: No</li>
+                                <li>Indexado: No</li>
+                            </ul>
+        
+                        <li>Número celular</li>
+                        <ul>
+                            <li>Tipo de dato: Texto</li>
+                            <li>Tamaño de campo: 10</li>
+                            <li>Requerido: Si</li>
+                            <li>Indexado: Si (sin duplicados)</li>
+                        </ul>
+                        
+                        
+                        
+                        
+                    </ol>
+                </p>
+                    </div>
+        
+                </div>
+
+                
+                
+            -->
+    
+            <!-- 
+
+    <div class="nota-box">
+        
+        <h2 class="number-title"> tipos de datos y las propiedades de los campos en  Access </h2>
+        
+        
+    
+    </div>
+    
+
+  
+<h1 class="number-subtitle">Introducción a los tipos de datos y las propiedades de los campos</h1>
+
+
+
+
+
+-->
+<!-- 
+<div class="info-box">
+    <h2 class="number-title"> Introducción </h2>
+    <p>
+        En esta sección se define la integral de funciones 
+        escalonadas y se desarrollan sus propiedades. 
+    </p>
+    <p>
+        La idea detrás de la definición de la integral es el área de 
+        los rectángulos que aproximaban el área bajo la parábola:
+        las sumas de las áreas de los rectángulos. Sólo que la definición 
+        se puede aplicar a funciones que no necesariamente representa área. 
+        Así por ejemplo las "alturas" pueden ser negativas pero lo importante
+        es que "las cuentas" son las mismas sin importar que pensemos en áreas o no.
+    </p>
+
+
+
+</div>
+
+<div class="definicion-box">
+    <h2 class="number-title" id="Def:IntegralEscalonadas"> Definición </h2>
+    <h3>Integral  de funciones escalonadas</h3>
+<p>
+    Para una función escalonada $s:[a,b]\to \mathbb{R}$, con partición $P=\{x_{i}\}_{i=0}^n$, y 
+    supongamos que en el intervalo $(x_{i-1},x_i)$ toma el valor $c_i$. Definimos
+    $$
+    \int_a^b s=\sum_{i=1}^n 
+    \underbrace{c_i}_{\textrm{altura}} 
+    \underbrace{(x_i-x_{i-1})}_{\textrm{base}}
+    $$
+</p>
+<p> 
+    Notas:
+<ol>
+<li>Las "alturas" muy bien pueden ser negativas.</li> 
+<li>La integral puede ser positiva o negativa.</li> 
+<li>Los valores  $s(x_0), s(x_1),\dots, s(x_n)$, es decir  
+    los valores de \(s\) en los puntos de \(P\), no importan
+    para nada en el cálculo de la integral.
+</li> 
+
+</ol>
+</p>
+</div>
+
+<div class="ejercicio-box"> 
+    <h2 class="number-title" id="Ejer:AditividadDeEscalonadas"> Ejercicio</h2> 
+    <p>
+        Sea $s:[a,b] \to \mathbb{R}$ una función escalonada.
+    </p>
+    <ol>
+        <li id="Ejer:IntegralConstantes">
+            Supongamos que \(s\) es constante, \(s(x)=k\) 
+            para todo \(k\in (a,b)\). Prueba 
+            $$
+            \int_a^b s(x)dx=k(b-a).
+            $$
+        </li>
+        <li>
+            Sea $P=\{x_i\}_{i=0}^n$ la partición de \(s\). Demuestra que
+            $$
+            \int_a^b s(x)dx= \sum_{i=1}^n \int_{x_{i-1}}^{x_i} s(x)dx
+            $$
+
+            Sugerencia: usa la definición  de la integral de funciones escalonadas y 
+            el inciso anterior.
+        </li>
+    </ol> 
+    <button class="respButton hvr-grow "> Solución  </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">
+        <p>
+            Inciso 1.
+        </p>
+        <p>
+            Tomando en 
+            cuenta de que \(s\) toma el valor \(k\) en todo \((a,b)\), tenemos
+            que la partición asociada a \(s\) es la más pequeña, \(P=\{a,b\}\),
+            por lo tanto directamente de la 
+            <a href="#Def:IntegralEscalonadas">Definición 2.2</a> tenemos 
+            \[
+                \int_a^b s(x)dx=k(b-a).
+            \]
+        </p>
+        <p>
+            Inciso 2.
+        </p>
+        <p>
+            Supongamos que \(P\) es la partición asociada a \(s\)
+            y que \(s\) toma el valor \(c_i\) en el intervalo
+            \((x_{i-1},x_i)\). Por la <a href="#Def:IntegralEscalonadas">Definición 2.2</a> tenemos 
+            \[
+                \int_a^b s(x)dx=\sum_{i=1}^n c_i (x_i-x_{i-1})
+            \]
+            Por otro lado, ya que \(s\) restringida a \((x_{i-1},x_i)\)
+            es constante igual a \(c_i\) por el inciso anterior tenemos 
+            \[
+                \int_{x_{i-1}}^{x_i}s(x)dx=c_i(x_{i-1}-x_i), i=1,\dots, n
+            \]
+            Igualando estas ecuaciones con los sumando de la 
+            ecuación anterior concluimos 
+        </p>
+        <p>
+                \[
+                \int_a^b s(x)dx=\sum_{i=1}^n \int_{x_{i-1}}^{x_i}s(x)dx.
+                \]
+        </p>
+    
+
+      </div>
+    </div>
+    
+</div>
+
+
+<div class="definicion-box">
+    <h2 class="number-title"> Definición</h2>
+<h3>
+    Las funciones piso y techo
+</h3>
+<p>
+    
+Función piso:
+$$
+\lfloor x \rfloor:=n
+$$
+si $n$ es el único entero tal que $n \leq x  < n+1$.
+</p>
+<p>
+Función techo:
+
+$$
+\lceil x \rceil:=n+1
+$$
+si $n$ es el único entero tal que $n <  x   \leq n+1$.
+
+Notar que $\lceil x \rceil = \lfloor x \rfloor +1$.
+</p>
+</div>
+
+
+<div class="ejercicio-box"> 
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Calcula la integrales:
+    </p>
+
+
+<ol>
+ <li>$\int_{-1}^3 \lfloor x \rfloor dx$</li> 
+ <li>$\int_{-2}^3 \lfloor 2 x \rfloor dx$</li> 
+ <li>$\int_{-2}^3 \lfloor x/2 \rfloor dx$</li>   
+ <li>$\int_{-1}^3 \lfloor x+\frac{1}{2} \rfloor dx$</li>
+ <li>$\int_0^9 \lfloor \sqrt{t} \rfloor dt$</li>
+</ol>
+
+<button class="respButton hvr-grow "> Solución inciso 3  </button>
+<div class="resp-box flexbox" >
+<div class="flexbox">
+        
+<p>
+    Empecemos por considerar la función \(f : [-2, 3]  \rightarrow \mathbb{R}\) 
+    dada por \(f(x) = \lfloor x/2 \rfloor\). 
+    Los primeros pasos para resolver el ejercicio es verificar que la función 
+    \(f\) es una función escalonada, 
+    y para ello basta exibir una partición \(\textbf{P}\) de \([-2, 3]\), 
+    de tal forma que \(f\) sea una función constante en los sub-intervalos abiertos 
+    generados por \(\textbf{P}\).  
+    Una vez demostrada la existencia de la partición \(\textbf{P}\)  
+    ya podemos calcular la integral \(\int_{-2}^3\lfloor x/2 \rfloor dx\) 
+    como lo indica la definición 2.2.
+</p>
+
+<p>
+    Afirmamos que si \( -2 \leq x < 0\), entonces 
+    \(f(x) = -1\). En efecto si \( -2 \leq x < 0\) se sigue 
+    \( -1 \leq x/2 < 0\) y esto implica por la definición de 
+    función piso (Definición 2.2) que 
+    \( f(x) = \lfloor x/2 \rfloor  = -1\), es decir \(f(x) = -1\).
+</p>
+<p>
+    Ahora veamos que si  \( 0 \leq x < 2\), entonces \(f(x) = 0\). 
+    Tenemos que si \( 0 \leq x < 2\) implica que \( 0 \leq x/2 < 1\) y por 
+    lo tanto \( f(x) = \lfloor x/2 \rfloor  = 0\), es decir \(f(x) = 0\).
+</p>
+
+<p>
+    Por último, tenemos que si \( 2 \leq x < 3\), entonces 
+    \( 1 \leq x/2 < 3/2 < 2 \), es decir \( 1 \leq x/2 < 2\) y 
+    esto implica que \(f(x) = 1\).
+</p>
+
+
+<p>
+    Por lo tanto la partición  que buscamos es 
+    \(\textbf{P} = \lbrace -2 < 0 < 2 < 3 \rbrace\), 
+    es decir es aquella que demuestra que $f$ es una función escalonada. 
+    Por lo tanto ya podemos calcular la integral \(\int_{-2}^3\lfloor x/2 \rfloor dx\) 
+    la cual es, 
+    \begin{equation*}
+    \begin{split}
+    \int_{-2}^3\lfloor x/2 \rfloor dx & =  -1(0-(-2)) + 0(2 -0) +1(3-2) \\
+     & = -2 + 0 + 1 \\
+     & = -1 
+     \end{split}  
+    \end{equation*}
+      
+</p>
+
+<p>
+    Por lo tanto \(\int_{-2}^3\lfloor x/2 \rfloor dx = -1\).
+</p>
+</div>
+</div> 
+
+
+
+<button class="respButton hvr-grow "> Solución inciso 5  </button>
+<div class="resp-box flexbox">
+<div class="flexbox">
+
+<p>
+    Afirmamos que \(\lfloor \sqrt{t} \rfloor\) es una función escalonada en \([0,9]\). 
+    Entonces consideremos la siguiente partición 
+    \(\textbf{P} = \lbrace 0 < 1 < 4 < 9 \rbrace \). 
+    Si demostarmos que  \(\lfloor \sqrt{t} \rfloor\) 
+    es  una función constante en los sub-intervalos abiertos generados por 
+    \(\textbf{P}\), entonces tendriamos que \(\lfloor \sqrt{t} \rfloor\) es una función escalonada. 
+</p>
+<p>
+    Si \(t \in (0, 1)\), es decir \(0 < t < 1\), 
+    esto implica que \(0 < \sqrt{t} < 1\) y por lo tanto 
+    \(\lfloor \sqrt{t} \rfloor = 0\). Lo cual implica que 
+    \(\lfloor \sqrt{t} \rfloor \) es constante en el intervalo \((0, 1)\).
+</p>
+
+<p>
+    Si \(t \in (1, 4)\), es decir \(1 < t < 4\), 
+    esto implica que \(1 < \sqrt{t} < 2\) y por lo tanto 
+    \(\lfloor \sqrt{t} \rfloor = 1\). Lo cual implica que \(\lfloor \sqrt{t} \rfloor \) 
+    es constante en el intervalo \((1, 4)\).
+</p>
+<p>
+    Si \(t \in (4, 9)\), es decir \(4 < t < 9\), esto implica que \(2 < \sqrt{t} < 3\) y por lo tanto 
+    \(\lfloor \sqrt{t} \rfloor = 2\). Lo cual implica que \(\lfloor \sqrt{t} \rfloor \) 
+    es constante en el intervalo \((4, 9)\).
+</p>
+<p>
+    Por lo tanto \(\lfloor \sqrt{t} \rfloor \) es una función escalonada en 
+    \([0,9]\). Por lo tanto, a partir de \(\textbf{P}\) ya podemos calcular 
+    la integral \(\int_{0}^9\lfloor \sqrt{t} \rfloor dt\)  la cual es, 
+    \begin{equation*}
+    \begin{split}
+    \int_{0}^9\lfloor \sqrt{t} \rfloor dt & =  0(1-0) + 1(4 -1) + 2(9-4) \\
+     & = 0 + 3 + 10 \\
+     & = 13
+     \end{split}
+    \end{equation*}
+    Por lo tanto \(\int_{0}^9\lfloor \sqrt{t} \rfloor dt = 13\).
+</p>
+</div>
+</div>
+
+
+
+</div>
+
+<div class="ejercicio-box"> 
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Demuestra que, para todo $n$ natural:
+
+        $$\int_0^{n^2} \lfloor \sqrt{t} \rfloor dt=n(n-1)(4n+1)/6.$$
+    </p>
+    <button class="respButton hvr-grow "> Demostración  </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">
+        <a href="https://youtu.be/QNGlSYgcSBU" target="_blank" > Video </a>
+      </div>
+    </div> 
+</div>
+
+<div class="ejercicio-box"> 
+    <h2 class="number-title" id="Ejer:LemaAditividadIntervalosEscalonadas"> Ejercicio</h2> 
+    <p>
+        Sea $s:[a,b] \to \mathbb{R}$ una función escalonada y $c\in (a,b)$. Demuestra:
+        $$
+        \int_a^c s dx + \int_c^b s dx= \int_a^b s dx
+        $$
+    </p>
+
+    <button class="respButton hvr-grow "> Solución  </button>
+    <div class="resp-box flexbox">
+      <div >
+        <p>
+            Sea \(P=\{a=x_0< x_1 < \cdots < x_n =b \}\) la partición 
+            asociada a \(s\) y supongamos que \(s\) toma el valor de 
+            \(d_i\) en \((x_{i-1},x_i)\), \(i=1,\dots, n\).
+        </p>
+        <p>
+            Notamos que podemos escribir el intervalo \((a,b])\) como 
+            \[
+            (a,b]=\sum_{i=1}^{n}(x_{i-1},x_i]
+            \]
+            donde los intervalos \((x_{i-1},x_i]\) son ajenos dos 
+            a dos. Por lo tanto exsite un único \(i_0\) tal  que 
+            \(c \in (x_{i_0-1},x_{i_0}]\).
+        </p>
+        <p>
+            Por la <a href="#Def:IntegralEscalonadas"> Definición 2.2</a>
+            aplicada en los intervalos \([a,c]\) y \([c,d]\) tenemos 
+            \begin{equation}\label{Eqn:Aux1LinealidadIntervaloes}
+                \int_a^c s(x)dx= d_1(x_1-x_0)+\cdots+ d_{i_0-1}(c- x_{i_0-1})
+            \end{equation}
+            y
+            \begin{equation}\label{Eqn:Aux2LinealidadIntervaloes}
+                \int_c^b s(x)dx= d_{i_0-1}(x_{i_0}-c)+\cdots+ d_n(x_{n}-x_{n-1})
+            \end{equation}
+        </p>
+        <p>
+            Notamos que, si sumamos el último término de \eqref{Eqn:Aux1LinealidadIntervaloes} 
+            y primer término de \eqref{Eqn:Aux2LinealidadIntervaloes} tenemos 
+            \begin{eqnarray*}
+            d_{i_0-1}(c- x_{i_0-1})+ d_{i_0-1}(x_{i_0}-c) = d_{i_0-1}(x_{i_0}-x_{i_0-1})
+            \end{eqnarray*}
+        </p>
+        <p>
+            Por lo tanto, sumando \eqref{Eqn:Aux1LinealidadIntervaloes} 
+            y \eqref{Eqn:Aux2LinealidadIntervaloes} concluimos:
+            \begin{eqnarray*}
+            \int_a^c s(x)dx+\int_c^b s(x)dx&=&d_1(x_1-x_0)+\cdots+ d_{i_0-1}(x_{i_0}- x_{i_0-1}) 
+            + \cdots+ d_n(x_{n}-x_{n-1}) \\
+            &=& \int_a^b s(x)dx
+            \end{eqnarray*}
+        </p>
+    </div>
+    </div>
+    
+</div>
+
+<div class="ejercicio-box"> 
+    <h2 class="number-title" > Ejercicio</h2> 
+    <p>
+        Digamos que $s, \tilde{s}:[a,b] \to \mathbb{R}$ son funciones escalonadas 
+        y $s=\tilde{s}$, excepto en un número finito de puntos. 
+        Demostrar que  $\int_a^bs=\int_a^b\tilde{s}$.
+    </p>
+    <p>
+        Sugerencia: usar el  <a href="#Ejer:LemaAditividadIntervalosEscalonadas">Ejercicio 2.7</a> 
+        e inducción sobre el número de puntos donde son distintos.
+    </p>
+    <button class="respButton hvr-grow "> Demostración  </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">
+        <a href="https://youtu.be/zhBTqGOFvWI" target="_blank" > Video </a>
+      </div>
+    </div>
+</div>
+
+<div class="ejercicio-box"> 
+    <h2 class="number-title" id="Ejer:LinealidadMultiplesIntervalos"> Ejercicio</h2>
+    <p>
+        Sea $s:[a,b]\to \mathbb{R}$ una función escalonada. 
+        Si $Q=\{y_j \}_{j=0}^m$ es una partición arbitraria de $[a,b]$, 
+        demuestra:
+        $$
+        \int_a^b s(x)dx =\sum_{j=1}^m \int_{y_{j-1}}^{y_j}s(x)dx.
+        $$
+    </p>
+     <p>
+        Sugerencia: usa inducción sobre la longitud de la partición 
+        y el ejercicio  <a href="#Ejer:LemaAditividadIntervalosEscalonadas">Ejercicio 2.7.</a>
+     </p>
+
+    <button class="respButton hvr-grow "> Demostración  </button>
+    <div class="resp-box flexbox">
+      <div >
+     <p>
+        La demostración se hara por inducción sobre los elementos de \(Q\). 
+     </p>
+     
+     <p>
+        <h4>Base de Inducción.</h4> Para el caso \(m=2\), tenemos que la única partición 
+        con dos elementos en \([a, b]\) es \(Q = \lbrace a < b \rbrace\) y es claro que se 
+        cumple la igualdad.
+     </p>
+     
+     <p>
+        Para el caso \(m=3\), consideremos una partición arbitraria con tres elementos 
+        \(Q = \lbrace a < y_1 < b \rbrace\), entonces por el  Ejercicio 2.7 tenemos  
+        \[ \int_a^bs(x) dx = \int_a^{y_1}s(x) dx + \int_{y_1}^bs(x) dx . \]
+     </p>
+     
+     <p>
+        <h4>Hipótesis de inducción.</h4> Supongamos que para cualquier partición 
+        \(Q\) con  \(m\) elementos (\(m \geq 2\) ) se cumple que si 
+        \( Q = \lbrace y_j \rbrace_{j=0}^{m-1} \) entonces 
+        \[\int_a^bs(x) dx = \sum_{j=1}^{m-1}\int_{y_{j-1}}^{y_j}s(x) dx \]
+     </p>
+     
+     <p>
+        <h4>Paso inductivo.</h4>  Por demostrar que se cumple para \(m +1\), 
+        es decir, se tiene que demostrar que si \( Q = \lbrace y_j \rbrace_{j=0}^m \)  
+        es una partición con \(m+1\) elementos, entonces se tiene que 
+        \[\int_a^bs(x) dx = \sum_{j=1}^m\int_{y_{j-1}}^{y_j}s(x) dx \]
+     
+        Sea \( Q = \lbrace y_j \rbrace_{j=0}^m \) una partición de \([a, b]\) con 
+        \(m+1\) elementos, entonces  consideremos la partición \(Q^*\) que se obtiene  
+        al quitarle un elemento \(y_{i_0}\) de \(Q\) tal que 
+        \(y_{i_0} \notin \lbrace a, b\rbrace\), tenemos que \(Q^*\) es una partición 
+        con \(m\), es decir tenemos que 
+        \[ Q^* = \lbrace y_0=a  < y_1  < \cdot \cdot \cdot y_{i_0-1} 
+        < y_{i_0+1} < \cdot \cdot \cdot < y_m= b \rbrace \]
+     
+        Entonces por hipótesis de inducción tenemos que  
+        \begin{equation}
+        \int_a^bs(x) dx = \sum_{j=1}^{i_0-1}\int_{y_{j-1}}^{y_j}s(x) dx 
+        + \int_{y_{i_0-1}}^{y_{i_0+1}} s(x) dx + \sum_{j=i_0+2}^m\int_{y_{j-1}}^{y_j}s(x) dx .
+        \end{equation} 
+     
+        Como \(s\) es una función escalonada en \([a, b]\) y \([y_{i_0-1}, y_{i_0+1}] 
+        \subseteq [a, b], \) entonces \(s\) es una función escalonada en  
+        \([y_{i_0-1}, y_{i_0+1}]\) y como \(y_{i_0}\in (y_{i_0-1}, y_{i_0+1}) \) 
+        entonces por el Ejercicio 2.7 tenemos que 
+        \begin{equation}
+        \int_{y_{i_0-1}}^{y_{i_0+1}} s(x) dx = \int_{y_{i_0-1}}^{y_{i_0}} s(x) dx 
+        + \int_{y_{i_0}}^{y_{i_0+1}} s(x) dx 
+        \end{equation}
+     
+        Entonces por (1) y (2) tenemos que 
+        \[\int_a^bs(x) dx = \sum_{j=1}^m\int_{y_{j-1}}^{y_j}s(x) dx \]
+     
+        Con esto se concluye la demostración por Inducción. Por lo tanto, para cualquier 
+        partición arbitraria \( Q = \lbrace y_j \rbrace_{j=0}^m \) de \([a, b]\) se 
+        tiene que \[\int_a^bs(x) dx = \sum_{j=1}^m\int_{y_{j-1}}^{y_j}s(x) dx \]
+     </p>
+    </div>
+</div>
+
+</div>
+
+<div class="ejercicio-box"> 
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Dibuja la gráfica de la  función 
+        $f(x)=\lfloor 2x  \rfloor + \lfloor 3x \rfloor$, $0\leq x \leq 2$ 
+        y escribe a $f$ de la forma
+        $$
+        f(x)=\sum_{i=1}^n \alpha_i \chi_{[x_{i-1}, x_i)}
+        $$
+        donde $\{x_i\}_{i=0}^n$ es una partición de $[0,2]$.
+    </p>
+</div>
+
+<div class="info-box">
+    <h2> Video </h2>
+    <button class="respButton hvr-grow "> Click me </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">
+        <a href="https://youtu.be/5C14oDUT994" target="_blank" > Video </a>
+      </div>
+    </div>
+</div>
+
+
+<div class="definicion-box">
+    <h2 class="number-title"> Definición </h2>
+    <p>
+        Sea $P$ una partición de $[a,b]$. Decimos que $Q$, 
+        una partición de $[a,b]$, refina a $P$ si $P \subseteq Q$, es decir, 
+        $Q$ tiene más puntos que $P$.
+    </p>
+    <p>
+        Dadas $P$ y $Q$, dos particiones del intervalo $[a,b]$, 
+        por $P\vee Q$ denotamos la partición que se obtiene de unir los puntos de $P$ 
+        y los de $Q$. Tal partición se llama la conjunta de $P$ y $Q$. 
+        Note que $P\vee Q$ es una partición que refina tanto a $P$ como a $Q$.
+    </p>
+</div>
+
+
+<div class="ejercicio-box"> 
+    <h2 class="number-title" id="Ejer:LemaUnionParticionesEscalonadas"> Ejercicio</h2> 
+    <p>
+        Sean $s,t:[a,b]\to \mathbb{R}$ dos funciones escalonadas. Por $P_s$ y $P_t$ denotamos 
+        las particiones asociadas a  $s$ y $t$, respectivamente. 
+        Denota $Q=P_t\vee P_s=\{ z_k\}_{k=0}^p$. Demuestra que, para todo $k=1,\dots, p$, 
+        $s$ es constante en $(z_{k-1}, z_k)$ y t es constante en $(z_{k-1}, z_k)$.
+    </p>
+    <button class="respButton hvr-grow "> Demostración  </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">
+        <a href="https://youtu.be/fjhj_WxcVg8" target="_blank" > Video </a>
+      </div>
+    </div>
+</div>
+
+
+<div class="ejercicio-box">
+    <h2 class="number-title" id="Ejer:MonotoniaIntegralEscalonadas"> Ejercicio</h2>   
+   <p>
+       Sean $s,t : [a,b]\to \mathbb{R}$ dos funciones escalondas con $s(x)\leq t(x)$
+       para todo \(x\in [a,b]\), excepto una cantidad finita de puntos. Demuestra que 
+       $$\int_a^b s(x)dx\leq \int_a^b t(x)dx.$$
+   </p> 
+
+   <button class="respButton hvr-grow "> Solución  </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">
+        <p>
+            Sean \(P_s\) y \(P_t\)las particiones asociadas a \(s\) y \(t\) respectivamente.
+            Además sean \(\{z_0< \cdots < z_k\}\) los puntos de \([a,b]\) donde falla 
+            la desigualdad \(s(x) \leq t(x)\). Agregando los puntos \(a\) y \(b\)
+            a \(\{z_0< \cdots < z_k\}\) podemos suponer que 
+            \(P=\{z_0< \cdots < z_k\}\) es una partición de \([a,b]\).
+        </p>
+        <p>
+            Tomemos \(Q=P_s\vee P_t \vee P=\{y_0< \cdots < y_m\}\). 
+            Por el <a>Ejercicio 2.12</a> \(s\) es constante cuando se restringe 
+            a los intervalos \((y_{j-1}, y_j)\), \(j=1,\dots, m\) e igualmente \(t\). 
+            Denotemos por   \(s_j\) el valor que toma \(s\) en \((y_{j-1},y_j)\) y 
+            \(t_j\) el valor de \(t\) en \((y_{j-i},y_j)\). Por el 
+            <a href="#Ejer:LinealidadMultiplesIntervalos"> Ejercicio 2.9</a> tenemos que 
+            \begin{eqnarray*}
+             \int_a^b s(x)dx&=&\sum_{j=1}^m s_j(y_j-y_{j-i})\\
+             \int_a^b t(x)dx&=&\sum_{j=1}^m t_j(y_j-y_{j-i})
+            \end{eqnarray*}
+        </p>
+        <p>
+            Ahora, ya que \(s(x) \leq t(x)\) para \(x\ne z_i\), \(i=0,\dots, k\), 
+            tenemos que \(s_j \leq t_j\), para todo \(j=1,\dots, n\). Multiplicando 
+            por \((y_j-y_{j-i})\) tenemos \(s_j(y_j-y_{j-1}) \leq t_jy(y_j-y_{j-1})\)
+            y sumando desde \(j=1\) a \(j=n\) concluimos
+            \[
+             \sum_{j=1}^n s_j(y_j-y_{j-1}) \leq \sum_{j=1}^m s_j(y_j-y_{j-1}).
+            \]
+            Por lo tanto 
+            \[
+             \int_a^b s(x)dx \leq \int_a^b t(x)dx.
+            \]
+        </p>
+      </div>
+    </div>
+   
+</div>
+
+<div class="ejercicio-box"> 
+    <h2 class="number-title" id="Ejer:EscalonadasEspacioVectorial"> Ejercicio</h2> 
+        <p>
+            Sean $s,t:[a,b]\to \mathbb{R}$ dos funciones escalonadas. Desmuestra:
+        </p>
+
+    <ol>
+        <li>La función suma, $s+t$, es otra vez una función escalonada.</li> 
+        <li>Si $\alpha$ es una constante, la función $\alpha s$, es otra vez  
+            una función escalonada.</li> 
+    </ol>
+    <p>
+        Sugerencia: usa el <a href="#Ejer:LemaUnionParticionesEscalonadas">Ejercicio 2.12.</a> 
+    </p>
+
+</div>
+
+
+<div class="ejercicio-box"> 
+    <h2 class="number-title" id="Ejer:LinealidadEscalonadas"> Ejercicio</h2> 
+    <p>
+        Sean $s,t:[a,b] \to \mathbb{R}$ dos funciones 
+        escalonadas y $\alpha \in \mathbb{R}$  una constante. Prueba:
+        $$
+        \int_a^b  (s+\alpha t )dx =  \int_a^b sdx+ \alpha \int_a^b t dx
+        $$
+    </p>
+    <p>
+        Dicha propiedad se conoce como la linealidad de la integral.
+    </p>
+
+    <button class="respButton hvr-grow "> Solución  </button>
+    <div class="resp-box flexbox">
+      <div >
+        <p>
+            Antes que nada por el <a>Ejercicio 2.14</p> \(s+\alpha t\) es una función 
+             escalonada por lo que podemos tomar su integral.   
+        </p>
+        <p>
+            Sean \(P_s\) y \(P_t\) las particiones asociadas a \(s\) y \(t\) respectivamente.
+            Tomemos \(Q=P_s\vee P_t=\{y_0<\cdots < y_m\}\). 
+        </p>
+        <p>
+            Por el <a href="#Ejer:LinealidadMultiplesIntervalos">Ejercicio 2.9</a> tenemos 
+            \[
+                \int_a^b (s+\alpha t)dx=\sum_{j=1}^m \int_{y_{j-1}}^{y_j} (s+\alpha t)dx 
+            \]
+        </p>
+        <p>
+            Por el <a>Ejercicio 2.12</a> tanto \(s\) como \(t\) son constantes en 
+            \((y_{j-1},y_j)\), \(j=1,\dots, m\). Sean \(s_j\) y \(t_j\) el valor de 
+            \(s\) y \(t\) en \((y_{j-1},y_j)\) respectivamente. Por lo tanto 
+            \begin{equation}\label{Eqn:AuxLinealidad}
+            \int_{y_{j-1}}^{y_j} (s+\alpha t)dx=(s_j+\alpha t_j)(y_j-y_{j-1})=
+            s_j(y_j-y_{j-1})+ \alpha( t_j(y_j-y_{j-1}))
+            \end{equation}
+         </p>
+         <p>
+             Por otro lado, 
+             \begin{eqnarray*}
+                \int_{y_{j-1}}^{y_j}sdx=s_j(y_j-y_{j-1}) \\
+                \int_{y_{j-1}}^{y_j} tdx = t_j (y_j-y_{j-1})
+             \end{eqnarray*}
+         </p>
+         <p>
+             Substituyendo las ecuaciones anteriores en \eqref{Eqn:AuxLinealidad} obtenemos 
+             \[
+             \int_{y_{j-1}}^{y_j} (s+\alpha t)dx=\int_{y_{j-1}}^{y_j}sdx+\alpha \int_{y_{j-1}}^{y_j}tdx
+             \]
+             de dónde se sigue que 
+             \begin{eqnarray*} 
+            \int_{a}^b (s+\alpha t)dx &=&\sum_{j=1}^m \int_{y_{j-1}}^{y_j}(s+\alpha t)dx  \\
+            &=& \sum_{j=1}^m \left( \int_{y_{j-1}}^{y_j} sdx + \alpha \int_{y_{j-1}}^{y_j}tdx  \right) \\
+            &=& \sum_{j=1}^m \int_{y_{j-1}}^{y_j} sdx+ \sum_{j=1}^m \alpha \int_{y_{j-1}}^{y_j}tdx\\
+            &=& \int_a^b sdx+ \alpha \int_a^b tdx 
+             \end{eqnarray*}
+             donde en la última igualdad usamos el <a href="#Ejer:LinealidadMultiplesIntervalos">Ejercicio 2.9</a>.
+         </p>
+      </div>
+    </div>
+
+
+</div>
+
+<div class="ejercicio-box"> 
+    <h2 class="number-title"> Ejercicio</h2>  
+    <p>
+        Calcula $\int_{-1}^3 \lfloor x \rfloor +  \lfloor x+\frac{1}{2} \rfloor  dx$.
+    </p>
+</div>
+
+<div class="ejercicio-box"> 
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Sean $s_1,\cdots, s_m:[a,b]\to \mathbb{R}$ funciones escalonadas. Demuestra
+        $$
+        \int_a^b \sum_{k=1}^m s_k(x)dx=\sum_{k=1}^m \int_a^b s_k(x)dx.
+        $$
+    </p>
+    <p>
+        Sugerencia: usa la linealidad e inducción sobre el número de sumandos.
+    </p>
+
+</div>
+
+<div class="ejercicio-box"> 
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Fija $k\in \mathbb{N}$ y 
+        considera la función $s_k:[0,1] \to \mathbb{R}$ dada por $s_k(x)=\lfloor kx\rfloor$.
+    </p>
+<ol>
+    <li>Demuestra que $s_k(x)=\sum_{j=1}^k (j-1)\chi_{[(j-1)/k, j/k)}$, para \(x\in [0,1)\).</li> 
+    <li>Demuestra $\int_0^1 s_k(x)dx=\frac{k-1}{2}$.</li> 
+
+    <li>Demuestra
+        $$
+        \int_0^1 \sum_{k=1}^n \lfloor kx \rfloor dx=\frac{(n-1)n}{4}.
+        $$
+    </li> 
+</ol>
+<button class="respButton hvr-grow "> Demostración </button>
+<div class="resp-box flexbox" >
+<div>
+
+<h4>Inciso 1.</h4>
+
+<p>
+    Tenemos que la colección de intervalos \(\lbrace [(j-1)/k, j/k) : j = 1, . . . , k \rbrace\) 
+    son ajenos por pares, es decir, si \(i, j \in \lbrace 1, . . ., k\rbrace\) con \(i \neq j\)  
+    entonces \( [(j-1)/k, j/k) \cap [(i-1)/k, i/k) = \emptyset\). 
+    Además \([0, 1) = \cup_{j=1}^k[(j-1)/k, j/k)\). Sea \( x\in [0, 1) \) 
+    arbitrario, entonces existe un \emph{único} 
+    \(i_0 \in \lbrace 1, . . . , k \rbrace \) tal que 
+    \( x \in [(i_0-1)/k, i_0/k) \), y esto implica 
+    \(\chi_{[(j-1)/k, j/k)}(x) = 0 \) si \( j \neq i_0 \) y 
+    \( \chi_{[(i_0-1)/k, i_0/k)}(x) = 1\). Por lo tanto 
+    \[ \sum_{j=1}^k(j-1)\chi_{[(j-1)/k, j/k)}(x) = 
+    (i_0 -1)\chi_{[(i_0-1)/k, i_0/k)}(x) = i_0 -1 \]
+</p>
+
+<p>
+    Por otro lado, como \( x \in [(i_0-1)/k, i_0/k), \) es decir \( (i_0-1)/k \leq x < i_0/k \) 
+    y esto implica que \( i_0 - 1 \leq kx < i_0 \) y como \(i_0 -1\) es el único entero que 
+    satisface \( i_0 - 1 \leq kx < i_0 \) entonces \(\lfloor kx \rfloor = i_0 - 1\), es decir 
+    \(s_k(x) = i_0 - 1\). Por lo tanto \[ s_k(x) = \sum_{j=1}^k(j-1)\chi_{[(j-1)/k, j/k)}(x) \]
+
+    Y como \( x \in [0, 1) \) fue arbitrario, se sigue que \(s_k(x) = 
+    \sum_{j=1}^k(j-1)\chi_{[(j-1)/k, j/k)} \) para toda \( x \in [0, 1). \) 
+
+</p>
+<p>
+    <h4>Inciso 2.</h4>
+    Sean \( r_j : [0, 1] \rightarrow \mathbb{R} \) dadas por 
+    \( r_j(x) = (j-1)\chi_{[(j-1)/k, j/k)} \) con \( j = 1, . . . , k\), las 
+    cuales son  funciones escalonadas y tenemos por el ejercicio anterior que 
+    \( s_k(x) = \sum_{j=1}^kr_j(x). \) Y por el Ejercicio 2.17 
+    tenemos que \[ \int_0^1s_k(x) dx =  \int_0^1\sum_{j=1}^kr_j(x) dx 
+    = \sum_{j=1}^k\int_0^1 r_j(x) dx   \]
+    Como 
+    \begin{equation*}
+    \begin{split}
+    \int_0^1 r_j(x) dx & = \int_0^1  (j-1)\chi_{[(j-1)/k, j/k)}(x) dx 
+    = (j-1) \int_0^1 \chi_{[(j-1)/k, j/k)}(x) dx \\
+    & = (j-1)\left(\frac{j}{k} - \frac{j-1}{k}\right) = \frac{ j-1}{k} 
+    \end{split}
+    \end{equation*}
+</p>
+<p>
+    Es decir \( \int_0^1 r_j(x) dx = \frac{j-1}{k}.\)  
+    Por lo tanto \[ \int_0^1s_k(x) dx =  \sum_{j=1}^k \frac{j-1}{k} 
+    = \frac{1}{k}\sum_{j=1}^k (j-1) = \frac{1}{k}\frac{(k-1)k}{2}= \frac{k-1}{2}\]
+    Por lo tanto \(\int_0^1s_k(x) dx =\frac{k-1}{2}\).
+</p>
+
+<p>
+    <h4>Inciso 3.</h4>
+    Tenemos que  \( s_k(x) = \lfloor kx \rfloor\) es función escalonada para toda 
+    \( k = 1, . . ., n\), ya que es una función constante en los sub-intervalos abiertos 
+    generados por la partición \(\textbf{P}_k = \lbrace j/k \rbrace_{j=0}^k \). Entonces 
+    por el Ejercicio 2.17 y por el inciso 2 tenemos 
+    \[ \int_0^1\sum_{k=1}^n\lfloor kx \rfloor dx = \sum_{k=1}^n\int_0^1\lfloor kx \rfloor dx 
+    = \sum_{k=1}^n\frac{k-1}{2}= \frac{1}{2}\sum_{k=1}^n(k-1) = \frac{1}{2}\frac{(n-1)n}{2} 
+    = \frac{(n-1)n}{4} \]
+
+    Por lo tanto, \[\int_0^1\sum_{k=1}^n\lfloor kx \rfloor dx = \frac{(n-1)n}{4} .\]
+
+</p>
+</div>
+</div>
+</div>
+
+<div class="ejercicio-box"> 
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Fija $n\in \mathbb{N}$  y considera la 
+        función $s(x)=\lfloor 2x \rfloor$, $0 \leq x \leq n$.
+    </p>
+<ol>
+<li>Prueba que $s(x)=\sum_{j=1}^{2n} (j-1)\chi_{[(j-1)/2, j/2)}(x)$, $0\leq x \leq n$.</li> 
+<li>Demuestra
+    $$
+    \int_0^n \lfloor 2x \rfloor dx =\frac{n(2n-1)}{2}.
+    $$</li> 
+</ol>
+</div>
+
+<div class="ejercicio-box"> 
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Sean $s,t:[a,b]\to \mathbb{R}$ dos funciones escalonadas.
+        <ol>
+            <li>
+                Prueba que  la función multiplicación, $st$, es escalonada. 
+            </li>
+            <li>
+                Si $s(x)\not=0$, para toda $x$, demuestra 
+                que $\frac{1}{s}$ es una función escalonada. 
+            </li>
+        </ol>
+     
+    </p>
+    <button class="respButton hvr-grow "> Demostración  </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">
+        <a href="https://youtu.be/meq6Mp0bttM" target="_blank" > Video </a>
+      </div>
+    </div>
+</div>
+
+<div class="ejercicio-box"> 
+    <h2 class="number-title"> Ejercicio</h2> 
+    <ol>
+        <li>    
+            Da un ejemplo de funciones escalonadas, \(s,t:[a,b]\to \mathbb{R}\), que muestre
+            $$
+            \int_a^b s(x)t(x) dx\not= \int_a^b s(x)dx \int_a^b t(x)dx
+            $$
+        </li>
+        <li>
+            Da un ejemplo de una función escalonada,
+            \(s:[a,b]\to \mathbb{R}\), tal que  \(s(x)\ne 0\) para toda 
+            \(x \in [a,b]\) y tal que 
+            \[
+                \int_a^b \frac{1}{s(x)}dx  \ne \frac{1}{\int_a^b s(x)dx}
+            \]
+        </li>
+    </ol>
+
+</div>
+
+
+
+<div class="ejercicio-box"> 
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Sean $s,t:[a,b]\to \mathbb{R}$ dos funciones escalonadas. Demuestra:
+    </p>
+<ol>
+<li>La fución $\max\{s,t\}$ es una función escalonada.</li> 
+<li>La función $\min\{s,t\}$ es una función escalonada.</li> 
+</ol>
+
+<button class="respButton hvr-grow "> Demostración  </button>
+     <div class="resp-box flexbox">
+<p>
+    Sean \(P\) y \(Q\) las  particiones asociadas a \(s \) y \( t\) respectivamente. 
+    Y consideremos \( P \vee Q = \lbrace z_k \rbrace_{k=0}^{n}\), 
+    entonces por el <a href="#Ejer:LemaUnionParticionesEscalonadas">Ejercicio 2.12</a> tenemos que   \(s \) y \(t\) son 
+    constantes en \((z_{k-1}, z_k)\)  para todo \(k =1, . . ., n\). 
+    Veamos que en efecto \(\max\lbrace s, t\rbrace\) y \(\min\lbrace s, t\rbrace\)  
+    son constantes en  \((z_{k-1}, z_k)\)  para todo \(k =1, . . ., n\). 
+</p>
+<p>
+    Sea \(k \in \lbrace1, . . ., n \rbrace\) arbitrario, y sean \(x, y \in (z_{k-1}, z_k)\), 
+    entonces tenemos que \(s(x) = s(y)\) y \(t(x) = t(y)\) (ya que  \(s \) y \(t\) son constantes 
+    en \((z_{k-1}, z_k)\)), podemos suponer sin perdida de generalidad que \(s(x) \leq t(x)\) por lo 
+    tanto \(\max\lbrace s, t\rbrace (x) = \max\lbrace s(x), t(x)\rbrace = t(x)\) y por otro lado  
+    \(\max\lbrace s, t\rbrace (y) = \max\lbrace s(y), t(y)\rbrace = \max\lbrace s(x), t(x)\rbrace =  t(x)\). 
+    Por lo tanto \(\max\lbrace s, t\rbrace (x) = \max\lbrace s, t\rbrace (y)\), es decir la función 
+     \(\max\lbrace s, t\rbrace\)  es constante en \((z_{k-1}, z_k)\). Como \(k\) fue arbitrarío se sigue 
+     que la función \(\max\lbrace s, t\rbrace\)  es constante en  \((z_{k-1}, z_k)\)  para 
+     todo \(k =1, . . ., n\). De manera análoga se tiene que la función \(\min\lbrace s, t\rbrace\)  
+     es constante en  \((z_{k-1}, z_k)\)  para todo \(k =1, . . ., n\). 
+</p>
+<p>
+    Esto demuestra que \(\max\lbrace s, t\rbrace\) y \(\min\lbrace s, t\rbrace\)  son funciones
+     escalonadas ya que exhibimos una partición en donde esta es constante en los intervalos que genera.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="ejercicio-box"> 
+    <h2 class="number-title"> Ejercicio</h2>  
+    <p>
+        Sea $s:[a,b]\to \mathbb{R}$ una función escalonada. 
+        Sea $f:[c,d] \to \mathbb{R}$ una función fija y arbitraria.
+    </p>
+<ol>
+ 
+ <li> Supón que \(s(x)\in [c,d]\), para todo \(x\in [a,b]\). Prueba que 
+     la composición $f\circ s$, es una función escalonada.</li> 
+ <li> Da un ejemplo que muestre que no siempre 
+        la composición $s\circ f$ es una función escalonada.</li> 
+</ol>
+
+<button class="respButton hvr-grow "> Solución inciso 1  </button>
+    <div class="resp-box flexbox">
+      <div >
+        
+<p>
+    Como \(s\) es una función escalonada, sea 
+    \(\textbf{P} = \lbrace y_j \rbrace_{j=0}^m\) la partición asociada a \(s\). 
+    Veamos que en efecto \(\textbf{P}\) nos demuestra que 
+    \(f \circ s\), es una función escalonada. Basta ver que \(f \circ s\) es 
+    constante en los intervalos \( (y_{j-i}, y_j)\) con \(j =1,. . . ,m\). Sea 
+    \(j \in \lbrace 1, . . ., m\rbrace\) arbitrario, tenemos que si 
+    \( x, y \in (y_{j-i}, y_j)\) basta demostrar que \((f \circ s)(x) =(f \circ s)(y). \) 
+    Como  \(s\) es una función escalonada y \(\textbf{P}\) es la partición asociada a 
+    \(s\), tenemos que \(s\) es constante en \( (y_{j-i}, y_j)\), es decir 
+    \(s(x) = s(y)\).  Por lo tanto   \[(f \circ s)(x) = f(s(x))= f(s(y)) = (f \circ s)(y) \]
+</p>
+<p>
+    Es decir  \((f \circ s)(x) =(f \circ s)(y), \) y esto es válido para 
+    toda \( x, y \in (y_{j-i}, y_j)\) esto implica que \(f \circ s\) es 
+    constante en \( (y_{j-i}, y_j)\) y como \(j\) fue arbitrario, entonces 
+    \(f \circ s\) es constante en los intervalos generados por la parición 
+    \(\textbf{P}\). Por lo tanto \(f \circ s\) es  una función escalonada.
+</p>
+</div>
+</div>
+
+<button class="respButton hvr-grow "> Solución inciso 2  </button>
+<div class="resp-box flexbox">
+<div >
+<p>
+    Para cualquier función \(f \) no necesariamente se tiene que  
+    \(s \circ f\), es una función escalonada. 
+    Consideremos las funciones \(s := \chi_{[1/2, 1]} :[0,1] \rightarrow \mathbb{R}\) 
+    y \(f : [0,1] \rightarrow \mathbb{R}\) dada por; 
+    \begin{equation*}
+    f(x)  = \left\{
+    \begin{array}{cccc}
+    \frac{1}{2}  & \text{ si } x\in \mathbb{Q}\cap [0,1]   \\
+    
+    0  & \text{ en otro caso } 
+    \end{array} \right.
+    \end{equation*}
+    
+    Tenemos la imagen de \(f\) se queda contenido en el dominio de \(s\). Más aún,
+    \begin{equation*}
+    (s\circ f)(x)  = \left\{
+    \begin{array}{cccc}
+    1  & \text{ si } x\in \mathbb{Q}\cap [0,1]   \\
+    
+    0  & \text{ en otro caso } 
+    \end{array} \right.
+    \end{equation*}
+    
+    Y es claro que \((s\circ f)\) no es una función escalonada, 
+    ya que para cualquier partición \(\textbf{P}= \lbrace y_j \rbrace_{j=0}^m \) 
+    se tiene que \((s\circ f)\) no es constante en el intevalo \((y_0,y_1)\)
+     generado por \(\textbf{P}\) y esto es consecuencia de la densidad de los 
+     racionales e irracionales.
+</p>
+</div>
+</div>
+</div>
+
+
+
+<div class="info-box">
+    <h2> Video </h2>
+    <button class="respButton hvr-grow "> Click me </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">
+        <a href="https://youtu.be/VsuHZe6dhIQ" target="_blank" > Video </a>
+      </div>
+    </div>
+</div>
+-->
+</body>

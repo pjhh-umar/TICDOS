@@ -1,0 +1,673 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+    
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+    <!-- This part is for using single $ for latex input, instead of \(\) -->
+    <script>
+        MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+        svg: {
+            fontCache: 'global'
+        }
+    };
+    </script>
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+    .lista
+        {
+            counter-reset: listaCounter 0 sublistaCounter 1 subsublistaCounter 1 subsubsublistaCounter 1;
+        }
+        /* .sublista{
+            counter-reset: sublistaCounter 1  SubsublistaCounter;
+        } */
+        </style>
+
+    <style>
+            /* body.number-title
+            {
+            counter-reset: temaCounter 1 subsectioncounter ;
+            } */
+            body.fondo-body{
+              counter-reset: temaCounter 0 sectionCounter;
+            }
+
+            /* h1.page-number-title
+            {
+            counter-reset: sectionCounter 0;
+            }  */
+
+            h1.tema-number-title
+                {
+                counter-reset: sectionCounter 0;
+                } 
+
+            h1.number-title
+            {
+            counter-reset: subsectionCounter;
+            /* counter-reset: subsectionCounter; */
+            }
+
+
+
+    </style>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+    <!-- Top Menu  -->
+    
+          
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Tecnologías de la Información y Comunicación II</div>
+          <div class="subtitle">Licenciatura en Administración Turística</div>
+          <div class="subsubtitle">Universidad del Mar, campus Huatulco </div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+
+      
+        </header>
+
+    <nav class="top-nav">
+        <ul>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Home.html"> Inicio  </a> </li>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Informacion_General.html"> Información</a> </li>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Notas.html"> Notas  </a> </li>
+        <!-- <li> <a href="https://pablojhh.github.io/TICDOS/Quizes.html"> Quizes  </a> </li>
+            <li> <a href="https://pablojhh.github.io/TICDOS/Practicas.html">Prácticas</a></li> -->
+            <li> <a href="https://pablojhh.github.io/TICDOS/Examenes.html"> Archivos  </a> </li>
+        </ul>
+    </nav>
+    
+    <title> Semana 1   </title>
+    
+    </head>
+
+  <body class="fondo-body" >
+    
+       
+    <div class="nota-box"> <h1 class="page-number-title"> Semana 1</h1> 
+
+  <button class="respButton"> <h1 class="number-title"> Funciones de fecha y hora</h1>  </button>
+  
+  <div class="resp-box flexbox">
+      <p>
+        <table class="info" align="center">
+          <tr>
+            <th>Funci&oacute;n</th>
+            <th>Descripci&oacute;n</th>
+            <th>Detalle</th>
+          </tr>
+          <tr>
+            <td>AHORA</td>
+            <td>Devuelve el n&uacute;mero de serie correspondiente a la fecha y hora actuales</td>
+            <td><a href="" id=""></a></td>
+          </tr>
+          <tr>
+            <td>A&Ntilde;O</td>
+            <td>Convierte un n&uacute;mero de serie en un valor de a&ntilde;o</td>
+            <td><a href="" id=""></a></td>
+            </tr>
+          <tr>
+            <td>DIA</td>
+            <td>Convierte un n&uacute;mero de serie en un valor de d&iacute;a del mes</td>
+            <td><a href="" id=""></a></td>
+            </tr>
+          <tr>
+            <td>DIA.LAB</td>
+            <td>Devuelve el n&uacute;mero de serie de la fecha que tiene lugar antes o despu&eacute;s    de un n&uacute;mero determinado de d&iacute;as laborables</td>
+            <td><a href="" id=""></a></td>
+            </tr>
+          <tr>
+            <td>DIA.LAB.INTL</td>
+            <td>Devuelve el n&uacute;mero de serie de la fecha anterior o posterior a un n&uacute;mero    especificado de d&iacute;as laborables mediante par&aacute;metros para indicar cu&aacute;les y    cu&aacute;ntos d&iacute;as son d&iacute;as de fin de semana</td>
+            <td><a href="" id=""></a></td>
+            </tr>
+          <tr>
+            <td>DIAS.LAB</td>
+            <td>Devuelve el n&uacute;mero de todos los d&iacute;as laborables existentes entre dos    fechas</td>
+            <td><a href="" id=""></a></td>
+            </tr>
+          <tr>
+            <td>DIAS360</td>
+            <td>Calcula el n&uacute;mero de d&iacute;as entre dos fechas a partir de un a&ntilde;o de 360 d&iacute;as</td>
+            <td><a href="" id=""></a></td>
+          </tr>
+          <tr>
+            <td>DIASEM</td>
+            <td>Convierte un n&uacute;mero de serie en un valor de d&iacute;a de la semana</td>
+            <td><a href="" id=""></a></td>
+            </tr>
+          <tr>
+            <td>FECHA</td>
+            <td>Devuelve el n&uacute;mero de serie correspondiente    a una fecha determinada</td>
+            <td><a href="" id=""></a></td>
+          </tr>
+          <tr>
+            <td>FECHA.MES</td>
+            <td>Devuelve el n&uacute;mero de serie de la fecha equivalente al n&uacute;mero indicado de    meses anteriores o posteriores a la fecha inicial</td>
+            <td><a href="" id=""></a></td>
+            </tr>
+          <tr>
+            <td>FECHANUMERO</td>
+            <td>Convierte una fecha con formato de texto en un valor de n&uacute;mero de serie</td>
+            <td><a href="" id=""></a></td>
+            </tr>
+          <tr>
+            <td>FIN.MES</td>
+            <td>Devuelve el n&uacute;mero de serie correspondiente al &uacute;ltimo d&iacute;a del mes    anterior o posterior a un n&uacute;mero de meses especificado</td>
+            <td><a href="" id=""></a></td>
+            </tr>
+          <tr>
+            <td>FRAC.A&Ntilde;O</td>
+            <td>Devuelve la fracci&oacute;n de a&ntilde;o que representa el n&uacute;mero total de d&iacute;as    existentes entre el valor de fecha_inicial y el de fecha_final</td>
+            <td><a href="" id=""></a></td>
+            </tr>
+          <tr>
+            <td>HORA</td>
+            <td>Convierte un n&uacute;mero de serie en un valor de hora</td>
+            <td><a href="" id=""></a></td>
+            </tr>
+          <tr>
+            <td>HOY</td>
+            <td>Devuelve el n&uacute;mero de serie correspondiente al d&iacute;a actual</td>
+            <td><a href="" id=""></a></td>
+            </tr>
+          <tr>
+            <td>MES</td>
+            <td>Convierte un n&uacute;mero de serie en un valor de mes</td>
+            <td><a href="" id=""></a></td>
+            </tr>
+          <tr>
+            <td>MINUTO</td>
+            <td>Convierte un n&uacute;mero de serie en un valor de minuto</td>
+            <td><a href="" id=""></a></td>
+            </tr>
+          <tr>
+            <td>NSHORA</td>
+            <td>Devuelve el n&uacute;mero de serie correspondiente a una hora determinada</td>
+            <td><a href="" id=""></a></td>
+            </tr>
+          <tr>
+            <td>NUM.DE.SEMANA</td>
+            <td>Convierte un n&uacute;mero de serie en un n&uacute;mero que representa el lugar    num&eacute;rico correspondiente a una semana de un a&ntilde;o</td>
+            <td><a href="" id=""></a></td>
+            </tr>
+          <tr>
+            <td>SEGUNDO</td>
+            <td>Convierte un n&uacute;mero de serie en un valor de segundo</td>
+            <td><a href="" id=""></a></td>
+            </tr>
+          <tr>
+            <td>VALHORA</td>
+            <td>Convierte una hora con formato de texto en un valor de n&uacute;mero de serie</td>
+            <td><a href="" id=""></a></td>
+            </tr>
+        </table>
+      </p>
+    </div>
+    
+    <button class="respButton hvr-grow "> <h1 class="number-title"> Funciones de texto </h1> </button>
+    <div class="resp-box flexbox">
+      <p>
+        <table class="info" align="center">
+          <tr>
+            <th>Funci&oacute;n</th>
+            <th>Descripci&oacute;n</th>
+            <th>Detalle</th>
+        
+          </tr>
+          <tr>
+            <td>CARACTER</td>
+            <td>Devuelve el car&aacute;cter especificado por el n&uacute;mero de c&oacute;digo</td>
+            <td><a href="" id=""></a></td>
+          </tr>
+          <tr>
+            <td>CODIGO</td>
+            <td>Devuelve un c&oacute;digo num&eacute;rico del primer car&aacute;cter de una cadena de texto</td>
+            <td><a href="" id=""></a></td>
+          </tr>
+          <tr>
+            <td>CONCATENAR</td>
+            <td>Concatena varios elementos de texto en uno solo</td>
+            <td><a href="" id=""></a></td>
+          </tr>
+          <tr>
+            <td>DECIMAL</td>
+            <td>Da formato a un n&uacute;mero como texto con un n&uacute;mero fijo de decimales</td>
+            <td><a href="" id=""></a></td>
+          </tr>
+          <tr>
+            <td>DERECHA, DERECHAB</td>
+            <td>Devuelve los caracteres del lado derecho de un valor de texto</td>
+            <td><a href="" id=""></a></td>
+          </tr>
+          <tr>
+            <td>ENCONTRAR, ENCONTRARB</td>
+            <td>Busca un valor de texto dentro de otro (distingue may&uacute;sculas de    min&uacute;sculas)</td>
+            <td><a href="" id=""></a></td>
+          </tr>
+          <tr>
+            <td>EXTRAE, EXTRAEB</td>
+            <td>Devuelve un n&uacute;mero espec&iacute;fico de caracteres de una cadena de texto que    comienza en la posici&oacute;n que se especifique</td>
+            <td><a href="" id=""></a></td>
+          </tr>
+          <tr>
+            <td>HALLAR, HALLARB</td>
+            <td>Busca un valor de texto dentro de otro (no distingue may&uacute;sculas de    min&uacute;sculas)</td>
+            <td><a href="" id=""></a></td>
+          </tr>
+          <tr>
+            <td>IGUAL</td>
+            <td>Comprueba si dos valores de texto son id&eacute;nticos</td>
+            <td><a href="" id=""></a></td>
+          </tr>
+          <tr>
+            <td>IZQUIERDA, IZQUIERDAB</td>
+            <td>Devuelve los caracteres del lado izquierdo de un valor de texto</td>
+            <td><a href="" id=""></a></td>
+          </tr>
+          <tr>
+            <td>LARGO, LARGOB</td>
+            <td>Devuelve el n&uacute;mero de caracteres de una cadena de texto</td>
+            <td><a href="" id=""></a></td>
+          </tr>
+          <tr>
+            <td>LIMPIAR</td>
+            <td>Quita del texto todos los caracteres no imprimibles</td>
+            <td><a href="" id=""></a></td>
+          </tr>
+          <tr>
+            <td>MAYUSC / MINUSC</td>
+            <td>Convierte el texto en may&uacute;sculas o en min&uacute;sculas respectivamente</td>
+            <td><a href="" id=""></a></td>
+          </tr>
+          <tr>
+            <td>MONEDA</td>
+            <td>Convierte un n&uacute;mero en texto, con el formato de moneda $ (d&oacute;lar)</td>
+            <td><a href="" id=""></a></td>
+          </tr>
+          <tr>
+            <td>NOMPROPIO</td>
+            <td>Pone en may&uacute;scula la primera letra de cada palabra de un valor de texto</td>
+            <td><a href="" id=""></a></td>
+          </tr>
+          <tr>
+            <td>REEMPLAZAR, REEMPLAZARB</td>
+            <td>Reemplaza caracteres de texto</td>
+            <td><a href="" id=""></a></td>
+          </tr>
+          <tr>
+            <td>REPETIR</td>
+            <td>Repite el texto un n&uacute;mero determinado de veces</td>
+            <td><a href="" id=""></a></td>
+          </tr>
+          <tr>
+            <td>SUSTITUIR</td>
+            <td>Sustituye texto nuevo por texto antiguo en una cadena de texto</td>
+            <td><a href="" id=""></a></td>
+          </tr>
+          <tr>
+            <td>T</td>
+            <td>Si el valor es un texto lo devuelve, y si no devuelve una cadena vac&iacute;a</td>
+            <td><a href="" id=""></a></td>
+          </tr>
+          <tr>
+            <td>TEXTO</td>
+            <td>&nbsp;</td>
+            <td><a href="" id=""></a></td>
+          </tr>
+          <tr>
+            <td>TEXTOBAHT</td>
+            <td>Convierte un n&uacute;mero en texto, con el formato de moneda &szlig; (Baht)</td>
+            <td><a href="" id=""></a></td>
+          </tr>
+        </table>
+      </p>
+      </div>
+    
+  
+    <button class="respButton hvr-grow "> <h1 class="number-title"> Funciones de b&uacute;squeda</h1>  </button>
+      <div class="resp-box flexbox">
+      <p>
+      <table class="info" align="center">
+        <tr>
+          <th>Funci&oacute;n</th>
+          <th>Descripci&oacute;n</th>
+          <th>Ver<br />
+      detalle</th>
+        </tr>
+        <tr>
+          <td>AREAS</td>
+          <td>Devuelve el n&uacute;mero de &aacute;reas de una    referencia</td>
+          <td><a href="" id=""></a></td>
+        </tr>
+        <tr>
+          <td>BUSCAR</td>
+          <td>Busca valores de un vector o una matriz</td>
+          <td><a href="" id=""></a></td>
+        </tr>
+        <tr>
+          <td>BUSCARH</td>
+          <td>Busca en la fila superior de una matriz y devuelve el valor de la celda    indicada</td>
+          <td><a href="" id=""></a></td>
+        </tr>
+        <tr>
+          <td>BUSCARV</td>
+          <td>Busca en la primera columna de una matriz y se mueve en horizontal por la    fila para devolver el valor de una celda</td>
+          <td><a href="" id=""></a></td>
+        </tr>
+        <tr>
+          <td>COINCIDIR</td>
+          <td>Busca valores de una referencia o matriz</td>
+          <td><a href="" id=""></a></td>
+        </tr>
+        <tr>
+          <td>COLUMNA</td>
+          <td>Devuelve el n&uacute;mero de columna de una referencia</td>
+          <td><a href="" id=""></a></td>
+        </tr>
+        <tr>
+          <td>COLUMNAS</td>
+          <td>Devuelve el n&uacute;mero de columnas de una referencia</td>
+          <td><a href="" id=""></a></td>
+        </tr>
+        <tr>
+          <td>DESREF</td>
+          <td>Devuelve un desplazamiento de referencia respecto a una referencia dada</td>
+          <td><a href="" id=""></a></td>
+        </tr>
+        <tr>
+          <td>DIRECCION</td>
+          <td>Devuelve una referencia como texto a una sola celda de una hoja de    c&aacute;lculo</td>
+          <td><a href="" id=""></a></td>
+        </tr>
+        <tr>
+          <td>ELEGIR</td>
+          <td>Elige un valor de una lista de valores</td>
+          <td><a href="" id=""></a></td>
+        </tr>
+        <tr>
+          <td>FILA</td>
+          <td>Devuelve el n&uacute;mero de fila de una referencia</td>
+          <td><a href="" id=""></a></td>
+        </tr>
+        <tr>
+          <td>FILAS</td>
+          <td>Devuelve el n&uacute;mero de filas de una referencia</td>
+          <td><a href="" id=""></a></td>
+        </tr>
+        <tr>
+          <td>HIPERVINCULO</td>
+          <td>Crea un acceso directo o un salto que abre un documento almacenado en un    servidor de red, en una intranet o en Internet</td>
+          <td><a href="" id=""></a></td>
+        </tr>
+        <tr>
+          <td>IMPORTARDATOSDINAMICOS</td>
+          <td>Devuelve los datos almacenados en un informe de tabla din&aacute;mica</td>
+          <td><a href="" id=""></a></td>
+        </tr>
+        <tr>
+          <td>INDICE</td>
+          <td>Usa un &iacute;ndice para elegir un valor de una referencia o matriz</td>
+          <td><a href="" id=""></a></td>
+        </tr>
+        <tr>
+          <td>INDIRECTO</td>
+          <td>Devuelve una referencia indicada por un valor de texto</td>
+          <td><a href="" id=""></a></td>
+        </tr>
+        <tr>
+          <td>TRANSPONER</td>
+          <td>Devuelve la transposici&oacute;n de una matriz</td>
+          <td><a href="" id=""></a></td>
+        </tr>
+      </table>
+    </p>
+      </div>
+  
+    <button class="respButton hvr-grow "><h1 class="number-title"> Funciones financieras </h1>  </button>
+      <div class="resp-box flexbox">
+        <p>
+          <table class="info" align="center">
+            <tr>
+              <th>Funci&oacute;n</th>
+              <th>Descripci&oacute;n</th>
+              <th>Ver<br />
+          detalle</th>
+            </tr>
+            <tr>
+              <td>AMORTIZ.LIN</td>
+              <td>Devuelve la amortizaci&oacute;n de cada uno de los    per&iacute;odos contables</td>
+              <td><a href="" id=""></a></td>
+            </tr>
+            <tr>
+              <td>AMORTIZ.PROGRE</td>
+              <td>Devuelve la amortizaci&oacute;n de cada per&iacute;odo contable mediante el uso de un    coeficiente de amortizaci&oacute;n</td>
+              <td><a href="" id=""></a></td>
+            </tr>
+            <tr>
+              <td>CUPON.DIAS</td>
+              <td>Devuelve el n&uacute;mero de d&iacute;as del per&iacute;odo (entre dos cupones) donde se    encuentra la fecha de liquidaci&oacute;n</td>
+              <td><a href="" id=""></a></td>
+            </tr>
+            <tr>
+              <td>CUPON.DIAS.L1</td>
+              <td>Devuelve el n&uacute;mero de d&iacute;as desde el principio del per&iacute;odo de un cup&oacute;n    hasta la fecha de liquidaci&oacute;n</td>
+              <td><a href="" id=""></a></td>
+            </tr>
+            <tr>
+              <td>CUPON.DIAS.L2</td>
+              <td>Devuelve el n&uacute;mero de d&iacute;as desde la fecha de liquidaci&oacute;n hasta la fecha    del pr&oacute;ximo cup&oacute;n</td>
+              <td><a href="" id=""></a></td>
+            </tr>
+            <tr>
+              <td>CUPON.FECHA.L1</td>
+              <td>Devuelve la fecha de cup&oacute;n anterior a la fecha de liquidaci&oacute;n</td>
+              <td><a href="" id=""></a></td>
+            </tr>
+            <tr>
+              <td>CUPON.FECHA.L2</td>
+              <td>Devuelve la fecha del pr&oacute;ximo cup&oacute;n despu&eacute;s de la fecha de liquidaci&oacute;n</td>
+              <td><a href="" id=""></a></td>
+            </tr>
+            <tr>
+              <td>CUPON.NUM</td>
+              <td>Devuelve el n&uacute;mero de pagos de cup&oacute;n entre la fecha de liquidaci&oacute;n y la    fecha de vencimiento</td>
+              <td><a href="" id=""></a></td>
+            </tr>
+            <tr>
+              <td>DB</td>
+              <td>Devuelve la amortizaci&oacute;n de un bien durante un per&iacute;odo espec&iacute;fico a    trav&eacute;s del m&eacute;todo de amortizaci&oacute;n de saldo fijo</td>
+              <td><a href="" id=""></a></td>
+            </tr>
+            <tr>
+              <td>DDB</td>
+              <td>Devuelve la amortizaci&oacute;n de un bien durante un per&iacute;odo espec&iacute;fico a    trav&eacute;s del m&eacute;todo de amortizaci&oacute;n por doble disminuci&oacute;n de saldo u otro    m&eacute;todo que se especifique</td>
+              <td><a href="" id=""></a></td>
+            </tr>
+            <tr>
+              <td>DVS</td>
+              <td>Devuelve la amortizaci&oacute;n de un bien durante un per&iacute;odo especificado usando el m&eacute;todo de amortizaci&oacute;n acelerada con una tasa   doble y seg&uacute;n el coeficiente que se especifique.</td>
+              <td><a href="" id=""></a></td>
+            </tr>
+            <tr>
+              <td>DURACION</td>
+              <td>Devuelve la duraci&oacute;n anual de un valor burs&aacute;til con pagos de inter&eacute;s    peri&oacute;dico</td>
+              <td><a href="" id=""></a></td>
+            </tr>
+            <tr>
+              <td>INT.ACUM</td>
+              <td>Devuelve el inter&eacute;s acumulado de un valor burs&aacute;til con pagos de inter&eacute;s    peri&oacute;dicos</td>
+              <td><a href="" id=""></a></td>
+            </tr>
+            <tr>
+              <td>INT.ACUM.V</td>
+              <td>Devuelve el inter&eacute;s acumulado de un valor burs&aacute;til con pagos de inter&eacute;s    al vencimiento</td>
+              <td><a href="" id=""></a></td>
+            </tr>
+            <tr>
+              <td>INT.EFECTIVO</td>
+              <td>Devuelve la tasa de inter&eacute;s anual efectiva</td>
+              <td><a href="" id=""></a></td>
+            </tr>
+            <tr>
+              <td>INT.PAGO.DIR</td>
+              <td>Calcula el inter&eacute;s pagado durante un per&iacute;odo espec&iacute;fico de una inversi&oacute;n. Esta   funci&oacute;n se incluye para proporcionar compatibilidad con Lotus 1-2-3.</td>
+              <td><a href="" id=""></a></td>
+            </tr>
+            <tr>
+              <td>MONEDA.DEC</td>
+              <td>Convierte una cotizaci&oacute;n de un valor burs&aacute;til expresada en forma    fraccionaria en una cotizaci&oacute;n de un valor burs&aacute;til expresada en forma    decimal</td>
+              <td><a href="" id=""></a></td>
+            </tr>
+            <tr>
+              <td>MONEDA.FRAC</td>
+              <td>Convierte una cotizaci&oacute;n de un valor burs&aacute;til expresada en forma decimal    en una cotizaci&oacute;n de un valor burs&aacute;til expresada en forma fraccionaria</td>
+              <td><a href="" id=""></a></td>
+            </tr>
+            <tr>
+              <td>NPER</td>
+              <td>Devuelve el n&uacute;mero de pagos de una inversi&oacute;n, 
+          
+            basada en pagos constantes y peri&oacute;dicos y una tasa de inter&eacute;s 
+          
+          constante.</td>
+              <td><a href="" id=""></a></td>
+            </tr>
+            <tr>
+              <td>PAGO.INT.ENTRE</td>
+              <td>Devuelve el inter&eacute;s acumulado pagado entre dos per&iacute;odos</td>
+              <td><a href="" id=""></a></td>
+            </tr>
+            <tr>
+              <td>PAGO.PRINC.ENTRE</td>
+              <td>Devuelve el capital acumulado pagado de un pr&eacute;stamo entre dos per&iacute;odos</td>
+              <td><a href="" id=""></a></td>
+            </tr>
+            <tr>
+              <td>PAGOINT</td>
+              <td>Devuelve el pago de intereses de una inversi&oacute;n durante un per&iacute;odo    determinado</td>
+              <td><a href="" id=""></a></td>
+            </tr>
+            <tr>
+              <td>PAGOPRIN</td>
+              <td>Devuelve el pago de un capital de una inversi&oacute;n 
+          
+            determinada, basado en pagos constantes y peri&oacute;dicos y una tasa 
+          
+          de inter&eacute;s constante. </td>
+              <td><a href="" id=""></a></td>
+            </tr>
+            <tr>
+              <td>SYD</td>
+              <td>Devuelve la depreciaci&oacute;n por m&eacute;todo 
+          
+          de anualidades de un bien durante un per&iacute;odo espec&iacute;fico.</td>
+              <td><a href="" id=""></a></td>
+            </tr>
+            <tr>
+              <td>TASA</td>
+              <td>Devuelve la tasa de inter&eacute;s por periodo de 
+          
+          un pr&eacute;stamo o una inversi&oacute;n.</td>
+              <td><a href="" id=""></a></td>
+            </tr>
+            <tr>
+              <td>TASA.DESC</td>
+              <td>Devuelve la tasa de descuento de un valor burs&aacute;til</td>
+              <td><a href="" id=""></a></td>
+            </tr>
+            <tr>
+              <td>TASA.INT</td>
+              <td>Devuelve la tasa de inter&eacute;s para la inversi&oacute;n total de un valor burs&aacute;til</td>
+              <td><a href="" id=""></a></td>
+            </tr>
+            <tr>
+              <td>TIR</td>
+              <td>Devuelve la tasa interna de retorno de una inversi&oacute;n 
+          
+          para una serie de valores en efectivo.</td>
+              <td><a href="" id=""></a></td>
+            </tr>
+            <tr>
+              <td>TIRM</td>
+              <td>Devuelve la tasa interna de retorno modificada, para 
+          
+            una serie de flujos peri&oacute;dicos, considerando costo de la inversi&oacute;n 
+          
+            e inter&eacute;s al volver a invertir el efectivo.</td>
+              <td><a href="" id=""></a></td>
+            </tr>
+            <tr>
+              <td>VA</td>
+              <td>Devuelve el valor actual de una inversi&oacute;n. 
+          
+            El valor actual es el valor que tiene actualmente la suma de una serie 
+          
+          de pagos que se efect&uacute;an en el futuro.</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>VF</td>
+              <td>Devuelve el valor futuro de una inversi&oacute;n</td>
+              <td><a href="" id=""></a></td>
+            </tr>
+            <tr>
+              <td>VF.PLAN</td>
+              <td>Devuelve el valor futuro de un capital inicial despu&eacute;s de aplicar una    serie de tasas de inter&eacute;s compuesto</td>
+              <td><a href="" id=""></a></td>
+            </tr>
+            <tr>
+              <td>VNA</td>
+              <td>Devuelve el valor neto actual de una inversi&oacute;n 
+                
+                a partir de una tasa de descuentos y una serie de pagos futuros.</td>
+              <td><a href="" id=""></a></td>
+            </tr>
+          </table>
+        </p>
+      </div> 
+    
+    
+
+</div>
+
+  
+  </body>

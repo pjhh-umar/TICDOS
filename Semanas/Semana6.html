@@ -1,0 +1,603 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+     <!-- This part is for using single $ for latex input, instead of \(\) -->
+     <script>
+      MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+          },
+      svg: {
+          fontCache: 'global'
+      }
+  };
+  </script>
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+    .lista
+        {
+            counter-reset: listaCounter 0 sublistaCounter 1 subsublistaCounter 1 subsubsublistaCounter 1;
+        }
+        /* .sublista{
+            counter-reset: sublistaCounter 1  SubsublistaCounter;
+        } */
+        </style>
+
+    <style>
+            /* body.number-title
+            {
+            counter-reset: temaCounter 1 subsectioncounter ;
+            } */
+            body.fondo-body{
+              counter-reset: temaCounter 9 sectionCounter;
+            }
+
+            /* h1.page-number-title
+            {
+            counter-reset: sectionCounter 0;
+            }  */
+
+            h1.tema-number-title
+                {
+                counter-reset: sectionCounter 0;
+                } 
+
+            h1.number-title
+            {
+            counter-reset: subsectionCounter;
+            /* counter-reset: subsectionCounter; */
+            }
+
+
+
+    </style>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+    <!-- Top Menu  -->
+    
+          
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Tecnologías de la Información y Comunicación II</div>
+          <div class="subtitle">Licenciatura en Administración Turística</div>
+          <div class="subsubtitle">Universidad del Mar, campus Huatulco </div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+
+      
+        </header>
+
+    <nav class="top-nav">
+        <ul>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Home.html"> Inicio  </a> </li>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Informacion_General.html"> Información</a> </li>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Notas.html"> Notas  </a> </li>
+        <!-- <li> <a href="https://pablojhh.github.io/TICDOS/Quizes.html"> Quizes  </a> </li>
+            <li> <a href="https://pablojhh.github.io/TICDOS/Practicas.html">Prácticas</a></li> -->
+            <li> <a href="https://pablojhh.github.io/TICDOS/Examenes.html"> Archivos  </a> </li>
+        </ul>
+    </nav>
+    
+    <title> Semana 6  </title>
+    
+    </head>
+
+  <body class="fondo-body" >
+    
+
+
+<!--######################################################################################################################## -->
+
+    <div class="nota-box"> <h1 class="page-number-title"> Semana 6</h1> 
+
+   <button class="respButton hvr-grow "> <h1 class="tema-number-title"> Funciones de Fecha y Hora</h1>  </button>
+      <div class="resp-box flexbox">
+        <h1 class="number-title"> Fechas en Excel</h1>  
+        <p>Excel almacena una fecha como si fuera un número entero. Al utilizar un sistema como éste,
+          Excel puede sumar, restar y comparar fácilmente las fechas sin necesidad de hacer alguna 
+          conversión ni cálculo especial.
+       <p>
+
+        <h2 class="number-title"> Ejemplo</h2>  
+       <p>La fecha 1/1/2000 está representada por el número de serie 36526 y la fecha
+          05/10/2000 tiene asignado el valor 36804. Al realizar una operación 
+          con fechas se utiliza su número de serie para facilitar las operaciones
+        </p>
+ 
+       <h2 class="number-title">  El primer y último dia de Excel</h2>   
+ 
+       <p>Excel reconoce todas las fechas posteriores a 1/1/1900. Es por eso que <b>el primer día del año 
+         1900</b> tiene asignado el número 1. Por el contrario, <b>el último día que Excel reconoce</b> es el 31/12/9999
+         el cual tiene asignado el número 2958465.</p>
+ 
+ 
+       <h2 class="number-title">  Valor númerico de una fecha</h2>
+       <p>Es realmente sencillo conocer el valor numérico de una fecha, solamente cambia el formato de la 
+         celda que contiene una fecha a un formato <b>General</b> y Excel desplegará su valor numérico.
+        </p> 
+        <p> 
+         <div class="flexbox">  
+           <img src="../Imagenes/Excel/fechas-en-excel-01.png" alt="",height="auto",width="auto"> 
+         </div>
+        </p>
+
+        <p>
+          <table class="tabla-funciones">
+            <thead>
+              <tr>
+                <th>Función</th>
+                <th>Sintaxis</th>
+                <th>Descripción</th>
+                <th>Ejemplo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="nombre-funcion">FECHA</td>
+                  <td>=FECHA(año,mes,dia)</td>
+                  <td>Devuelve el número de serie que representa una fecha determinada.</td>
+                  <td>=FECHA(22,04,2024)</td>
+                </tr>
+              <tr>
+              <td class="nombre-funcion">HOY</td>
+                <td>=HOY()</td>
+                <td>Devuelve el número de serie de la fecha actual en formato de fecha.</td>
+                <td>=HOY()</td>
+              </tr>
+            <tr>
+              <td class="nombre-funcion">AHORA</td>
+              <td>=AHORA()</td>
+              <td>Devuelve el número de serie de la fecha y hora actuales en formato de fecha y hora.</td>
+              <td>=AHORA()</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">DÍA</td>
+              <td>=DIA(fecha)</td>
+              <td>Devuelve el día de una fecha, representada por un número de serie. El día se expresa
+                como un número entero comprendido entre 1 y 31.</td>
+              <td>=DÍA("01/15/2024") devuelve 15</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">MES</td>
+              <td>=MES(fecha)</td>
+              <td>Devuelve el mes de una fecha representada por un número de serie. El mes se expresa 
+                como número entero comprendido entre 1 (enero) y 12 (diciembre).</td>
+              <td>=MES("01/15/2024") devuelve 1</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">AÑO</td>
+              <td>=AÑO(fecha)</td>
+              <td>Devuelve el año de una fecha representada por un número de serie. El año se expresa como
+                 un número entero entero entre 1900 y 9999</td>
+              <td>=AÑO("01/15/2024") devuelve 2024</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">DÍAS</td>
+              <td>=DIAS(fecha_inicial, fecha_final)</td>
+              <td>Calcula el número de días entre dos fecha_inicial y fecha_final.</td>
+              <td>=DIAS("01/01/2023", "01/01/2024") devuelve el número de días entre las dos fechas</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">DÍAS360</td>
+              <td>=DIAS360(fecha_inicial, fecha_final, [método])</td>
+              <td>Devuelve el número de días entre dos fechas basándose en un año de 360 días 
+                (doce meses de 30 días), que se usa en los cálculos de contabilidad. Use esta función para calcular 
+                pagos si el sistema de contabilidad está basado en doce meses de 30 días.</td>
+              <td>=DIAS360("01/01/2023", "01/01/2024") devuelve 360</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">HORA</td>
+              <td>=HORA(fecha_hora)</td>
+              <td>Devuelve la hora de una fecha y hora dadas como un número de 0 (12:00 a.m.) a 23 (11:00 p.m.).</td>
+              <td>=HORA("01/15/2024 12:30:45 PM") devuelve 12</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">MINUTO</td>
+              <td>=MINUTO(fecha_hora)</td>
+              <td>Devuelve el minuto de una fecha y hora dadas como un número de 0 a 59.</td>
+              <td>=MINUTO("01/15/2024 12:30:45 PM") devuelve 30</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">SEGUNDO</td>
+              <td>=SEGUNDO(fecha_hora)</td>
+              <td>Devuelve el segundo de una fecha y hora dadas como un número de 0 a 59.</td>
+              <td>=SEGUNDO("01/15/2024 12:30:45 PM") devuelve 45</td>
+            </tr>
+            <tr>
+
+              <td class="nombre-funcion">DIASEM</td>
+              <td>=DIASEM(fecha, [tipo])</td>
+              <td>Devuelve el día de la semana correspondiente al argumento fecha representada por un número de serie. 
+                Devuelve el día como un número entero entre 1 (domingo) y 7 (sábado).</td>
+              <td>=DIASEM("01/15/2024", 2) devuelve 2 (martes)</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">DIA.LAB</td>
+              <td>=DIA.LAB(fecha_inicial, días, [vacaciones/festivos]))</td>
+              <td>Devuelve el número de serie que representa una fecha  antes o despues de un número especificado de 
+                 días laborables. Los días laborables excluyen los días de fin de semana y cualquier fecha 
+                 identificada en el argumento vacaciones/festivos. Use DIA.LAB para excluir fines de semana
+                 o días festivos cuando calcule fechas de vencimiento de facturas, las fechas de entrega esperadas o el número de 
+                 días de trabajo realizado.
+              </td>
+              <td>=DIA.LAB("01/01/2023",10) devuelve fecha 10 días laborables posterior a la fecha inicial 01/01/2023, excluidos los fines de semana.</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">DIAS.LAB</td>
+              <td>=DIASLAB(fecha_inicial, fecha_final, [festivos])</td>
+              <td>Devuelve el número de días laborables entre fecha_inicial y fecha_final. Los días laborables no incluyen 
+                los fines de semana ni otras fechas que se identifiquen en el argumento festivos. </td>
+              <td>=DIASLAB("01/01/2023", "01/01/2024") devuelve el número de días laborables entre las dos fechas</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">FECHA.MES</td>
+              <td>=FECHA.MES(fecha_inicial, meses)</td>
+              <td>Devuelve el número de serie de la fecha que es el número indicado de meses antes o después de la fecha inicial.</td>
+              <td>=FECHA.MES("26/01/1991",2) devuelve el número de serie correspondiente a la fecha: 26/03/1991,
+                dos meses después de la fecha 26/01/1991.</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">FIN.MES</td>
+              <td>=FIN.MES(fecha_inicial, meses)</td>
+              <td>Devuelve el número de serie del último día del mes que es el número indicado de meses antes
+                 o después de fecha_inicial. Use FIN.MES para calcular las fechas de vencimiento que coinciden
+                con el último día del mes.</td>
+              <td>=FIN.MES("2024-04-22", 1) devuelve 45247 (representando el 30 de abril de 2024)</td>
+            </tr>
+            <!-- <tr>
+              <td class="nombre-funcion">DIA.LAB.INTL</td>
+              <td>=DIA.LAB.INTL(fecha_inicial, días, [fin_de_semana], [festivos])</td>
+              <td>Devuelve el número de serie que representa una fecha después de un número especificado de días laborables, 
+                usando parámetros para definir qué días se consideran fines de semana y qué días son festivos.</td>
+              <td>=DIA.LAB.INTL("01/01/2023", 10, [1,7], ["01/05/2023"]) devuelve el número de días laborables entre las dos fechas</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">DIAS.LAB.INTL</td>
+              <td>=DIAS.LAB.INTL(fecha_inicial, fecha_final, [fin_de_semana], [festivos])</td>
+              <td>Devuelve el número de días laborables entre dos fechas, usando parámetros para definir qué días se consideran 
+                fines de semana y qué días son feriados.</td>
+              <td>=DIAS.LAB.INTL("01/01/2023", "01/01/2024", [1,7], ["01/05/2023"]) devuelve el número de días laborables entre las dos fechas</td>
+            </tr> -->
+            <tr>
+              <td class="nombre-funcion">FRAC.AÑO</td>
+              <td>=FRAC.AÑO(fecha_inicial, fecha_final, [base])</td>
+              <td>Calcula la fracción de año que representa el número total de días entre las fechas fecha_inicial
+                 y fecha_final. </td>
+              <td>=FRAC.AÑO("1/1/2012","30/7/2012",3)  Fracción entre las mismas fechas, con el argumento de base Real/365. 
+                Usa una base de 365 días. Devuelve 0.57808219</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">NUM.SEMANA</td>
+              <td>=NUM.SEMANA(fecha, [tipo])</td>
+              <td>Devuelve el número de semana en el año para una fecha dada.</td>
+              <td>=NUM.SEMANA("2024-04-22", 2) devuelve 17</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">FECHANUMERO</td>
+              <td>=FECHANUMERO(texto_de_fecha)</td>
+              <td>Convierte una fecha almacenada como texto en un número de serie que Excel reconoce como fecha</td>
+              <td>=FECHANUMERO("2024-04-22") devuelve 45247 (representando el 22 de abril de 2024)</td>
+            </tr>
+         
+            <tr>
+              <td class="nombre-funcion">HORANUMERO</td>
+              <td>=HORANUMERO(texto_de_hora)</td>
+              <td>Devuelve el número decimal de la hora representada por una cadena de texto. 
+                El número decimal es un valor comprendido entre 0 (cero) y 0,99988426 que representa
+                las horas entre 0:00:00 (12:00:00 a.m.) y 23:59:59 (11:59:59 p.m.).</td>
+              <td>=HORANUMERO("2024-04-22 12:30:45 PM") devuelve 0.5203125</td>
+            </tr>
+            <!-- <tr>
+              <td class="nombre-funcion">NSHORA</td>
+              <td>=NSHORA()</td>
+              <td>Devuelve el número de serie que representa la hora actual.</td>
+              <td>=NSHORA()</td>
+            </tr> -->
+            
+            <!-- 
+            <tr>
+              <td class="nombre-funcion">DÍASENTRE</td>
+              <td>=DÍASENTRE(fecha_inicial, fecha_final, [festivos])</td>
+              <td>Calcula el número de días hábiles entre dos fechas, excluyendo días no laborables.</td>
+              <td>=DÍASENTRE("01/01/2023", "01/01/2024") devuelve el número de días hábiles entre las dos fechas</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">DÍASHOY</td>
+              <td>=DÍASHOY()</td>
+              <td>Devuelve el número de días transcurridos desde el 1 de enero del año actual hasta la fecha actual.</td>
+              <td>=DÍASHOY()</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">FECHA</td>
+              <td>=FECHA(año,mes,día)</td>
+              <td>Devuelve la fecha serial para una fecha específica.</td>
+              <td>=FECHA(2024,1,15) devuelve 01/15/2024</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">HORA</td>
+              <td>=HORA(número_serie)</td>
+              <td>Devuelve la parte de hora de un número de serie de fecha.</td>
+              <td>=HORA("01/15/2024 12:30:45 PM") devuelve 12</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">MINUTO</td>
+              <td>=MINUTO(número_serie)</td>
+              <td>Devuelve la parte de minutos de un número de serie de fecha.</td>
+              <td>=MINUTO("01/15/2024 12:30:45 PM") devuelve 30</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">SEGUNDO</td>
+              <td>=SEGUNDO(número_serie)</td>
+              <td>Devuelve la parte de segundos de un número de serie de fecha.</td>
+              <td>=SEGUNDO("01/15/2024 12:30:45 PM") devuelve 45</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">DIASEM</td>
+              <td>=DIASEM(número_serie, [tipo])</td>
+              <td>Devuelve el número de día de la semana correspondiente a una fecha serial.</td>
+              <td>=DIASEM(44315, 2) devuelve 2 (martes)</td>
+            </tr> -->
+          </tbody>
+        </table>
+    </p>
+    <h1 class="number-title">Observaciones</h1>
+        <p>
+          <h2 class="number-title">Generales </h2>
+          <ol>
+              <li>Excel almacena las fechas como números de serie secuenciales para que se puedan usar en cálculos.
+                 De manera predeterminada, la fecha 1 de enero de 1900 es el número de serie 1, mientras que la fecha 
+                 1 de enero de 2008 es el número de serie 39448, porque es 39447 días posterior al 1 de enero de 1900.</li><br>
+              <li>En los números de serie, los dígitos a la derecha del separador decimal representan la hora; 
+                los números a la izquierda representan la fecha. Por ejemplo, el número de serie 0.5 representa 
+                la hora 12:00 del mediodía.</li><br>
+               
+          </ol>
+          <h2 class="number-title">Función AHORA </h2>
+          <ol>
+              <li>Los resultados de la función AHORA solo cambian cuando se realiza un cálculo en la hoja de cálculo 
+                o cuando se ejecuta una macro que contiene la función. No se actualiza constantemente.</li><br>
+          </ol>
+          <h2 class="number-title">Función DIAS360</h2>
+          <ol>
+              <li><b>Método</b>     es un valor lógico que especifica si se va a utilizar el método europeo o el de EE.UU. en el cálculo.</p>
+                <table class="tabla-funciones">
+                  <thead>
+                    <tr>
+                      <th>Método</th>
+                      <th>Modo de cálculo</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="nombre-funcion">FALSO u omitido</td>
+                      <td>Método EE.UU. (NASD). Si la fecha inicial es el día 31 de un mes, se iguala al día 30 del mismo mes.
+                         Si la fecha final es el día 31 de un mes y la fecha inicial es anterior al día 30 de un mes, la fecha 
+                         final se iguala al día 1 del mes siguiente; en caso contrario, la fecha final se iguala al día 30 del 
+                         mismo mes.</td>
+                    </tr>
+                    <tr>
+                     <td class="nombre-funcion">VERDADERO</td>
+                     <td>Método europeo. Las fechas inicial y final que coincidan con el día 31 de un mes se igualan al día 30 del mismo mes.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </li><br>
+              <!-- <li></li><br> -->
+          </ol>
+          <h2 class="number-title">Función DIASLAB </h2>
+          <!-- <ol>
+              <li></li><br>
+              <li></li><br>
+          </ol>
+          <h2 class="number-title">Función </h2>
+          <ol> -->
+            <li>Es importante tener en cuenta que Excel no contabiliza la fecha de inicio como día laborable. 
+              Es decir: si estableces el 1 de marzo como día de inicio y quieres acabar el 2 de marzo, esto implicaría
+              sólo un día de trabajo y no dos.</li><br>
+            <li>Si uno de los argumentos no es una fecha válida, DIAS.LAB devuelve el #VALUE! o #VALOR!.</li><br>
+            <!-- <li></li><br> -->
+          </ol>
+          <h2 class="number-title">Función DIASEM</h2>
+          <ol>
+            <li>Si num_serie está fuera del intervalo para el valor base de fecha actual,
+              ocurre  #NUM.</li><br>
+              <li><p><b>Tipo</b>    Opcional. Es un número que determina el tipo de valor que debe devolverse. </p>
+                <table  class="tabla-funciones">
+                  <thead>
+                    <tr>
+                     <th>Tipo</th>
+                     <th>Número devuelto</th>   
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                     <td class="nombre-funcion"> 1 u omitido
+                      </td>
+                      <td>
+                        <p>Números del 1 (domingo) al 7 (sábado). Igual que en versiones anteriores de Microsoft Excel.
+                      </td>
+                    </tr>
+                    <tr>
+                     <td class="nombre-funcion">2
+                      </td>
+                      <td>
+                        <p>Números del 1 (lunes) al 7 (domingo).
+                      </td>
+                    </tr>
+                    <tr>
+                     <td class="nombre-funcion">3
+                      </td>
+                      <td>
+                        <p>Números del 0 (lunes) al 6 (domingo).
+                      </td>
+                    </tr>
+                    <tr>
+                     <td class="nombre-funcion">11
+                      </td>
+                      <td>
+                        <p>Números del 1 (lunes) al 7 (domingo).
+                      </td>
+                    </tr>
+                    <tr>
+                     <td class="nombre-funcion">1,2
+                      </td>
+                      <td>
+                        <p>Números del 1 (martes) al 7 (lunes).
+                      </td>
+                    </tr>
+                    <tr>
+                     <td class="nombre-funcion">1,3
+                      </td>
+                      <td>
+                        <p>Números del 1 (miércoles) al 7 (martes).
+                      </td>
+                    </tr>
+                    <tr>
+                     <td class="nombre-funcion">14
+                      </td>
+                      <td>
+                        <p>Números del 1 (jueves) al 7 (miércoles).
+                      </td>
+                    </tr>
+                    <tr>
+                     <td class="nombre-funcion">15
+                      </td>
+                      <td>
+                        <p>Números del 1 (viernes) al 7 (jueves).
+                      </td>
+                    </tr>
+                    <tr>
+                     <td class="nombre-funcion">16
+                      </td>
+                      <td>
+                        <p>Números del 1 (sábado) al 7 (viernes).
+                      </td>
+                    </tr>
+                    <tr>
+                     <td class="nombre-funcion">17
+                      </td>
+                      <td>
+                        <p>Números del 1 (domingo) al 7 (sábado).
+                      </td>
+                    </tr>
+                  </tbody>
+                </table></li><br>
+              <!-- <li></li><br> -->
+          </ol>
+          <h2 class="number-title">Función DIA.LAB </h2>
+          <ol>
+              <li>Especifique las fechas con la función FECHA o como resultado de otras fórmulas o funciones.
+                Por ejemplo, use FECHA(2008;5;23) para el 23 de mayo de 2008. Puede tener problemas al escribir
+                las fechas como texto.</li><br>
+              <li>Si uno de los argumentos no es una fecha válida, DIA.LAB devuelve el #VALUE! o #VALOR!.</li><br>
+              <!-- <li>Si fecha_inicial más días produce una fecha no válida, DIA.LAB devuelve el #NUM! valor de error.</li><br> -->
+              <li>Si el argumento días no es un entero, se trunca.</li><br>
+          </ol>
+
+          <h2 class="number-title">Función FECHA </h2>
+          <ol>
+              <li>Use cuatro dígitos para el argumento año para evitar resultados no deseados. Por ejemplo, "07" podría significar "1907" o "2007". Los años de cuatro dígitos evitan la confusión.</li><br>
+              <li>Si el año es menor que 0, o es igual o mayor que 10000, Excel devuelve el valor de error #¡NUM!. valor de error</li><br>
+              <li>Si el año es un número entre 1900 y 9999 (inclusive), Excel usa ese valor como el año. Por ejemplo, FECHA(2008,1,2) devuelve 2 de enero de 2008</li><br>
+              <li>Si el mes es mayor que 12, mes suma esa cantidad de meses al primer mes del año especificado. Por ejemplo, FECHA(2008,14,2) devuelve el número de serie que representa el 2 de febrero de 2009.</li><br>
+              <li>Si el mes es menor que 1, mes resta la magnitud de esa cantidad de meses, más 1, del primer mes del año especificado. Por ejemplo, FECHA(2008,-3,2) devuelve el número de serie que representa el 2 de septiembre de 2007.</li><br>
+              <li>i el día es mayor que la cantidad de días del mes especificado, día suma esa cantidad a los días del primer día del mes. Por ejemplo, FECHA(2008,1,35) devuelve el número de serie que representa el 4 de febrero de 2008.</li><br>
+              <li>Si el día es menor que 1, día resta la magnitud de la cantidad de días, más uno, del primer día del mes especificado. Por ejemplo, FECHA(2008,1,-15) devuelve el número de serie que representa el 16 de diciembre de 2007.</li><br>
+              <li></li><br>
+          </ol>
+        
+          <h2 class="number-title">Función FIN.MES </h2>
+          <ol>
+              <li>El argumento Meses es obligatorio y es el número de meses anteriores o posteriores al argumento
+                 fecha_inicial. Cuando meses es un valor positivo, el resultado es una fecha futura; cuando es un
+                valor negativo, el resultado es una fecha pasada.</li><br>
+              <li>Si el argumento meses no es un número entero, se trunca.</li><br>
+          </ol>
+      
+          <h2 class="number-title">Función FECHANUMERO </h2>
+          <ol>
+              <li>La función FECHANUMERO es útil cuando una hoja de cálculo contiene fechas en
+                 formato de texto que desea filtrar, ordenar o usar en cálculos de fecha, o bien
+                a las que desea dar formato de fecha.</li><br>
+              <li>Para ver un número de serie como una fecha, debe aplicar un formato de fecha a la celda.</li><br>
+          </ol>
+
+          <h2 class="number-title">Función FRAC.AÑO </h2>
+
+          <ol>
+            <li>Si base < 0 o si base > 4, FRAC.AÑO devuelve el valor de error #¡NUM!. error #¡NUM!.</li><br>
+            <li>Todos los argumentos se truncan a enteros.</li><br>
+            <li>Si la fecha_inicial o la fecha_final no son fechas válidas, FRAC.AÑO devuelve
+               el valor de error #¡VALOR! valor de error.</li><br>
+
+            <li> 
+              <table class="tabla-funciones">
+                <thead>
+                  <tr>
+                    <th>Base</th>
+                    <th>Base para contar días</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="nombre-funcion">0 u omitido</td>
+                    <td>US (NASD) 30/360</td>
+                  </tr>
+                  <tr>
+                    <td class="nombre-funcion">1</td>
+                    <td>Real/real</td>
+                  </tr>
+                  <tr>
+                    <td class="nombre-funcion">2</td>
+                    <td>Real/360</td>
+                  </tr>
+                  <tr>
+                    <td class="nombre-funcion">3</td>
+                    <td>Real/365</td>
+                  </tr>
+                  <tr>
+                    <td class="nombre-funcion">4</td>
+                    <td>Europea 30/360</td>
+                  </tr>
+                </tbody>
+              </table>
+            </li><br>
+
+          </ol>
+    </div>
+    
+    </div>
+
+  </body>

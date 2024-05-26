@@ -1,0 +1,783 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+     <!-- This part is for using single $ for latex input, instead of \(\) -->
+     <!-- <script>
+      MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+          },
+      svg: {
+          fontCache: 'global'
+      }
+  };
+  </script> -->
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+    .lista
+        {
+            counter-reset: listaCounter 0 sublistaCounter 1 subsublistaCounter 1 subsubsublistaCounter 1;
+        }
+        /* .sublista{
+            counter-reset: sublistaCounter 1  SubsublistaCounter;
+        } */
+        </style>
+
+    <style>
+            /* body.number-title
+            {
+            counter-reset: temaCounter 1 subsectioncounter ;
+            } */
+            body.fondo-body{
+              counter-reset: temaCounter 9 sectionCounter;
+            }
+
+            /* h1.page-number-title
+            {
+            counter-reset: sectionCounter 0;
+            }  */
+
+            h1.tema-number-title
+                {
+                counter-reset: sectionCounter 0;
+                } 
+
+            h1.number-title
+            {
+            counter-reset: subsectionCounter;
+            /* counter-reset: subsectionCounter; */
+            }
+
+
+
+    </style>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+    <!-- Top Menu  -->
+    
+          
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Tecnologías de la Información y Comunicación II</div>
+          <div class="subtitle">Licenciatura en Administración Turística</div>
+          <div class="subsubtitle">Universidad del Mar, campus Huatulco </div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+
+      
+        </header>
+
+    <nav class="top-nav">
+        <ul>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Home.html"> Inicio  </a> </li>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Informacion_General.html"> Información</a> </li>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Notas.html"> Notas  </a> </li>
+        <!-- <li> <a href="https://pablojhh.github.io/TICDOS/Quizes.html"> Quizes  </a> </li>
+            <li> <a href="https://pablojhh.github.io/TICDOS/Practicas.html">Prácticas</a></li> -->
+            <li> <a href="https://pablojhh.github.io/TICDOS/Examenes.html"> Archivos  </a> </li>
+        </ul>
+    </nav>
+    
+    <title> Semana 5  </title>
+    
+    </head>
+
+  <body class="fondo-body" >
+    
+
+
+<!--######################################################################################################################## -->
+
+    <div class="nota-box"> <h1 class="page-number-title"> Semana 5</h1> 
+
+   <button class="respButton hvr-grow "> <h1 class="tema-number-title"> Funciones de texto</h1>  </button>
+      <div class="resp-box flexbox">
+        <p>
+          <table class="tabla-funciones">
+            <thead>
+              <tr>
+                <th>Función</th>
+                <th>Sintaxis</th>
+                <th>Descripción</th>
+                <th>Ejemplo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="nombre-funcion">IZQUIERDA</td>
+                <td>=IZQUIERDA(texto,[num_caracteres])</td>
+                <td>Devuelve el número de caracteres especificado del principio de una cadena de texto.</td>
+                <td>=IZQUIERDA("Ejemplo", 3) devuelve "Eje"</td>
+            </tr>
+            <tr>
+                <td class="nombre-funcion">DERECHA</td>
+                <td>=DERECHA(texto,[num_caracteres])</td>
+                <td>Devuelve el número de caracteres especificado del final de una cadena de texto.</td>
+                <td>=DERECHA("Ejemplo", 4) devuelve "mplo"</td>
+            </tr>
+            <tr>
+                <td class="nombre-funcion">ESPACIOS</td>
+              <td>=ESPACIOS(texto)</td>
+              <td>Elimina todos los espacios del texto excepto los espacios individuales entre palabras.</td>
+              <td>=ESPACIOS("   Ejem   plo   ") devuelve "Ejemplo"</td>
+            </tr>
+            <tr>
+                <td class="nombre-funcion">LARGO</td>
+              <td>=LARGO(texto)</td>
+              <td>Devuelve el número de caracteres de una cadena de texto.</td>
+              <td>=LARGO("Ejemplo") devuelve 7</td>
+            </tr>
+            <tr>
+                <td class="nombre-funcion">EXTRAE</td>
+                <td>=EXTRAE(texto,posicion_inicio, num_caracteres)</td>
+                <td>Devuelve un número específico de caracteres de una cadena de texto, comenzando 
+                  en la posición de inicio 
+                  y en función del número de caracteres especificado.</td>
+                <td>=EXTRAE("Ejemplo", 2, 3) devuelve "jem"</td>
+            </tr>
+            <tr>
+                <td class="nombre-funcion">NOMPROPIO</td>
+              <td>=NOMPROPIO(texto)</td>
+              <td>Recibe como argumento un texto, el cual puede estar formado por una o varias palabras.
+                 y convierte la primera letra de cada palabra en mayúscula y el resto de las letras en
+                 minúsculas.</td>
+              <td>=NOMPROPIO("hOLA muNDo") devuelve "Hola Mundo"</td>
+            </tr>
+            <tr>
+                <td class="nombre-funcion">MINÚSCULA</td>
+                <td>=MINUSC(texto)</td>
+                <td>Convierte todos los caracteres de una cadena de texto en minúsculas.</td>
+                <td>=MINUSC("Ejemplo") devuelve "ejemplo"</td>
+            </tr>
+            <tr>
+                <td class="nombre-funcion">MAYÚSCULA</td>
+                <td>=MAYUSC(texto)</td>
+                <td>Convierte todos los caracteres de una cadena de texto en mayúsculas.</td>
+                <td>=MAYUSC("Ejemplo") devuelve "EJEMPLO"</td>
+            </tr>
+            <tr>
+                <td class="nombre-funcion">CONCATENAR</td>
+                <td>=CONCATENAR(texto1, texto2, ...)</td>
+                <td>Une varios elementos de texto en uno solo.</td>
+                <td>=CONCATENAR("Hola", " ", "mundo") devuelve "Hola mundo"</td>
+            </tr>
+            <tr>
+                <td class="nombre-funcion">HALLAR</td>
+                <td>=HALLAR(texto_buscado, texto, [posición_inicio])</td>
+                <td>Busca una cadena de texto dentro de una segunda cadena de texto y devuelve el número 
+                  de la posición inicial de la primera cadena de texto a partir de la posición inicial de 
+                  la segunda cadena de texto, leyendo de izquierda a  derecha. HALLAR no distingue entre mayúsculas 
+                  o minúsculas, y permite el uso de los comodines “?” y “*”.</td>
+                <td>=HALLAR("e", "Ejemplo") devuelve 1</td>
+            </tr>
+            <tr>
+                <td class="nombre-funcion">ENCONTRAR</td>
+                <td>=ENCONTRAR(buscar_texto, texto, [posicion_inicio])</td>
+                <td>Busca una cadena de texto dentro de una segunda cadena de texto y devuelve el número 
+                  de la posición inicial de la primera cadena de texto a partir de la posición inicial de 
+                  la segunda cadena de texto, leyendo de izquierda a  derecha. ENCONTRAR distingue entre mayúsculas 
+                  o minúsculas, y permite el uso de los comodines “?” y “*”.</td>
+                <td>=ENCONTRAR("e", "Ejemplo") devuelve 3</td>
+            </tr>
+            <tr>
+                <td class="nombre-funcion">SUSTITUIR</td>
+                <td>=SUSTITUIR(texto, texto_original, texto_nuevo, [núm_de_ocurrencia])</td>
+                <td>Sustituye texto_original por texto nuevo dentro de una cadena de texto, 
+                  llegando a precisar si se requiere este cambio en algunas de las ocurrencias 
+                  del texto a ser reemplazado, o en todas las ocurrencias del texto 
+                  a reemplazar. SUSTITUIR distingue entre mayúsculas y minúsculas.
+                </td>
+                <td>=SUSTITUIR("Uno,Dos,Dos","Uno","Dos") devuelve "Dos,Dos,Dos".</td>
+            </tr>
+            <tr>
+                <td class="nombre-funcion">REEMPLAZAR</td>
+                <td>=REEMPLAZAR(texto, posicion_inicio, num_caracteres, texto_nuevo)</td>
+                <td>Reemplaza parte de una cadena de texto con texto nuevo en función de la posición de 
+                  inicio y del número de caracteres que se especifique.
+                </td>
+                <td>=REEMPLAZAR("Señor Pedro", 1, 5, "Sr.") devuelve "Sr. Pedro"</td>
+            </tr>
+            <tr>
+                <td class="nombre-funcion">TEXTO</td>
+                <td>=TEXTO(valor, formato_texto)</td>
+                <td>Convierte un valor en texto cambiaando su apariencia  aplicándole formato con códigos
+                   de formato. Es útil para mostrar números en un formato más legible o para combinarlos 
+                   con texto o símbolos.
+                </td>
+                <td>=TEXTO(1234.567, "0.00") devuelve "1234.57"</td>
+            </tr>
+            <tr>
+                <td class="nombre-funcion">REPETIR</td>
+                <td>=REPETIR(texto, num_veces)</td>
+                <td>Repite un texto un número específico de veces.</td>
+                <td>=REPETIR("abc", 3) devuelve "abcabcabc"</td>
+            </tr>
+            <!-- <tr>
+                <td class="nombre-funcion">IZQUIERDAB</td>
+                <td>=IZQUIERDAB(texto, num_bytes)</td>
+                <td>Devuelve los primeros caracteres de una cadena de texto, basándose en el número de bytes.</td>
+                <td>=IZQUIERDAB("Ejemplo", 3) devuelve "Eje"</td>
+            </tr>
+            <tr>
+                <td class="nombre-funcion">DERECHAB</td>
+                <td>=DERECHAB(texto, num_bytes)</td>
+                <td>Devuelve los últimos caracteres de una cadena de texto, basándose en el número de bytes.</td>
+                <td>=DERECHAB("Ejemplo", 4) devuelve "mplo"</td>
+            </tr> -->
+            <tr>
+                <td class="nombre-funcion">IGUAL</td>
+                <td>=IGUAL(texto1, texto2)</td>
+                <td>Comprueba si dos cadenas de texto son idénticas (distingue entre mayúsculas y minúsculas).</td>
+                <td>=IGUAL("Hola", "hola") devuelve FALSO</td>
+            </tr>
+            <!-- <tr>
+                <td class="nombre-funcion">SUSTITUIRB</td>
+                <td>=SUSTITUIRB(texto, inicio, num_caracteres, nuevo_texto)</td>
+                <td>Reemplaza parte de una cadena de texto por otra cadena de texto, basándose en bytes.</td>
+                <td>=SUSTITUIRB("Ejemplo", 2, 3, "xxx") devuelve "Exxxplo"</td>
+            </tr> -->
+            <tr>
+              <td class="nombre-funcion">LIMPIAR</td>
+              <td>=LIMPIAR(texto)</td>
+              <td>Elimina caracteres no imprimibles de una celda, como tabulaciones 
+                y otros caracteres que no se pueden imprimir de un texto.</td>
+              <td>=LIMPIAR("Hola" & CHAR(10) & "Mundo") devuelve "HolaMundo"</td>
+            </tr>
+            <tr>
+                <td class="nombre-funcion">VALOR</td>
+                <td>=VALOR(texto)</td>
+                <td>Convierte un texto que representa un número en un valor numérico.</td>
+                <td>=VALOR("123.45") devuelve 123.45</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">CARACTER</td>
+              <td>=CARACTER(número)</td>
+              <td>Devuelve el carácter correspondiente al número ASCII especificado.</td>
+              <td>=CARACTER(65) devuelve "A"</td>
+          </tr>
+          </table>
+        </p>
+
+      <h1 class="number-title"> Formato de celdas en Excel</h1>
+        <p> El <b>código de formato</b> en Excel se refiere a la forma en que puedes personalizar 
+          el aspecto visual de tus datos utilizando formato condicional o formato personalizado
+          para celdas, números, fechas, etc.
+        </p>
+
+      <h2 class="number-title">Símbolos en formatos de celdas de Excel</h2>
+        <p>
+          <table class="tabla-funciones">
+            <tr>
+              <th>Símbolo</th>
+              <th>Descripción</th>
+              <th>Ejemplo</th>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">#</td>
+              <td>Representa un dígito indica un dígito numérico obligatorio en esa posición.
+                 Si hay un dígito en esa posición, se mostrará. Si no hay un dígito, se mostrará
+                como un espacio en blanco. Por ejemplo, si tienes el formato "#.##", mostrará un 
+                número con hasta dos dígitos decimales, pero si no hay decimales, no mostrará un
+                punto decimal en absoluto.</td>
+              <td>#,### → 1,234 / 123</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">0</td>
+              <td>Representa un dígito obligatorio. Por ejemplo, si tienes el formato "00.00", 
+                esto significa que deseas mostrar un número con dos dígitos enteros y dos decimales, 
+                y si el número tiene menos dígitos, se rellena con ceros</td>
+              <td>00000 → 00001 / 00123</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">.</td>
+              <td>Representa el separador decimal.</td>
+              <td>0.00 → 123.45 / 678.90</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">,</td>
+              <td>Representa el separador de miles.</td>
+              <td>#,### → 1,234</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">$</td>
+              <td>Representa el símbolo de la moneda.</td>
+              <td>$#,###.00 → $1,234.56</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">?</td>
+              <td>Representa un dígito adicional opcional en el formato de celda.
+                Si hay un dígito disponible en esa posición, se mostrará. Si no hay dígito,
+                simplemente se omitirá en la visualización del número. Por ejemplo, si tienes el formato "?0.00", mostrará un dígito antes del punto decimal si está disponible, pero si no lo está, no mostrará ningún dígito antes del punto decimal.</td>
+              <td>###-####? → 123-4567 / 1234-5678</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">-</td>
+              <td>Representa un carácter literal de signo menos.</td>
+              <td>"-$#,##0.00" → -$1,234.56</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">%</td>
+              <td>Muestra el valor de la celda como porcentaje.</td>
+              <td>5 → 5%</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">/</td>
+              <td>Representa el separador de fecha.</td>
+              <td>d/m/a → 18/04/2024</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">d</td>
+              <td>Representa el día del mes como 1-31.</td>
+              <td>d/m/a → 18/4/24</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">m</td>
+              <td>Representa el mes como 1-12.</td>
+              <td>d/m/a → 18/4/24</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">a</td>
+              <td>Representa el año utilizando dos dígitos.</td>
+              <td>d/m/a → 18/4/24</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">:</td>
+              <td>Representa el separador de hora y minuto.</td>
+              <td>h:mm → 12:30</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">h</td>
+              <td>Representa la hora en formato de 12 horas.</td>
+              <td>h:mm AM/PM → 12:00 PM</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">H</td>
+              <td>Representa la hora en formato de 24 horas.</td>
+              <td>H:mm → 12:00</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">m</td>
+              <td>Representa los minutos.</td>
+              <td>h:mm → 12:30</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">AM/PM</td>
+              <td>Indica la parte del día (antes del meridiano/despues del meridiano).</td>
+              <td>h:mm AM/PM → 12:00 PM</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">( )</td>
+              <td>Indica que el valor negativo debe mostrarse entre paréntesis.</td>
+              <td>(#,###) → (1,234)</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">[ ]</td>
+              <td>Permite aplicar formato condicional a los valores.</td>
+              <td>[Rojo]#,###;[Azul]#,### → Valor positivo en rojo, valor negativo en azul</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">" "</td>
+              <td>Representa un texto literal que debe mostrarse como está.</td>
+              <td>"Total: "0.00 → Total: 1234.56</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">@</td>
+              <td>Muestra el contenido de la celda de forma literal, sin aplicar ningún otro formato.</td>
+              <td>"Valor: " $ @ → Valor: $1000 $</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">_</td>
+              <td>Representa un espacio en blanco.</td>
+              <td>"Espacio:"_ → Espacio: [espacio en blanco]</td>
+            </tr>
+            
+            
+            <!-- <tr>
+              <td class="nombre-funcion">_</td>
+              <td>Representa un espacio en blanco en el formato de celda.</td>
+              <td>"Producto: "_@_ "unidades disponibles" → Producto: 50 unidades disponibles</td>
+            </tr> -->
+            <!-- <tr>
+              <td class="nombre-funcion">_</td>
+              <td>Representa un espacio en blanco.</td>
+              <td>"Customer: "_@@_ → Customer: [espacio en blanco]</td>
+            </tr> -->
+            <!-- <tr>
+              <td class="nombre-funcion">*</td>
+              <td>Representa la repetición del carácter siguiente.</td>
+              <td>*0.00 → 1234.56 / 0000.00</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">^</td>
+              <td>Indica que se debe cambiar el caso del texto.</td>
+              <td>^& → TEXTO en mayúsculas / texto en minúsculas</td>
+            </tr> -->
+            <tr>
+              <td class="nombre-funcion">;</td>
+              <td>Indica el separador de secciones en el formato condicional.</td>
+              <td>0.00;[Rojo]-0.00 → Valor positivo en negro, valor negativo en rojo</td>
+            </tr>
+            <!-- <tr>
+              <td class="nombre-funcion">,</td>
+              <td>Representa el separador decimal.</td>
+              <td>0,00 → 1234,56</td>
+            </tr> -->
+            <tr>
+              <td class="nombre-funcion">!</td>
+              <td>Ignora los dígitos y los sustituye por un espacio.</td>
+              <td>###-####! → Teléfono: [espacio en blanco]</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion"> \ </td>
+              <td>Escapa el siguiente carácter para que se muestre como texto.</td>
+              <td>Texto \# → Texto #</td>
+            </tr>
+            <!-- <tr>
+              <td class="nombre-funcion">_(* #,##0_);_(* (#,##0);_(* "-"_);_(@_)</td>
+              <td>Define un patrón de formato personalizado para diferentes tipos de datos.</td>
+              <td>Aplicará diferentes formatos según el tipo de dato</td>
+            </tr> -->
+            <!-- <tr>
+              <td class="nombre-funcion">¡</td>
+              <td>Representa el separador de miles invertido (para algunos idiomas).</td>
+              <td>#,###¡00 → 1¡234.56</td>
+            </tr> -->
+            <!-- <tr>
+              <td class="nombre-funcion">?</td>
+              <td>Representa un carácter alfanumérico opcional.</td>
+              <td>###-####? → 123-4567 / 1234-5678</td>
+            </tr> -->
+            <!-- <tr>
+              <td class="nombre-funcion">&amp;</td>
+              <td>Inserta el carácter siguiente.</td>
+              <td>"Customer: "&amp;@ → Customer: Texto</td>
+            </tr> -->
+            
+            <!-- <tr>
+              <td class="nombre-funcion">+</td>
+              <td>Indica que los números positivos deben mostrarse con un signo más.</td>
+              <td>+# → +123</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">_;</td>
+              <td>Indica que los números negativos deben mostrarse con un signo menos.</td>
+              <td>-_ → -123</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">~</td>
+              <td>Indica que el siguiente carácter es un carácter de escape.</td>
+              <td>Texto ~# → Texto #</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">^*</td>
+              <td>Indica que el siguiente carácter es un carácter literal.</td>
+              <td>Texto ^*# → Texto *#</td>
+            </tr>
+            <tr>
+              <td class="nombre-funcion">\""</td>
+              <td>Representa un carácter de comilla doble como texto literal.</td>
+              <td>\"Texto\" → "Texto"</td>
+            </tr>
+            -->
+            <!-- <tr>
+              <td class="nombre-funcion">0.00</td>
+              <td>Representa un número con dos decimales.</td>
+              <td>0.00 → 1234.56</td>
+            </tr> -->
+          </table>
+        </p>
+
+      <h1 class="number-title">Función TEXTO</h1>
+        <p>
+          <ol>
+              <li>La función TEXTO convierte números en texto, lo que puede dificultar la referencia
+                 en cálculos posteriores.  Es mejor mantener el valor original en una celda y, después, 
+                 usar la función TEXTO en otra celda. Después, si es necesario crear otras fórmulas, 
+                 haga referencia siempre al valor original y no al resultado de la función de TEXTO.
+                </li><br>
+              <li><p>Los códigos de formato deben ir entre comillas. Enseguida se presentan algunos ejemplos
+                populares, puedes copiar directamente en Excel para experimentar con ellos.</p>
+
+                <p>
+                  <table class="tabla-funciones">
+                    <thead>
+                        <tr>
+                            <th>Fórmula</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          <td class="nombre-funcion2">=TEXTO(1234.567,"$#,##0.00")</td>
+                          <td>Moneda con separador de millares y 2 decimales, como 1.234,57 $. 
+                            Tenga en cuenta que Excel redondea el valor a 2 posiciones decimales.</td>
+                        </tr>
+                        <tr>
+                          <td class="nombre-funcion2">=TEXTO(HOY(),"DD/MM/AA")</td>
+                          <td>Fecha de hoy en formato DD/MM/AA, por ejemplo, 14/03/12</td>
+                        </tr>
+                        <tr>
+                          <td class="nombre-funcion2">= TEXTO(HOY(),"DDDD")</td>
+                          <td>Día de la semana de hoy, por ejemplo, lunes</td>
+                        </tr>
+                        <tr>
+                          <td class="nombre-funcion2">=TEXTO(AHORA(),"H:MM AM/PM")</td>
+                          <td>Hora actual, por ejemplo, 13:29</td>
+                        </tr>
+                        <tr>
+                          <td class="nombre-funcion2"> =TEXTO(0.285, "0.0%") </td>
+                          <td>Porcentaje, por ejemplo, 28,5 %</td>
+                        </tr>
+                        <tr>
+                          <td class="nombre-funcion2">=TEXT(4.34 ,"# ?/?")</td>
+                          <td>Fracción, por ejemplo, 4 1/3 </td>
+                        </tr>
+                        <tr>
+                          <td class="nombre-funcion2">=ESPACIOS (TEXTO(0.34,"#? /?"))</td>
+                          <td>Fracción, por ejemplo, 1/3. Tenga en cuenta que esto usa 
+                              la función ESPACIOS para quitar los espacios iniciales de un valor decimal.
+                            </td>
+                        </tr>
+                        <tr>
+                          <td class="nombre-funcion2">=TEXTO(12200000,"0.00E+00") </td>
+                          <td>
+                                <p>Notación científica, por ejemplo, 1.22E+07</p>
+                            </td>
+                        </tr>
+                        <tr>
+                          <td class="nombre-funcion2">=TEXTO(1234567898,"[&lt;=9999999]###-####;(###) ###-####")</td>
+                          <td>Especiales (números de teléfono), por ejemplo, (123) 456-7898</td>
+                        </tr>
+                        <tr>
+                          <td class="nombre-funcion2">=TEXTO(1234,"0000000")</td>
+                          <td>Agrega ceros a la izquierda (0), por ejemplo, 0001234</td>
+                        </tr>
+                        <tr>
+                          <td class="nombre-funcion2">=TEXTO(123456, "##0° 00' 00''")</td>
+                          <td>Personalizada: latitud y longitud</td>
+                        </tr>
+                        <tr>
+                          <td class="nombre-funcion2">=TEXTO(A1, "dddd, dd de mmmm de aaaa")</td>
+                          <td>Convierte una fecha en un formato de fecha larga que incluye el día de la semana, el día del mes, el mes y el año.</td>
+                        </tr>
+                        <tr>
+                          <td class="nombre-funcion2">=TEXTO(A1, "hh:mm:ss")</td>
+                          <td>Convierte una hora en un formato de hora con horas, minutos y segundos.</td>
+                        </tr>
+                        <tr>
+                          <td class="nombre-funcion2">=TEXTO(A1, "#,##0.00")</td>
+                          <td>Convierte un número en un formato de moneda con separadores de miles y dos decimales.</td>
+                        </tr>
+                        <tr>
+                          <td class="nombre-funcion2">=TEXTO(A1, "0.00%")</td>
+                          <td>Convierte un número en un formato de porcentaje.</td>
+                        </tr>
+                        <tr>
+                          <td class="nombre-funcion2">=TEXTO(A1, "0.00E+00")</td>
+                          <td>Convierte un número en notación científica.</td>
+                        </tr>
+                        <tr>
+                          <td class="nombre-funcion2">=TEXTO(A1, "\"Número: \"#0.00\" unidades\"")</td>
+                          <td>Agrega un prefijo y un sufijo alrededor de un número.</td>
+                        </tr>
+                        <tr>
+                          <td class="nombre-funcion2">=TEXTO(A1, "00000")</td>
+                          <td>Convierte un número en un formato de código postal.</td>
+                        </tr>
+                        <tr>
+                          <td class="nombre-funcion2">=TEXTO(A1, "000000")</td>
+                          <td>Rellena un número con ceros a la izquierda.</td>
+                        </tr>
+                        <tr>
+                          <td class="nombre-funcion2">=TEXTO(A1, "(###) ###-####")</td>
+                          <td>Formatea un número como un número de teléfono con paréntesis y guiones.</td>
+                        </tr>
+                        <tr>
+                          <td class="nombre-funcion2">=TEXTO(A1, "[$-800A]0")</td>
+                          <td>Formatea un número como un número romano.</td>
+                        </tr>
+                        <!-- Nuevos ejemplos -->
+                        <tr>
+                          <td class="nombre-funcion2">=TEXTO(A1, "#,###")</td>
+                          <td>Convierte un número en texto con separadores de miles y sin decimales.</td>
+                        </tr>
+                        <tr>
+                          <td class="nombre-funcion2">=TEXTO(A1, "#,###.000")</td>
+                          <td>Convierte un número en texto con separadores de miles y tres decimales.</td>
+                        </tr>
+                        <tr>
+                          <td class="nombre-funcion2">=TEXTO(A1, "[>0]@;[<=0]@")</td>
+                          <td>Convierte un texto en mayúsculas o minúsculas según el signo del número en A1.</td>
+                        </tr>
+                        <tr>
+                          <td class="nombre-funcion2">=TEXTO(A1, "00000000")</td>
+                          <td>Rellena un texto con longitud fija.</td>
+                        </tr>
+                        <tr>
+                          <td class="nombre-funcion2">=TEXTO(A1, "###-###-###")</td>
+                          <td>Formatea un texto con guiones intermedios.</td>
+                        </tr>
+                        <tr>
+                          <td class="nombre-funcion2">=TEXTO(A1, "(###) ###-####")</td>
+                          <td>Formatea un texto con paréntesis alrededor.</td>
+                        </tr>
+                        <tr>
+                          <td class="nombre-funcion2">=TEXTO(A1, "\"Número: \"@\" unidades\"")</td>
+                          <td>Agrega un prefijo y un sufijo alrededor de un texto.</td>
+                        </tr>
+                        <tr>
+                          <td class="nombre-funcion2">=TEXTO(A1, "[>=1000]#,###, \"K\";[<=-1000]-#,###, \"K\"")</td>
+                          <td>Formatea un texto con símbolos especiales y diferentes rangos de valores.</td>
+                        </tr>
+                        <tr>
+                          <td class="nombre-funcion2">=TEXTO(A1, "0º")</td>
+                          <td>Convierte un número en un texto como número ordinal.</td>
+                        </tr>
+                    </tbody>
+                </table>
+              </p>
+               </li>
+               
+              <!-- <li></li><br> -->
+          </ol>
+        </p>
+
+      <h1 class="number-title">Formato a una fecha</h1>
+        <p>Al escribir texto en una celda como "2/2", Excel supone que se trata de una fecha y le da formato
+          según la configuración de fecha predeterminada de Panel de control. Excel podría darle el formato
+          "2-Feb". Si cambia la configuración de fecha en Panel de control, el formato de fecha predeterminado
+          en Excel cambiará en consecuencia. Si no le gusta el formato de fecha predeterminado, puede elegir 
+          otro formato de fecha en Excel, como "2 de febrero de 2012" o "2/2/12". También puede crear su 
+          propio formato personalizado en la versión de escritorio de Excel.
+        </p>
+        <p>
+          <table class="tabla-funciones">
+            <thead>
+                <tr>
+                  <th>Código</th>
+                  <th>Resultado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td class="nombre-funcion">m</td>
+                  <td>Los meses como 1-12</td>  
+                </tr>
+                <tr>
+                  <td class="nombre-funcion">mm</td>
+                  <td>Los meses como 01-12</td>
+                </tr>
+                <tr>
+                  <td class="nombre-funcion">mmm</td>
+                  <td>Los meses como ene-dic</td>
+                </tr>
+                <tr>
+                  <td class="nombre-funcion">mmmm</td>
+                  <td>Los meses como enero-diciembre</td>
+                </tr>
+                <tr>
+                  <td class="nombre-funcion">mmmmm</td>
+                  <td>Los meses como la inicial de cada mes</td>
+                </tr>
+                <tr>
+                  <td class="nombre-funcion">d</td>
+                  <td>Los días como 1-31</td>
+                </tr>
+                <tr>
+                  <td class="nombre-funcion">dd</td>
+                  <td>Los días como 01-31</td>  
+                </tr>
+                <tr>
+                  <td class="nombre-funcion">ddd</td>
+                  <td>Los días como dom-sáb</td>
+                </tr>
+                <tr>
+                  <td class="nombre-funcion">dddd</td>
+                  <td>Los días como domingo-sábado</td>
+                </tr>
+                <tr>
+                  <td class="nombre-funcion">aa</td>
+                  <td>Los años como 00-99</td>  
+                </tr>
+                <tr>
+                  <td class="nombre-funcion">aaaa</td>
+                  <td>Los años como 1900-9999</td>
+                  
+                </tr>
+            </tbody>
+            </table>
+        </p>
+        <p>Si está modificando un formato que incluye valores de hora y usa "m" inmediatamente 
+          después del código "h" o "hh" o inmediatamente antes del código "ss", Excel muestra
+          los minutos en lugar del mes.
+        </p>
+      
+      <h2 class="number-title">Observaciones</h2>
+        <ol>
+          <li>Los formatos de fecha que comienzan por un asterisco (*) cambiarán si cambia la configuración de fecha y hora regional en el Panel de control. Los formatos sin asterisco no cambiarán.</li><br>
+          <li>Para usar rápidamente el formato de fecha predeterminado, haga clic en la celda con la fecha y, a continuación, presione CTRL+MAYÚS+#.</li><br>
+          <li>Si una celda muestra ##### tras aplicarle formato de fecha, dicha celda no será lo suficientemente ancha como para mostrar el número completo. Trate de hacer doble clic en el borde derecho de la columna que contiene las celdas con #####. De esta manera se cambiará el tamaño de la columna para ajustar el número. También puede arrastrar el borde derecho de la columna para que tenga el tamaño que desea.</li><br>
+          <li>Para introducir rápidamente la fecha actual en la hoja de cálculo, seleccione cualquier celda vacía, presione CTRL+; (punto y coma) y, a continuación, presione ENTRAR, en caso necesario.</li><br>
+          <li>Para introducir una fecha que se actualizará a la fecha actual cada vez que vuelva a abrir una hoja de cálculo o vuelva a calcular una fórmula, escriba =HOY() en una celda vacía y, a continuación, presione ENTRAR</li><br>
+        </ol>
+
+
+
+      
+
+      
+        <!-- <h1 class="number-title">Observaciones</h1> -->
+              
+          </ol>
+          <!-- <h2 class="number-title">Función  </h2>
+              <ol>
+                <li></li><br>
+                <li></li><br>
+              </ol>    
+          <h2 class="number-title">Función  </h2>
+              <ol>
+                <li></li><br>
+                <li></li><br>
+              </ol> -->
+        </p> 
+      
+      
+      </div>
+
+
+    </div>
+    
+
+  </body>

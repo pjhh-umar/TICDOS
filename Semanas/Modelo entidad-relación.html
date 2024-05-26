@@ -1,0 +1,1903 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+    
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+    <!-- This part is for using single $ for latex input, instead of \(\) -->
+    <script>
+        MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+        svg: {
+            fontCache: 'global'
+        }
+    };
+    </script>
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+    .lista
+        {
+            counter-reset: listaCounter 0 sublistaCounter 1 subsublistaCounter 1 subsubsublistaCounter 1;
+        }
+        /* .sublista{
+            counter-reset: sublistaCounter 1  SubsublistaCounter;
+        } */
+        </style>
+
+    <style>
+            /* body.number-title
+            {
+            counter-reset: temaCounter 1 subsectioncounter ;
+            } */
+        h1.page-number-title
+            {
+            counter-reset: temaCounter 2 sectionCounter  subsectionCounter;
+            }
+    </style>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+    <!-- Top Menu  -->
+    
+          
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Tecnologías de la Información y Comunicación II</div>
+          <div class="subtitle">Licenciatura en Administración Turística</div>
+          <div class="subsubtitle">Universidad del Mar, campus Huatulco </div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+
+      
+        </header>
+
+    <nav class="top-nav">
+        <ul>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Home.html"> Inicio  </a> </li>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Informacion_General.html"> Información</a> </li>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Notas.html"> Notas  </a> </li>
+        <!-- <li> <a href="https://pablojhh.github.io/TICDOS/Quizes.html"> Quizes  </a> </li>
+            <li> <a href="https://pablojhh.github.io/TICDOS/Practicas.html">Prácticas</a></li> -->
+            <li> <a href="https://pablojhh.github.io/TICDOS/Examenes.html"> Archivos  </a> </li>
+        </ul>
+    </nav>
+    
+    <title> § Tema 2   </title>
+    
+    </head>
+
+    <body class="fondo-body" >
+        
+    <!-- <h1 class="page-title"> Modelo Entidad-Relación y Modelo Relacional </h1>   -->
+    <h1 class="page-number-title">Modelo entidad-relación</h1>  
+    
+        <div class="nota-box"><h1 class="title">Introducción</h1>
+          <p>También conocido como <b>diagrama o modelo E-R</b> o <b>E/R</b>. El diagrama entidad/relación
+            es una técnica cuyo objetivo es la <b>representación</b> y <b>definición</b> de todos los datos que se introducen,
+            almacenan, transforman y producen dentro de un sistema de información, sin tener en cuenta
+            las necesidades de la tecnología existente, ni otras restricciones.
+          </p>
+            
+          <p>Definimos <b>sistema de información</b> como el conjunto de procedimientos y funciones dirigidos
+            a la recolección, elaboración, evaluación, almacenamiento, recuperación, condensación y distribución
+            de informaciones dentro de una organización
+          </p>
+            <!-- Merece la pena recalcar ese factor de independencia con respecto a la implementación final. -->
+          <p>El Diagrama E-R dará solución al problema planteado sin importar cuál sea el SGBD comercial que se
+            vaya a utilizar. Para ello parte de una serie de conceptos que se describen a continuación:<br>
+          </p>
+
+        </div>
+
+        <div class="nota-box"><h1 class="number-title"> Entidad</h1>
+          <p>Una <b>entidad</b> es cualquier objeto real o abstracto que tiene existencia por sí mismo y se puede
+            identificar de una forma clara y precisa, y del cual se desea registrar información en el sistema.
+            <b>Es el elemento fundamental que hay que caracterizar</b>.
+          </p>
+          
+          <p>Una entidad se <b>representa con sustantivos en singular</b> que encierran un concepto, y es labor del analista identificar dichos sustantivos.
+          </p>
+        </div>
+
+        <div class="nota-box"><h2 class="number-title"> Ejemplos</h2> Los siguientes son ejemplos de entidad<br>       
+          <p>
+            <ul>
+              <li>"Empleado",</li><br>
+              <li>"Cliente",</li><br>
+              <li>"Factura",</li><br> 
+              <li>"Línea de factura",</li><br>
+              <li>"Proveedor".</li>
+            </ul>
+          </p>
+        </div>
+         
+        <div class="nota-box"><h2 class="number-title"> Ocurrencia y atributos</h2>
+
+        <p><!-- Entidad es un concepto abstracto.--> Cada elemento concreto de una entidad es una <b>ocurrencia</b>.
+          En el ejemplo de la entidad "Empleado", cada uno de los empleados es una ocurrencia de dicha
+          entidad. A su vez, <b>cada ocurrencia presenta una serie de datos asociados</b>:<br>
+          
+          <p><li>Un empleado tendrá nombre, apellidos, NIF, dirección postal, número de teléfono, etc. </li></p>
+
+          <p>Cada uno de esos datos es un <b>atributo</b>, y cada ocurrencia tiene <i>distintos valores para cada atributo</i>.</p>
+
+          <p><li>En la entidad "Empleado", un empleado concreto tendrá "Juan Antonio" como valor de su atributo "Nombre", "García Corredor"
+          como valor de su atributo "Apellidos" y "52874660Y" como valor de su atributo "NIF".</li></p>
+        </p>
+
+        <p><b>Toda entidad debe cumplir dos características:</b></p>
+
+        <p>
+          <ol>
+            <li>Presencia del <b>mismo conjunto de atributos para todas las ocurrencias</b>, independientemente
+              de que alguna ocurrencia carezca de valor para algún atributo.</li><br>
+            <li><b>Diferenciación unívoca de ocurrencias</b>. No puede haber dos ocurrencias con los mismos
+              valores para todos sus atributos.</li>
+          </ol>
+        </p>
+      </div>
+    
+      <div class="nota-box"><h2 class="number-title">Representación gráfica de una entidad</h2>
+      <p>La <b>representación gráfica de una entidad</b> consiste en un <b>rectángulo</b> con el nombre de la entidad
+        en su interior, generalmente en mayúsculas. Los <b>atributos asociados</b> a una entidad se pueden
+        representar de dos formas:
+        <ul>
+          <li>Mediante <b>óvalos</b> que incluyen el nombre del atributo, </li>
+          <li>Mediante <b>círculos</b> con el nombre del atributo en el exterior.</li>
+        </ul>
+      </p>
+
+      <p>
+        <div class="flexbox">
+          <img src="../Imagenes/BD/Representacion_grafica_entidad_atributos.JPG" alt="", width="auto" height="auto">
+        </div>
+        <br>
+      </p>
+      </div>
+
+      <div class="nota-box"><h2 class="number-title">Clasificación de entidades</h2>
+       <p>Hay dos tipos de entidades:</p>
+        <ol>
+          <li> <b>Fuerte o regular</b>. No depende de otra. Corresponde a la inmensa mayoría de las entidades.</li><br>
+          <li> <b>Débil</b>. La existencia de sus ocurrencias depende de la existencia de ocurrencias en otras
+            entidades.</li>
+        </ol>
+      </div>
+
+      <div class="nota-box"><h2 class="number-title">Ejemplo:</h2>
+         <p>Consideremos un sistema de información de una <b>biblioteca</b>. Si queremos llevar un control sobre
+          las multas impuestas a los socios por devolución tardía de libros, crearemos una entidad "Multa".</p> Debemos tener en consideración 
+          los siguientes aspectos: 
+
+          <ul>
+          <li>Toda multa se impone a un socio; por tanto, no podrá haber ocurrencias en la entidad "Multa" si
+          no existe una ocurrencia correspondiente a un socio en la entidad "Socio".</li><br>
+
+          <li>Para que una entidad sea débil tiene que serlo respecto a todas las entidades con las que se relaciona.
+          <b>Las entidades débiles se representan mediante un doble rectángulo</b>:<br>
+        </li><br>
+        </ul>
+        <p>
+          <div class="flexbox">
+            <img src="../Imagenes/BD/Entidad_debil.JPG" alt="", width="auto" height="auto">
+          </div>
+          <br>
+        </p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Relación</h1>
+
+      <p>Una <b>relación</b> es una asociación o vínculo entre ocurrencias de varias entidades. Se denotan 
+        con <b>expresiones verbales</b>.
+      </p>
+    </div>
+
+    <div class="nota-box"><h2 class="number-title">Ejemplos:</h2>
+      <p>Se tienen relaciones entre las ocurrencias de la entidad "Cliente" y las de la entidad "Factura" (ya que toda factura corresponde a un cliente), y a la que podríamos llamar "genera" (se leería "cliente genera factura").
+      </p>
+    </div>
+
+    <div class="nota-box"><h2 class="number-title">Representacón gráfica de una relación</h2>
+      <p>La <b>representación gráfica de una relación</b> consiste en un <b>rombo</b> rodeando su nombre:</p>
+      <p>
+        <div class="flexbox">
+          <img src="../Imagenes/BD/Relacion.JPG" alt="", width="auto" height="auto">
+        </div>
+        <br>
+      </p>
+    </div>
+
+
+    <div class="nota-box"><h2 class="number-title"> Clasificación de relaciones</h2>
+    <p>De acuerdo al número de entidades cuyas ocurrencias relacionan, podemos dividir las relaciones
+      en varias categorías:</p>
+
+        <h3 class="title">Binarias.</h3><p>Relacionan entre sí ocurrencias de dos entidades. En el ejemplo anterior, la relación "genera" entre "Cliente" y "Factura" representa una relacion binaria y 
+            gráficamente se representa  como:
+          </p>
+          <p><br>
+            <div class="flexbox">
+              <img src="../Imagenes/BD/Relacion_binaria.JPG" alt="", width="auto" height="auto">
+            </div>
+            <br>
+          </p>
+          
+        <h3 class="title">Binarias.</h3><p>Relacionan entre sí ocurrencias de tres entidades. Consideremos un sistema de información correspondiente a un centro de enseñanza. Cada profesor imparte una serie de asignaturas a distintos grupos de alumnos. Si disponemos de las entidades "Profesor", "Grupo" y "Asignatura", tendríamos que relacionar
+        sus ocurrencias mediante la siguiente relación ternaria:
+      <p><br>
+        <div class="flexbox">
+          <img src="../Imagenes/BD/Relacion_ternaria.JPG" alt="", width="auto" height="auto">
+        </div>
+        <br>
+      </p>
+    </p>
+    
+    <h3 class="title">N-arias.</h3><p>Dependiendo de la complejidad de nuestro modelo de datos podemos relacionar
+    ocurrencias de más de tres entidades. Supongamos que en la relación del ejemplo anterior sea necesario, además, indicar en qué aula se imparte cada asignatura a cada grupo:
+    </p>
+      <p><br>
+        <div class="flexbox">
+          <img src="../Imagenes/BD/Relacion_cuaternaria.JPG" alt="", width="auto" height="auto">
+        </div>
+        <br>
+    </p>
+    </div>
+
+    <div class="nota-box"><h2 class="number-title">Observación:</h2>  
+      <p>Como criterio de diseño se identifican <b>relaciones ternarias</b> o <b>n-arias</b> 
+      cuando la acción identificada por la relación <b>afecta de forma simultánea a las ocurrencias de todas las entidades
+      relacionadas</b> (un profesor imparte una asignatura a un grupo en un aula en un
+      momento concreto, por lo que existe simultaneidad temporal). 
+      </p>     
+   
+  </li>
+  <li><b>Reflexivas.</b> Relacionan entre sí ocurrencias de la misma entidad. Para comprenderlas correctamente
+    hay que tener en cuenta que las ocurrencias que relacionan, aun perteneciendo
+    a la misma entidad, están jugando papeles distintos. <br>
+
+  <p><b>Ejemplo:</b> Consideremos  una entidad “Empleado” que almacena 
+    ocurrencias de empleados de una empresa. Hay empleados que son jefes de otros, y todos
+    los empleados figuran como ocurrencias de la entidad "Empleado".</p>
+    
+    <p>En este caso, debemos
+    relacionar ocurrencias de "Empleado" correspondientes a empleados que tienen jefe con
+    ocurrencias de "Empleado" correspondientes a empleados que son jefes de otros:<br>
+  </p>
+  <p><br>
+    <div class="flexbox">
+      <img src="../Imagenes/BD/Relacion_reflexiva.JPG" alt="", width="auto" height="auto">
+    </div>
+  </p>
+  </li>
+</ol>
+<br>
+</p>
+
+<h2 class="number-title"> Cardinalidad y modalidad</h2>
+
+<p>Para dotar de contenido semántico a una relación hay que especificar <b>de qué modo se relacionan
+  entre sí las ocurrencias de las distintas entidades</b>, estableciendo ámbitos, límites y restricciones.</p>
+
+  <h3>Cardinalidad</h3>
+
+ <p>La <b>cardinalidad</b> (también llamada <b>tipo de correspondencia</b> por algunos autores) indica el número máximo
+  de ocurrencias de una entidad con las que se puede relacionar una ocurrencia de otra entidad.</p>
+
+  <p><b>Ejemplos:</b><br> 
+  <ol>
+    <li>Toda factura deba emitirse a nombre de un
+  solo cliente, pero que cada cliente pueda emitir muchas facturas,</li>
+  <li> Cada proveedor suministre varios artículos y que cada artículo sea suministrado por varios 
+  proveedores, </li>
+  <li>Cada empleado se siente en una ubicación concreta de la oficina y a cada ubicación corresponda
+  solamente un empleado.</li>
+  </ol>
+  </p>
+
+  <h3> Clasificación de la cardinalidad de una relación</h3>
+  <p>
+    <ul>
+      <li><b>1:N (uno a ene/uno a muchos)</b>. Una ocurrencia de una entidad puede relacionarse con
+        varias de otra entidad, pero cada ocurrencia de la segunda entidad solo puede relacionarse
+        con una única ocurrencia de la primera entidad.<br>
+        <p>
+        <b>Ejemplo:</b> Supongamos una empresa donde cada empleado pertenece a un departamento y en
+        cada departamento puede haber varios empleados. Esta sería la representación gráfica:
+        <p><br>
+          <div class="flexbox">
+            <img src="../Imagenes/BD/Relacion_1an.JPG" alt="", width="auto" height="auto">
+          </div>
+          <br>
+        </p>
+        </p>
+      </li>
+      <li><b>M:N (eme a ene/muchos a muchos).</b> Cada ocurrencia de una entidad puede relacionarse
+        con varias de otra entidad, y cada ocurrencia de la segunda entidad también puede relacionarse
+        con varias de la primera.<br>
+      <p>
+        <b>Ejemplo: </b> Un músico puede tocar varios instrumentos y
+        un instrumento puede ser tocado por varios músicos:
+        <p>
+          <br>
+          <div class="flexbox">
+            <img src="../Imagenes/BD/Relacion_MaN.JPG" alt="", width="auto" height="auto">
+          </div>
+          <br>
+        </p>
+      </p>
+      </li>
+    <li><b>1:1 (uno a uno).</b> Una ocurrencia de una entidad se relaciona con otra ocurrencia de otra
+      entidad y viceversa.<br>
+     <p><b>Ejemplo:</b>  Una consultora financiera podría asignar a cada cliente una única cartera de inversión
+      propia:
+      <p>
+        <br>
+        <div class="flexbox">
+          <img src="../Imagenes/BD/Relacion_1a1.JPG" alt="", width="auto" height="auto">
+        </div>
+        <br>
+      </p>
+    </p> 
+    </li>
+    </ul>
+  </p><br>
+
+  <h2 class="number-title"> Modalidad</h2>
+
+ 
+  <p>
+    <b>La cardinalidad delimita los límites superiores de una relación, pero no define su obligatoriedad.</b>
+  </p>
+
+  <ul>
+    <li>¿Todo instrumento debe ser tocado por algún músico?</li><br>
+    <li>¿Podría haber alguna ocurrencia en la entidad "Instrumento" que no tuviera relación con
+       otra ocurrencia en la entidad "Músico"?</li>
+  </ul>
+  <p>
+    Puede que, como requisito del sistema de información, la entidad "Instrumento" deba contener
+    una lista de instrumentos independientemente de que haya algún músico que los toque (quizás
+    una de las ocurrencias de "Instrumento" corresponda al acordeón y, en cambio, en "Músico" 
+    no haya ninguna ocurrencia correspondiente a un músico que toque el acordeón).</p>
+    
+  <p>Pero también puede que el sistema de información exija que las ocurrencias de "Instrumento" se carguen a
+    medida que se introduzcan en "Músico" ocurrencias de músicos, de modo que todos los instrumentos
+    tendrían su correspondencia con, al menos, un músico.</p>
+    
+    <p>Las dos situaciones previas
+    son incompatibles en un buen diseño de datos, y la cardinalidad no nos aporta la
+    información necesaria para solventar esta disyuntiva.
+  </p>
+
+<h3>Modalidad</h3>
+
+  <p>La <b>modalidad</b> (llamada por algunos autores cardinalidad, con la consiguiente confusión) define
+    el número mínimo y máximo de ocurrencias de una entidad que pueden estar relacionadas con
+    una ocurrencia de otra u otras entidades, identificando <b>relaciones optativas</b> (en las que no tiene
+    por qué haber correspondencia).</p>
+    
+  <p><b>La modalidad se indica a ambos lados de la relación, y su valor
+    máximo coincide con el valor de la cardinalidad correspondiente al lado de la relación en el
+    que nos encontremos.</b></p>
+
+
+  <h3>Clasificación de la modalidad de una entidad</h3>
+  <p> Puede ser de los siguientes tipos:</p>
+
+    <p>
+      <ul>
+        <li><b>0..1 (cero a uno).</b> Cada ocurrencia de la primera entidad puede relacionarse con una
+          ocurrencia de la segunda entidad o no. No puede relacionarse con varias.</li>
+        <li><b>1..1 (uno a uno).</b> Cada ocurrencia de la primera entidad debe relacionarse obligatoriamente
+          con una y solo una ocurrencia de la segunda entidad.</li>
+        <li><b>1..N (uno a ene/uno a muchos).</b> Cada ocurrencia de la primera entidad debe relacionarse
+          obligatoriamente con al menos una ocurrencia de la segunda entidad. Puede relacionarse
+          con varias.</li>
+        <li><b>0..N (cero a ene/cero a muchos).</b> Cada ocurrencia de la primera entidad no tiene limitada
+          su relación con ocurrencias de la segunda entidad. Puede relacionarse con una, varias
+          o ninguna.</li>
+      </ul>
+
+      <p><b>Ejemplo:</b> Veamos el siguiente ejemplo, correspondiente a un concesionario de automóviles:</p>
+      <p>
+        <div class="flexbox">
+          <img src="../Imagenes/BD/Ejemplo_modalidad.JPG" alt="", width="auto" height="auto">
+        </div>
+      </p>
+
+      <p><b>Para cada entidad de la relación debemos leer su modalidad en el lado opuesto.</b> En este caso, la modalidad de "Cliente" con respecto a "Automóvil" es de 0..N, 
+        y la de "Automóvil" con respecto a "Cliente" es de 0..1. Esta relación "compra" se leería del siguiente modo:</p>
+
+      <p>
+      <ul>
+        <li>Toda ocurrencia de "Cliente" puede relacionarse con varias ocurrencias de "Automóvil",
+          con una o con ninguna (en lenguaje natural: un cliente puede no comprar, comprar un
+          automóvil o comprar varios automóviles).</li><br>
+          <li> Toda ocurrencia de "Automóvil" puede relacionarse con una sola ocurrencia de
+          "Cliente" o no (un automóvil puede ser vendido a un solo cliente, o bien no ser vendido;
+          en cualquier caso, el mismo automóvil no puede ser vendido a varios clientes).</li>
+        </ul>
+      </p>
+    </p>
+
+
+
+  <h2 class="number-title"> Atributos de relación</h2>
+
+  <p>En algunas ocasiones, ciertas propiedades o características susceptibles de constituir un atributo
+    afectan a más de una entidad</p>
+
+  <p>Retomando uno de los  ejemplos previos: Es fácil identificar posibles
+    atributos de la entidad "Socio" ("NIF", "Nombre", "Apellidos", "Dirección", "Teléfono", "Fecha
+    de nacimiento", "Fecha de alta") y de la entidad "Libro" ("Signatura", "Título", "Autor", "Editorial",
+    "Año de publicación"). No obstante, un dato importante que el sistema debe registrar
+    es la fecha del préstamo. No puede figurar como atributo de "Socio", porque impediría que un
+    socio pudiera tomar más de un libro en préstamo, y no puede figurar como atributo de "Libro"
+    porque impediría que un libro fuera prestado más de una vez. <b> Afecta a ocurrencias de ambas
+    entidades, por lo que debe figurar en la relación</b>:
+  </p>
+
+  <p>
+    <div class="flexbox">
+      <img src="../Imagenes/BD/Atributo_relacion.JPG" alt="", width="auto" height="auto">
+    </div>
+  </p>
+
+  <h2 class="number-title"> Clave primaria y claves candidatas</h2>
+
+  <p>En toda entidad hay al menos un atributo o conjunto de atributos cuyos valores <b>identifican de
+    forma unívoca a cada una de las ocurrencias</b>. Observemos el siguiente ejemplo:</p>
+
+    <p>
+      <div class="flexbox">
+        <img src="../Imagenes/BD/Entidad_con_atributos.JPG" alt="", width="auto" height="auto">
+      </div>
+    </p>
+  
+  <p>Si queremos elegir un conjunto de atributos que identifiquen de forma única a cada empleado,
+    podemos pensar en la combinación de "Nombre" y "Apellidos", pero presenta un gran problema:
+    no garantiza la unicidad (puede haber dos empleados llamados "Juan Pérez García").</p>
+    
+    
+    <p>Si seguimos buscando entre la lista de atributos, veremos tres posibles opciones: "Código de empleado", "NIF" y
+    "Número de la Seguridad Social". Cada uno de los tres sirve para identificar a cada ocurrencia de
+    forma única e inconfundible (no puede haber dos empleados con el mismo NIF, ni con el mismo
+    número de la Seguridad Social, ni con el mismo código de empleado, suponiendo que dicho código
+    haya sido definido de forma única).</p>
+    
+    <p>Esos tres atributos son llamados <b>claves candidatas</b>, y el que elijamos
+    para identificar a las ocurrencias de la entidad será la <b>clave primaria</b> (<b>primary key</b>).
+    </p>
+    
+    <p>Por motivos de rendimiento de la base de datos resultante, se recomienda <b>elegir la clave primaria
+       más pequeña posible</b>.</p>
+
+  <p><b>En un diagrama entidad/relación</b> las claves primarias se representan subrayando el nombre
+    del atributo si se ha optado por dibujar los atributos en el interior de un óvalo, u oscureciendo
+    el círculo si se ha decidido utilizar el otro tipo de representación gráfica.</p>
+    
+    <p><b>Ejemplo: </b>Supongamos que hemos elegido "NIF" como clave primaria:</p>
+
+    <p>
+      <div class="flexbox">
+        <img src="../Imagenes/BD/Representaciones_gráficas_de_clave_primaria.JPG" alt="", width="auto" height="auto">
+      </div>
+    </p>
+
+  <h2 class="number-title"> Clave primaria compuesta</h2>
+   
+   
+  <p>A veces un solo atributo no es suficiente para identificar de forma unívoca todas las ocurrencias
+    de una entidad, por lo que hay que construir una clave primaria que incluya los valores
+    de varios atributos en el orden especificado, es decir, una <b>clave primaria compuesta</b>. 
+  </p>
+  
+  <p><b>Ejemplo:</b> En el siguiente ejemplo, la entidad "Cuenta bancaria" necesita cuatro atributos para definir su clave primaria,
+    ya que cada uno de ellos es susceptible de repetir valores en distintas ocurrencias:</p>
+
+    
+    <p>
+      <div class="flexbox">
+        <img src="../Imagenes/BD/Clave_primaria_compuesta.JPG" alt="", width="auto" height="auto">
+      </div>
+    </p>
+
+<!-- 
+  <h2 class="number-title"> Ejemplo de diagrama entidad/relación</h2>
+
+  <p>Se ha de definir el modelo de datos de una biblioteca con las siguientes restricciones básicas:</p>
+
+  <p>
+    <ul>
+    <li> Cada libro registrado cuenta con varios ejemplares físicos.</li>
+    <li>Todo libro corresponde a una o varias temáticas, está escrito por uno o varios autores y
+    publicado por una sola editorial.</li>
+    <li>Los ejemplares se prestan a los socios. Hay que guardar la fecha de préstamo.</li>
+    <li>Es necesario almacenar la nacionalidad o nacionalidades de cada autor, así como el país
+    donde cada editorial tiene su sede principal.</li>
+  </ul></p>
+
+  <p>A pesar de que falta mucha información sobre los requisitos de la aplicación, el siguiente
+    diagrama cumple con las restricciones expuestas:</p>
+
+
+-->
+</div>
+
+<div class="nota-box">
+  <h1 class="number-subtitle"> Modelo relacional </h1><!-- (sistema de gestión de bases de datos relacionales)? </h1> -->
+
+
+<p>Propuesto  por <b>Edgar F. Codd</b> en el IBM Research Center de San José (California) en 1970, el
+  modelo relacional buscaba una solución a los problemas derivados de la rigidez estructural de
+  las bases de datos <b>jerárquicas</b> y en <b>red</b> imperantes en la época. Presentado en sólidos términos
+  matemáticos, independiza los datos de su tratamiento.</p>
+
+
+<h2 class="number-title"> Relación</h2>
+
+
+<p>El elemento básico del modelo relacional es la <b>relación</b>, una estructura bidimensional que representa
+  las entidades y algunas relaciones del diagrama entidad-relación. Las filas de una relación,
+  llamadas <b>tuplas</b>, corresponden a las ocurrencias; cada tupla cuenta con una <b>serie de atributos</b>,
+  cada uno de ellos con un valor.
+</p>
+
+
+
+<p><b>Ejemplo:</b><br>
+  <div class="flexbox">
+    <img src="../Imagenes/BD/Relacion_MR.JPG" alt="", width="auto" height="auto">
+  </div>
+</p>
+
+<h2 class="number-title"> Dominio</h2>
+
+<p>Se le llama <b>dominio</b> de un atributo al conjunto de valores que puede tomar para una ocurrencia
+  concreta. Aunque de acuerdo a la definición teórica del modelo relacional cada dominio
+  corresponde exclusivamente a los valores posibles (es decir, el dominio del atributo “Apellidos”
+  es el conjunto de apellidos de los socios), la idea de dominio típicamente <b>se asocia con la de tipo
+  de datos</b> (es decir, el conjunto de combinaciones de datos que podría constituir un dominio, de
+  modo que desde un punto de vista técnico cualquier combinación de caracteres alfanuméricos,
+  aunque no tenga sentido, podría representar los apellidos de un socio). 
+</p>
+
+<p>Se identifican los siguientes <b>tipos de datos</b>:<br>
+  <ul>
+    <li>Números enteros.</li><br>
+    <li>Números decimales.</li><br>
+    <li>Cadenas de caracteres.</li><br>
+    <li>Fechas y horas.</li><br>
+    <li>Valores lógicos (verdadero o falso).</li><br>
+    <li>Objetos (ficheros binarios).</li><br>
+  </ul>
+</p>
+
+<p>También se pueden definir <b>conjuntos de valores a medida</b>. </p>
+
+<p><b>Ejemplo:</b> Un atributo
+  “día de la semana”, los  posibles valores pueden ser  los contenidos en el conjunto {“lunes”, “martes”,
+  “miércoles”, “jueves”, “viernes”, “sábado”, “domingo”}.</p>
+
+ <p>
+  Hay un valor especial que constituye un tipo por sí mismo: <b>el valor nulo</b> o <b>NULL</b>, que representa
+  ausencia de valor. No se debe confundir con el <b>valor vacío</b> ( <b>" "</b> en un campo de tipo
+  cadena de caracteres, o 0 en un campo numérico).
+</p>
+
+<h2 class="number-title"> Normalización</h2>
+
+<p>También a Codd se debe la definición de una serie de normas cuya aplicación elimina las redundancias
+  de información en una solución relacional. La técnica es conocida como <b>normalización</b>,
+  y consiste en llevar todas las relaciones a determinados estados llamados <b>formas normales</b>.
+</p>
+
+<p>A continuación se describen dichas formas normales y cómo se llega hasta ellas.</p>
+
+<h2 class="number-title"> Primera forma normal ( 1FN )</h2>
+
+<p>Una relación está en primera forma normal ( 1FN ) si todos sus valores son <b>atómicos</b>, es decir,
+  cada valor de los dominios de todos los atributos es único.</p>
+  
+<p><b>Ejemplo:</b> En el siguiente ejemplo (clave primaria
+  en negrita) vemos un atributo, "Teléfono", cuyos valores no son atómicos, sino repetitivos:
+</p>
+
+<p>
+  <div class="flexbox">
+    <img src="../Imagenes/BD/Relación_sin_normalizar.JPG" alt="", width="auto" height="auto">
+  </div>
+</p>
+
+<p><b>Una primera solución</b> para alcanzar la 1FN consiste en <b>atomizar el atributo</b> "Teléfono", del
+  siguiente modo:</p>
+
+  <p>
+    <div class="flexbox">
+      <img src="../Imagenes/BD/Relación_en_1FN.JPG" alt="", width="auto" height="auto">
+    </div>
+  </p>
+
+
+<p>Esta solución <b>implica una fuerte redundancia</b> ("Nombre" y "Apellidos" se repiten por cada
+  teléfono), e invalida a "NIF" como clave primaria, obligando a ampliar dicha clave primaria con
+  el atributo "Teléfono". Por ese motivo <b>se propone una solución más elaborada</b> consistente en
+  dividir la relación original en dos (una con las personas y otra con los teléfonos), vinculándolas
+  mediante los valores de la clave primaria original:</p>
+
+  <p>
+    <div class="flexbox">
+      <img src="../Imagenes/BD/Relaciones_en_1FN_1.JPG" alt="", width="auto" height="auto">
+    </div>
+  </p>
+
+  <p>
+    <div class="flexbox">
+      <img src="../Imagenes/BD/Relaciones_en_1FN_2.JPG" alt="", width="auto" height="auto">
+    </div>
+  </p>
+
+
+<p>La 1FN es parte de la definición del modelo relacional, por lo que su cumplimiento es
+  obligatorio.
+</p>
+
+<h2 class="number-title"> Segunda forma normal ( 2FN )</h2>
+
+<p>Una relación está en <b>segunda forma normal</b> (<b>2FN</b>) si cumple las siguientes reglas:</p>
+
+<p>
+  <ul>
+    <li>Está en 1FN.</li><br>
+    <li>Todos <b>los atributos que no forman parte de la clave primaria dependen  por completo de ella</b>.</li>
+  </ul>
+</p>
+
+
+<p><b>Ejemplo:</b> La relación siguiente ilustra el stock de una librería. La clave primaria está compuesta por
+  dos atributos ("Código de libro" y "Código de tienda"), pero el atributo "Dirección" no depende
+  de toda la clave, sino únicamente del atributo "Código de tienda". Por ese motivo se repite la
+  dirección de la tienda 9, con la consiguiente redundancia de información:</p>
+
+
+  <p>
+    <div class="flexbox">
+      <img src="../Imagenes/BD/Relacion_1FN_no_2FN.JPG" alt="", width="auto" height="auto">
+    </div>
+  </p>
+
+
+  <p>En este caso, el proceso de normalización obliga a dividir la relación en dos, una con la información
+    de la tienda y otra con la del stock:</p>
+
+    <p>
+      <div class="flexbox">
+        <img src="../Imagenes/BD/Relaciones_en_1FN_2_1.JPG" alt="", width="auto" height="auto">
+      </div>
+    </p>
+
+
+    <p>
+      <div class="flexbox">
+        <img src="../Imagenes/BD/Relaciones_en_1FN_2_2.JPG" alt="", width="auto" height="auto">
+      </div>
+    </p>
+
+  <p><b>Observación:</b> Nótese que la 2FN solo se puede violar si la clave primaria está compuesta por más de un
+    atributo, por lo que <b>toda relación en 1FN cuya clave primaria esté formada por un solo atributo
+    también está en 2FN.</b>
+  </p>
+
+  <h2 class="number-title"> Tercera forma normal ( 3FN )</h2>
+
+  <p>Una relación está en <b>tercera forma normal</b> (<b>3FN</b>) si cumple las siguientes reglas:</p>
+
+  <p>
+    <ul>
+      <li>Está en 2FN.</li><br>
+      <li>Todos <b>los atributos que no forman parte de la clave primaria son independientes entre
+        sí</b>, es decir, no dan información sobre otros atributos de la relación.</li>
+    </ul>
+  </p>
+
+  <p><b>Ejemplo:</b> Consideremos una  relación con información sobre empleados. Todos los atributos
+    dependen directamente de la clave primaria ("Código de empleado") excepto "Nombre
+    de departamento", que depende de "Código de departamento":</p>
+
+    <p>
+      <div class="flexbox">
+        <img src="../Imagenes/BD/2FN_no_3FN.JPG" alt="", width="auto" height="auto">
+      </div>
+    </p>
+
+
+    <p>La información sobre el departamento constituirá una nueva relación:</p>
+
+
+    <p>
+      <div class="flexbox">
+        <img src="../Imagenes/BD/Relacion_en_3FN.JPG" alt="", width="auto" height="auto">
+      </div>
+    </p>
+
+    
+    <p>
+      <div class="flexbox">
+        <img src="../Imagenes/BD/Relacion_en_3FN_2.JPG" alt="", width="auto" height="auto">
+      </div>
+    </p>
+
+    <h2 class="number-title"> Paso del Modelo E-R al modelo físico de datos</h2>
+
+    <p>El objetivo del diagrama entidad-relación y las técnicas de normalización es proporcionar el
+      mejor diseño posible para una futura base de datos.</p>
+      
+    <p>En el <b>modelo relacional</b> la información
+      se almacena en forma de tablas con campos y registros, a modo de las relaciones, los atributos
+      y las tuplas del modelo relacional (coincidentes, a su vez, con las entidades y relaciones,
+      los atributos y las ocurrencias del diagrama entidad-relación).</p>
+
+      <p>
+        <div class="flexbox">
+          <img src="../Imagenes/BD/Comparación_paradigma_relacional.JPG" alt="", width="auto" height="auto">
+        </div>
+      </p>
+
+      <p><b>Ejemplo:</b> Se muestra la tabla TSocio, resultante de la relación "Socio" vista anteriormente:</p>
+
+      <p>
+        <div class="flexbox">
+          <img src="../Imagenes/BD/Tabla_MR.JPG" alt="", width="auto" height="auto">
+        </div>
+      </p>
+
+      <h2 class="number-title"> Nomenclatura</h2>
+
+      <p>Se define una <b>nomenclatura</b> común a todos los elementos de
+        modelo físico y base de datos referidos. Para ello se usará como punto de partida la <b>notación
+        húngara</b>, definida en los años 70 por <b>Charles Simonyi</b>, programador húngaro de Xerox. Simonyi
+        estableció unas <b>reglas de nominación de variables</b> que aportaba información sobre su ámbito y
+        tipo de datos.</p>
+        
+        <p>Centrada originalmente en código fuente de programación, se presenta
+        a continuación una adaptación reducida de la notación húngara a los nombres de elementos de una
+        base de datos relacional, según los siguientes criterios:</p>
+
+        <p>
+          <ul>
+            <li><b>Nombres de tablas.</b> Se prefijarán con una "T" mayúscula (TEmpleado, TCliente).</li><br>
+            <li><b>Nombres de campo.</b> El prefijo, una letra minúscula, indicará el tipo de datos del campo, de
+              acuerdo a los siguientes tipos básicos:<br>   
+              <ul><br>
+                <li><b>Números:</b> "n" (nCantidad, nTotal), de number.</li><br>
+                <li><b>Cadenas de caracteres:</b> "c" (cNombre, cCiudad), de character.</li><br>
+                <li><b>Fechas:</b> "d" (dNacimiento, dAlta), de date. Nótese que ya no es necesario especificar
+                la palabra "fecha" (dFechaNacimiento sería redundante).</li><br>
+                <li><b>Valores lógicos:</b> "l" (lSexo, lPensionista), de logical.</li><br>
+                <li><b>Objetos:</b> "o" (oFoto, oDocumentoXML), de object.</li><br>
+              </ul>
+            </li>
+            <li><b>Nombres (genérico).</b> <b>El primer carácter de un nombre siempre será una letra.</b> Se evitará el uso de caracteres de alfabetos locales, como la eñe, la ç,
+              las vocales acentuadas o con diéresis, etc. Únicamente se aceptarán como válidos los siguientes
+              caracteres:<br>
+            <ul><br>
+              <li>Letras del alfabeto inglés en mayúscula y minúscula.</li><br>
+              <li>Números.</li><br>
+              <li>Signo de subrayado o guion bajo ("_").</li><br>
+            </ul>
+           
+           </li> 
+          <li><b>Identificadores.</b> Todo campo creado para identificar de forma unívoca los registros de una
+            tabla (código de cliente, código de libro, código de país) llevará como sufijo las letras
+            "<b>ID</b>" (<b>identificador</b>) en mayúscula (nClienteID, nLibroID, nPaisID).</li>
+          </ul>
+        </p>
+
+    <p><b>Observaciones:</b>
+      <ul>
+       <li>A pesar de que esta nomenclatura puede resultar insuficiente en el entorno de trabajo de
+        un SGBD real, nos servirá como marco de referencia común para los ejemplos de este texto.</li><br>
+       <li> Queda a discreción del lector ampliarla y/o adaptarla como convenga a sus necesidades.</li>
+      </ul>
+    </p>
+
+
+    <h2 class="number-title"> Reglas de transformación</h2>
+    
+    <p>Se propone la siguiente representación gráfica de <b>modelo físico de datos</b>:</p>
+
+    <ul>
+      <li>Las <b>tablas</b> se representan como un rectángulo con el nombre de la tabla en la parte superior
+      y la lista de campos en la inferior. Los campos que conformen la clave primaria
+      irán subrayados y en orden:
+      <p>
+        <div class="flexbox">
+          <img src="../Imagenes/BD/Representacion_grafica_tabla.JPG" alt="", width="auto" height="auto">
+        </div>
+      </p>
+    </li>
+    <li>La <b>modalidad</b> irá implícita en la terminación de las líneas que relacionan tablas, del siguiente
+      modo:
+    </li>
+    </ul>
+
+    
+  <table class="info">
+    <thead>
+      <tr>
+        <td>
+          <p>
+            <b>Modalidad</b>
+          </p>
+        </td>
+        <td>
+          <p>
+            <b>Simbolo</b>
+          </p>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <p> <b>Modalidad O..1 </b></p>
+        </td>
+        <td>
+          <p><img src="../Imagenes/BD/Modalidad_0_1.JPG" alt="", width="auto" height="auto"></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p> <b>Modalidad 1..1</b>) </p>
+        </td>
+        <td>
+          <p><img src="../Imagenes/BD/Modalidad_1_1.JPG" alt="", width="auto" height="auto"></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>   <b>Modalidad 1..N</b> </p>
+        </td>
+        <td>
+          <p><img src="../Imagenes/BD/Modalidad_1_N.JPG" alt="", width="auto" height="auto"></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>   <b>Modalidad 0..N</b> </p>
+        </td>
+        <td>
+          <p><img src="../Imagenes/BD/Modalidad_0_N.JPG" alt="", width="auto" height="auto"></p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+<p>En algunos casos, <b>las relaciones generan tablas</b>. A la hora de asignar nombre a
+  dichas tablas se pueden seguir dos criterios:</p>
+  <p>
+    <ul>
+      <li>Utilizar un sustantivo que represente la acción implícita en la relación ("cliente contrata
+        servicio" generaría una tabla TContrato, "usuario compra producto" generaría TCompra).</li><br>
+      <li>Concatenar los nombres de las entidades relacionadas ("profesor imparte asignatura" generaría
+        TProfesorAsignatura).</li>
+    </ul>
+  </p>
+
+
+<p><b>La transformación de componentes del diagrama entidad-relación en elementos del modelo
+  físico de datos sigue las siguientes reglas:</b>
+</p>
+
+  <ul>
+    <li>Toda <b>entidad</b> se convierte en una <b>tabla</b>.</li><br>
+    <li>Todo <b>atributo</b> pasa a ser un <b>campo</b>. Los atributos marcados como parte de la clave primaria
+      se convierten en campos de la clave primaria de la nueva tabla, conservando su
+      orden.
+    </li><br>
+    <li>Las <b>relaciones</b> presentan casos basadas en su <b>cardinalidad</b>. Uno de los objetivos
+      fundamentales a la hora de diseñar una base de datos es evitar la proliferación de valores
+      nulos:
+    <ul><br>
+      <li><b>Relaciones M:N, ternarias</b> y <b>n-arias</b>. Se convierten en <b>tabla</b>.
+        Su clave primaria será la concatenación de las claves primarias de las entidades que relacionan.<br>
+        
+      </li>
+    </ul>
+
+  </li>
+  
+  </ul>
+
+  <p><b>Ejemplo:</b><br>
+    <div class="flexbox">
+      <img src="../Imagenes/BD/Relacion_M_N.JPG" alt="", width="auto" height="auto">
+    </div>
+  </p>
+</div>
+
+
+
+
+    <h1 class="page-subtitle">Bases de datos</h1>
+
+    <div class="nota-box"><h1 class="number-title"> Bases de datos</h1>    
+        <p> Una base de datos es un conjunto de información organizada de forma lógica, de
+tal manera que es posible extraer toda la información o una parte de ella en
+cualquier momento.
+</p>
+<p>
+    Las bases de datos tienen importantes aplicaciones en la administración de
+empresas e instituciones públicas.
+</p>
+
+<p>
+    Las bases de datos requieren de un software que permita la administración de
+dicha base de datos. Estos programas especializados sirven como interfaz para
+que los usuarios puedan administrar como se estructura y optimiza toda la
+información recopilada.
+</p>
+
+<p>
+    Existen programas llamados sistemas gestores de bases de datos, abreviado
+SGBD (o DBMS por sus siglas en inglés Database Management System), que
+permiten almacenar y posteriormente acceder a los datos de forma rápida y
+estructurada.
+</p>
+
+<p>
+    Un sistema de gestión de bases de datos también permite realizar un gran número
+de operaciones relacionadas con la administración de la base de datos, tales
+como, supervisar la productividad, realizar ajustes, backups y restauración de los
+datos.
+</p>
+
+<p>
+    Entre los sistemas gestores de bases de datos (SGBD) más conocidos se
+encuentran: Microsoft Access y MySQL.
+</p>
+
+    </div>
+
+    <div class="nota-box">
+        <h1 class="number-title"> Bases de datos VS hojas de calculo</h1>  
+<p>
+    Las bases de datos y las hojas de cálculo son herramientas útiles para almacenar
+información. Las principales diferencias entre ambas son:
+</p>
+
+<ol>
+    <li>La forma de manipular y guardar la información.</li>
+    <li>La cantidad de datos que se pueden almacenar</li>
+    <li>La accesibilidad a esos datos almacenados.</li>
+</ol>
+
+<p>
+Las hojas de cálculo desde sus comienzos fueron diseñadas para un usuario. Son
+excelentes para uno o un pequeño número de usuarios que no necesitan utilizar un
+gran volumen de datos.
+</p>
+
+<p>
+    Las bases de datos, por otro lado, fueron creadas para almacenar gran cantidad
+de información organizada, permite acceder y consultar los datos de forma rápida
+y segura a muchos usuarios al mismo tiempo.
+</p>
+    </div>
+
+
+
+    <div class="nota-box">
+        <h1 class="number-title"> Bases de datos relacional </h1>  
+    
+        <p>
+            Las bases de datos se pueden clasificar de acuerdo a la función de la base de
+datos, o bien de acuerdo a su modelo de administración de datos. En este ultimo
+caso el modelo relacional es el modelo utilizado en la actualidad para representar
+problemas reales y administrar datos dinámicamente.
+        </p>
+
+        <p>
+            Una base de datos relacional es un conjunto de una o más tablas estructuradas
+en registros (filas o tuplas) y campos (columnas), que se vinculan entre sí por un
+campo en común, en ambos casos posee las mismas características como por
+ejemplo el nombre de campo, tipo y longitud; a este campo generalmente se le
+denomina ID, identificador o clave. A esta manera de construir bases de datos se le
+denomina modelo relacional
+        </p>
+        <p>
+            En un sistema de base de datos relacional, los datos se organizan en tablas
+estructuradas en registros y campos, vinculadas entre si por un campo en
+común.
+        </p>
+    </div>
+
+<div class="nota-box">
+    <h1 class="number-title"> Microsoft Access</h1>  
+
+<p>
+    Hoy en día muchas de las actividades que se desempeñan en una empresa
+requieren un seguimiento especial: administrar un inventario, seguir los pedidos de
+los clientes, tener un control de ingresos y gastos, son sólo algunas de ellas.
+</p>
+
+<p>
+    Aunque podríamos desempeñar esta tarea en Excel. Nada es más cómodo que
+utilizar una base de datos, y una opción para esto último es Microsoft Access.
+</p>
+<p>
+    Con Access, puedes crear una base de datos sin escribir código ni ser un experto
+en bases de datos.
+</p>
+
+<p>Microsoft Access (MS Access) es un sistema de gestión de bases de datos
+    relacional; esto significa que está preparado para almacenar múltiples tablas y crear
+    relaciones entre estas.</p>
+
+    <p>
+        MS Access es un programa desarrollado por Microsoft que permite crear bases de
+datos relacionales. La información se obtiene a través de tablas, las cuáles
+almacenan información sobre temas concretos. Las tablas disponen los datos en
+campos (columnas) y registros (filas).
+    </p>
+
+    <p>
+        Una base de datos en Access nos permite generar nueva información a partir de
+dichos datos y a través de diversos procesos, haciendo uso de campos y registros.
+    </p>
+
+    <p>
+        Recordemos que las tablas disponen los datos en campos y registros. Los campos
+son las columnas y los registros las filas.
+    </p>
+    
+    <p>
+        Las bases de datos de Access 2010 tienen la extensión .accdb o en versiones mas
+recientes la extensión .mdb para que el ordenador las reconozca como tal.
+    </p>
+
+    <p>
+        La diferencia mas grande entre Excel y Access es la forma en la que Access
+permite relaciones entre múltiples tablas
+    </p>
+
+    <p>
+        Access es una poderosa herramienta que sirve como gestor de datos, ademas de se
+puede conectar con Excel y todos los otros programas de Offi
+    </p>
+    <p>
+        Imagina contar con el conocimiento necesario para poder dominar esta poderosa
+herramienta y resolver fácilmente tareas en tu empresa, trabajo u hogar.
+    </p>
+</div>
+
+<div class="ejercicio-box">
+    <h1 class="number-title" > Tarea 1 </h1>  
+    <ol>
+        <li>
+            Dar tres ejemplos (especificando detalles) de distintas aplicaciones de bases de
+datos que sean de tu interés y preferentemente que pertenezcan a alguna rama
+del turismo.
+        </li>
+        <li>
+            Investigar las principales similitudes y diferencias entres MySQL y Microsoft
+Access.
+        </li>
+        <li>
+            Investigar y mencionar al menos dos SGDB distintos de MySQL y Microsoft
+Access.
+        </li>
+        <li>
+            Describe dos diferencias (distintas de las presentadas) entre Access y Excel.
+Sugerencia: Analiza las propiedades de las tablas en Access y en Excel
+respectivamente.
+        </li>
+    </ol>
+</div>
+
+
+
+
+<div class="info-box">
+    <h4 class="number-title"> Cuando  diseñamos una base de datos, debemos
+        tomar en cuenta las siguientes aspectos: </h4>
+        <ol>
+            <li>Trate de planificar para el futuro e incluya todos los datos que probablemente necesite.</li>
+            <!--
+            En Access, es posible cambiar los tipos de datos de los atributos o agregar atributos más tarde,
+            pero si la base de datos ya es grande o muchas personas la están usando simultáneamente, 
+            agregar atributos o modificar los tipos de datos podría ser lento o interrumpir 
+            el uso de su sistema.
+            -->
+            <li>Tenga un campo separado para cada división de los datos que anticipe necesitar.</li>
+                <!-- Como regla general, es mucho más fácil juntar datos que separarlos. Por ejemplo, 
+                si almacenamos los nombres de los estudiantes como tres campos diferentes (nombre, segundo nombre y apellido),
+                entonces podemos formar fácilmente el nombre completo de un estudiante concatenando (colocando de extremo a extremo)
+                el contenido de estos campos. Si solo almacenamos el nombre como un campo grande, entonces ciertas tareas, 
+                como ordenar a los estudiantes por su nombre o apellido, pueden volverse innecesariamente difíciles y propensas a errores.
+                -->
+            <li>  Evite almacenar campos calculados</li>
+            <!-- 
+            Si ya ha almacenado el total de créditos y puntos de calificación acumulados,
+            puede calcular fácilmente el GPA. No hay necesidad de almacenar de forma redundante 
+            los GPA de los estudiantes. Eso ocupará espacio innecesario y creará una oportunidad 
+            para que los campos de la base de datos se vuelvan inconsistentes entre sí. 
+            En bases de datos relacionales como Access, generalmente debe usar objetos de tabla 
+            solo para sus datos "base". Los cálculos basados en esos datos residen en otros objetos, 
+            como consultas, formularios e informes. Esta separación de datos base y calculados es otra
+             forma en la que las bases de datos relacionales son diferentes de las hojas de cálculo,
+              en las que todos los datos "base" coexisten con los cálculos dentro de la misma cuadrícula bidimensional 
+              de celdas.
+            -->
+        </ol>
+
+        <p>
+        <b>Recuerda:</b> Una base de datos bien diseñada no solo ayuda a garantizar la integridad de los datos,
+         sino que es más fácil de mantener y actualizar.
+        </p>
+</div>
+
+
+
+  <div class="ejercicio-box"> 
+    <h1 class="number-title"> Ejercicio. Tabla Alumnos</h1>  
+    <p>Supongamos que se desea almacenar información sobre estudiantes en una universidad pequeña.
+     Se desea almacenar y administar  la información mas relevante  de los alumnos</p>
+    
+        
+     <button class="respButton hvr-grow ">   Construya una tabla en Access de nombre Alumnos con la siguiente estructura 
+    </button>
+<div class="resp-box flexbox">
+  <div class="flexbox">
+        <p>
+           
+            <ol>
+                <li>Matrícula </li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 10</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (sin duplicados)</li>
+                </ul>
+                <li>Nombre(s)</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 20</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Primer apellido.</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 25</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Segundo apellido.</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 10</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Fecha de nacimiento</li>
+                <ul>
+                    <li>Tipo de dato: Fecha/Hora</li>
+                    <li>Formato: Fecha corta </li>
+                    <li>Mascara de entrada: Aspecto 26/01/1990</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Genero</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 1</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>CURP</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 18</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (sin duplicados)</li>
+                </ul>
+                <li>NSS</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 12</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (sin duplicados)</li>
+                </ul>
+                <li>Tipo de Sangre</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 4</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Calle</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 30</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                
+                <li>Número interior</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 4</li>
+                    <li>Requerido: No</li>
+                    <li>Indexado: No</li>
+                </ul>
+                <li>Número exterior</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 10</li>
+                    <li>Requerido: No</li>
+                    <li>Indexado: No</li>
+                </ul>
+                <li>Colonia</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 50</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                  <li>Municipio</li>
+                  <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 30</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                   <li>código postal</li>
+                   <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 10</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Estado</li>
+                <ul>
+                <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 20</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Carrera</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                        <li>Tamaño de campo: 30</li>
+                        <li>Requerido: Si</li>
+                        <li>Indexado: Si (con duplicados)</li>
+                    </ul>
+                <li>Tutor académico</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                        <li>Tamaño de campo: 60</li>
+                        <li>Requerido: Si</li>
+                        <li>Indexado: Si (con duplicados)</li>
+                    </ul>
+                <li>Alumno regular</li>
+                <ul>
+                    <li>Tipo de dato: Si/No</li>
+                    <li>Formato: Si/No</li>
+                        <li>Indexado: Si (con duplicados)</li>
+                    </ul>
+                <li>Creditos acumulados</li>
+                <ul>
+                    <li>Tipo de dato: Número</li>
+                        <li>Requerido: Si</li>
+                    </ul>
+                <li>Becas de Alimentos</li>
+                <ul>
+                    <li>Tipo de dato: Si/No</li>
+                    <li>Formato: Si/No</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                    </ul>
+                <li>Beca de  Colegiatura</li>
+                <ul>
+                    <li>Tipo de dato: Si/No</li>
+                    <li>Formato: Si/No</li>
+
+                        <li>Indexado: Si (con duplicados)</li>
+                    </ul>
+                </ul>
+
+                <li>Correo electrónico</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                        <li>Tamaño de campo: 50</li>
+                        <li>Requerido: Si</li>
+                        <li>Indexado: Si (sin duplicados)</li>
+                    </ul>
+                <li>Numero celular</li>
+                <ul>
+                <li>Tipo de dato: Texto</li>
+                <li>Tamaño de campo: 10</li>
+                <li>Requerido: Si</li>
+                <li>Indexado: Si (sin duplicados)</li>
+            </ul>
+            
+                
+                
+                
+            </ol>
+        </p>
+
+       <!-- 
+<button class="respButton hvr-grow "> Procedamos ahora con el diseño de nuestra base de datos  
+        </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">
+        <ol>
+            <li> Access ya proporcionó un campo llamado "ID", de acuerdo con el procedimiento estándar de cada tabla,
+                 que incluye un atributo de clave principal cuyo valor identifica de 
+                 manera única cada fila de una tabla.</li>
+            </ol>
+      </div>
+      </div>
+    -->
+
+  </div>
+</div>
+    </div>
+
+
+    
+<!-- 
+<div class="info-box">
+    <h1 class="number-title"> La noción de  área </h1>  
+    <p>
+        Una de las motivaciones más importantes para el desarrollo 
+        del cálculo integral es el área, en particular calcular áreas 
+        debajo de gráficas de funciones. La noción de área no 
+        la vamos a definir formalmente pues es un proceso 
+        largo (pero interesante). En su lugar vamos pensar 
+        al área  simplemente como una función, que por el momento 
+        vamos a denotar  $a$, que asigna números no negativos  a ciertas regiones 
+        del plano, las cuales llamaremos medibles. Dicha función \(a\) 
+        satisface las siguientes propiedades:
+    </p>
+    <ol>
+        <li>$a(S) \geq 0$ para todo medible $S$; </li> 
+        <li>$a(\emptyset)=0$.</li>
+        <li>$a(S\cup T) = a(S)+ a(T)$ si $S\cap T =\emptyset$;</li>
+        <li> si $T \subseteq S$ entonces $a(T) \leq a(S)$ y $a(S\setminus T)= a(S)-a(T)$;</li>
+        <li>si $S$ es un rectángulo de base $b$ y altura $h$, $a(S)=bh$;</li>
+        <li>decimos que dos medibles, $S$ y $T$, son congruentes si existen 
+        rotaciones y/o translaciones que manden uno al otro.
+        Con esta definición se tiene que si $S$ y $T$ son congruentes entonces 
+        $a(S)=a(T)$;
+        </li>
+    </ol>
+    <p>
+        Nota: existe una propiedad más que tiene que ver con límites pero que 
+        no es fundamental entender en este momento. La propiedad se puede escribir como 
+        \[
+            a\left(\cup_{i=1}^\infty S_i\right)=\sum_{i=1}^\infty a(S_i)
+        \]
+        siempre y cuando los medibles \((S_i)_{i=1}^\infty\) sean ajenos dos a dos.
+    </p>
+    
+</div>
+
+<div class="nota-box">
+    <h1 class="number-title"> El ejemplo</h1>  
+    <p>
+        Entre otras muchas cosas Arquímides estaba interesado en calcular áreas y 
+        volúmenes. Antes de cálcular áreas ya hábia calculado varios volúmenes: 
+        el cóno de base rectangular
+        tiene volumen \(\frac{1}{3}Bh\), donde  \(B\) es el área de la base 
+        y \(h\) la altura; la esfera de radio \(R\) tiene volumen \(\frac{4}{3}\pi R^3\)
+        (ver por ejemplo <a href="http://www.mat.ucm.es/cosasmdg/cdsmdg/05edumat/geometriahoy/experimentosgeom/lamejor.htm">
+            la mejor idea de Arquímides</a>).
+    </p>
+    <p>
+        La idea más importante de Arquímides es tratar de descomponer la región (ya sea 
+        en el plano o en el espacio) en regiones más sencillas cuya área o volumen sea conocido o 
+        fácil de calcular.
+    </p>
+    <p>
+        El ejemplo que vamos a ver, siguiendo las ideas de Arquímides pero con una 
+        notación muy diferente al que el usó, es calcular el área bajo la curva de la 
+        parábola \(y=x^2\), desde \(x=0\) hasta \(x=b\), donde \(b>0\) es un número arbitrario.
+    </p>
+    <div class="flexbox">
+        <img src="./Images/S1-Image1.png" alt="AreaBajoParabola" width="40%" height="auto">
+      </div>
+    <p>
+        Cálcular directamente el área bajo la parábola no es sencillo pero podemos 
+        aproximarla si dividimos la región en franjas y consideramos  rectángulos que 
+        aproximen el área de dichas franjas. La ventaja de los rectángulos es que su área 
+        es simplemente base por altura.
+    </p>
+    <div class="flexbox">
+        <img src="./Images/S1-Image2.png" alt="FranjasParabola" width="40%" height="auto">
+      </div>
+    <p>
+        Intuitivamente si dividimos la región en un número muy grande de franjas la aproximación 
+        del área de los rectángulos será cada vez una mejor estimación del área bajo 
+        la parábola  y en el límite obtendremos precisamente el área buscada. En lo que 
+        sigue hacemos las cuentas que formalizan esta idea. 
+    </p>
+    <div class="flexbox">
+        <img src="./Images/S1-Image3.png" alt="Escalones" width="40%" height="auto">
+      </div>
+    <p>
+        Para empezar dividimos el invervalo \([0,b]\) en un número igual de partes. Para 
+        llevar un control de las partes vamos a usar un entero \(n\). Por ejemplo, para 
+        \(n=2\) lo dividimos en dos partes y para llevar un control vamos a enumerar los 
+        puntos de estas partes iniciando con \(x_0=0\), luego el punto medio 
+        \(x_1=\frac{b}{2}\) y el punto final \(x_2=b\). En general si dividimos 
+        el intervalo \([0,b]\) en \(n\) partes iguales los puntos de la partición,
+        iniciando con \(x_0=0\)  y terminando con \(x_n=b\) son 
+        \[
+        x_0=0,x_1= \frac{b}{n}, x_2=2\frac{b}{n}, \dots, x_{n-1}=(n-1)\frac{b}{n}, x_n=n\frac{b}{n}=b.
+        \]
+
+    </p>
+    <div class="flexbox">
+        <img src="./Images/S1-Image5.png" alt="Particion" width="40%" height="auto">
+      </div>
+    <p>
+        Ahora calculamos el área de cada rectángulo cuya base 
+        está en el intervalo \([x_{i-1},x_i]\) (con \(1 \leq i \leq n \)). En este punto necesitamos 
+        hacer una decisión de cómo tomar la altura de cada  rectángulo, pues podemos aproximar el 
+        área con rectángulos por debajo de la gráfica o por arriba. Vamos a usar los rectángulos 
+        por arriba. En esta situación tenemos la siguiente figura
+    </p>
+    <div class="flexbox">
+        <img src="./Images/S1-Image4.png" alt="AreaRectangulo" width="40%" height="auto">
+      </div>
+    <p>
+        Sumando todos las contribuciones de área de los  rectángulos obtenemos 
+        \[
+        \sum_{i=1}^{n} \frac{b^3}{n^3}i^2=\frac{b^3}{n^3}\sum_{i=1}^ni^2.
+        \]
+        lo cual es una  aproximación del área bajo la parábola.
+    </p>
+    <p>
+        En este punto uno topa con pared pues necesitamos una manera de estimar la 
+        expresión anterior cuando \(n\) tiende a infinito. Afortunadamente Arquímides 
+        pudo reconocer la suma anterior como un volumen. 
+    </p>
+    <p>
+        En particular Arquímides notó que la suma \(\sum_{i=1}^n i^2\) es una estimación 
+        del volúmen de la pirámide rectangular de base \(n\) y altura \(n\). Lo anterior 
+        se puede ver mediante la siguiente figura, que acomoda cubos de lado 1 en forma de 
+        una pirámide.
+
+    </p>
+    <div class="flexbox">
+        <img src="./Images/S1-Image6.png" alt="AreaRectangulo" width="40%" height="auto">
+      </div>
+    <p>
+        Con este arreglo cada capa tiene un volumen de \(i^2\), empezando con la 
+        base en \(i=n\) y terminando con la cúspide en \(i=1\). El volumen 
+        de dicho cono es \(\frac{1}{3}n^2 n\) (un tercio del área de la base 
+        por la altura). Por lo que si  \(n\) es muy grande la suma 
+        \(\sum_{n=1}^n i^2 \) es aproximadamente \(\frac{1}{3}n^3\).
+    </p>
+    <p>
+        Por lo tanto 
+        \[
+        \frac{b^3}{n^3}\sum_{i=1}^n i^2 \approx \frac{b^3}{n^3} \left(\frac{1}{3} n^3\right)
+        =\frac{b^3}{3}.
+        \]
+    </p>
+    <p>
+        Por lo tanto Arquímides dedujo que el área bajo la parábola, de \(x=0\)
+        a \(x=b\), es \(\frac{b^3}{3}\). 
+    </p>
+    <p>
+        Este ejemplo es muy ilustrativo pues todo lo que se hará en adelante es refinar 
+        las ideas y cuentas que se han hecho.
+    </p>
+    <p>
+        En el <a href="https://youtu.be/RUJdetmqPsM" target="_blank" > Video </a> 
+        se presenta este ejemplo.
+        
+    </p>
+</div>
+
+
+
+
+<div class="definicion-box">
+    <h1 class="number-title"> Definición</h1>  
+
+
+        <p>
+            Dado un intervalo $[a,b] \subseteq \mathbb{R}$, su longitud se define como: $b-a.$
+        </p>
+        <p>
+           Una partición del intervalo $[a,b]$ es un subconjunto finito de puntos 
+           $P \subset [a,b]$ tal que $a, b \in P$. 
+        </p>
+        <p>
+            Dada una partición denotamos 
+            $P=\{ x_0 < x_1 < \cdots < x_n \}$ con $x_0=a$ y $x_n=b$.  
+            A los intervalos de la forma $[x_{i-1}, x_i]$, $i=1,\dots, n$, 
+            se le llaman los subintervalos de la partición. Al número  $n$ lo llamamos la
+            longitud de la partición y cuenta en cuántas partes la partición  divide a \([a,b]\).
+        </p>
+        <p>
+          La partición más sencilla es simplemente $P=\{a,b\}$.
+        </p>
+</div>
+
+<div class="nota-box">  
+    <h1 class="number-title"> Partición homogenea </h1>  
+        <p>
+            Una partición se llama homogenea si todos los subintervalos, $[x_{i-1}, x_i]$,  
+            tienen la misma longitud. Por ejemplo, si \(P\) es una partición homogenea 
+            de \([a,b]\) de longitud \(n\) entonces \([a,b]\) se divide en \(n\) subintervalos 
+            de la misma longitud, por lo que cada subintervalo tiene longitud \(\frac{b-a}{n}\).
+            Por lo tanto, para viajar entre puntos consecutivos de la partición sólo sumamos 
+            \(\frac{b-a}{n}\), por lo que los puntos de la partición homogenea están dados 
+            por 
+            \begin{eqnarray*}
+            x_0&=&a, \\
+            x_1&=&a+\frac{b-a}{n},\\
+            x_2&=&x_1+\frac{b-a}{n}=a+2\left(\frac{b-a}{n}\right),\\
+            \vdots \\
+            x_{j+1}&=&x_{j}+\frac{b-a}{n}=a+j\left(\frac{b-a}{n}\right),\\
+            \vdots \\ 
+            x_n&=&a+n \left(\frac{b-a}{n}\right)=a+b-a=b.
+            \end{eqnarray*}
+        </p>
+</div>
+
+<div class="definicion-box"> 
+    <h1 class="number-title"> Definición </h1>  
+    <p>
+        Dada una función acotada $f:[a,b]\to \mathbb{R}$  y $P$, 
+        una partición de $[a,b]$, definimos las sumas inferiores y superiores de Riemann de $f$, 
+        con respecto a $P$, como:
+        \begin{eqnarray*}
+        \overline{S}(f,P)=\sum_{i=1}^n M_i [x_i-x_{i-1}] \\
+        \underline{S}(f,P)=\sum_{i=1}^n m_i [x_i-x_{i-1}]
+        \end{eqnarray*} 
+        donde $M_i=\sup \{f(x) : x\in (x_{i-1}, x_i)\}$, $m_i=\inf \{ f(x): x\in (x_{i-1}, x_i) \}$. 
+    </p>
+    <p>
+        Nota que los supremos e ínfimos de la definición anterior existen pues estamos 
+        pidiendo que \(f\) sea acotada.
+    </p>
+    <p>
+        Si $P$ es la partición homogenea de longitud $n$ podemos abreviar 
+        $\overline{S}(f,P)$ como $\overline{S}_n(f)$ (similarmente con las sumas inferiores).
+    </p>
+</div>
+
+ <div class="ejercicio-box">
+     <h1 class="number-title" id="Ejer:SumasSupInfParabloa"> Ejercicio </h1>  
+        <p>
+            Considera la funcíon \(f:[0,b]\to \mathbb{R}\) dada por $f(x)=x^2$. Por \(P_n\)
+            denotamos la partición homogenea de longitud \(n\).
+        </p>
+        <ol>
+            <li>
+                Demuestra que:
+                \begin{eqnarray*}
+                \overline{S}(f,P_n)= \frac{b^3}{n^3}\sum_{i=1}^n  i^2\\
+                \underline{S}(f,P_n)= \frac{b^3}{n^3}\sum_{i=1}^{n-1}  i^2
+                \end{eqnarray*}  
+            </li>
+            <li>
+                Demuestra por inducción sobre \(n\) que:
+                $$
+                \sum_{i=0}^{n-1}i^2 \leq \frac{n^3}{3} \leq \sum_{i=0}^n i^2
+                $$
+            </li>
+            <li>
+                Demuestra que 
+                \[
+                \overline{S}(f,P_n)- \underline{S}(f,P_n)= \frac{b^3}{n}
+                \]
+            </li>
+            <li>
+                Con ayuda de los incisos anteriores prueba que 
+                \[
+                \lim_{n\to \infty} \overline{S}(f,P_n)=
+                \lim_{n\to \infty} \underline{S}(f,P_n)=\frac{b^3}{3}
+                \]
+            </li>
+        </ol>
+ </div>
+ -->
+
+<!--
+    <div class="ejercicio-box"> 
+    <h1 class="number-title"> Ejercicio </h1>   
+    <p>
+        Usa la fórmula del volumen de una pirámide de base cuadrada para estimar que
+        $$
+        \sum_{i=1}^n i^2 \sim \frac{n^3}{3}
+        $$
+    </p>
+    <p>
+        Sugerencia: construye una pirámide con cubos unitarios, con los 
+        lados de la base de tamano $n$ y altura igual a $n$.
+    </p>
+</div> 
+-->
+
+
+<!-- 
+<div class="ejercicio-box"> 
+    <h1 class="number-title"> Ejercicio</h1>  
+    <p>
+        Este ejercicio da otra prueba de que, para la función 
+        \(f:[0,b]\to \mathbb{R}\), $f(x)=x^2$, 
+        $$\lim_{n\to \infty} \overline{S}(f,P_n)=
+        \lim_{n\to \infty} \underline{S}(f,P_n)=\frac{b^3}{3}$$
+    </p>
+        <ol>
+            <li> Usar induccion para probar:
+                $$
+                \sum_{i=1}^n i^2=\frac{n^3}{3}+\frac{n^2}{2}+\frac{n}{6}
+                $$
+                hint: primero prueba que $k^3-(k-1)^3=3k^2-3k+1$
+            </li>
+            <li>
+                Usando el inciso anterior prueba que 
+                $$
+                \lim_n \underline{S}_n(f)=\lim_{n}\overline{S}_n(f) =\frac{b^3}{3}
+                $$
+            </li>
+</div>
+
+
+<div class="ejercicio-box"> 
+   <h1 class="number-title" id="Ejer:SumasSupInfCubica"> Ejercicio</h1>   
+    <p>
+        Este ejercicio  es similar al anterior pero para 
+        la función \(f:[0,b]\to \mathbb{R}\) dada por $f(x)=x^3$.  
+    </p>
+<ol>
+    <li>
+        Prueba  por inducción:
+        $$\sum_{i=1}^n i^3= \frac{n^4}{4}+\frac{n^3}{2}+\frac{n^2}{4}$$
+    </li>
+    <li>
+        Si $P_n$ es la partición homogenea de \([0,b]\) usa el inciso anterior para probar 
+        $$\lim_{n}\underline{S}(f,P_n)=\lim_n\overline{S}(f,P_n)=\frac{b^4}{4}$$
+    </li>
+</ol>
+<p>
+    Este ejercicio se interpreta como que el area bajo la curva \(y=x^3\), de \(0\) a \(b\)
+    es \(\frac{b^4}{4}\).
+</p>
+<button class="respButton hvr-grow "> Solución  </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">
+        <a href="https://youtu.be/HVk1gIwSvVU" target="_blank" > Video </a>
+      </div>
+    </div>
+</div>
+
+
+
+
+<div class="definicion-box">
+    <h1 class="number-title"> Definición</h1>  
+    <p>
+        Una función $s:[a,b]\to \mathbb{R}$ se llama escalonada si 
+        existe una partición $P$, de $[a,b]$, de tal 
+        forma que $s$ es constante en los sub-intervalos abiertos generados por $P$. 
+        Llamamos a $P$ 
+        la partición de $s$ o la partición inducida o generada por $s$.
+    </p>
+    <p>
+        Por ejemplo, toda función constante es escalonada. 
+    </p>
+    <p>
+        Otro ejemplo de función escalonada es la función mayor entero menor o igual a \(x\),
+        denotada \(\lfloor x \rfloor\). 
+    </p>
+
+</div>
+
+
+<div class="definicion-box">
+    <h1 class="number-title"> Definición </h1>  
+    <p>
+        Existen cierto tipo de funciones que ayudan a describir algebráicamente 
+        a las funciones escalonadas y que en principio son más sencillas que éstas. Se llaman
+        funciones características.
+    </p>
+    <p>
+        Dada un subconjunto no vacío $A\subseteq \mathbb{R}$ la función característica o indicadora de $A$ se define como
+        $$
+        \chi_A(x)=
+        \left\{
+        \begin{array}{cc}
+        1 & x\in A \\
+        0 & x\notin A
+        \end{array}
+        \right.
+        $$
+    </p>
+    <p>
+        Nota que \(\chi_A\) es una función con dominio \(\mathbb{R}\) y que sólo toma los valores 
+        \(0\) y \(1\), por lo que las gráficas de éstas funciones son sencillas: en los 
+        puntos de \(A\) se lavanta uno y en el resto permanece en el eje de las \(x's\).
+    </p>
+</div>
+
+<div class="ejercicio-box"> 
+    <h1 class="number-title"> Ejercicio</h1>  
+    <p>
+        Las funciones características tienen muchas propiedades que reflejan 
+        propiedades de conjuntos. Este ejercicio menciona algunas de ellas.
+        Sean \(A,B\subseteq \mathbb{R}\).
+    </p>
+    <ol>
+        <li>
+            Prueba que \(\chi_A=\chi_B\) sii \(A=B\).
+        </li>
+        <li>
+            Si $A\cap B = \emptyset$ 
+            entonces la función característica de la unión es 
+            la suma de las funciones características:  $\chi_A+\chi_B=\chi_{A\cup B}$.
+        </li>
+        <li>    
+            Prueba que la función característica de la intersección es 
+            el producto de las funciones características: \( \chi_{A\cap B}=\chi_A \chi_B\).
+        </li>
+        <li>
+            La diferencia simétrica de dos conjuntos se define como 
+            \(A\triangle B=(A\setminus B)\cup (B\setminus A)\). Prueba que 
+            \[
+            |\chi_A(x)-\chi_B(x)|\leq \chi_{A\triangle B}(x)
+            \]
+            para toda \(x\in \mathbb{R}\).
+        </li>
+    </ol>
+    <button class="respButton hvr-grow "> Solución  </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">
+        <a href="https://youtu.be/65HXTsImGPc" target="_blank" > Video </a>
+      </div>
+    </div>
+</div>
+
+
+<div class="ejercicio-box"> 
+    <h1 class="number-title"> Ejercicio</h1>  
+    <p> 
+        Sea $P=\{ x_0< x_1<  \cdots< x_{n-1}< x_n  \}$ una partición de $[a,b]$ y sean 
+        $s_1,\dots, s_n \in \mathbb{R}$ fijos y arbitrarios. Demuestra que
+        $$
+        s(x):=\sum_{i=1}^n s_i \chi_{[x_{i-1}, x_i)}(x)
+        $$
+        es una función escalonada.
+    </p>
+</div>
+
+
+<div class="ejercicio-box"> 
+    <h1 class="number-title"> Ejercicio</h1>  
+    <p>
+        Este ejercicio muestra porqué se llaman funciones escalonadas.
+    </p>
+    <p>
+        Encuentra las gráficas de las siguientes funciones.
+    </p>
+        <ol>
+        <li> $2\chi_{[0,1)}+ 4\chi_{[1,2)}$.</li>
+        <li>$2\chi_{[0,1)}+4\chi_{[1/2,2)}$</li> 
+        <li>$3\chi_{[0,1)} -2 \chi_{[1/3,1/2)}+ 4\chi_{[1/2, 2)}$.</li>
+</ol>
+</div>
+
+<div class="ejercicio-box"> 
+    <h1 class="number-title"> Ejercicio</h1>  
+    <p>
+        Demuestra que toda función escalonada $s:\mathbb{R}\to \mathbb{R}$ 
+        se puede escribir de la forma
+        $$
+        s=\sum_{j=1}^m s_j \chi_{A_j}
+        $$
+        donde $A_j \subseteq \mathbb{R}$ satisfacen: 
+        $\cup_{j=1}^m A_j=\mathbb{R}$ y si $j_1\ne j_2$, $A_{j_1}\cap A_{j_2}=\emptyset$.
+    </p>
+    
+</div>
+
+
+
+<div class="ejercicio-box"> 
+    <h1 class="number-title"> Ejercicio</h1>  
+    <p>
+        Una partícula se mueve sobre el eje de las $x$, tomando su velocidad positiva 
+        cuando se mueve hacia la derecha y negativa cuando se mueve hacia la izquierda. 
+        Para fijar ideas, suponemos que el punto de partida de la partícula es el origen al tiempo $t=0$.
+    </p>
+
+    <ol>
+        <li> Supongamos que $v:[0,T] \to \mathbb{R}$ modela la velocidad de la partícula, $v$ dada por:
+            $$
+            v(t)=\left\{
+            \begin{array}{cc}
+            2,  & \textrm{ si $0\leq t < T/6$,} \\ 
+            0, &  \textrm{ si $T/6 \leq t < T/2$,} \\ 
+            -1, & \textrm{ si  $T/2 \leq t \leq 3T/4$.}\\
+            0 & \textrm{si $3T/4 \leq t < 3T/2$} \\
+            3 & \textrm{si $3T/2 \leq t \leq T$}
+            \end{array}
+            \right.
+            $$
+            Encuentra la distancia recorrida por la partícula en el intervalo de tiempo $[0,T]$.
+        </li>
+        <li> 
+            Ahora, toma una variable $v_3$ y considera la velocidad modelada por la función:
+            $$
+            v(t)=\left\{
+            \begin{array}{cc}
+            2,  & \textrm{ si $0\leq t < T/6$,} \\ 
+            0, &  \textrm{ si $T/6 \leq t < T/2$,} \\ 
+            v_3, & \textrm{ si  $T/2 \leq t \leq 3T/4$.}\\
+            0 & \textrm{si $3T/4 \leq t < 3T/2$} \\
+            3 & \textrm{si $3T/2 \leq t \leq T$}
+            \end{array}
+            \right.
+            $$
+            Encuentra $v_3$ de tal forma que la distancia recorrida es cero. Es decir, la partícula inicia y termina en el mismo lugar.
+        </li>
+    </ol>
+</div>
+
+<div class="info-box">
+    <h2> Video </h1>  
+    <p>
+        En el video se presentan soluciones de los ejercicios 1.8, 1.12 y se explican las 
+        funciones escalonadas.
+    </p>
+    <button class="respButton hvr-grow "> Click me </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">
+        <a href="https://youtu.be/kNoGo6lCzs4" target="_blank" > Video </a>
+      </div>
+    </div>
+</div>
+-->
+</body>

@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+    
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+    <!-- This part is for using single $ for latex input, instead of \(\) -->
+    <script>
+        MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+        svg: {
+            fontCache: 'global'
+        }
+    };
+    </script>
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+    .lista
+        {
+            counter-reset: listaCounter 0 sublistaCounter 1 subsublistaCounter 1 subsubsublistaCounter 1;
+        }
+        /* .sublista{
+            counter-reset: sublistaCounter 1  SubsublistaCounter;
+        } */
+        </style>
+
+    <style>
+            /* body.number-title
+            {
+            counter-reset: temaCounter 1 subsectioncounter ;
+            } */
+        h1.page-title
+            {
+            counter-reset: temaCounter 1 sectionCounter  subsectionCounter;
+            }
+    </style>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+    <!-- Top Menu  -->
+    
+          
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Tecnologías de la Información y Comunicación II</div>
+          <div class="subtitle">Licenciatura en Administración Turística</div>
+          <div class="subsubtitle">Universidad del Mar, campus Huatulco </div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+
+      
+        </header>
+
+    <nav class="top-nav">
+        <ul>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Home.html"> Inicio  </a> </li>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Informacion_General.html"> Información</a> </li>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Notas.html"> Notas  </a> </li>
+        <!-- <li> <a href="https://pablojhh.github.io/TICDOS/Quizes.html"> Quizes  </a> </li>
+            <li> <a href="https://pablojhh.github.io/TICDOS/Practicas.html">Prácticas</a></li> -->
+            <li> <a href="https://pablojhh.github.io/TICDOS/Examenes.html"> Archivos  </a> </li>
+        </ul>
+    </nav>
+    
+    <title> §   </title>
+    
+    </head>
+
+<body class="fondo-body" >
+
+<h1 class="number-title flexbox"> Semana del 06 de junio</h1>
+
+
+<div class="nota-box">
+<h2 class="number-title"> Consultas</h2>
+
+
+Las consultas son los objetos de una base de datos que permiten recuperar datos de una tabla, 
+modificarlos e incluso almacenar el resultado en otra tabla. En general, las consultas se clasifican en 
+<em>consultas de selección</em> y <em>consultas de acción</em>  
+
+
+<h2 class="number-title"> Consultas de seleccion  </h2>
+
+Son las consultas que extraen o nos muestran datos. Muestran aquellos datos de una tabla que cumplen 
+los criterios especificados. En la mayoria de las consultas de seleccion una vez obtenido el resultado
+podremos consultar los datos para modificarlos. Una consulta de selección genera una tabla "virtual"
+(se le llama "virtual" porque no está físicamente en el disco duro sino en la memoria ram del ordenador y cada vez que se
+abre se vuelve a calcular).
+
+
+<h2 class="number-title"> Consultas de acción  </h2>
+
+Son consultas que realizan cambios a los registros. Existen varios tipos de consultas de acción,
+de eliminación, de actualización, de datos anexados y de creación de tablas. Las veremos más adelante.
+
+
+<h2 class="number-title">  Consultas específicas de SQL </h2>
+
+Son consultas que no se pueden definir desde la cuadrícula QBE de Access sino que se tienen que definir
+directamente en SQL, como por ejemplo las de Unión
+
+</div>
+
+</body>

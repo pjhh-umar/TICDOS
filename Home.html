@@ -1,0 +1,207 @@
+
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="./main.js"></script>
+
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+    <!-- This part is for using single $ for latex input, instead of \(\) -->
+    <script>
+        MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+        svg: {
+            fontCache: 'global'
+        }
+    };
+    </script>
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+    .lista{
+        counter-reset: listaCounter 0 sublistaCounter 1 subsublistaCounter 1 subsubsublistaCounter 1;
+      }
+    /* .sublista{
+        counter-reset: sublistaCounter 1  SubsublistaCounter;
+      } */
+    </style>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="style.css" />
+    <!-- Top Menu  -->
+    
+          
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="./Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Tecnologías de la Información y Comunicación II</div>
+          <div class="subtitle">Licenciatura en Administración Turística</div>
+          <div class="subsubtitle">Universidad del Mar, campus Huatulco </div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+
+      
+        </header>
+
+        <nav class="top-nav">
+          <ul>
+            <li> <a href="https://pablojhh.github.io/TICDOS/Home.html"> Inicio  </a> </li>
+            <li> <a href="https://pablojhh.github.io/TICDOS/Informacion_General.html"> Información</a> </li>
+            <li> <a href="https://pablojhh.github.io/TICDOS/Notas.html"> Notas  </a> </li>
+            <!-- <li> <a href="https://pablojhh.github.io/TICDOS/Quizes.html"> Quizes  </a> </li>
+            <li> <a href="https://pablojhh.github.io/TICDOS/Practicas.html">Prácticas</a></li> -->
+            <li> <a href="https://pablojhh.github.io/TICDOS/Examenes.html"> Archivos </a> </li>
+          </ul>
+          </nav>
+        <!-- 
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav> 
+        -->
+
+      <!-- This part is for title in tab-->
+            
+      <title>TIC II</title>
+      </head>  
+          
+      <body class="fondo-body" >
+          
+        <div class="info-profesor-box">
+            <!-- <div class="informacion_profesor">  -->
+              <div class="title_nombre">Profesor: Pablo Jorge Hernández Hernández</div>
+              <div class="subtitle_nombre">Instituto de Investigación de Matemáticas y Actuaría (IIMA)</div>
+              <div class="subtitle_nombre">Cubículo #5</div>            
+            <!-- </div> -->
+        </div>
+
+        
+
+      <div class="info-box" style = "font-family: 'Oldenburg', cursive;"><h1 class="title">Temario</h1>
+
+      <ol class="lista" >
+        <li>Microsoft Access. Modelo físico de base de datos en Access</li>
+          <ol class="sublista"> 
+            <li>La ventana de Access</li>
+            <li>Creación y modificación de tablas</li>
+            <li>Consultas, Criterios</li>
+            <li>Formularios</li>
+            <li>Informes</li>
+            <li>Importación y exportación de datos de y desde Excel</li>  
+          </ol>
+        <li>Excel intermedio</li>
+          <!--<p>En estos temas se trabaja con enunciados más elaborados y con una considerable cantidad de datos
+          para la utilización de las siguientes funciones:
+          </p> -->
+          <ol class="sublista">
+          <li>Búsquedas con la función BUSCARV, BUSCARH y/o BUSCARX(ConsultaV, ConsultaH y/o
+            ConsultaX según la versión de Offi</li>
+          <li>Funciones de Bases de Datos (BDSUMA, BDCONTARA, etc.).</li>
+          <li>Filtros y Macros. Se utilizan macros para sistematizar los criterios de los filtros.</li>
+          <ol class="subsublista">
+            <li>Criterio de filtros simples: texto, fecha y condicionales</li>
+            <li>Rangos y criterios de filtros avanzados</li>
+          </ol>
+        <li>Tablas dinámicas</li>
+          <ol class="sublista">
+            <li>Reportes utilizando tablas dinámicas</li>
+          </ol>
+        <!-- <li>Interfaces. Una introducción a la utilización de interfaces de usuario haciendo énfasis en las
+          funciones que a continuación se mencionan.
+        </li> -->
+        <!-- <li>Consulta y manejo de información mediante interfaces con botones de control de formulario
+          (sin utilizar formularios de programador) del Menú PROGRAMADOR o DESARROLLADOR (según
+          la versión de Office), A lo anterior aplicar las funciones de búsqueda y referencia: COINCIDIR,
+          ELEGIR, ÍNDICE, TRASPONER, etc.</li> -->
+      </ol>
+      <li>Proyecto final</li>
+        <p>Desarrollar un proyecto abordando una problemática dentro de alguna rama del turismo, en el cual se
+        integre Access y Excel mediante la importación, exportación y análisis de datos.
+        </p>
+      </ol>
+          
+<!-- 
+          <ol class="lista">
+            <li>Elemento 1</li>
+            <ol class="sublista">
+              <li>subelemento</li>
+              <ol class="subsublista">
+                <li>subelemento</li>
+                <li>subelemento</li>
+                <li>subelemento</li>
+                <li>subelemento</li>
+              </ol>
+              <li>subelemento</li>
+              <ol class="subsublista">
+                <li>subelemento</li>
+                <li>subelemento</li>
+                <li>subelemento</li>
+                <li>subelemento</li>
+              </ol>
+              <li>subelemento</li>
+              <li>subelemento</li>
+            </ol>
+            <li>Elemento 2</li>
+            <ol class="sublista">
+              <li>subelemento</li>
+              <li>subelemento</li>
+              <li>subelemento</li>
+              <li>subelemento</li>
+            </ol>
+            <li>Elemento 3</li>
+          </ol> -->
+        
+      
+      </div>
+
+        
+      <div class="info-box"  style = "font-family: 'Oldenburg', cursive;"><h1 class="title">Bibliografía</h1>    
+      <!-- <b><font size="5">Libros básicos</font></b> -->
+          <ol class="lista">
+            <li>Silberschata A., Korth H.F., Sudarshan S. (2006) Fundamentos de Bases de Datos, McGraw-Hill.</li>
+            <li><b></b></li>
+            <li><b></b></li>
+          </ol>
+  
+        <!-- <b><font size="5">Libros de consulta</font></b>
+          <ol>
+            <li>Banner A. (2007) The Calculus Lifesaver, New Jersey: Princeton University Press.</li>
+            <li>Hasser B., La Salle P., Sullivan A. (1992) Análisis Matemático: Curso de Introducción, Vol. 1, México: Editorial Trillas.</li>
+            <li>Kuratowski K. (1970) Introducción al Cálculo, México: Limusa-Wiley.</li>
+            <li>Silverman R.A. (1989) Essencial Calculus with Applications., New York: Dover Publications, Inc.</li>
+            <li>Stewart J. (2008) Calculus, México: Thomson Brooks/Cole.</li>
+            <li>Thompson S.P. (2008) Calculus Made Easy, New York: Macmillan Company.</li>
+          </ol> -->
+  </div>
+
+
+      </body>
+  </html>

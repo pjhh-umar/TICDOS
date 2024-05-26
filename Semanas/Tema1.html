@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+    
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+    <!-- This part is for using single $ for latex input, instead of \(\) -->
+    <script>
+        MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+        svg: {
+            fontCache: 'global'
+        }
+    };
+    </script>
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+    .lista
+        {
+            counter-reset: listaCounter 0 sublistaCounter 1 subsublistaCounter 1 subsubsublistaCounter 1;
+        }
+        /* .sublista{
+            counter-reset: sublistaCounter 1  SubsublistaCounter;
+        } */
+        </style>
+
+    <style>
+            /* body.number-title
+            {
+            counter-reset: temaCounter 1 subsectioncounter ;
+            } */
+        h1.page-number-title
+            {
+            counter-reset: temaCounter 0 sectionCounter  subsectionCounter;
+            }
+    </style>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+    <!-- Top Menu  -->
+    
+          
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Tecnologías de la Información y Comunicación II</div>
+          <div class="subtitle">Licenciatura en Administración Turística</div>
+          <div class="subsubtitle">Universidad del Mar, campus Huatulco </div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+
+      
+        </header>
+
+    <nav class="top-nav">
+        <ul>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Home.html"> Inicio  </a> </li>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Informacion_General.html"> Información</a> </li>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Notas.html"> Notas  </a> </li>
+        <!-- <li> <a href="https://pablojhh.github.io/TICDOS/Quizes.html"> Quizes  </a> </li>
+            <li> <a href="https://pablojhh.github.io/TICDOS/Practicas.html">Prácticas</a></li> -->
+            <li> <a href="https://pablojhh.github.io/TICDOS/Examenes.html"> Archivos  </a> </li>
+        </ul>
+    </nav>
+    
+    <title> § Tema 1   </title>
+    
+    </head>
+
+    <body class="fondo-body" >
+        
+    <!-- <h1 class="page-title"> Modelo Entidad-Relación y Modelo Relacional </h1>   -->
+    <h1 class="page-number-title">Sistemas de Bases de Datos </h1>  
+    
+    <!-- <h1 class="number-title flexbox"> </h1> -->
+
+    <div class="nota-box"><h1 class="title">Introducción</h1>
+        
+
+    <p>En 1597 sir <i>Francis Bacon</i> acuñó la conocida frase "<b>Knowledge itself is a power</b>"", adaptada generalmente al castellano como "<b>La información es poder</b>". Hoy en día la información es el activo más valioso de toda organización,
+        y las <em>bases de datos</em> son la respuesta a las necesidades técnicas surgidas hace unas
+        décadas.
+    </p>
+
+</div>
+
+
+<div class="nota-box"><h1 class="number-title"> Bases de datos</h1>    
+
+  
+  <p>Una <b>base de datos</b> es un conjunto de información organizada de forma lógica, de tal manera que es
+    posible extraer toda la información o una parte de ella en cualquier momento. Las bases de datos
+    tienen importantes aplicaciones en la administración de empresas e instituciones públicas.
+    Algunas de sus aplicaciones representativas son:
+    <br>
+    
+    <!--
+    Las bases de datos sirven para:
+    <ol>
+    <li>Almacenar</li>
+    <li>Controlar:</li>
+    <ul>
+        <li>Restricciones</li>
+        <li>Seguridad</li>
+    </ul>
+    <li>Consultar</li>
+    <li>Actualizar</li>
+    </ol>
+</p>
+-->
+
+
+<ul>
+<li><h3 class="title">Banca:</h3> Para información de los clientes, cuentas, préstamos y transacciones bancarias</li><br>
+<li><h3 class="title">Líneas aéreas:</h3>
+  Para reservas e información de horarios. Las líneas aéreas fueron de las primeras en
+  usar las bases de datos de forma distribuida geográficamente</li><br>
+<li><h3 class="title">Universidades:</h3> Para información de los estudiantes, matrículas en las asignaturas y cursos.</li><br>
+<li><h3 class="title">Transacciones de tarjetas de crédito:</h3> Para compras con tarjeta de crédito y 
+   la generación de los estados de cuenta </li><br>
+<li><h3 class="title">Telecomunicaciones:</h3> Para guardar un registro de las llamadas realizadas, generar
+   las facturas mensuales, mantener el saldo de las tarjetas telefónicas de prepago y 
+   para almacenar información sobre las redes de comunicaciones.</li><br>
+<li><h3 class="title">Finanzas:</h3> Para almacenar información sobre compañías tenedoras, ventas y 
+  compras de productos financieros, como acciones y bonos; también para almacenar
+  datos del mercado en tiempo real para permitir a los clientes la compraventa en línea
+  y a la compañía la compraventa automática.</li><br>
+<li><h3 class="title">Ventas:</h3> Para información de clientes, productos y compras</li><br>
+<li><h3 class="title">Comercio en línea:</h3> Para los datos de ventas ya mencionados y para el seguimiento de los pedidos
+  Web, generación de listas de recomendaciones y mantenimiento de evaluaciones de productos
+  en línea</li><br>
+<li><h3 class="title">Producción:</h3> Para la gestión de la cadena de proveedores y para el seguimiento de la producción
+  de artículos en las factorías, inventarios en los almacenes y pedidos.</li><br>
+<li><h3 class="title">Recursos humanos:</h3> Para información sobre los empleados, salarios, impuestos sobre los sueldos y
+  prestaciones sociales, y para la generación de las nóminas</li><br>
+</ul>
+
+<!-- <p><h3 class="title">Importante:</h3> Las bases de datos forman una parte esencial de casi todas las empresas actuales.</p> -->
+
+  </div>
+
+  <div class="nota-box">
+      <h1 class="number-title"> Bases de datos VS hojas de calculo</h1>  
+<p>
+  Las bases de datos y las hojas de cálculo son herramientas útiles para almacenar
+información. Las principales diferencias entre ambas son:
+</p>
+
+<ol>
+  <li>La forma de manipular y guardar la información.</li>
+  <li>La cantidad de datos que se pueden almacenar</li>
+  <li>La accesibilidad a esos datos almacenados.</li>
+</ol>
+
+<p>
+Las hojas de cálculo desde sus comienzos fueron diseñadas para un usuario. Son
+excelentes para uno o un pequeño número de usuarios que no necesitan utilizar un
+gran volumen de datos.
+</p>
+
+<p>
+  Las bases de datos, por otro lado, fueron creadas para almacenar gran cantidad
+de información organizada, permite acceder y consultar los datos de forma rápida
+y segura a muchos usuarios al mismo tiempo.
+</p>
+  </div>
+
+
+
+  <div class="nota-box">
+      <h1 class="number-title"> Bases de datos relacional </h1>  
+  
+      <p>
+          Las bases de datos se pueden clasificar de acuerdo a la función de la base de
+datos, o bien de acuerdo a su modelo de administración de datos. En este ultimo
+caso el modelo relacional es el modelo utilizado en la actualidad para representar
+problemas reales y administrar datos dinámicamente.
+      </p>
+
+      <p>
+          Una base de datos relacional es un conjunto de una o más tablas estructuradas
+en registros (filas o tuplas) y campos (columnas), que se vinculan entre sí por un
+campo en común, en ambos casos posee las mismas características como por
+ejemplo el nombre de campo, tipo y longitud; a este campo generalmente se le
+denomina ID, identificador o clave. A esta manera de construir bases de datos se le
+denomina modelo relacional
+      </p>
+      <p>
+          En un sistema de base de datos relacional, los datos se organizan en tablas
+estructuradas en registros y campos, vinculadas entre si por un campo en
+común.
+      </p>
+
+
+
+
+      <button class="respButton hvr-grow "><h1 class="number-title"> Otras funciones de informaci&oacute;n </h1>  </button>
+      <div class="resp-box flexbox">
+      <p>
+        <table class="tabla-funciones">
+          <thead>
+            <tr>
+                <th class="nombre-funcion">Función</th>
+                <th>Sintaxis</th>
+                <th>Descripción</th>
+                <th>Ejemplo</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+                  <td class="nombre-funcion">MAX.SI.CONJUNTO</td>
+            <td>=MAX(SI(CONJUNTO(condición1, rango1), rango_a_evaluar))</td>
+            <td>Devuelve el valor máximo de un rango que cumple con múltiples condiciones.</td>
+            <td>= MAX.SI.CONJUNTO(A1:A10,B1:B10, ""=Matemáticas")
+              <!-- Supongamos que tenemos una lista de notas de estudiantes en el rango A1:A10 y queremos encontrar la nota máxima de los estudiantes que aprobaron (nota mayor a 70) y que están en el curso de matemáticas (indicado en el rango B1:B10). La fórmula sería: <br> =MAX(SI(CONJUNTO((A1:A10>70)*(B1:B10="Matemáticas"), A1:A10))) <br> Esta fórmula devuelve la nota máxima de los estudiantes que aprobaron y están en el curso de matemáticas. -->
+            </td>
+          </tr>
+          <tr>
+                  <td class="nombre-funcion">MIN.SI.CONJUNTO</td>
+            <td>=MIN.SI.CONJUNTO(condición1, rango1, rango_a_evaluar)</td>
+            <td>Devuelve el valor mínimo de un rango que cumple con múltiples condiciones.</td>
+            <td> =MIN(SI.CONJUNTO(B1:B10 ="Electrónica"*(A1:A10>0.2), A1:A10)))
+              <!-- Supongamos que tenemos una lista de precios de productos en el rango A1:A10 y queremos encontrar el precio mínimo de los productos que están en la categoría "Electrónica" y que tienen un descuento mayor al 20% (indicado en el rango B1:B10). La fórmula sería: <br> =MIN(SI(CONJUNTO((B1:B10="Electrónica")*(A1:A10>0.2), A1:A10))) <br> Esta fórmula devuelve el precio mínimo de los productos que cumplen con las condiciones especificadas. -->
+            </td>
+          </tr>
+          <tr>
+                  <td class="nombre-funcion">CONTAR.SI</td>
+            <td>=CONTAR.SI(rango, criterio)</td>
+            <td>Cuenta el número de celdas en un rango que cumplen con un determinado criterio.</td>
+            <td>Si tenemos una lista de calificaciones en el rango A1:A10 y queremos contar cuántos estudiantes aprobaron (calificación mayor a 70), la fórmula sería: <br> =CONTAR.SI(A1:A10, ">70") <br> Esta fórmula contará cuántos estudiantes obtuvieron una calificación mayor a 70.</td>
+          </tr>
+          <tr>
+                  <td class="nombre-funcion">CONTAR.SI.CONJUNTO</td>
+            <td>=CONTAR.SI(CONJUNTO(condición1, rango1), criterio)</td>
+            <td>Cuenta el número de celdas en un rango que cumplen con múltiples condiciones.</td>
+            <td>Si tenemos una lista de calificaciones en el rango A1:A10 y queremos contar cuántos estudiantes aprobaron (calificación mayor a 70) y que están en el curso de matemáticas (indicado en el rango B1:B10), la fórmula sería: <br> =CONTAR.SI(CONJUNTO((A1:A10>70)*(B1:B10="Matemáticas"), A1:A10), ">70") <br> Esta fórmula contará cuántos estudiantes aprobaron y están en el curso de matemáticas.</td>
+          </tr>
+          <tr>
+                  <td class="nombre-funcion">PROMEDIO.SI</td>
+            <td>=PROMEDIO.SI(rango, criterio)</td>
+            <td>Calcula el promedio de los valores en un rango que cumplen con un determinado criterio.</td>
+            <td>Supongamos que tenemos una lista de calificaciones en el rango A1:A10 y queremos calcular el promedio de las calificaciones de los estudiantes que aprobaron (calificación mayor a 70). La fórmula sería: <br> =PROMEDIO.SI(A1:A10, ">70") <br> Esta fórmula calculará el promedio de las calificaciones de los estudiantes que obtuvieron una calificación mayor a 70.</td>
+          </tr>
+          <tr>
+                  <td class="nombre-funcion">PROMEDIO.SI.CONJUNTO</td>
+            <td>=PROMEDIO.SI(CONJUNTO(condición1, rango1), criterio)</td>
+            <td>Calcula el promedio de los valores en un rango que cumplen con múltiples condiciones.</td>
+            <td>Supongamos que tenemos una lista de calificaciones en el rango A1:A10 y queremos calcular el promedio de las calificaciones de los estudiantes que aprobaron (calificación mayor a 70) y que están en el curso de matemáticas (indicado en el rango B1:B10). La fórmula sería: <br> =PROMEDIO.SI(CONJUNTO((A1:A10>70)*(B1:B10="Matemáticas"), A1:A10), ">70") <br> Esta fórmula calculará el promedio de las calificaciones de los estudiantes que aprobaron y están en el curso de matemáticas.</td>
+          </tr>
+          <tr>
+            <td class="nombre-funcion">SUMAR.SI</td>
+            <td>SUMAR.SI(rango, criterio, [sumar_rango])</td>
+            <td>Suma los valores en un rango que cumplen con un único criterio.</td>
+            <td> =           SUMAR.SI(A1:A10, ">5")</td>
+        </tr>
+        <tr>
+          <td class="nombre-funcion">SUMAR.SI.CONJUNTO</td>
+            <td>SUMAR.SI.CONJUNTO(rango_criterios1, criterio1, [rango_criterios2, criterio2], ...)</td>
+            <td>Suma los valores en un rango que cumplen con múltiples conjuntos de criterios.</td>
+            <td> =           SUMAR.SI.CONJUNTO(A1:A10, ">5", B1:B10, "<10")</td>
+        </tr>
+        </tbody>
+  </div>
+      
+</body>

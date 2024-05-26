@@ -1,0 +1,831 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+    
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+    <!-- This part is for using single $ for latex input, instead of \(\) -->
+    <script>
+        MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+        svg: {
+            fontCache: 'global'
+        }
+    };
+    </script>
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+    .lista
+        {
+            counter-reset: listaCounter 0 sublistaCounter 1 subsublistaCounter 1 subsubsublistaCounter 1;
+        }
+        /* .sublista{
+            counter-reset: sublistaCounter 1  SubsublistaCounter;
+        } */
+        </style>
+
+    <style>
+            /* body.number-title
+            {
+            counter-reset: temaCounter 1 subsectioncounter ;
+            } */
+            body.fondo-body{
+              counter-reset: temaCounter 0 sectionCounter;
+            }
+
+            /* h1.page-number-title
+            {
+            counter-reset: sectionCounter 0;
+            }  */
+
+            h1.tema-number-title
+                {
+                counter-reset: sectionCounter 0;
+                } 
+
+            h1.number-title
+            {
+            counter-reset: subsectionCounter;
+            /* counter-reset: subsectionCounter; */
+            }
+
+
+
+    </style>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+    <!-- Top Menu  -->
+    
+          
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Tecnologías de la Información y Comunicación II</div>
+          <div class="subtitle">Licenciatura en Administración Turística</div>
+          <div class="subsubtitle">Universidad del Mar, campus Huatulco </div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+
+      
+        </header>
+
+    <nav class="top-nav">
+        <ul>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Home.html"> Inicio  </a> </li>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Informacion_General.html"> Información</a> </li>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Notas.html"> Notas  </a> </li>
+        <!-- <li> <a href="https://pablojhh.github.io/TICDOS/Quizes.html"> Quizes  </a> </li>
+            <li> <a href="https://pablojhh.github.io/TICDOS/Practicas.html">Prácticas</a></li> -->
+            <li> <a href="https://pablojhh.github.io/TICDOS/Examenes.html"> Archivos  </a> </li>
+        </ul>
+    </nav>
+    
+    <title> Semana 1   </title>
+    
+    </head>
+
+  <body class="fondo-body" >
+    
+       
+    <div class="nota-box"> <h1 class="page-number-title"> Semana 1</h1> 
+      
+      <button class="respButton"> <h1 class="tema-number-title"> Referencias</h1> </button>
+      <!-- <h1 class="block-number-title"> Referencias</h1> -->
+      <div class="resp-box flexbox">
+      <p>Las <b>referencias</b> son indispensables para trabajar con <i>fórmulas</i> y <i>funciones</i> en hojas de cálculo. 
+        Las fórmulas pueden contener, aparte de datos numéricos simples, referencias a datos de otras celdas
+      </p>
+<!-- 
+      <p>Todo el mundo que ha utilizado Excel en alguna ocasión ha entendido que su razón de ser es poder utilizar valores introducidos o calculados en unas celdas en tus fórmulas que están en otras celdas. Y que cada vez que esos valores se modifiquen, también lo hagan tus cálculos</p> -->
+
+    <h1 class="number-title"> Referencia a una celda</h1>
+
+    <p>Recordemos que una celda puede contener datos de tipo <em>texto</em>, 
+      <em>números</em>, <em>fechas</em>, <em>horas</em> y, también 
+      <em>fórmulas</em> y <em>funciones</em>. Estos datos 
+      pueden ser ingresados por nosotros o generarse como resultado de 
+      aplicar una fórmula o función. En este último caso, los datos harán 
+      referencia al contenido de otra celda y serán <b>dependientes</b>. Entonces, 
+      tendremos una <b>celda de origen</b> y una <b>celda dependiente</b>. 
+      Al cambiar el contenido de la celda de origen, las celdas que dependan
+      de esta se actualizarán automáticamente. 
+
+      <h2 class="number-title">Ejemplo</h2>
+      <p>Para hacer referencia a una celda, nos 
+        ubicamos en la celda dependiente, ingresamos el signo igual $(=)$  y,
+        a continuación, seleccionamos la celda o escribimos el 
+        nombre de la celda de origen. </p>
+        <!-- <p><center><b>=A2</b>.</center> -->
+          <div class="flexbox">
+            <img src="../Imagenes/Excel/refencia_celda.JPG" alt="", width="auto" height="auto">
+          </div>
+        </p>
+
+      <p>En Microsoft Excel existen tres tipos de referencias: <i>relativas</i>, <i>absolutas</i> y 
+        <i>mixtas</i>. </p>
+
+      <h1 class="number-title"> Referencias relativas</h1>
+
+      <p>Una <b>referencia relativa</b> es aquella que se modifica al cambiar la 
+        posición de la celda dependiente (aquella que contiene la fórmula). En este 
+        caso, como la ubicación de la celda de origen es relativa a la celda 
+        de destino, cuando cambia una, también cambia la otra. Es decir, si 
+        copiamos y pegamos una fórmula a otra celda, cambiará la celda de 
+        origen a la que se hace referencia
+      </p>
+
+      <!-- <p>
+        Las referencias relativas son la forma estándar de usar referencias en Excel porque guardan una relación con la columna y la fila en donde se encuentran. Es decir, al momento de copiar una referencia relativa a otra celda, Excel ajustará automáticamente su columna y su fila.
+      </p> -->
+
+
+      <h2 class="number-title">Ejemplo</h2>
+      <p>En la siguiente imagen copiamos el contenido de la celda $\mathrm{B3}$ (que hace referencia  a la celda 
+        $\mathrm{A1}$) y pegarlo en la celda $\mathrm{B7}$ automáticamente cambia la referencia a la
+         celda $\mathrm{A5}$.</p>
+      <p>
+        <div class="flexbox">
+         <img src="../Imagenes/Excel/Referencia_relativa.JPG" alt="Al copiar el contenido de la celda B3 (que hace referencia 
+         a A1) y pegarlo en B7 automáticamente cambia la referencia a la celda A5.",
+         width="auto" height="auto">
+       </div>
+      </p>
+
+     
+      
+      <p><h2 class="number-title">Observaciones:</h2>
+        <ol><li> Cuando copiamos y pegamos una fórmula en otra celda de la misma 
+          columna, se modificará el número de la fila de la referencia, según la 
+          posición relativa entre la celda de destino y la celda de origen. </li><br>
+        <li>Cuando copiamos y pegamos una fórmula en una celda de la 
+          misma fila, cambiará de manera automática la letra de la columna 
+          de la referencia, de acuerdo con la posición relativa entre la celda 
+          de destino y la celda de origen.</li><br>
+        <li>De manera predeterminada, cuando copiamos y pegamos una 
+          fórmula que hace referencia a datos que se encuentran en otras celdas, Excel utiliza referencias relativas</li>
+        </ol>
+      </p>
+      
+      <!--
+      <p>
+        En la imagen siguiente  obsérvemos que en la barra de fórmulas aparece el dato =B2+4^C3, que utilizará el
+ dato contenido en B2 (15) para sumárselo a 4 elevado a 2 (dato que aparece en C3). El resultado
+ de la fórmula aparece en la celda B5. Observe, por otra parte, que si teclea paréntesis en la
+ fórmula anterior el resultado variará ofreciendo un resultado diferente, ya que en ese caso
+ Excel suma primero B2 y 4 así el resultado lo eleva al cuadrado:
+       </p>
+      
+      <p>
+        En la imagen siguiente obsérvemos que en la barra de fórmulas aparece el dato <b>=10+ B2^D3</b>, que utilizará el
+        dato contenido en A1  (10) para sumarlo con el resultado de  elevar 2 (el valor que aparece en B2)
+         a la potencia 3 (dato que aparece en D3) y el resultado
+        de la fórmula aparece en la celda B6.
+       </p>
+
+       <p>
+         <div class="flexbox">
+          <img src="../Imagenes/Excel/Referencia_celdas_.PNG" alt="", width="auto" height="auto">
+        </div>
+       </p>
+
+      <p>
+        Observe, por otra parte, que si teclea paréntesis en la  fórmula anterior <img src="../Imagenes/Excel/Referencia_celdas_formula.PNG" alt="", width="auto" height="auto">
+         el resultado variará ofreciendo un
+        resultado diferente, ya que en ese caso Excel suma primero 10 y B2 y  el resultado lo eleva al 3 
+        (dato que aparece en D3): 
+       </p>
+
+       <p>
+        <div class="flexbox">
+         <img src="../Imagenes/Excel/Referencia_celdas.PNG" alt="", width="auto" height="auto">
+       </div>
+      </p>
+      -->
+
+      <h1 class="number-title"> Referencias absolutas </h1>
+
+      <!-- <p>Si bien las referencias relativas son muy útiles, existirán muchos casos en los que vamos a querer que una referencia quede fija, para lo cual haremos uso del símbolo $ para establecer referencias absolutas, ya que no permiten que Excel las modifique al momento de copiarlas. Estas referencias permanecen fijas sin importar la cantidad de veces que sean copiadas.</p> -->
+
+      <p>Una <b>referencia absoluta</b> siempre refiere a una celda de origen 
+        determinada (fija). Por eso, la utilizamos cuando queremos copiar y pegar 
+        una fórmula a otra celda y mantener la referencia a la celda de origen.</p>
+
+        <h2 class="number-title">Ejemplo</h2>
+        <p>Para hacer referencia a una celda fija, debemos fijar la referencia anteponiendo el signo de pesos 
+          ($\mathrm{$}$) a la letra de la columna y al número de la fila: </p>
+          
+          <center><b>$\mathrm{=$A$1}$</b>.</center>
+
+        <p>
+          <div class="flexbox">
+           <img src="../Imagenes/Excel/Referencia_absoluta.JPG" alt="Copiamos el contenido de la celda B3 
+           y lo pegamos en B7. En este caso, la celda de referencia A1 
+           se mantiene, porque es una referencia absoluta.",
+           width="auto" height="auto">
+         </div>
+        </p>
+
+        <p>Para fijar una referencia lo podemos realizar de dos maneras distintas:</p>
+
+        <ol><li><h5 class="title">Manual:</h5> Haciendo doble clic sobre la celda que contiene la fórmula 
+          y, desde el teclado, ingresamos el signo $\mathrm{$}$ antes de la letra y del 
+          número de la referencia. También podemos ubicarnos sobre la 
+          celda que contiene la fórmula y agregar el signo $\mathrm{$}$ desde la Barra de 
+          fórmulas. En ambos casos, luego pulsamos ENTER. 
+        </li><br>
+        <li><h5 class="title">Tecla F4:</h5> Haciendo doble clic sobre la celda que contiene la fórmula 
+          o bien seleccionamos la celda y hacemos un clic sobre la Barra de fórmulas, luego seleccionamos
+          en la fórmula la referencia de la celda que deseamos fijar y  pulsamos F4 en el 
+          teclado y luego, ENTER o el botón Introducir.</li>
+        </ol> 
+
+
+      <h2 class="number-title"> Uso de referencias relativas y absolutas</h2>
+
+      <p>Las referencias relativas y absolutas nos facilitarán el trabajo y nos 
+        permitirán ahorrar tiempo cuando utilicemos fórmulas y funciones.</p>
+        
+      <p>Entender qué son las referencias relativas y las referencias absolutas que 
+        utilizamos en las fórmulas y funciones suele ser difícil al principio. En 
+        la práctica son herramientas muy útiles, y su uso es mucho más sencillo 
+        de lo que parece. </p>
+
+        <h1 class="number-title"> Referencias mixtas</h1>
+        <p>Una <b>referencia mixta</b> tiene una parte relativa y otra absoluta: la 
+          columna relativa y la fila absoluta o la columna fija y la fila relativa.</p>
+          
+          <h2 class="number-title">Ejemplos</h2>
+          <p>  Para hacer una referencia mixta, debemos anteponer el signo de pesos
+            ($\mathrm{$}$) 
+            a la letra de la columna o al número de la fila, de forma manual 
+            o mediante la tecla F4. Si  pulsamos f4 dos veces, fijará la fila, y si la 
+            presionamos tres veces, fijará la columna.</p>
+            <p>
+              <ol class="two-column">
+              <li> $\mathrm{=A$2}$</li><br>
+              <li> $\mathrm{=$A2}$</li>
+              </ol>
+            </p>
+
+
+          
+
+          <h2 class="number-title">Observación</h2>
+          
+            <p>Si copiamos y pegamos en otra celda una fórmula que contiene una 
+              referencia mixta, la parte relativa se actualizará de manera automática 
+              y la parte absoluta permanecerá fija.
+            </p>
+          
+           
+
+                 
+
+      <h1 class="number-title"> Referencias a datos de otras hojas</h1>
+      <p>
+        Cuando se desea utilizar una fórmula en la que hay un dato de otra hoja, es
+        necesario teclear el nombre de esa hoja para referirse al dato,  seguido del <b>signo de exclamación cerrado</b> (<b>!</b>) y la
+        referencia de la celda.
+      </p>
+      <h2 class="number-title">Ejemplo</h2>
+      <p>
+        Supongamos que se desea multiplicar por $2$ el dato que se encuentra en la celda
+        $\mathrm{C7}$ de la Hoja3 (suponiendo que el resultado deba aparecer en otra hoja),
+        la forma correcta de hacerlo sería:
+      </p>
+      <p>
+        <center>
+          $\mathrm{=Hoja3!C7*2}$</b>
+        </center>
+      </p>
+      </div>
+    
+
+<!--######################################################################################################################## -->
+    <button class="respButton"><h1 class="tema-number-title"> Barra de fórmulas</h1></button>
+    <div class="resp-box flexbox">
+
+    
+      <p>
+        Cuando trabajamos con hojas de cálculo, introduciremos en ellas 
+        datos de diferentes tipos, como números, fechas y texto; y para 
+        procesarlos, utilizaremos <i>fórmulas</i> y <i>funciones</i> o la combinación de 
+        ambas. Para ingresar los datos en Excel podemos escribir directamente 
+        en las celdas o también es posible utilizar la <b>Barra de fórmulas</b>.
+      </p>
+
+      <!-- <p> En esta sección analizaremos sus opciones:</p> -->
+
+      <p>
+        <div class="flexbox">
+            <img src="../Imagenes/Excel/Barra_formula.JPG" alt="", width="100%" height="auto">
+            </div>
+      </p>
+
+     <h1 class="number-title"> Cuadro de nombres</h1>
+
+     <p>Cuando comenzamos a trabajar con Excel y creamos las primeras 
+      fórmulas, nos referimos a las celdas por la intersección de la columna y 
+      la fila, por ejemplo: $\mathrm{A1}$, aunque también podemos darles un nombre. El 
+      <b>Cuadro de nombres</b>   <img src="../Imagenes/Excel/Barra_formula_cuado_nombre.JPG" alt="", width="auto" height="auto"> permite acceder rápidamente a una celda o asignarle 
+      un nombre a una celda o rango de celdas; esto facilita su uso en las fórmulas o 
+      funciones que emplearemos en los diferentes cálculos.</p>
+
+    
+      <p>Para <b>asignarle un nombre a una celda o rango de celdas</b>, seleccionamos las 
+      celdas, ingresamos el nombre que deseamos asignarle dentro del Cuadro de nombres y 
+      luego, presionamos la tecla ENTER.</p> 
+
+      <p>
+        <div class="flexbox">
+            <img src="../Imagenes/Excel/Barra_formula_cuado_nombre_asignar_nombre.JPG" alt="", width="auto" height="auto">
+            </div>
+      </p>
+      
+
+      <p>Si asignamos nombres a diferentes celdas o rangos de celdas, 
+        y queremos ver la lista de nombres creados en el libro, debemos 
+        presionar la flecha que se encuentra a la derecha del cuadro  
+        <img src="../Imagenes/Excel/Barra_formula_cuado_nombre.JPG" alt="", width="auto" height="auto">. Se 
+        desplegará una lista con todos los nombres asignados en el libro, 
+        incluidos los de las tablas que hayamos creado.</p>
+
+      <h2 class="number-title"> Distribuir el espacio</h2>
+
+       <p>Sobre la derecha del Cuadro de nombres se muestra un pequeño
+        icono formado por tres puntos situados de manera vertical
+         <img src="../Imagenes/Excel/Barra_formula_puntos.JPG" alt="", width="auto" height="auto"> . Al acercar
+        el puntero del mouse, notaremos que este cambia de forma, para
+        convertirse en una <b>flecha horizontal de doble punta</b>. En ese momento,
+        podemos hacer clic con el botón principal del mouse y sin soltarlo
+       arrastrar hacia la derecha o la izquierda. De este modo cambiaremos
+        el tamaño del área correspondiente al Cuadro de nombres o al área de
+        introducción, para hacerlas más grandes o más pequeñas.</p>
+
+
+      <h1 class="number-title"> Iconos de la Barra de fórmulas</h1>
+       <p>A la derecha del Cuadro de nombre se encuentran tres iconos, cuya 
+        función explicaremos a continuación:
+       </p>
+       <ol>
+       <li>
+        El botón  <img src="../Imagenes/Excel/Barra_formula_cancelar.PNG" alt="", width="auto" height="auto">
+        (<b>Cancelar</b>) se emplea para anular la introducción o modificación del dato que se ha estado escribiendo 
+        en la celda.
+      </li><br>
+      <li>
+        El botón <img src="../Imagenes/Excel/Barra_formula_introducir.PNG" alt="", width="auto" height="auto"> 
+        (<b>Introducir</b>) aceptará el dato que se haya estado escribiendo en la celda, añadiéndolo a la hoja de 
+        cálculo activa
+      </li><br>
+      <li>
+        El botón <img src="../Imagenes/Excel/Barra_formula_insertar_formula.PNG" alt="", width="auto" height="auto"> 
+         (<b>Insertar función</b>) Al pulsar el icono Insertar función 
+         <img src="../Imagenes/Excel/Barra_formula_insertar_formula.PNG" alt="", width="auto" height="auto"> 
+        Permite añadir una función de Excel, al hacer click llamamos al <b>Asistente de funciones</b>, que nos permite
+        insertar una función en la celda activa. Este asistente nos guía en la selección de los argumentos que debe llevar
+        la función y brinda una breve descripción de cada uno.
+      </li>
+    </ol>
+       <p>
+        Es frecuente que los usuarios avanzados no usen este asistente en todos 
+        los casos, porque con el tiempo se aprenden la sintaxis de muchas de las 
+        funciones. Los iconos Introducir <img src="../Imagenes/Excel/Barra_formula_introducir.PNG" alt="", width="auto" height="auto"> 
+          y Cancelar <img src="../Imagenes/Excel/Barra_formula_cancelar.PNG" alt="", width="auto" height="auto">
+           se activan en el modo de 
+        edición (cuando estamos ingresando datos o modificando el contenido de 
+        una celda), y permiten cancelar o aceptar el ingreso o la modificación.</p>
+
+
+      <h1 class="number-title"> Espacio para datos</h1>
+        <p>El área de escritura/edición </p>
+        <p>
+          <div class="flexbox">
+              <img src="../Imagenes/Excel/Barra_formula_espacio.JPG" alt="", width="100%" height="auto">
+              </div>
+        </p>
+        <p>
+         es el lugar donde 
+         vamos a <b>ingresar los datos, fórmulas y funciones</b>, 
+         o desde donde, posteriormente, editaremos el 
+         contenido de una celda. En ocasiones, al crear 
+         fórmulas extensas, el espacio disponible para la 
+         edición/visualización no es lo suficientemente 
+         grande como para mostrar todo el contenido que 
+         hemos introducido. En estos casos, es posible 
+         aumentar el espacio haciendo clic sobre el icono 
+         de expansión <img src="../Imagenes/Excel/Barra_formula_expansion.JPG" alt="", width="auto" height="auto">
+         del área de escritura situado sobre el extremo derecho de 
+         la barra. Al hacer clic sobre este icono, el área de escritura se ampliará</p>
+
+      <p><b>Truco:</b>
+        Microsoft Excel permite escribir en más de una línea dentro de una misma celda. Para lograr ingresar datos
+         en una nueva línea dentro de una celda, debemos presionar la combinación de teclas <b>ALT</b> + <b>ENTER</b>
+        y se creará un <b>salto de línea</b>. Tengamos en cuenta que el programa ajusta de manera automática el alto 
+       de la fila, de acuerdo con la cantidad de líneas de contenido</p>
+    </div>
+    
+
+    <button class="respButton"><h1 class="tema-number-title"> Fórmulas y funciones</h1></button>
+    <div class="resp-box flexbox">
+    
+    <p>Excel posee una gran cantidad de herramientas que nos ayudan a resolver toda clase de 
+      problemas, desde sencillos hasta complejos, una de ellas son las <em>fórmulas</em> y 
+      las <em>funciones</em>. Con ellas podremos realizar distintas operaciones: 
+      <em>matemáticas</em>, <em>lógicas</em> y <em>financieras</em>, entre otras. 
+      Las <em>fórmulas</em> son operaciones matemáticas o llamadas a funciones en las que se analizan 
+      variables y se obtiene un resultado.</p>
+
+    <h1 class="number-title"> Ingresar fórmulas</h1>
+    <p>Siempre que vamos a escribir una fórmula, tenemos que utilizar el 
+      operador o signo igual (=). De esta manera, el programa interpretará 
+      que lo siguiente que escribiremos es una fórmula o una función.</p>
+
+      <p>
+      Antes de describir la ficha <b>Fórmulas</b> de la cinta de opciones, veremos 
+      algunas de las operaciones básicas que podemos efectuar sin tener 
+      que recurrir a este menú.
+      Para realizar operaciones, es posible utilizar los datos de dos 
+      maneras con características específicas: </p>
+  
+      <h5 class="title"> Literales.</h5> Escribimos los números directamente dentro de la 
+      fórmula.
+      
+      <h2 class="number-title">Ejemplo</h2>
+      <p><center><b>=15+14</b></center></p>
+
+      <h5 class="title">Referencia a valores.</h5> Utilizamos los nombres de las celdas.
+
+      <h2 class="number-title">Ejemplo</h2>
+        
+      <p><center> <b>=A4 + A5</b>, donde A4 y A5 contienen valores numéricos. </center></p>
+      
+    
+
+
+    <p><h2 class="number-title">Observaciones</h2>
+      <ol><li>
+         Las operaciones en Excel se realizan en un orden, siempre de 
+      <b>izquierda a derecha</b> y <b>respetando la jerarquía de los operadores
+      aritméticos</b>: 
+      <p>
+        <ul>
+          <li>signos de agrupación (parentesis $(\,)$, corchetes $[\,]$ y llaves $\{\,\}$)</li><br>
+          <li>potencias y raices,</li><br>
+          <li>división y multiplicación,</li><br>
+          <li>sumas y restas. </li>
+        </ul>
+      </p>
+        
+      <!-- Debemos tener 
+      esto en cuenta a la hora de efectuar las operaciones básicas, 
+      para no cometer errores. Sin embargo, la mejor manera de evitar 
+      equivocaciones es recurrir a los paréntesis, ya que Excel primero 
+      resolverá las operaciones que estén dentro de ellos.<p> -->
+      </li>
+      <li>
+      <p>Una vez que aprendamos a utilizar las fórmulas, <b>ya no 
+      necesitaremos una calculadora</b> para hacer las operaciones básicas 
+      dentro de una hoja de cálculo, sino que podremos sumar, restar, 
+      multiplicar y dividir por medio de la siguiente estructura: </p>
+      </li>
+      <center><b>=(operando1) (operador aritmético) (operando2)</b></center><br>
+      <li>Al situarnos en una celda, la Barra de fórmulas mostrará el cálculo realizado.</li>
+      </ol>
+
+    <h1 class="number-title"> Editar fórmulas</h1>
+
+    <p>Si lo necesitamos, podemos editar los datos que se encuentran 
+      dentro de la fórmula tanto desde la Barra de fórmulas como desde la 
+      celda que contiene la operación. 
+    </p>
+
+    <p>
+      Para saber si una celda tiene una fórmula o si, simplemente, 
+      queremos ver la fórmula en la celda, presionamos la tecla <b>F2</b>. Excel mostrará
+      la fórmula en la celda, y en el caso de que hayamos usado 
+      referencias a valores, señalará con un color cada una de las celdas que 
+      están involucradas en la operación. Esta tecla tiene el mismo efecto que 
+      hacer <b>doble clic sobre la celda</b>
+    </p>
+
+    <p>
+      <div class="flexbox">
+        <img src="../Imagenes/Excel/Edicion_formulas.JPG" alt="Visualizar la operación realizada 
+        en la celda ayuda a identificar los datos incluidos en ella", width="auto" height="auto">
+      </div>
+    </p>
+
+    <h1 class="number-title">    Ficha Fórmulas</h1>
+    
+    <p>  Ahora sí conoceremos la ficha Fórmulas, que nos permite crear o 
+      modificar diferentes funciones.</p>
+      
+      <p>
+        <div class="flexbox">
+          <img src="../Imagenes/Excel/Ficha_formula.JPG" alt="", width="100%" height="auto">
+        </div>
+      </p>
+  
+      
+      <p>El primer grupo, <b>Biblioteca de funciones</b>, contiene toda la variedad de fórmulas que existen en Excel. 
+        A  continuación, las veremos en detalle</p>
+
+
+      <p>        
+        <table class="info">
+          <tr>
+            <th>Icono</th>
+              <th> Tipo de funciones</th>
+              <th> Detalles</th>
+            </tr>
+            
+            <tr>
+              <td> <img src="../Imagenes/Excel/Formulas_autosuma.JPG" alt="", width="auto" height="auto"></td>
+              <td><b>Autosuma</b></td>
+              <td> Contiene funciones sencillas y de uso frecuente, para 
+                realizar una suma, calcular un promedio, obtener un valor máximo o 
+                mínimo y contar elementos.</td>
+            </tr>
+
+            <tr>
+              <td> <img src="../Imagenes/Excel/Formulas_recientes.JPG" alt="", width="auto" height="auto"></td>
+              <td><b>Recientes</b> </td>
+              <td>agrupa las últimas funciones utilizadas.</td>
+            </tr>
+
+            <tr>
+              <td> <img src="../Imagenes/Excel/Formulas_financieras.JPG" alt="", width="auto" height="auto"></td>
+              <td><b>Financieras</b></td>
+              <td> Posee las funciones para realizar cálculos financieros, 
+                como la obtención de intereses y tasas, calcular pagos y 
+                amortizaciones de préstamos.</td>
+            </tr>
+
+            <tr>
+              <td> <img src="../Imagenes/Excel/Formulas_Logicas.JPG" alt="", width="auto" height="auto"></td>
+              <td><b>Lógicas</b> </td>
+              <td>Estas funciones permiten realizar operaciones de lógica, 
+                como analizar si un valor cumple o no una determinada condición, en consecuencia, efectuar una acción; o averiguar si algo es 
+                verdadero o falso.</td>
+            </tr>
+
+            <tr>
+              <td> <img src="../Imagenes/Excel/Formulas_Texto.JPG" alt="", width="auto" height="auto"></td>
+              <td><b>Texto</b> </td>
+              <td>Reúne las funciones para trabajar con textos, como extraer 
+                datos, pasar caracteres a mayúscula o minúscula, o unir el 
+                contenido de dos celdas para armar una frase.</td>
+            </tr>
+
+            <tr>
+              <td> <img src="../Imagenes/Excel/Formulas_Texto_hora.JPG" alt="", width="auto" height="auto"></td>
+              <td><b>Fecha y hora</b></td>
+              <td> Incluye las funciones para realizar operaciones con fechas 
+                y horas, como obtener los días laborales de un año o la fecha actual.</li>
+                <li><b>Búsqueda y referencia:</b> con estas funciones podemos buscar datos en 
+                  una tabla a partir de condiciones especificadas y utilizarlos para 
+                  realizar cálculos o referencias de celda.</td>
+            </tr>
+
+            <tr>
+              <td> <img src="../Imagenes/Excel/Formulas_Matematicas_trigonometria.JPG" alt="", width="auto" height="auto"></td>
+              <td><b>Matemáticas y trigonométricas</b></td>
+              <td>Algunas de las funciones que podemos 
+                encontrar en este grupo son SUMA (con diferentes variantes), 
+                REDONDEO, COSENO, TANGENTE y PRODUCTO</td>
+            </tr>
+
+            <tr>
+              <td> <img src="../Imagenes/Excel/Formulas_Mas_funciones.JPG" alt="", width="auto" height="auto"></td>
+              <td><b>Más funciones</b></td>
+              <td>Contiene cinco subgrupos de funciones avanzadas. 
+                <ul>
+                 <li><b>Estadísticas:</b> Para efectuar cálculos estadísticos, como, por ejemplo, 
+               frecuencias, desvíos, media, moda. </li>
+                 <li><b>Ingeniería:</b> Para realizar diferentes operaciones con números 
+               complejos, binarios, imaginarios.</li>
+                <li><b>Cubo:</b> Para trabajar con cubos de datos. </li>
+                <li><b>Información:</b> Para obtener información sobre el formato de una 
+               celda o el tipo de datos que contiene. </li>
+                <li><b>Compatibilidad:</b> Agrupa las funciones que facilitan la compatibilidad 
+               con versiones anteriores de Excel.</li>
+                <li><b>Web:</b> Posee funciones para trabajar con una conexión a Internet 
+               (obtener datos de un servicio web, codificación de cadenas URL, etc.</li>
+              </ul>
+            </td>
+            </tr>
+          </table>
+        </p>
+
+    <p>Si presionamos <b>Insertar función</b> <img src="../Imagenes/Excel/Insertar_funcion.JPG" alt="", width="auto" height="auto">,
+       se abre un cuadro del diálogo con la <b>lista de todas las funciones</b>; ahí podemos buscar y seleccionar la que 
+      necesitamos. Por ejemplo, elegimos Suma y presionamos Aceptar.
+    </p>
+
+    <p>
+      <div class="flexbox">
+        <img src="../Imagenes/Excel/Ventana_insertar_funcion.JPG" alt="Luego de elegir la función deseada, pulsamos Aceptar 
+        e indicamos los valores", width="auto" height="auto">
+      </div>
+    </p>
+
+    <p> Luego, 
+      se abrirá otro cuadro de diálogo para elegir las celdas que vamos a 
+      sumar, por ejemplo, B3 y B4. Luego de aceptar, obtenemos el resultado.</p>
+
+      <p>
+        <div class="flexbox">
+          <img src="../Imagenes/Excel/Ventana_insertar_funcion_argumentos.JPG" alt="Luego de elegir la función deseada, pulsamos Aceptar 
+          e indicamos los valores", width="auto" height="auto">
+        </div>
+      </p>
+
+  
+    <!-- </div>
+
+
+
+  <button class="respButton"><h1 class="tema-number-title"> Funciones básicas</h1> </button>
+  <div class="resp-box flexbox"> -->
+
+    <!-- <h1 class="title"> Introducción</h1> -->
+
+    <p>Excel posee una gran cantidad de funciones
+      para diferentes usos. Conocer algunas de ellas
+      con profundidad nos permitirá <b>resolver tareas
+      complejas con sencillez</b>.</p>
+
+      <p>Una de las características que hacen de Excel
+        una herramienta tan potente (y fascinante) es la
+        interminable variedad de formas en que podemos
+        <b>combinar las funciones en fórmulas</b>,
+        creando soluciones eficaces que nos permitirán
+        resolver problemas complejos con rapidez. 
+        Las funciones son muy versátiles, ya que pueden 
+        emplearse en diversos lugares, aunque suelen 
+        acoplarse siempre a las celdas de la hoja de
+        cálculo. </p>
+
+   
+
+      <h1 class="number-title"> ¿Qué es una función?</h1>
+      
+      <p>Las <b>funciones son fórmulas predefinidas</b> que utilizan valores en una
+        estructura u orden específico para realizar cálculos, y devuelven un
+        resultado. Los valores reciben el nombre de <b>argumentos</b>, y el orden o
+        estructura es la <b>sintaxis de la función</b>.</p>
+
+      <ul>
+        <li>
+      <p>
+        Los argumentos pueden ser números, texto, referencias a celdas,
+        valores constantes, fórmulas u otras funciones.
+      </p>
+        </li>
+
+        <li>
+        <p>La sintaxis de una función debe contener los siguientes elementos y
+        en el orden que detallamos:
+        </p>
+        </li>
+      
+        <p>
+          <ol>
+            <li>El signo igual (=)</li>
+            <li>El nombre de la función.</li>
+            <li>Paréntesis de apertura.</li>
+            <li>Los argumentos separados por coma (,). </li>
+            <li>Paréntesis de cierre.</li>
+          </ol>
+        </p>
+      </ul>
+
+        <p>Cualquiera sea la función que utilicemos, esta siempre deberá
+          respetar la siguiente estructura:
+        </p>
+
+        <center><b>=Nombre_funcion(argumento1,argumento2)</b></center>
+
+
+        <p>Podemos utilizar las funciones para realizar de manera rápida
+          distintos tipos de operaciones, tanto simples como complejas.</p>
+          
+          <p><h2 class="number-title">Ejemplo:</h2> Si queremos sumar los valores de las celdas C3 hasta C8,
+          podemos escribir la siguiente fórmula usando el operador suma (+):</p>
+
+        <center><b>=C3 + C4 + C5 + C6 + C7 + C8</b></center>
+
+        <p>También es posible usar la función SUMA y, como único argumento,
+            ingresar el rango que queremos sumar:</p>
+
+        <center><b>=SUMA(C3:C8)</b></center>
+
+        <p>Con ambas fórmulas llegamos al mismo resultado, pero resulta
+              mucho más sencillo y rápido utilizar la última.</p>
+
+
+        <p>Si una función requiere dos o más argumentos, los ingresamos
+          separándolos con  coma (,). 
+          <b>El número de argumentos varía para cada función</b>. Incluso, hay
+          algunas que no requieren ningún argumento, sin que deje de ser
+          obligatorio para estas el uso de paréntesis. Por ejemplo: <b>=HOY()</b>, que
+          devuelve la fecha actual.</p>
+
+
+          <h1 class="number-title"> Ventana insertar función</h1>
+
+          <p>Sabemos que las diferentes funciones que presenta Excel se
+            encuentran agrupadas por categorías en la <b>Biblioteca de funciones</b>. Ahora
+            veremos cómo podemos utilizar una función.</p>
+
+            <p>Primero debemos ubicarnos en la celda donde queremos obtener el
+              resultado y, luego, pulsar el botón <b>Insertar función</b>, ya sea desde la Barra 
+              de fórmulas o desde la Biblioteca de funciones. A continuación, se abrirá
+              la <b>ventana Insertar función</b>, el asistente que nos guiará en el proceso de
+              creación de la sintaxis de la función.</p>
+
+              <p>
+                <div class="flexbox">
+                  <img src="../Imagenes/Excel/asistente_insertar_funcion.JPG" alt="Luego de elegir la función deseada, pulsamos Aceptar 
+                  e indicamos los valores", width="auto" height="auto">
+                </div>
+              </p>
+
+              <p>Veamos las opciones que ofrece esta ventana:</p>
+
+              <ul>
+                <li><h5 class="title">Buscar una función:</h5> En este cuadro podemos escribir el nombre
+                  de la función o una breve descripción del cálculo que queremos
+                  hacer, y luego, pulsamos el botón Ir. En el cuadro Seleccionar una
+                  función aparecerán listadas todas las funciones relacionas con la
+                  descripción que hemos ingresado.</li><br>
+
+                  <li><h5 class="title">Seleccionar una categoría:</h5> Si conocemos la categoría a la que
+                  pertenece la función que buscamos, podemos desplegar el menú de
+                  esta sección y seleccionarla. A continuación, en el cuadro Seleccionar
+                  una función aparecerá el listado de las funciones que pertenecen a la
+                  categoría elegida. Si seleccionamos la categoría Todo, en el listado
+                  figurarán todas las funciones que posee Excel. Si elegimos Usadas
+                  recientemente, accederemos a las últimas funciones utilizadas.</li> <br>
+
+                  <li><h5 class="title">Seleccionar una función:</h5> En este sector podemos desplazarnos mediante
+                  la barra derecha para buscar la función. Si seleccionamos cualquiera
+                  de las funciones, debajo aparecerá su descripción y sintaxis.</li>
+              </ul>
+
+        <p>Una vez que elegimos la función, pulsamos Aceptar y se abrirá la
+          <b>ventana Argumentos de función</b>, que nos indicará la cantidad y el tipo
+          de argumentos requeridos. Aquí podremos ingresar un valor, una
+          referencia de celda o minimizar la ventana y directamente seleccionar
+          la celda o el rango en la hoja de cálculo.</p>
+
+          <p>
+            <div class="flexbox">
+              <img src="../Imagenes/Excel/asistente_insertar_funcion2.JPG" alt="Luego de elegir la función deseada, pulsamos Aceptar 
+              e indicamos los valores", width="auto" height="auto">
+            </div>
+          </p>
+
+         <p>En la celda donde comenzamos el proceso para insertar la función
+          aparecerá el resultado, y si nos colocamos en ella, podremos ver la
+          sintaxis de la función en la Barra de fórmulas.</p>
+        </div>
+    </div>
+  </body>

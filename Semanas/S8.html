@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+    
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+    <!-- This part is for using single $ for latex input, instead of \(\) -->
+    <script>
+        MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+        svg: {
+            fontCache: 'global'
+        }
+    };
+    </script>
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+    .lista
+        {
+            counter-reset: listaCounter 0 sublistaCounter 1 subsublistaCounter 1 subsubsublistaCounter 1;
+        }
+        /* .sublista{
+            counter-reset: sublistaCounter 1  SubsublistaCounter;
+        } */
+        </style>
+
+    <style>
+            /* body.number-title
+            {
+            counter-reset: temaCounter 1 subsectioncounter ;
+            } */
+        h1.page-title
+            {
+            counter-reset: temaCounter 1 sectionCounter  subsectionCounter;
+            }
+    </style>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+    <!-- Top Menu  -->
+    
+          
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Tecnologías de la Información y Comunicación II</div>
+          <div class="subtitle">Licenciatura en Administración Turística</div>
+          <div class="subsubtitle">Universidad del Mar, campus Huatulco </div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+
+      
+        </header>
+
+    <nav class="top-nav">
+        <ul>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Home.html"> Inicio  </a> </li>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Informacion_General.html"> Información</a> </li>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Notas.html"> Notas  </a> </li>
+        <!-- <li> <a href="https://pablojhh.github.io/TICDOS/Quizes.html"> Quizes  </a> </li>
+            <li> <a href="https://pablojhh.github.io/TICDOS/Practicas.html">Prácticas</a></li> -->
+            <li> <a href="https://pablojhh.github.io/TICDOS/Examenes.html"> Archivos  </a> </li>
+        </ul>
+    </nav>
+    
+    <title> §   </title>
+    
+    </head>
+
+<body class="fondo-body" >
+
+<h1 class="number-title flexbox"> Semana del 20 de junio</h1>
+
+
+<div class="nota-box">
+<h2 class="number-title"> Formularios</h2>
+
+<p>
+Los <em>formularios</em> permiten visualizar y presentar los datos almacenados en tablas
+o consultas de forma atractiva, ya que, si bien la función  principal de Access es manejar información, la manera
+en que la presentemos es fundamental, para obtener de ella su máximo provecho.
+</p>
+
+<p>
+Para la creación de formularios, primero debemos tener en claro 
+lo que deseamos mostrar y la forma en la cual queremos visualizar 
+la información
+</p>
+
+
+<p>
+La creación de formularios, se complementan con las tablas y las consultas, ya que permiten realizar operaciones sobre
+los datos: ingresar nuevos registros, buscar datos, filtrarlos, modificarlos y eliminarlos.
+</p>
+
+
+
+<h2 class="number-title"> Crear formularios
+</h2>
+
+
+<p>Para crear un formulario tenemos varias opciones. Podemos acceder a todas ellas desde la pestaña Crear:</p>
+
+<b><li> Formulario</li></b> consiste en crear automáticamente un nuevo formulario que contiene todos los datos de la tabla, 
+consulta o informe seleccionado en el Panel de Navegación.
+
+<b><li>Diseño del formulario</li></b> abre un formulario en blanco en la Vista Diseño y tenemos que ir incorporando los distintos
+   objetos que queremos aparezcan en él. Este método no se suele utilizar ya que en la mayoría de los casos es más 
+   cómodo y rápido crear un autoformulario o utilizar el asistente y después sobre el formulario creado modificar el
+   diseño para ajustar el formulario a nuestras necesidades. En esta unidad veremos más adelante cómo modificar el
+   diseño de un formulario.
+
+<b><li> Formulario en blanco</li></b> consiste en crear un nuevo formulario sin contenido, pero en vez de abrirse en
+ Vista Diseño como la anterior opción, se abrirá en Vista Presentación. Esta vista ofrece ventajas, como poder incorporar
+  datos simplemente arrastrando el objeto (consulta, informe, tabla...) desde el Panel de Navegación.
+
+<b><li> Asistente para formularios</li></b> utiliza un asistente que nos va guiando paso por paso en la creación del formulario. 
+
+
+<b><li>  Navegación</li></b> te permite crear un formulario dedicado a la navegación, que simula la estructura típica de menús de una página web. Podrás elegir entre seis diseños distintos.
+
+<b> <li> Más formularios</li></b> despliega un menú con otros tipos de formularios disponibles, como Varios elementos, Hoja de datos, Formulario dividido y Cuadro de diálogo modal.
+</ul>
+
+<h3> Vista Formulario</h3>
+
+
+<h3> Vista Diseño</h3>
+
+La vista diseño es la que nos permite definir el formulario, en ella le indicamos a Access cómo debe presentar
+los datos del origen del formulario, para ello nos servimos de los controles que veremos más adelante.
+
+<h3> Vista Presentación</h3>
+
+</div>
+
+
+
+</body>

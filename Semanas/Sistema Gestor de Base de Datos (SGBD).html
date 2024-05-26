@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+    
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+    <!-- This part is for using single $ for latex input, instead of \(\) -->
+    <script>
+        MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+        svg: {
+            fontCache: 'global'
+        }
+    };
+    </script>
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+    .lista
+        {
+            counter-reset: listaCounter 0 sublistaCounter 1 subsublistaCounter 1 subsubsublistaCounter 1;
+        }
+        /* .sublista{
+            counter-reset: sublistaCounter 1  SubsublistaCounter;
+        } */
+        </style>
+
+    <style>
+            /* body.number-title
+            {
+            counter-reset: temaCounter 1 subsectioncounter ;
+            } */
+        h1.page-number-title
+            {
+            counter-reset: temaCounter 1 sectionCounter  subsectionCounter;
+            }
+    </style>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+    <!-- Top Menu  -->
+    
+          
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Tecnologías de la Información y Comunicación II</div>
+          <div class="subtitle">Licenciatura en Administración Turística</div>
+          <div class="subsubtitle">Universidad del Mar, campus Huatulco </div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+
+      
+        </header>
+
+    <nav class="top-nav">
+        <ul>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Home.html"> Inicio  </a> </li>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Informacion_General.html"> Información</a> </li>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Notas.html"> Notas  </a> </li>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Quizes.html"> Quizes  </a> </li>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Practicas.html">Prácticas</a> </li>
+        <li> <a href="https://pablojhh.github.io/TICDOS/Enlaces_externos.html"> Links </a> </li>
+        </ul>
+    </nav>
+    
+    <title> § Tema 1   </title>
+    
+    </head>
+
+    <body class="fondo-body" >
+        
+    <!-- <h1 class="page-title"> Modelo Entidad-Relación y Modelo Relacional </h1>   -->
+    <h1 class="page-number-title"> Sistema Gestor de Base de Datos (SGBD)</h1>  
+    
+    <!-- <h1 class="number-title flexbox"> </h1> -->
+
+    <div class="nota-box"><h1 class="title">Introducción</h1>
+
+
+      <p>Las bases de datos requieren de un software que permita la administración de dicha base de datos. 
+        Estos programas especializados sirven como interfaz para que los usuarios puedan administrar como
+        se estructura y optimiza toda la información recopilada.</p>
+              
+        
+        <p>
+          Existen programas llamados sistemas gestores de bases de datos, abreviado
+        SGBD (o DBMS por sus siglas en inglés Database Management System), que
+        permiten almacenar y posteriormente acceder a los datos de forma rápida y
+        estructurada.
+        </p>
+        
+        <p>
+          Un sistema de gestión de bases de datos también permite realizar un gran número
+        de operaciones relacionadas con la administración de la base de datos, tales
+        como, supervisar la productividad, realizar ajustes, backups y restauración de los
+        datos.
+        </p>
+        
+        <p>
+          Entre los sistemas gestores de bases de datos (SGBD) más conocidos se
+        encuentran: Microsoft Access y MySQL.
+        </p>
+        
+
+
+  <p>Se le llama <b>sistema gestor de bases de datos</b> ( <b>SGBD</b> aunque se suele 
+    utilizar más a menudo las siglas DBMS procedentes del inglés, Data Base Management System) a 
+    una colección de datos interrelacionados y un conjunto de programas para acceder a dichos datos.</p>
+    
+  <p>
+    El <b>objetivo principal de un SGBD</b> es proporcionar una forma de <em>almacenar</em> y <em>recuperar</em> la información de una base
+    de datos de manera que sea tanto práctica como eficiente.
+  </p>
+
+  <p>Los sistemas gestores de bases de datos se diseñan para gestionar grandes cantidades de información 
+    de tal manera que  se garantiza la fiabilidad de la información almacenada, a pesar de las caídas del sistema o
+    de los intentos de acceso no autorizados. Si los datos van a ser compartidos entre diferentes usuarios, el
+    sistema debe evitar posibles resultados anómalos.</p>
+  <!--
+
+  <p>. La
+    gestión de los datos implica tanto la definición de estructuras para almacenar la información como la
+    provisión de mecanismos para la manipulación de la información. Además, 
+  </p>
+
+  <p>Un sistema gestor de bases de datos o SGBD (aunque se
+    suele utilizar más a menudo las siglas DBMS procedentes del
+    inglés, Data Base Management System) es el software que permite
+    a los usuarios procesar, describir, administrar y recuperar
+    los datos almacenados en una base de datos</p>
+
+  -->
+
+  <p>Entre los sistemas gestores de bases de datos (SGBD) más conocidos se encuentran: <b>Microsoft Access</b> y <b>MySQL</b>.</p>
+ 
+</div>  
+
+ 
+<div class="nota-box"><h1 class="number-title"> Bases de datos vs Hojas de cálculo</h1>
+<p>
+Las bases de datos y las hojas de cálculo son herramientas útiles para almacenar
+información. Las <b>principales diferencias</b> entre ambas son:
+</p>
+
+<ol>
+<li>La forma de manipular y guardar la información.</li>
+<li>La cantidad de datos que se pueden almacenar</li>
+<li>La accesibilidad a esos datos almacenados.</li>
+</ol>
+
+<p>
+Las hojas de cálculo desde sus comienzos fueron diseñadas para un usuario. Son
+excelentes para uno o un pequeño número de usuarios que no necesitan utilizar un
+gran volumen de datos.
+</p>
+
+<p>
+Las bases de datos, por otro lado, fueron creadas para almacenar gran cantidad
+de información organizada, permite acceder y consultar los datos de forma rápida
+y segura a muchos usuarios al mismo tiempo.
+</p>
+
+<h3 class="number-title"> Cuando  diseñamos una base de datos, debemos
+tomar en cuenta las siguientes aspectos: </h3>
+<ol>
+  <li>Trate de planificar para el futuro e incluya todos los datos que probablemente necesite.</li>
+  <!--
+  En Access, es posible cambiar los tipos de datos de los atributos o agregar atributos más tarde,
+  pero si la base de datos ya es grande o muchas personas la están usando simultáneamente, 
+  agregar atributos o modificar los tipos de datos podría ser lento o interrumpir 
+  el uso de su sistema.
+  -->
+  <li>Tenga un campo separado para cada división de los datos que anticipe necesitar.</li>
+      <!-- Como regla general, es mucho más fácil juntar datos que separarlos. Por ejemplo, 
+      si almacenamos los nombres de los estudiantes como tres campos diferentes (nombre, segundo nombre y apellido),
+      entonces podemos formar fácilmente el nombre completo de un estudiante concatenando (colocando de extremo a extremo)
+      el contenido de estos campos. Si solo almacenamos el nombre como un campo grande, entonces ciertas tareas, 
+      como ordenar a los estudiantes por su nombre o apellido, pueden volverse innecesariamente difíciles y propensas a errores.
+      -->
+  <li>  Evite almacenar campos calculados</li>
+  <!-- 
+  Si ya ha almacenado el total de créditos y puntos de calificación acumulados,
+  puede calcular fácilmente el GPA. No hay necesidad de almacenar de forma redundante 
+  los GPA de los estudiantes. Eso ocupará espacio innecesario y creará una oportunidad 
+  para que los campos de la base de datos se vuelvan inconsistentes entre sí. 
+  En bases de datos relacionales como Access, generalmente debe usar objetos de tabla 
+  solo para sus datos "base". Los cálculos basados en esos datos residen en otros objetos, 
+  como consultas, formularios e informes. Esta separación de datos base y calculados es otra
+   forma en la que las bases de datos relacionales son diferentes de las hojas de cálculo,
+    en las que todos los datos "base" coexisten con los cálculos dentro de la misma cuadrícula bidimensional 
+    de celdas.
+  -->
+</ol>
+
+<p>
+<b>Recuerda:</b> Una base de datos bien diseñada no solo ayuda a garantizar la integridad de los datos,
+sino que es más fácil de mantener y actualizar.
+</p>
+</div>
+
+
+
+</body>

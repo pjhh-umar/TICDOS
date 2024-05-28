@@ -405,13 +405,7 @@
         </div>
       </p>
 
-      <p><h3 class="title"> Ejemplo.</h3> Se muestra la tabla TSocio, resultante de la relación "Socio" vista anteriormente:</p>
-
-      <p>
-        <div class="flexbox">
-          <img src="../Imagenes/BD/Tabla_MR.JPG" alt="", width="auto" height="auto">
-        </div>
-      </p>
+      
 
       <h2 class="number-title"> Nomenclatura</h2>
 
@@ -427,29 +421,29 @@
 
         <p>
           <ul>
-            <li><h5 class="title">Nombres de tablas.</h5> Se prefijarán con una "T" mayúscula (TEmpleado, TCliente).</li><br>
-            <li><h5 class="title">Nombres de campo.</h5> El prefijo, una letra minúscula, indicará el tipo de datos del campo, de
+            <li><h3 class="title">Nombres de tablas.</h3> Se prefijarán con una "T" mayúscula (TEmpleado, TCliente).</li><br>
+            <li><h3 class="title">Nombres de campo.</h3> El prefijo, una letra minúscula, indicará el tipo de datos del campo, de
               acuerdo a los siguientes tipos básicos:<br>   
               <ul><br>
-                <li>Números: "n" (nCantidad, nTotal), de number.</li><br>
-                <li>Cadenas de caracteres: "c" (cNombre, cCiudad), de character.</li><br>
-                <li>Fechas: "d" (dNacimiento, dAlta), de date. Nótese que ya no es necesario especificar
+                <li><h5 class="title"> Números </h5> "n" (nCantidad, nTotal), de number.</li><br>
+                <li><h5 class="title">Cadenas de caracteres: </h5> "c" (cNombre, cCiudad), de character.</li><br>
+                <li><h5 class="title">Fechas:</h5> "d" (dNacimiento, dAlta), de date. Nótese que ya no es necesario especificar
                 la palabra "fecha" (dFechaNacimiento sería redundante).</li><br>
-                <li>Valores lógicos: "l" (lSexo, lPensionista), de logical.</li><br>
-                <li>Objetos: "o" (oFoto, oDocumentoXML), de object.</li><br>
+                <li><h5 class="title">Valores lógicos:</h5> "l" (lSexo, lPensionista), de logical.</li><br>
+                <li><h5 class="title">Objetos: </h5> "o" (oFoto, oDocumentoXML), de object.</li><br>
               </ul>
             </li>
-            <li><h5 class="title">Nombres (genérico).</h5> <h5 class="title">El primer carácter de un nombre siempre será una letra.</h5> Se evitará el uso de caracteres de alfabetos locales, como la eñe, la ç,
+            <li><h3 class="title">Nombres (genérico).</h3> <h5 class="title">El primer carácter de un nombre siempre será una letra.</h5> Se evitará el uso de caracteres de alfabetos locales, como la eñe, la ç,
               las vocales acentuadas o con diéresis, etc. Únicamente se aceptarán como válidos los siguientes
               caracteres:<br>
             <ul><br>
-              <li>Letras del alfabeto inglés en mayúscula y minúscula.</li><br>
+              <li>Letras del alfabeto en mayúscula y minúscula.</li><br>
               <li>Números.</li><br>
               <li>Signo de subrayado o guion bajo ("_").</li><br>
             </ul>
            
            </li> 
-          <li><h5 class="title">Identificadores.</h5> Todo campo creado para identificar de forma unívoca los registros de una
+          <li><h3 class="title">Identificadores.</h3> Todo campo creado para identificar de forma unívoca los registros de una
             tabla (código de cliente, código de libro, código de país) llevará como sufijo las letras
             "<h5 class="title">ID</h5>" (<h5 class="title">identificador</h5>) en mayúscula (nClienteID, nLibroID, nPaisID).</li>
           </ul>
@@ -463,6 +457,13 @@
       </ul>
     </p>
 
+    <p><h3 class="title"> Ejemplo.</h3> Se muestra la tabla TSocio, resultante de la relación "Socio" vista anteriormente:</p>
+
+      <p>
+        <div class="flexbox">
+          <img src="../Imagenes/BD/Tabla_MR.JPG" alt="", width="auto" height="auto">
+        </div>
+      </p>
 
     <h2 class="number-title"> Reglas de transformación</h2>
     
@@ -545,7 +546,6 @@
         TProfesorAsignatura).</li>
     </ul>
   </p>
-
 
 <p><b>La transformación de componentes del diagrama entidad-relación en elementos del modelo
   físico de datos sigue las siguientes reglas:</b>

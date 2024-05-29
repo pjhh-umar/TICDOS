@@ -589,7 +589,7 @@
           </div>
          </p>
 
-      <p>Este tipo de problemática tiene que ver con la dimensión temporal de la infor- mación almacenada en una base de datos, y suele requerir intervención especial por parte del analista, que evaluará cuál es la solución más eficiente para cada caso.</p>
+      <p>Este tipo de problemática tiene que ver con la dimensión temporal de la información almacenada en una base de datos, y suele requerir intervención especial por parte del analista, que evaluará cuál es la solución más eficiente para cada caso.</p>
       </li><br>
 
       <li><p><b>Si la modalidad mínima en el lado de cardinalidad 1 es 1 y no hay atributos, la relación desaparece. Los atributos que conforman la clave primaria de la entidad de modalidad máxima 1 se propagarán a la entidad de modalidad máxima N:</b></p>
@@ -615,16 +615,16 @@
       </li><br>
 
       <li><p><b>Relaciones 1:1. Es la casuística más compleja</b></p>
-        <p> El objetivo es evitar a toda costa que queden campos sin valor. Generalmente requiere un estudio detallado de las circunstancias con- cretas de cada caso, pero se pueden definir unas reglas para ciertas situaciones:</p>
+        <p> El objetivo es evitar a toda costa que queden campos sin valor. Generalmente requiere un estudio detallado de las circunstancias concretas de cada caso, pero se pueden definir unas reglas para ciertas situaciones:</p>
         <ul>
-          <li><p>Si ambas modalidades son 0..1, la relación genera una tabla. Obsérvese el siguiente ejemplo, donde se relacionan empleados con ubicaciones físicas dentro de una ofi- cina, dándose la posibilidad de que haya empleados sin ubicación (personal de lim- pieza o mensajería) y ubicaciones vacías (mesas sin ocupar). Propagar cualquiera de las claves primarias a la otra entidad ocasionaría valores ausentes en campos (em- pleados sin valor en su código de ubicación o ubicaciones sin valor en su código de empleado):</p>
+          <li><p>Si ambas modalidades son 0..1, la relación genera una tabla. Obsérvese el siguiente ejemplo, donde se relacionan empleados con ubicaciones físicas dentro de una oficina, dándose la posibilidad de que haya empleados sin ubicación (personal de limpieza o mensajería) y ubicaciones vacías (mesas sin ocupar). Propagar cualquiera de las claves primarias a la otra entidad ocasionaría valores ausentes en campos (empleados sin valor en su código de ubicación o ubicaciones sin valor en su código de empleado):</p>
             <p>
               <div class="flexbox">
                 <img src="../Imagenes/BD/Relacion_1_1_con_modalidades_0_1.png" alt="", width="100%" height="auto">
               </div>
              </p>
           </li><br>
-          <li>Si una modalidad es 0..1 y la otra 1..1, la clave de la entidad con modalidad mínima 1 se propaga a la entidad con modalidad mínima 0. De forma más intuitiva, en el si- guiente ejemplo se puede ver que todo chalet es un inmueble, pero no todo inmueble es un chalet, por lo que lo lógico es que la clave de “Inmueble” se propague a “Cha- let”, y no al revés:
+          <li>Si una modalidad es 0..1 y la otra 1..1, la clave de la entidad con modalidad mínima 1 se propaga a la entidad con modalidad mínima 0. De forma más intuitiva, en el siguiente ejemplo se puede ver que todo chalet es un inmueble, pero no todo inmueble es un chalet, por lo que lo lógico es que la clave de “Inmueble” se propague a “Chalet”, y no al revés:
             <p>
               <div class="flexbox">
                 <img src="../Imagenes/BD/Relacion_1_1_con_modalidad_0_1.png" alt="", width="100%" height="auto">
@@ -640,7 +640,7 @@
               </div>
              </p>
             </li><br>
-          <li><p>Si ambas modalidades son 1..1 y no hay entidades débiles, o bien si existe algún atri- buto de relación, habrá que estudiar en detalle cuál es la opción adecuada en cada caso, dependiendo de la semántica de los datos almacenados y de otros detalles téc- nicos, como el número estimado de accesos a cada una de las tablas o el orden de consulta de la información.
+          <li><p>Si ambas modalidades son 1..1 y no hay entidades débiles, o bien si existe algún atributo de relación, habrá que estudiar en detalle cuál es la opción adecuada en cada caso, dependiendo de la semántica de los datos almacenados y de otros detalles técnicos, como el número estimado de accesos a cada una de las tablas o el orden de consulta de la información.
           </p></li><br>
 
         </ul>

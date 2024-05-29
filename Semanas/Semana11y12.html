@@ -541,30 +541,119 @@
   físico de datos sigue las siguientes reglas:</b>
 </p>
 
-  <ul>
-    <li>Toda <b>entidad</b> se convierte en una <b>tabla</b>.</li><br>
-    <li>Todo <b>atributo</b> pasa a ser un <b>campo</b>. Los atributos marcados como parte de la clave primaria
-      se convierten en campos de la clave primaria de la nueva tabla, conservando su
-      orden.
-    </li><br>
-    <li>Las <b>relaciones</b> presentan casos basadas en su <b>cardinalidad</b>. Uno de los objetivos
-      fundamentales a la hora de diseñar una base de datos es evitar la proliferación de valores
-      nulos:
-    </li>
-  </ul>
-
-    <ul><br>
+    <ul>
+      <li>Toda <b>entidad</b> se convierte en una <b>tabla</b>.</li><br>
+      <li>Todo <b>atributo</b> pasa a ser un <b>campo</b>. Los atributos marcados como parte de la clave primaria
+        se convierten en campos de la clave primaria de la nueva tabla, conservando su
+        orden.
+      </li><br>
+      <li>Las <b>relaciones</b> presentan casos basadas en su <b>cardinalidad</b>. Uno de los objetivos
+        fundamentales a la hora de diseñar una base de datos es evitar la proliferación de valores
+        nulos:
       
-      <li><h3 class="title">Relaciones M:N, ternarias y $n$-arias</h3>. Se convierten en <b>tabla</b>.
+    <ul>
+      <li><p><h3 class="title">Relaciones M:N, ternarias y $n$-arias</h3>. Se convierten en <b>tabla</b>.
         Su clave primaria será la concatenación de las claves primarias de las entidades que relacionan.<br>
-        
-        <p><h3 class="title"> Ejemplo.</h3>
+      </p>
+        <p><h3 class="title"> Ejemplo.</h3></p>
+        <p>
           <div class="flexbox">
             <img src="../Imagenes/BD/Relacion_M_N.JPG" alt="", width="auto" height="auto">
           </div>
         </p>
       </li>
+      <li><p><h3 class="title">Relaciones 1:N. Se presentan tres posibilidades básicas</h3></p>
+      <ul>
+        <li><b>Si la relación tiene algún atributo, se convierte en tabla:</b>
+        <p><h3 class="title"> Ejemplo.</h3></p>
+        <p>
+          <div class="flexbox">
+            <img src="../Imagenes/BD/Relacion_1_N.png" alt="", width="100%" height="auto">
+          </div>
+        </p>
+        
+        <p>Es posible que se dé una circunstancia que haya que evaluar en el momento de la transformación:
+          si algún atributo de la relación debe formar parte de la clave primaria o no. En el presente ejemplo, 
+          la relación cuenta con tres atributos,“Fecha de contratación”,“Fecha de cancelación” y “Contrata seguro”.
+          Si la especificación de requisitos indica que un cliente puede contratar el mismo servicio más de una vez
+          (previa cancelación), la clave primaria de TContrato (formada por la concatenación de las claves primarias
+          de las entidades relacionadas) no garantizaría la unicidad (podría haber dos registros con el mismo 
+          nClienteID y nServicioID). En ese caso, se debería añadir la fecha de contratación a la clave 
+          (entendiendo que no puede haber un cliente que contrate el mismo servicio dos veces en la misma fecha):
+        </p>
+
+        <p><h3 class="title"> Ejemplo.</h3></p>
+        <p>
+          <div class="flexbox">
+            <img src="../Imagenes/BD/Relacion_1_N_.png" alt="", width="100%" height="auto">
+          </div>
+         </p>
+
+      <p>Este tipo de problemática tiene que ver con la dimensión temporal de la infor- mación almacenada en una base de datos, y suele requerir intervención especial por parte del analista, que evaluará cuál es la solución más eficiente para cada caso.</p>
+      </li><br>
+
+      <li><p><b>Si la modalidad mínima en el lado de cardinalidad 1 es 1 y no hay atributos, la relación desaparece. Los atributos que conforman la clave primaria de la entidad de modalidad máxima 1 se propagarán a la entidad de modalidad máxima N:</b></p>
+          <p>
+            <div class="flexbox">
+              <img src="../Imagenes/BD/Relacion_1_N_con_modalidad_1_1.png" alt="", width="100%" height="auto">
+            </div>
+           </p>
+        
+        <p>Debemos referirnos aquí a un nuevo concepto. Cuando el campo o campos que conforman la clave primaria en una tabla aparecen en otra tabla distinta, se dice que conforman una clave ajena o foránea (foreign key). En el ejemplo nEditorialID es clave primaria en TEditorial y clave ajena en TLibro.</p>
+      </li><br>
+
+      <li><p><b>Si la modalidad mínima en el lado de cardinalidad 1 es 0, la relación se convierte en tabla.</b></p>
+        <p>
+          <div class="flexbox">
+            <img src="../Imagenes/BD/Relacion_1_N_con_modalidad_0_1.png" alt="", width="100%" height="auto">
+          </div>
+         </p>
+         <p>
+          Si, en el presente ejemplo, se hubiese optado por propagar nDescuentoID a TCliente se podrían generar valores nulos en dicho campo, ya que no todos los clientes tienen descuento.
+
+         </p>
+      </li><br>
+
+      <li><p><b>Relaciones 1:1. Es la casuística más compleja</b></p>
+        <p> El objetivo es evitar a toda costa que queden campos sin valor. Generalmente requiere un estudio detallado de las circunstancias con- cretas de cada caso, pero se pueden definir unas reglas para ciertas situaciones:</p>
+        <ul>
+          <li><p>Si ambas modalidades son 0..1, la relación genera una tabla. Obsérvese el siguiente ejemplo, donde se relacionan empleados con ubicaciones físicas dentro de una ofi- cina, dándose la posibilidad de que haya empleados sin ubicación (personal de lim- pieza o mensajería) y ubicaciones vacías (mesas sin ocupar). Propagar cualquiera de las claves primarias a la otra entidad ocasionaría valores ausentes en campos (em- pleados sin valor en su código de ubicación o ubicaciones sin valor en su código de empleado):</p>
+            <p>
+              <div class="flexbox">
+                <img src="../Imagenes/BD/Relacion_1_1_con_modalidades_0_1.png" alt="", width="100%" height="auto">
+              </div>
+             </p>
+          </li><br>
+          <li>Si una modalidad es 0..1 y la otra 1..1, la clave de la entidad con modalidad mínima 1 se propaga a la entidad con modalidad mínima 0. De forma más intuitiva, en el si- guiente ejemplo se puede ver que todo chalet es un inmueble, pero no todo inmueble es un chalet, por lo que lo lógico es que la clave de “Inmueble” se propague a “Cha- let”, y no al revés:
+            <p>
+              <div class="flexbox">
+                <img src="../Imagenes/BD/Relacion_1_1_con_modalidad_0_1.png" alt="", width="100%" height="auto">
+              </div>
+             </p>
+             <p>Nótese que en este caso la clave primaria deTInmueble se propaga aTChalet como clave ajena, pero también funcionará en TChalet como clave primaria (se garantiza la unicidad), aunque se rellene con valores ya existentes en TInmueble. En este caso, en el que una entidad débil necesita de la clave primaria de la entidad fuerte de la que depende, se dice que hay una relación de dependencia en identificación. Cuando la entidad débil puede generar su propia clave primaria se habla de dependencia en existencia. Si, en vez de conformar la clave primaria de TChalet por completo, nInmuebleID fuese parte de una clave compuesta, la relación seguiría siendo de dependencia en identificación.</p>
+
+          </li><br>
+          <li><p>Si ambas modalidades son 1..1, pero una de las entidades es débil, la clave de la entidad fuerte se propaga a la débil. Supongamos una relación 1 a 1 entre clientes y carteras de inversión donde la cartera de inversión se crea exclusivamente a partir del cliente:</p>
+            <p>
+              <div class="flexbox">
+                <img src="../Imagenes/BD/Relacion_1_1_con_entidad_debil.png" alt="", width="100%" height="auto">
+              </div>
+             </p>
+            </li><br>
+          <li><p>Si ambas modalidades son 1..1 y no hay entidades débiles, o bien si existe algún atri- buto de relación, habrá que estudiar en detalle cuál es la opción adecuada en cada caso, dependiendo de la semántica de los datos almacenados y de otros detalles téc- nicos, como el número estimado de accesos a cada una de las tablas o el orden de consulta de la información.
+          </p></li><br>
+
+        </ul>
+
+    
     </ul>
+      
+      </li>
+    </ul>
+   </li>
+  </ul>
+
+    
 
 </div>
 

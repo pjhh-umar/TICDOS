@@ -599,7 +599,9 @@
             </div>
            </p>
         
-        <p>Debemos referirnos aquí a un nuevo concepto. Cuando el campo o campos que conforman la clave primaria en una tabla aparecen en otra tabla distinta, se dice que conforman una clave ajena o foránea (foreign key). En el ejemplo nEditorialID es clave primaria en TEditorial y clave ajena en TLibro.</p>
+        <p>Debemos referirnos aquí a un nuevo concepto. Cuando el campo o campos que conforman la clave
+          primaria en una tabla aparecen en otra tabla distinta, se dice que conforman una <b>clave ajena</b> o 
+          <b>foránea</b>. En el ejemplo nEditorialID es clave primaria en TEditorial y clave ajena en TLibro.</p>
       </li><br>
 
       <li><p><b>Si la modalidad mínima en el lado de cardinalidad 1 es 0, la relación se convierte en tabla.</b></p>
@@ -614,7 +616,7 @@
          </p>
       </li><br>
 
-      <li><p><b>Relaciones 1:1. Es la casuística más compleja</b></p>
+      <li><p><b>Relaciones 1:1. Es el caso más complejo</b></p>
         <p> El objetivo es evitar a toda costa que queden campos sin valor. Generalmente requiere un estudio detallado de las circunstancias concretas de cada caso, pero se pueden definir unas reglas para ciertas situaciones:</p>
         <ul>
           <li><p>Si ambas modalidades son 0..1, la relación genera una tabla. Obsérvese el siguiente ejemplo, donde se relacionan empleados con ubicaciones físicas dentro de una oficina, dándose la posibilidad de que haya empleados sin ubicación (personal de limpieza o mensajería) y ubicaciones vacías (mesas sin ocupar). Propagar cualquiera de las claves primarias a la otra entidad ocasionaría valores ausentes en campos (empleados sin valor en su código de ubicación o ubicaciones sin valor en su código de empleado):</p>

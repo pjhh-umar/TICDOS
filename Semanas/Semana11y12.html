@@ -593,7 +593,8 @@
       </li><br>
 
       <li><p><b>Si la modalidad mínima en el lado de cardinalidad 1 es 1 y no hay atributos, la relación desaparece. Los atributos que conforman la clave primaria de la entidad de modalidad máxima 1 se propagarán a la entidad de modalidad máxima N:</b></p>
-          <p>
+        <p><h3 class="title"> Ejemplo.</h3></p>  
+        <p>
             <div class="flexbox">
               <img src="../Imagenes/BD/Relacion_1_N_con_modalidad_1_1.png" alt="", width="100%" height="auto">
             </div>
@@ -605,28 +606,37 @@
       </li><br>
 
       <li><p><b>Si la modalidad mínima en el lado de cardinalidad 1 es 0, la relación se convierte en tabla.</b></p>
+        <p><h3 class="title"> Ejemplo.</h3></p>
         <p>
           <div class="flexbox">
             <img src="../Imagenes/BD/Relacion_1_N_con_modalidad_0_1.png" alt="", width="100%" height="auto">
           </div>
          </p>
-         <p>
-          Si, en el presente ejemplo, se hubiese optado por propagar nDescuentoID a TCliente se podrían generar valores nulos en dicho campo, ya que no todos los clientes tienen descuento.
+         <p><h3 class="title">Observación:</h3>
+          Si, en el presente ejemplo, se hubiese optado por propagar nDescuentoID a TCliente se podrían 
+          generar <b>valores nulos</b> en dicho campo, ya que no todos los clientes tienen descuento.
 
          </p>
-      </li><br>
+      </li>
+      </ul>
 
-      <li><p><b>Relaciones 1:1. Es el caso más complejo</b></p>
-        <p> El objetivo es evitar a toda costa que queden campos sin valor. Generalmente requiere un estudio detallado de las circunstancias concretas de cada caso, pero se pueden definir unas reglas para ciertas situaciones:</p>
+      <li><p><h3 class="title">Relaciones 1:1. Es el caso más complejo</h3></p>
+        <p><b>El objetivo es evitar a toda costa que queden campos sin valor</b>. Generalmente requiere un estudio detallado de las circunstancias concretas de cada caso, pero se pueden definir unas reglas para ciertas situaciones:</p>
         <ul>
-          <li><p>Si ambas modalidades son 0..1, la relación genera una tabla. Obsérvese el siguiente ejemplo, donde se relacionan empleados con ubicaciones físicas dentro de una oficina, dándose la posibilidad de que haya empleados sin ubicación (personal de limpieza o mensajería) y ubicaciones vacías (mesas sin ocupar). Propagar cualquiera de las claves primarias a la otra entidad ocasionaría valores ausentes en campos (empleados sin valor en su código de ubicación o ubicaciones sin valor en su código de empleado):</p>
+          <li><p><b>Si ambas modalidades son 0...1, la relación genera una tabla.</b></p>
+            <p>Obsérvese el siguiente ejemplo, donde se relacionan empleados con ubicaciones físicas dentro de una oficina, dándose la posibilidad de que haya empleados sin ubicación (personal de limpieza o mensajería) y ubicaciones vacías (mesas sin ocupar). Propagar cualquiera de las claves primarias a la otra entidad ocasionaría valores ausentes en campos (empleados sin valor en su código de ubicación o ubicaciones sin valor en su código de empleado):</p>
+
+            <p><h3 class="title"> Ejemplo.</h3></p>
             <p>
               <div class="flexbox">
                 <img src="../Imagenes/BD/Relacion_1_1_con_modalidades_0_1.png" alt="", width="100%" height="auto">
               </div>
              </p>
           </li><br>
-          <li>Si una modalidad es 0..1 y la otra 1..1, la clave de la entidad con modalidad mínima 1 se propaga a la entidad con modalidad mínima 0. De forma más intuitiva, en el siguiente ejemplo se puede ver que todo chalet es un inmueble, pero no todo inmueble es un chalet, por lo que lo lógico es que la clave de “Inmueble” se propague a “Chalet”, y no al revés:
+          <li><p><b>Si una modalidad es 0...1 y la otra 1...1, la clave de la entidad con modalidad mínima 1 se propaga a la entidad con modalidad mínima 0. </b></p>
+            <p>De forma más intuitiva, en el siguiente ejemplo se puede ver que todo chalet es un inmueble, pero no todo inmueble es un chalet, por lo que lo lógico es que la clave de “Inmueble” se propague a “Chalet”, y no al revés:
+            <p><h3 class="title"> Ejemplo.</h3></p>
+
             <p>
               <div class="flexbox">
                 <img src="../Imagenes/BD/Relacion_1_1_con_modalidad_0_1.png" alt="", width="100%" height="auto">
@@ -635,14 +645,21 @@
              <p>Nótese que en este caso la clave primaria deTInmueble se propaga aTChalet como clave ajena, pero también funcionará en TChalet como clave primaria (se garantiza la unicidad), aunque se rellene con valores ya existentes en TInmueble. En este caso, en el que una entidad débil necesita de la clave primaria de la entidad fuerte de la que depende, se dice que hay una relación de dependencia en identificación. Cuando la entidad débil puede generar su propia clave primaria se habla de dependencia en existencia. Si, en vez de conformar la clave primaria de TChalet por completo, nInmuebleID fuese parte de una clave compuesta, la relación seguiría siendo de dependencia en identificación.</p>
 
           </li><br>
-          <li><p>Si ambas modalidades son 1..1, pero una de las entidades es débil, la clave de la entidad fuerte se propaga a la débil. Supongamos una relación 1 a 1 entre clientes y carteras de inversión donde la cartera de inversión se crea exclusivamente a partir del cliente:</p>
+          <li><p><b>Si ambas modalidades son 1...1, pero una de las entidades es débil, la clave de la entidad fuerte
+             se propaga a la débil.</b></p>
             <p>
+            Supongamos una relación 1 a 1 entre clientes y carteras de inversión donde la cartera de inversión se 
+            crea exclusivamente a partir del cliente:
+          </p>
+          <p><h3 class="title"> Ejemplo.</h3></p>
+           <p>
               <div class="flexbox">
                 <img src="../Imagenes/BD/Relacion_1_1_con_entidad_debil.png" alt="", width="100%" height="auto">
               </div>
              </p>
             </li><br>
-          <li><p>Si ambas modalidades son 1..1 y no hay entidades débiles, o bien si existe algún atributo de relación, habrá que estudiar en detalle cuál es la opción adecuada en cada caso, dependiendo de la semántica de los datos almacenados y de otros detalles técnicos, como el número estimado de accesos a cada una de las tablas o el orden de consulta de la información.
+          <li><p><b>Si ambas modalidades son 1...1 y no hay entidades débiles, o bien si existe algún atributo de relación</b></p>
+             <p>Habrá que estudiar en detalle cuál es la opción adecuada en cada caso, dependiendo de la semántica de los datos almacenados y de otros detalles técnicos, como el número estimado de accesos a cada una de las tablas o el orden de consulta de la información.
           </p></li><br>
 
         </ul>

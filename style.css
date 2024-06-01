@@ -572,7 +572,8 @@ h1.tema-number-title{
   /* color:  rgb(0,0,128);  */
   /* color: rgb(184,134,11);  */
   color: rgb(3, 89, 165); 
-
+  /* text-align: center; */
+  line-height: 1.1;
   /* font-weight: 500; */
 }
 
@@ -642,6 +643,8 @@ h1.number-title{
   /* 'Hina Mincho', serif; */
   /* font-size: 33px; */
   color: rgb(3, 89, 165); 
+  line-height: 1.1;
+
 }
 
 h1.number-title::before{
@@ -664,6 +667,8 @@ h2.number-title{
   /* font-family: 'EB Garamond', serif; */
   /* font-family: 'Hina Mincho', serif; */
   color: rgb(3, 89, 165); 
+  /* text-align: center; */
+  line-height: 1.1;
 }
 
 h2.number-title::before{

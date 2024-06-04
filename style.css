@@ -926,6 +926,11 @@ h1.number-title-practica::after{
   /* box-shadow: 1px 1px 5px 1px  rgb(31, 147, 201); */
 }
 
+img {
+  max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
 .prop-box{
     background:  rgb( 255, 249, 205 );
     border-radius: 25px;

@@ -1067,19 +1067,19 @@ img {
 
 .respButton{
   display: block;
-  border: 2.5px solid rgb(3, 89, 165); 
+  
+  /* border-radius: 25px; */
+  border: 2.5px solid  rgba(255, 255, 255, 0.5) ;
   /* background-color: rgb(255, 255, 255); */
   background: rgb(252, 252, 244);
   /* margin-right: auto; */
   margin-left: 0%;
   /* margin-top: 3%; */
   margin-top: 0%;
-  font-size: 110%;
-  width: 30%;
-
-border-radius: 60px; 
-  margin-bottom: 0px;
+  font-size: 100%;
+  /* margin-bottom: 0px; */
 }
+
 
 .respButton:hover,.respButton:focus, .respButton:active{
 transition: background-color 0.75s ease;

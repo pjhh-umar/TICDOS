@@ -1067,9 +1067,9 @@ img {
 
 .respButton{
   display: block;
-  
-  /* border-radius: 25px; */
-  border: 2.5px solid  rgba(255, 255, 255, 0.5) ;
+  font-family: "Bitter", serif;
+  border-radius: 60px; 
+  border: 2.5px solid  rgba(52, 173, 249, 0.718) ;
   /* background-color: rgb(255, 255, 255); */
   background: rgb(252, 252, 244);
   /* margin-right: auto; */
@@ -1077,6 +1077,8 @@ img {
   /* margin-top: 3%; */
   margin-top: 0%;
   font-size: 100%;
+  padding: 1%;
+  font-weight: 600;
   /* margin-bottom: 0px; */
 }
 
@@ -1100,11 +1102,13 @@ transition-duration: 10s;
   /* transform: perspective(1px) translateZ(0); */
 -webkit-transform: scale(1.1);
 transform: scale(1.1);
+font-weight: 600;
 }
 
 .respButton:hover::after{
 -webkit-transform: scale(1.1);
 transform: scale(1.1);
+font-weight: 600;
 }
 
 

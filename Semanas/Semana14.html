@@ -665,28 +665,28 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Casilla</td>
+                              <td class="nombre-funcion">Casilla</td>
                         <td>Introducción a los tipos de datos y las propiedades de los campos</td>
                       </tr>
                   
                       <tr>
-                        <td>Si/No</td>
+                              <td class="nombre-funcion">Si/No</td>
                         <td>Opciones de Sí o No. </td>
                       </tr>
                   
                       <tr>
-                        <td>Verdader/Falso</td>
+                              <td class="nombre-funcion">Verdader/Falso</td>
                         <td>Opciones de Verdadero o Falso.
                         </td>
                       </tr>
                   
                       <tr>
-                        <td>Activar/Desactivar</td>
+                              <td class="nombre-funcion">Activar/Desactivar</td>
                         <td>Opciones de Activar o Desactivar</td>
                       </tr>
                   
                       <tr>
-                        <td>Porcentaje</td>
+                              <td class="nombre-funcion">Porcentaje</td>
                         <td>Porcentajes.</td>
                       </tr>
             
@@ -708,22 +708,39 @@
   
   <h2 class="number-title">Mascara de entrada </h2> 
    
-  <p>Se puede usar una máscara de entrada para validar los datos, lo que obliga a los usuarios a escribir los valores
-      de una manera específica. Por ejemplo, una máscara de entrada permite obligar a los usuarios a escribir las
-       fechas en un formato como 14/04/2007.</p>
-  
-  <p>Una máscara de entrada está formada por caracteres literales (como espacios, puntos, guiones y
-   paréntesis) que separan los espacios en blanco para rellenar. La configuración de la
-   propiedad Máscara de entrada (InputMask) está formada por caracteres literales
-   junto con caracteres especiales que determinan el tipo de valor que puede introducirse
-   en un espacio en blanco en esa posición. Una buena pratica es configurar  máscaras de entrada
-   para los campos que contienen datos cuyo formato siempre es el mismo,  
-   permite que los usuarios escriban datos correctamente en la base de datos de Access.
+  <p>Una máscara de entrada es una cadena de caracteres que define el formato de los valores de entrada válidos, 
+    formada por caracteres literales (como espacios, puntos, guiones y paréntesis) que separan los espacios en 
+    blanco para rellenar. 
+  </p>
+  <p>
+    <!-- La configuración de la
+    propiedad Máscara de entrada (InputMask) está formada por caracteres literales
+    junto con caracteres especiales que determinan el tipo de valor que puede introducirse
+    en un espacio en blanco en esa posición.  
+    Las máscaras de entrada se almacenan como una propiedad de objeto. 
+    --> 
+    
+    Las máscaras de entrada son de utilidad cuando es importante que el formato de los valores de entrada sea uniforme.
+    Por ejemplo, se puede usar una máscara de entrada con un campo donde se almacenan números de teléfono, 
+    de modo que Access obligue a que se escriban diez dígitos. Si alguien escribe un número de teléfono sin el código de 
+    área, Access no registrará los datos hasta que dicho código se incluya. O bien, una máscara de entrada permite obligar 
+    a los usuarios a escribir las fechas en un formato como 14/04/2007. De esta manera, ase puede usar una máscara de entrada para 
+    validar los datos, lo que obliga a los usuarios a escribir los valores de una manera específica.
   </p>
   
-  <p><h3 class="title">Observacion:</h3> Una máscara de entrada solo determina si Access acepta los datos o no; es decir, 
-      no altera la manera en  la que los datos se almacenan, que se controla mediante el tipo de datos del campo
-      y otras propiedades. 
+  
+  <h3 class="title">Observaciones</h3>
+  <p>
+    <ol>
+      <li>Una buena practica es configurar  máscaras de entrada
+        para los campos que contienen datos cuyo formato siempre es el mismo,  
+        permite que los usuarios escriban datos correctamente en la base de datos de Access.</li><br>
+      <li>Una máscara de entrada solo determina si Access acepta los datos o no; es decir, 
+        no altera la manera en  la que los datos se almacenan, que se controla mediante el tipo de datos del campo
+        y otras propiedades.
+      </li>
+
+    </ol>
   </p>
   
   <p>
@@ -732,17 +749,6 @@
       una máscara de entrada para asegurarnos que los números de teléfono introducidos en un campo
       de número de teléfono van a tener el formato adecuado.
   </p>
-   
-  
-  <p>
-   Una máscara de entrada es una cadena de caracteres que define el formato de los valores de entrada válidos.
-   Las máscaras de entrada se almacenan como una propiedad de objeto. Las máscaras de entrada son de utilidad 
-   cuando es importante que el formato de los valores de entrada sea uniforme. Por ejemplo, se puede usar una 
-   máscara de entrada con un campo donde se almacenan números de teléfono, de modo que Access obligue a que se 
-   escriban diez dígitos. Si alguien escribe un número de teléfono sin el código de área, Access no registrará 
-   los datos hasta que dicho código se incluya.
-  </p>
-
   
   <h3 class="title"> Composición de las mascaras de entrada</h3>
       <p>
@@ -761,7 +767,7 @@
            <li>
                <h5 class="title">La segunda sección</h5> es opcional y hace referencia a los caracteres de máscara insertados y
                 al modo en que se almacenan dentro del campo, esto es, en esta seccion se  especifica
-                si Access 2016 almacena los caracteres de visualización literales en la tabla al introducir datos.
+                si Access almacena los caracteres de visualización literales en la tabla al introducir datos.
                 Si utilizas 0 para esta sección, todos los caracteres de visualización literales (por ejemplo, 
                 el paréntesis de una máscara de entrada de un número de teléfono) se almacenan con el valor; 
                 si introduces 1 o dejas esta sección en blanco, sólo se almacenan los caracteres introducidos.
@@ -924,17 +930,18 @@
                         </tr>
                       </tbody>
                       </table>
-                  <p>
-                  Microsoft Access interpreta los caracteres de la primera sección de la definición de la
-                  propiedad Máscara de entrada (InputMask) tal como se muestra en la tabla siguiente.
-                  Para definir un carácter literal deberá introducirse cualquier otro carácter no incluido en
-                  la tabla, incluidos espacios y símbolos. Para definir uno de los siguientes caracteres
-                  </p>
+                
                     </div>
                   </p>
                 </div>
             </center>
 
+            <p>
+              Microsoft Access interpreta los caracteres de la primera sección de la definición de la
+              propiedad Máscara de entrada (InputMask) tal como se muestra en la tabla siguiente.
+              Para definir un carácter literal deberá introducirse cualquier otro carácter no incluido en
+              la tabla, incluidos espacios y símbolos. Para definir uno de los siguientes caracteres
+              </p>
                      
               <h3 class="title"> Ejemplos </h3>
                 
@@ -964,7 +971,7 @@
                     <li>L0L0</li><br>
                     <li>>L0L 0L0</li><br>
                     <li>00000-9999</li><br>
-                    <li>ISBN 0-&&&&&&&&&-0</li>
+                    <li>ISBN 0-$&&&&&&&&$-0</li>
                 </ol>
                 </p>
             

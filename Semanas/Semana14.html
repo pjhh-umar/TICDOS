@@ -974,7 +974,480 @@
                     <li>ISBN 0-&&&&&&&&-0</li>
                 </ol>
                 </p>
+                
+                <h2 class="number-title">Regla de validación de campo </h2>
+
+
+                <p>Access ofrece varias formas de restringir la entrada de datos:</p>
+                
+                <p><h3 class="title">Tipos de datos:</h3> Todos los campos de una tabla tienen un tipo de datos que restringe lo que pueden escribir
+                   los usuarios. Por ejemplo, un campo de fecha y hora sólo acepta valores de fecha y hora, 
+                   un campo de moneda solo acepta datos de moneda, etc.Los tipos de datos no son opcionales 
+                   y reportan la validación de tipo de datos más básica. 
+                </p>
+                <p><h3 class="title">Propiedades de campo:</h3> Algunas propiedades de campo restringen 
+                    la entrada de datos.
+                    <ul>
+                      <li><h5 class="title">Tamaño de campo:</h5> La propiedad Tamaño del campo restringe
+                      la entrada al limitar la cantidad de caracteres a recibir.
+                      </li>
+                    
+                      <li><h5 class="title">Mascara de entrada:</h5> La propiedad de campo Mascara de entrada 
+                        se puede usar también para validar los datos, lo que obliga a los usuarios a escribir
+                        los valores de una manera específica. Por ejemplo, una máscara de entrada permite 
+                        obligar a los usuarios a escribir las fechas en un formato como 14/04/2007.
+                      </li>
+                      <li><h5 class="title">Regla de validación:</h5> Las reglas de validacion permiten 
+                      establecer las condiciones que deben cumplir los datos para ser aceptados o no en un campo. 
+                      Esto es, puede prohibir o validar datos mediante reglas de validación al escribirlos en 
+                      bases de datos de Access. Puede usar el generador de expresiones para ayudarle 
+                      a dar formato a la regla correctamente. Las regllas de validacion se usan conjuntamente con 
+                      la propiedad <b>texto de validación</b> para informar de errores a los usuarios.
+                      </li>
+                    </ul>
+                </p>
+                <p>Cuando se escriben datos, Access comprueba si se ha infringido alguna regla de validación y, si así es,
+                   los datos escritos no se aceptan y Access muestra un mensaje (<b>Mensaje de validacion</b>).
+                </p>
+ 
             
+                <p>
+                  Estos métodos de validación de datos se pueden usar de forma aislada o combinados entre sí. En Access puede
+                  establecer reglas de validación en la vista de diseño de  tabla o en la de hoja de datos de tabla.
+                  Puede añadir una regla de validación de campo o una regla de validación de registro. 
+                  Una regla de validación de campo comprueba la entrada de un campo y se aplica cuando el foco deja el campo. 
+                  Una regla de validación de registro comprueba la entrada de uno o más campos y se aplica cuando el foco deja 
+                  el registro. Habitualmente, una regla de validación de registro compara los valores de dos o más campos.
+                
+                </p>
+                <p><h3 class="title">Observación:</h3> Los tipo de campo: Autonumeración, Objeto OLE y Datos adjuntos
+                   no admiten reglas de validación:
+                </p>
+            
+                
+            
+            <h2 class="number-title"> Regla de validación de campo:</h2>
+            
+            
+                <p>
+                  Puede usar una <b>regla de validación de campo</b> para especificar un criterio que deben cumplir
+                  todos los valores de campo válidos. En principio en una regla de validación de campo no se deberían tener que especificar el campo actual
+                  como parte de la regla a no ser que use el campo en una función. Las restricciones sobre los tipos de caracteres que se 
+                  escriban en un campo pueden aplicarse más fácilmente con una máscara de entrada. 
+                </p>
+                 
+                <p>
+                  Use una regla de validación de campo para comprobar el valor especificado en un campo al salir de él. 
+                  Por ejemplo, imagine que tiene un campo Fecha y escribe >=#01/01/2010# en la propiedad Regla de validación 
+                  de ese campo. La regla obligará a los usuarios a escribir fechas que coincidan con el 1 de enero de 2010 o
+                  sean posteriores. Si especifica una fecha anterior a 2010 e intenta colocar el foco en otro campo,
+                  Access no le permitirá abandonar el campo actual hasta que corrija el problema.
+                </p>
+             
+                <!--
+                <p>
+                  <h4>Ejemplos:</h4>
+                    <ul>
+                    <li>Impedir valores de fecha del pasado: >=Fecha()</li>
+                    <li>Número inferior o igual a cinco: <=5</li>
+                    <li>Restringir la longitud de caracteres de una cadena: Len([NombreCampoCadena])<100 </li>
+                    <li> Escribir fechas que coincidan con el 1 de enero de 2010 o sean posteriores:  >=#01/01/2010# </li>
+                    <p> Si especifica una fecha anterior a 2010 e intenta colocar el foco en otro campo, 
+                        Access no le permitirá abandonar el campo actual hasta que corrija el problema.</p>
+            
+                     
+                    </ul>
+                </p>
+                -->
+            
+            <!--
+                <p>
+                    Una regla de validación es una forma de limitar la información que se escribe en un campo de tabla
+                   o en un control (como un cuadro de texto) de un formulario. Con el texto de validación se puede
+                    incluir un mensaje que sirva de ayuda a los usuarios que escriben datos no válidos.
+                </p>
+            -->
+            
+          <p>
+            <center>
+              <button class="respButton hvr-grow ">  Ejemplos basicos de reglas de validación</button>
+                <div class="resp-box flexbox">
+                  <p> 
+                    <div class="flexbox">   
+                      <table class="tabla-funciones">
+                          <thead>
+                          <tr>
+                          <th>Regla de validación</th>
+                          <th>Descripción</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                          <td class="nombre-funcion">&lt;100</td>
+                          <td>Debe ser inferior a 100.</td>
+                          </tr>
+                          <tr>
+                          <td class="nombre-funcion">&lt;= 100</td>
+                          <td>Debe ser menor o igual a 100.</td>
+                          </tr>
+                          <tr>
+                          <td class="nombre-funcion">Entre 1 y 10</td>
+                          <td>Debe estar entre 1 y 10.</td>
+                          </tr>
+                          <tr>
+                        <!--  <td>0 0</td>
+                          <td>No debe ser igual a 0.</td>
+                          </tr>
+                          <tr>
+                          <td class="nombre-funcion">&lt;1/1/95</td>
+                          <td>Debe ser una fecha anterior al 1/1/95.</td>
+                          </tr>
+                          -->
+                          <tr>
+                          <td class="nombre-funcion">&gt; = Fecha ()</td>
+                          <td>Debe ser la fecha de hoy o más tarde.</td>
+                          </tr>
+                          <tr>
+                          <td class="nombre-funcion">&lt;= Fecha ()</td>
+                          <td>Debe ser la fecha de hoy o antes.</td>
+                          </tr>
+                          <tr>
+                          <td class="nombre-funcion">&#8220;Hombre&#8221; o &#8220;Mujer&#8221;</td>
+                          <td>Debe ser &#8220;Hombre&#8221; o &#8220;Mujer&#8221;.</td>
+                          </tr>
+                          <tr>
+                          <td class="nombre-funcion">Como &#8220;??&#8221;</td>
+                          <td>Debe tener dos caracteres.</td>
+                          </tr>
+                          <tr>
+                          <td class="nombre-funcion">Como &#8220;####&#8221;</td>
+                          <td>Debe tener cuatro números.</td>
+                          </tr>
+                          </tbody>
+                      </table>  
+                    </div>
+                  </p>
+                </div>
+            </center>
+          </p>
+                
+          <p>
+            <center>
+              <button class="respButton hvr-grow "> Ejemplos de sintaxis de operadores de regla de validación comunes</button>
+                <div class="resp-box flexbox">
+                  <p>
+                    <div class="flexbox"> 
+            
+                        
+                      <table class="tabla-funciones">
+                        <thead>
+                          <tr>
+                            <th>Operador</th>
+                            <th>Función</th>
+                            <th>Ejemplo</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="nombre-funcion">Y</td>
+                                <td>Especifica que todas las partes de la regla de validación deben cumplirse.</td>
+                                <td>&gt;= #01/01/2007# Y &lt;=#06/03/2008#</b>
+                                  </p>
+                                  <div class="ocpAlert">
+                          <p class="ocpAlertSection"><b class="ocpNote">Nota: </b>Se puede usar <b class="ocpLegacyBold">Y</b> también para combinar reglas de validación. Por ejemplo: <b class="ocpLegacyBold">NO "Reino Unido" Y COMO "R*"</b>.</p>
+                        </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="nombre-funcion">O</td>
+                                <td>Especifica que algunas partes (no todas) de la regla de validación deben cumplirse.</td>
+                                <td>enero O febrero</td>
+                              </tr>
+                              <tr>
+                                <td class="nombre-funcion">&lt;</td>
+                                <td>Menor que.</td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td class="nombre-funcion">&lt;=</td>
+                                <td>Menor o igual que.</td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td class="nombre-funcion">&gt;</td>
+                                <td>Mayor que.</td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td class="nombre-funcion">&gt;=</td>
+                                <td>Mayor o igual que.</td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td class="nombre-funcion">=</td>
+                                <td>Igual que.</td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td class="nombre-funcion">&lt;&gt;</td>
+                                <td>Distinto de.</td>
+                                <td></td>
+                              </tr>
+                          <tr>
+                            <td class="nombre-funcion">NO</td>
+                            <td>
+                              <p>Comprueba si hay valores opuestos. Se puede usar delante de cualquier operador de comparación, salvo NO ES NULO.</p>
+                            </td>
+                            <td>NO &gt; 10</b> (es lo mismo que <b class="ocpLegacyBold">&lt;=10</b>).</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="nombre-funcion">EN</td>
+                            <td>
+                              <p>Comprueba si hay valores iguales a los elementos de una lista. El valor de comparación debe ser una lista de valores separados por comas que aparece entre paréntesis.</p>
+                            </td>
+                            <td>EN ("Tokio","París","Moscú")</td>
+                          </tr>
+                          <tr>
+                            <td class="nombre-funcion">ENTRE</td>
+                            <td>
+                              <p>Comprueba si hay un intervalo de valores. Debe haber dos valores de comparación (un valor alto y un valor bajo) y esos valores deben ir separados por el separador Y.</p>
+                            </td>
+                            <td>ENTRE 100 Y 1000</b> (es lo mismo que <b class="ocpLegacyBold">&gt;=100 Y &lt;=1000</b>)</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="nombre-funcion">COMO</td>
+                            <td>
+                              <p>Busca cadenas modelo coincidentes en los campos de tipo Texto y Memo.</p>
+                            </td>
+                            <td>COMO "Geo*"</td>
+                          </tr>
+                          <!-- <tr>
+                            <td>NO ES NULO</td>
+                            <td>
+                              <p>Obliga a los usuarios a escribir valores en el campo. Equivale a establecer el valor de la propiedad de campo <b class="ocpLegacyBold">Requerido</b> en <b class="ocpLegacyBold">Sí</b>. Sin embargo, cuando se habilita la propiedad <b class="ocpLegacyBold">Requerido</b> y un usuario no especifica un valor, Access muestra un mensaje de error poco descriptivo. En general, el uso de las bases de datos resulta más fácil si se utiliza NO ES NULO y se escribe un mensaje descriptivo en la propiedad <b class="ocpLegacyBold">Texto de validación</b>.</p>
+                            </td>
+                            <td>NO ES NULO</td>
+                          </tr>
+                        -->
+                        </tbody>
+                      </table>
+                        
+                    </div>
+                  </p>
+                </div>
+            </center>
+          </p>
+
+          <p>
+          <center>
+          <button class="respButton hvr-grow ">  Ejemplos de regla de validación y texto de validación</button>
+            <div class="resp-box flexbox">
+              <p>
+                <div class="flexbox">   
+            
+                    <table class="tabla-funciones" >
+                        <thead>
+                          <tr>
+                            <th>Regla de validación</th>
+                            <th>Texto de validación</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="nombre-funcion">&lt;&gt; 0</td>
+                            <td>
+                              <p>Especifique un valor que no sea cero.</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="nombre-funcion">&gt;=0</td>
+                            <td>
+                              <p>El valor debe ser igual o mayor que cero.</p>
+                              <p>-o bien-</p>
+                              <p>Especifique un número positivo.</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="nombre-funcion">0 o &gt;100
+                            </td>
+                            <td>
+                              <p>El valor debe ser igual que cero o mayor que 100.</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="nombre-funcion">ENTRE 0 Y 1</td>
+                            <td>
+                              <p>Especifique un valor con un signo de porcentaje. (Se usa con los campos que almacenan los valores numéricos como porcentajes).</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="nombre-funcion">&lt;#01/01/2007#</td>
+                            <td>
+                              <p>Especifique una fecha anterior a 2007.</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="nombre-funcion">&gt;=#01/01/2007# Y &lt;#01/01/2008#</td>
+                            <td>
+                              <p>La fecha debe ser del año 2007.</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="nombre-funcion"> &lt;Fecha()</td>
+                            <td>
+                              <p>La fecha de nacimiento no puede ser una fecha futura.</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="nombre-funcion">CompCadena(Mayús([Apellidos]),<br> [Apellidos],0) = 0</td>
+                            <td>
+                              <p>Los datos del campo Apellidos deben escribirse en mayúsculas.</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="nombre-funcion"> &gt;=Ahora()</td>
+                            <td>
+                              <p>Especifique la fecha de hoy.</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="nombre-funcion"> H O M </td>
+                            <td>
+                              <p>Escriba H para hombre o M para mujer.</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="nombre-funcion">COMO "S*"</td>
+                            <td>
+                              <p>El dato introducido debe comenzar con S</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="nombre-funcion">COMO "[A-Z]*@[A-Z].com" O "[A-Z]*@[A-Z].net" O "[A-Z]*@[A-Z].org"</td>
+                            <td>
+                              <p>Escriba una dirección de correo electrónico válida que termine en .com, .net u .org.</p>
+                            </td>
+                          </tr>
+                          
+                        
+                        </tbody>
+                      </table>
+                </div>
+              </p>
+            </div>
+          </center>
+          </p>
+            
+          <p>
+            <center>
+              <button class="respButton hvr-grow ">  Ejemplo: Validación por longitud </button>
+                <div class="resp-box flexbox">
+                  <div class="flexbox">   
+                      <p>Supongamos que tenemmos un campo <b>Contraseña</b> y queremos que este tenga una 
+                      longitud mínima de 8 caracteres. Entonces podemos usar: </p>
+            <p>
+                <b>Como "????????*""
+            
+                </b>
+            </p>
+            Cuando ingrese la información, cada ? representa una posición que deberá rellenarse obligatoriamente,
+            y el * del final, nos indica que una vez cumplida la longitud mínima, ya se pueden indicar los caracteres 
+            que se consideren conveniente
+            
+                  </div>
+                </div>
+            </center>
+          </p>
+            
+          <p>
+            <center>    
+              <button class="respButton hvr-grow ">  Ejemplo: Validación de Correo electrónico </button>
+                <div class="resp-box flexbox">
+                  <p>
+                    <div class="flexbox">   
+            
+                      Supongamos que el formato requerido del campo correo electrónico es:
+              
+                      <ul>
+                      <li>Más de 1 caracter(podemos suponer mas de tres, y empezando por letra)</li>
+                      <li>el símbolo @</li>
+                      <li>más de un carácter(y más de tres)</li>
+                      <li>un punto (.)</li>
+                      <li>varios caracteres alfabéticos (como mínimo 2)</li>
+                      </ul>
+                      Para comprobar esas condiciones, podríamos escribir en la «Regla de validación de ese campo:
+              
+                      <p><b>Como "[A-Z]??*@???*.??*"</b></p>
+                    </div>
+                  </p>
+                </div>
+            </center>
+          </p>
+                
+            
+                <h1 class="number-title"> Regla de validación de registro  :</h1>
+            
+                <p>
+                 Puede usar una regla de validación de registro para especificar una condición que necesitan cumplir todos los 
+                 registros válidos. Puede comparar valores de distintos campos con una regla de validación de registro.
+                 Por ejemplo, un registro con dos campos de fecha puede necesitar que los valores de un campo siempre sean anteriores a los del otro (por ejemplo, que FechaDeInicio sea anterior a FechaDeFinalización).
+                </p>
+                
+                <p>
+                  Use una regla de validación de registro para controlar cuándo puede guardar un registro (una fila de una tabla).
+                  A diferencia de una regla de validación de campo, la regla de validación de registro hace referencia a otros campos
+                  de la misma tabla. Las reglas de validación de registro se crean cuando es necesario comprobar los valores de un 
+                  campo en relación con los valores de otro campo. Por ejemplo, imagine que su empresa le obliga a enviar los
+                  productos en un plazo de 30 días y, si no lo hace, tendrá que reembolsar al cliente parte del precio de compra.
+                  Puede definir una regla de validación de registro como [FechaObligatoria]<=[FechaPedido]+30 para evitar que un
+                   usuario especifique una fecha de envío (el valor del campo FechaObligatoria) demasiado lejana en el futuro.
+                </p>
+            
+            
+                <button class="respButton hvr-grow ">  Ejemplos de regla de validación y texto de validación</button>
+                  <div class="resp-box flexbox">
+                    <div class="flexbox">   
+                        <table class="tabla-funciones" >
+                            <thead>
+                              <tr>
+                                <td>
+                                  Regla de validación
+                                </td>
+                                <td>
+                                  Texto de validación
+                                </td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                          
+                              <tr>
+                                <td class="nombre-funcion">[FechaObligatoria]&lt;=[FechaPedido]+30</td>
+                                <td class="nombre-funcion">Escriba una fecha obligatoria que no sea posterior a un plazo de 30 días a partir de la fecha de pedido.</td>
+                              </tr>
+                              <tr>
+                                <td class="nombre-funcion">[FechaFin]&gt;=[FechaInicio]</td>
+                                <td class="nombre-funcion">Escriba una fecha de fin que sea igual o posterior a la fecha de inicio.</td>
+                              </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                  </div>
+            
+            
+            <h2 class="number-title"> Validación en un formulario </h2>
+            
+            
+              <p>
+                   Puede usar la propiedad Regla de validación de un control de un formulario para especificar un
+                    criterio que deben cumplir todos los valores indicados para ese control. La propiedad de control 
+                    Regla de validación funciona como una regla de validación de campo. Normalmente, se usa una regla de validación
+                    de formulario en lugar de una regla de validación de campo si se trata de una regla específica del formulario
+                    y no de la tabla, sin importar donde se use.
+                  </p>
+              </div>
+                
   <!--
 
           <h3 class="title"> Ejemplo.</h3>

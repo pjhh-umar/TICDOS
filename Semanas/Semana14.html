@@ -219,9 +219,10 @@
                       
                       <tr>
                           <td class="nombre-funcion">Texto corto</td>
-                        <td  > Datos alfanuméricos cortos como nombres, apellidos, títulos,  
-                            una dirección, etc. En general se utiliza para introducir datos que incluyan
-                            texto y/o valores numéricos que no requieran cálculos matemáticos.
+                        <td  >Datos alfanuméricos cortos como nombres, apellidos, títulos,  
+                            una dirección, etc.
+                            <p>En general se utiliza para introducir datos que incluyan
+                            texto y/o valores numéricos que no requieran cálculos matemáticos.</p>
                           <!-- <p> Nota: Desde Access 2013, se ha cambiado el nombre del tipo de datos Texto por Texto corto.</p> -->
       
                             </td>
@@ -230,9 +231,12 @@
                     
                       <tr>
                           <td class="nombre-funcion">Texto largo</td>
-                        <td>Grandes cantidades de datos alfanuméricos: oraciones y párrafos.
-                            Un uso típico de un campo Texto Largo sería  una descripción detallada de
+                        <td><p>Grandes cantidades de datos alfanuméricos: oraciones y párrafos.
+
+                        </p>
+                          <p>Un uso típico de un campo Texto Largo sería  una descripción detallada de
                             un producto.
+                          </p>
                           <!-- <p>Nota: Desde Access 2013, se ha cambiado el nombre de los tipos de datos Memo por Texto largo.</p> -->
                         </td>
                         <td>Hasta 1 gigabyte (GB) aproximadamente, pero los controles para mostrar un texto
@@ -266,7 +270,7 @@
                               que vayan a utilizarse para cálculos matemáticos 
                               y que necesitemos que lo preceda el signo de moneda. 
                               
-                              <p>Nota:Acepta hasta 15 dígitos para la parte entera del número y hasta 4 
+                              <p>Nota: Acepta hasta 15 dígitos para la parte entera del número y hasta 4 
                                 dígitos en su parte decimal. </p>
                           </td>
                           <td>8 bytes</td>
@@ -296,7 +300,7 @@
                           <td class="nombre-funcion">Objeto OLE</td>
                           <td> Este tipo de datos es usado para enlazar o adjuntar archivos 
                               creados en otros programas, como pueden ser archivos word, excel, etc.
-                              Solo admite un sólo archivo y el archivo ocupa espacio en la base de datos.</td>
+                              Solo admite un único archivo y el archivo ocupa espacio en la base de datos.</td>
                           <td>Hasta unos 2 GB.</td>
                       </tr>
           
@@ -358,30 +362,26 @@
           </div>
           </div>
         </center>
+       
+        <p>Una vez elegido el tipo de datos adecuado a la informacion 
+          que almacenaremos en dicho campo. Las <b>propiedades de un campo</b>  describen las 
+          características y el comportamiento de los datos agregados a dicho campo. 
+        </p>
 
-        <p>
-          El tipo de datos de un campo posee multiples <b>propiedades de campo</b> las 
-          cuales determinan cualidades importantes del mismo, tales como:
+        <h1 class="number-title"> Propiedades de campo en  Access</h1>
+      <p>
+       Después de crear un campo y establecer su tipo de datos, se pueden establecer otras propiedades del campo,
+       las cuales determinan cualidades importantes del mismo, tales como:
       <ol>
         <li>Los formatos que se pueden usar con el campo.</li>
         <li>El tamaño máximo de un valor del campo.</li>
         <li>Cómo se puede usar el campo en expresiones.</li>
         <li>Si el campo se puede indizar.</li>
       </ol>
-        </p>
-
-        <p>Una vez elegido el tipo de datos adecuado a la informacion 
-          que almacenaremos en dicho campo. Las <b>propiedades de un campo</b>  describen las 
-          características y el comportamiento de los datos agregados a dicho campo. 
-        </p>
 
 
-          
-      <h1 class="number-title"> Propiedades de un campo en  Access</h1>
-      <p>
-       Después de crear un campo y establecer su tipo de datos, se pueden establecer otras propiedades del campo.
-       Por ejemplo, se puede controlar el tamaño de un campo de texto estableciendo su propiedad 
-       Tamaño del campo, entre otras muchas propiedades.
+       <!-- Por ejemplo, se puede controlar el tamaño de un campo de texto estableciendo su propiedad 
+       Tamaño del campo, entre otras muchas propiedades. -->
       </p>
   
       <p>Enseguida se describen  algunas  propiedades de campo y su uso para  distintos tipos de datos:  </p>
@@ -403,11 +403,11 @@
                       <tr>
                         <td class="nombre-funcion"> Formato</td>
                         <td>Determina la forma en que aparece el campo cuando se visualiza o imprime en hojas de datos o en formularios 
-                            o informes enlazados al campo. Se puede definir un formato personalizado para un campo de hipervínculo.
+                            o informes enlazados al campo. 
+                            <!-- Se puede definir un formato personalizado para un campo de hipervínculo. -->
                         </td>
                     </tr>
             
-                  
                       <tr>
                         <td class="nombre-funcion">Si/No</td>
                         <td>Opciones de Sí o No. </td>
@@ -417,10 +417,11 @@
                         <td class="nombre-funcion">Titulo</td>
                         <td> Se utiliza esta propiedad para indicar cómo queremos que se visualice la cabecera del campo.
                             Por ejemplo, si un campo se llama Fecha_nac e indicamos Fecha de nacimiento como valor 
-                            en la propiedad Título, en la cabecera del campo Fecha_nac veremos Fecha de nacimiento. Es tambien el
-                            el texto de etiqueta que se muestra para este campo de forma predeterminada en formularios,
+                            en la propiedad Título, en la cabecera del campo Fecha_nac veremos Fecha de nacimiento.
+                            <p>Es tambien el texto de etiqueta que se muestra para este campo de forma predeterminada en formularios,
                             informes y consultas. Si esta propiedad está vacía, se usa como valor predeterminado 
                             el nombre del campo. Se permite cualquier cadena de texto. Un título eficaz suele ser breve.
+                          </p>
                         </td>
                       </tr>
                   
@@ -464,21 +465,21 @@
                           <ol>
                               <li>Sí (sin duplicados)   Crea un índice exclusivo en el campo.</li>
                               <li>Sí (con duplicados)   Crea un índice no exclusivo en el campo. </li>
-                              <li>No,   quita cualquier índice del campo. </li>
+                              <li>No, quita cualquier índice del campo. </li>
                             
                           </ol>
-                        <p>Nota: No cambie esta propiedad en un campo que se use como clave principal.</p>
+                        <p>Nota: No cambies esta propiedad en un campo que se use como clave principal.</p>
                     </td>
                       </tr>
             <tr>
-                          <td class="nombre-funcion">Compresión Unicode</td>
+                          <!-- <td class="nombre-funcion">Compresión Unicode</td>
                 <td>Comprime el texto que se almacena en este campo cuando se almacenan menos de 4.096 caracteres.</td>
             </tr>
             
                       <tr>
                         <td class="nombre-funcion">Modo IME</td>
                         <td>Controla la conversión de caracteres en las versiones asiáticas de Windows.</td>
-                      </tr>
+                      </tr> -->
                     
                     
             
@@ -496,21 +497,18 @@
       </center>
       
   
-      <h2 class="number-title">Permitir longitud cero y requerido </h2>
+      <h2 class="number-title">Requerido y Permitir longitud cero</h2>
   
       Cuando creamos nuevas tablas en Access, es mucho mas fácil  realizarlo a través de la vista diseño de la tabla.
       Para modificar y/o agregar información también podemos acceder a dicha vista.
       <ul>
-         <p><li><h3 class="title"> Longitud cero:</h3> Permitir longitud cero admite dos posibles valores, 
+         <li><p><h3 class="title">Requerido:</h3> La propiedad Requerido indica que ese campo no se puede dejar en blanco, sin datos. </p></li> 
+         <li><p><h3 class="title"> Longitud cero:</h3> Permitir longitud cero admite dos posibles valores, 
           Sí y No. Si está con valor Sí significa que podemos introducir una cadena de longitud cero en el
           campo. Esta cadena se puede puede representar como "" sin nada dentro de las comillas. 
           Con el valor No no se admitiría esta cadena.
           </p>
         </li>
-          
-          <p><li><h3 class="title">Requerido:</h3> La propiedad Requerido indica que ese campo no se puede dejar en blanco, sin datos. 
-          </p>
-        </li> 
       </ul>
 
       <h3 class="title">Observación.</h3>
@@ -527,14 +525,13 @@
            ¿Qué podemos hacer? Si la propiedad permitir longitud cero está activada (valor Sí), que hacemos es pulsar la barra espaciadora, y de esta forma podemos pasar a otro campo sin problemas. Más tarde, con la información en nuestras manos, introducimos el dato sin problemas.
       </p>
       
-      <p>
-          <b> En resumen: </b>Con permitir longitud cero y requerido a sí podemos dejar la introducción de datos para más tarde. Si tuviésemos requerido a si y permitir longitud cero a no, entonces Access no permite introducir una cadena de longitud cero en el campo,
+      <p><h3 class="title">Observación.</h3> Con permitir longitud cero y requerido a sí podemos dejar la introducción de datos para más tarde. Si tuviésemos requerido a si y permitir longitud cero a no, entonces Access no permite introducir una cadena de longitud cero en el campo,
            y estaremos obligados a introducir información, dar a la barra espaciadora no se permite.
       </b>
       
       <h2 class="number-title"> Formato </h2>
       <p> 
-      Entre las propiedades de campo, una de las más importantes es la propiedad de campo formato.
+      Entre las propiedades de campo, una de las más importantes es formato.
       Esta propiedad se utiliza para personalizar la forma de presentar los datos en pantalla o en un informe. 
       Enseguida se presentan los propiedades de campo para algunos de los tipos de dato usados mas
       frecuentemente durante el diseño de una base de datos:
@@ -760,7 +757,6 @@
     cada una de ellas se separa con punto y coma. El propósito de cada sección es el siguiente:
      </p>
    
-   
        <ul>
            <li><h5 class="title"> La primera sección es obligatoria.</h5> Incluye los caracteres o la cadena de caracteres 
                que especifican propiamente a la mascara de entrada junto con marcadores de posición tales como 
@@ -770,8 +766,8 @@
   
            <li>
                <h5 class="title">La segunda sección</h5> es opcional y hace referencia a los caracteres de máscara insertados y
-                al modo en que se almacenan dentro del campo, esto es, en esta seccion se  especifica
-                si Access almacena los caracteres de visualización literales en la tabla al introducir datos.
+                al modo en que se almacenan dentro del campo, esto es, en esta seccion <b>se especifica
+                si Access almacena los caracteres de visualización literales en la tabla al introducir datos</b>.
                 Si utilizas 0 para esta sección, todos los caracteres de visualización literales (por ejemplo, 
                 el paréntesis de una máscara de entrada de un número de teléfono) se almacenan con el valor; 
                 si introduces 1 o dejas esta sección en blanco, sólo se almacenan los caracteres introducidos.
@@ -780,8 +776,8 @@
            <li>
                <h5 class="title">La tercera sección</h5> también es opcional e indica un solo carácter o espacio que se usa como marcador de posición. 
                De forma predeterminada, Access usa el carácter de subrayado (_). Si desea usar otro carácter, escríbalo en la 
-               tercera sección de la máscara. En otras palabras, en esta sección se especifica el carácter que Access 
-                muestra para el espacio en el que el usuario debe escribir un carácter en la máscara de entrada.
+               tercera sección de la máscara. En otras palabras, en esta sección <b>se especifica el carácter que Access 
+                muestra para el espacio en el que el usuario debe escribir un carácter en la máscara de entrada</b>.
                Para esta sección puedes utilizar casi cualquier  carácter; para mostrar una cadena en blanco, utiliza 
                un espacio entre comillas (" ").
            </li>

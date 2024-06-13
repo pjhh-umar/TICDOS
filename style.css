@@ -1246,10 +1246,10 @@ font-weight: 600;
   /* content:" "; */
   /* color: rgb(0, 77, 179); */
   color: rgb(0, 0, 0); 
-  text-align: left;
+  text-align: justify;
   /* display: inline; */
   border-collapse: collapse;
-  /* width: 100%; */
+  width: auto;
   max-width: 100%;
   
 }
@@ -1294,9 +1294,8 @@ font-weight: 600;
   /* content:" "; */
   /* color: rgb(0, 77, 179); */
   color: rgb(0, 0, 0); 
-  text-align: center;
+  /* text-align: center; */
   border-collapse: collapse;
-  /* width: 100%; */
   /* display: inline; */
  }
 
@@ -1330,11 +1329,9 @@ thead tr:nth-child(odd) {
 
 td{
   border: 1.7px solid rgb(3, 89, 165);  
-  text-align: left;
+  text-align: justify;
   padding: 8px;
   word-wrap: break-word; /* Permite que las palabras se ajusten y no desborden */
-
-  
 }
 
 tbody tr:nth-child(even) {

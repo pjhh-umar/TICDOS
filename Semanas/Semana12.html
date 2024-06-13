@@ -380,7 +380,7 @@
              <p>Nótese que en este caso la clave primaria deTInmueble se propaga aTChalet como clave ajena, pero también funcionará en TChalet como clave primaria (se garantiza la unicidad), aunque se rellene con valores ya existentes en TInmueble. En este caso, en el que una entidad débil necesita de la clave primaria de la entidad fuerte de la que depende, se dice que hay una relación de dependencia en identificación. Cuando la entidad débil puede generar su propia clave primaria se habla de dependencia en existencia. Si, en vez de conformar la clave primaria de TChalet por completo, nInmuebleID fuese parte de una clave compuesta, la relación seguiría siendo de dependencia en identificación.</p>
 
           </li><br>
-          <li><p><b>Si ambas modalidades son 1...1, pero una de las entidades es débil, la clave de la entidad fuerte
+          <li><p><b>Si ambas modalidades son 1...1, pero una de las entidades es débil, la relación desaparece y la clave de la entidad fuerte
              se propaga a la débil.</b></p>
             <p>
             Supongamos una relación 1 a 1 entre clientes y carteras de inversión donde la cartera de inversión se 

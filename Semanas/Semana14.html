@@ -975,29 +975,30 @@
                 </ol>
                 </p>
                 
-                <h2 class="number-title">Regla de validación de campo </h2>
+                <h2 class="number-title">Reglas de validación</h2>
 
 
                 <p>Access ofrece varias formas de restringir la entrada de datos:</p>
                 
-                <p><h3 class="title">Tipos de datos:</h3> Todos los campos de una tabla tienen un tipo de datos que restringe lo que pueden escribir
+                <p><h5 class="title">Tipos de datos:</h5> Todos los campos de una tabla tienen un tipo de datos que restringe lo que pueden escribir
                    los usuarios. Por ejemplo, un campo de fecha y hora sólo acepta valores de fecha y hora, 
                    un campo de moneda solo acepta datos de moneda, etc.Los tipos de datos no son opcionales 
                    y reportan la validación de tipo de datos más básica. 
                 </p>
-                <p><h3 class="title">Propiedades de campo:</h3> Algunas propiedades de campo restringen 
+                <p><h5 class="title">Propiedades de campo:</h5> Algunas propiedades de campo restringen 
                     la entrada de datos.
                     <ul>
-                      <li><h5 class="title">Tamaño de campo:</h5> La propiedad Tamaño del campo restringe
+                      <li><b>Tamaño de campo:</b> La propiedad Tamaño del campo restringe
                       la entrada al limitar la cantidad de caracteres a recibir.
-                      </li>
+                      </li><br>
                     
-                      <li><h5 class="title">Mascara de entrada:</h5> La propiedad de campo Mascara de entrada 
+                      <li><b>Mascara de entrada:</b> La propiedad de campo Mascara de entrada 
                         se puede usar también para validar los datos, lo que obliga a los usuarios a escribir
                         los valores de una manera específica. Por ejemplo, una máscara de entrada permite 
                         obligar a los usuarios a escribir las fechas en un formato como 14/04/2007.
-                      </li>
-                      <li><h5 class="title">Regla de validación:</h5> Las reglas de validacion permiten 
+                      </li><br>
+
+                      <li><b>Regla de validación:</b> Las reglas de validacion permiten 
                       establecer las condiciones que deben cumplir los datos para ser aceptados o no en un campo. 
                       Esto es, puede prohibir o validar datos mediante reglas de validación al escribirlos en 
                       bases de datos de Access. Puede usar el generador de expresiones para ayudarle 
@@ -1014,19 +1015,19 @@
                 <p>
                   Estos métodos de validación de datos se pueden usar de forma aislada o combinados entre sí. En Access puede
                   establecer reglas de validación en la vista de diseño de  tabla o en la de hoja de datos de tabla.
-                  Puede añadir una regla de validación de campo o una regla de validación de registro. 
+                  Puede añadir una <i>regla de validación de campo</i> o una <i>regla de validación de registro</i>. 
                   Una regla de validación de campo comprueba la entrada de un campo y se aplica cuando el foco deja el campo. 
                   Una regla de validación de registro comprueba la entrada de uno o más campos y se aplica cuando el foco deja 
                   el registro. Habitualmente, una regla de validación de registro compara los valores de dos o más campos.
                 
                 </p>
-                <p><h3 class="title">Observación:</h3> Los tipo de campo: Autonumeración, Objeto OLE y Datos adjuntos
+                <p><h4 class="title">Observación:</h4> Los tipo de campo: Autonumeración, Objeto OLE y Datos adjuntos
                    no admiten reglas de validación:
                 </p>
             
                 
             
-            <h2 class="number-title"> Regla de validación de campo:</h2>
+            <h2 class="title"> Reglas de validación de campo</h2>
             
             
                 <p>
@@ -1035,10 +1036,188 @@
                   como parte de la regla a no ser que use el campo en una función. Las restricciones sobre los tipos de caracteres que se 
                   escriban en un campo pueden aplicarse más fácilmente con una máscara de entrada. 
                 </p>
-                 
+                
                 <p>
-                  Use una regla de validación de campo para comprobar el valor especificado en un campo al salir de él. 
-                  Por ejemplo, imagine que tiene un campo Fecha y escribe >=#01/01/2010# en la propiedad Regla de validación 
+                  <center>
+                    <button class="respButton hvr-grow ">Operadores de reglas de validación</button>
+                      <div class="resp-box flexbox">
+                        <p>
+                          <div class="flexbox"> 
+                  
+                              
+                            <table class="tabla-funciones">
+                              <thead>
+                                <tr>
+                                  <th>Operador</th>
+                                  <th>Función</th>
+                                  <th>Ejemplo</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <td class="nombre-funcion">Y</td>
+                                      <td>Especifica que todas las partes de la regla de validación deben cumplirse.</td>
+                                      <td>&gt;= #01/01/2007# Y &lt;=#06/03/2008#</b>
+                                        </p>
+                                        <div class="ocpAlert">
+                                <p class="ocpAlertSection"><b class="ocpNote">Nota: </b>Se puede usar <b class="ocpLegacyBold">Y</b> también para combinar reglas de validación. Por ejemplo: <b class="ocpLegacyBold">NO "Reino Unido" Y COMO "R*"</b>.</p>
+                              </div>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td class="nombre-funcion">O</td>
+                                      <td>Especifica que algunas partes (no todas) de la regla de validación deben cumplirse.</td>
+                                      <td>enero O febrero</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="nombre-funcion">&lt;</td>
+                                      <td>Menor que.</td>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                      <td class="nombre-funcion">&lt;=</td>
+                                      <td>Menor o igual que.</td>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                      <td class="nombre-funcion">&gt;</td>
+                                      <td>Mayor que.</td>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                      <td class="nombre-funcion">&gt;=</td>
+                                      <td>Mayor o igual que.</td>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                      <td class="nombre-funcion">=</td>
+                                      <td>Igual que.</td>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                      <td class="nombre-funcion">&lt;&gt;</td>
+                                      <td>Distinto de.</td>
+                                      <td></td>
+                                    </tr>
+                                <tr>
+                                  <td class="nombre-funcion">NO</td>
+                                  <td>
+                                    <p>Comprueba si hay valores opuestos. Se puede usar delante de cualquier operador de comparación, salvo NO ES NULO.</p>
+                                  </td>
+                                  <td>NO &gt; 10</b> (es lo mismo que <b class="ocpLegacyBold">&lt;=10</b>).</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="nombre-funcion">EN</td>
+                                  <td>
+                                    <p>Comprueba si hay valores iguales a los elementos de una lista. El valor de comparación debe ser una lista de valores separados por comas que aparece entre paréntesis.</p>
+                                  </td>
+                                  <td>EN ("Tokio","París","Moscú")</td>
+                                </tr>
+                                <tr>
+                                  <td class="nombre-funcion">ENTRE</td>
+                                  <td>
+                                    <p>Comprueba si hay un intervalo de valores. Debe haber dos valores de comparación (un valor alto y un valor bajo) y esos valores deben ir separados por el separador Y.</p>
+                                  </td>
+                                  <td>ENTRE 100 Y 1000</b> (es lo mismo que <b class="ocpLegacyBold">&gt;=100 Y &lt;=1000</b>)</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="nombre-funcion">COMO</td>
+                                  <td>
+                                    <p>Busca cadenas modelo coincidentes en los campos de tipo Texto y Memo.</p>
+                                  </td>
+                                  <td>COMO "Geo*"</td>
+                                </tr>
+                                <!-- <tr>
+                                  <td>NO ES NULO</td>
+                                  <td>
+                                    <p>Obliga a los usuarios a escribir valores en el campo. Equivale a establecer el valor de la propiedad de campo <b class="ocpLegacyBold">Requerido</b> en <b class="ocpLegacyBold">Sí</b>. Sin embargo, cuando se habilita la propiedad <b class="ocpLegacyBold">Requerido</b> y un usuario no especifica un valor, Access muestra un mensaje de error poco descriptivo. En general, el uso de las bases de datos resulta más fácil si se utiliza NO ES NULO y se escribe un mensaje descriptivo en la propiedad <b class="ocpLegacyBold">Texto de validación</b>.</p>
+                                  </td>
+                                  <td>NO ES NULO</td>
+                                </tr>
+                              -->
+                              </tbody>
+                            </table>
+                              
+                          </div>
+                        </p>
+                      </div>
+                  </center>
+                </p>
+
+
+          <p>
+            <center>
+              <button class="respButton hvr-grow ">  Ejemplos basicos de reglas de validación de campo</button>
+                <div class="resp-box flexbox">
+                  <p> 
+                    <div class="flexbox">   
+                      <table class="tabla-funciones">
+                          <thead>
+                          <tr>
+                          <th>Regla de validación</th>
+                          <th>Descripción</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                          <td class="nombre-funcion">&lt;100</td>
+                          <td>El valor del campo debe ser inferior a 100.</td>
+                          </tr>
+                          <tr>
+                          <td class="nombre-funcion">&lt;= 100</td>
+                          <td>El valor del campo debe ser menor o igual a 100.</td>
+                          </tr>
+                          <tr>
+                          <td class="nombre-funcion">Entre 1 y 10</td>
+                          <td>El valor del campo debe estar entre 1 y 10.</td>
+                          </tr>
+                          <tr>
+                        <!--  <td>0 0</td>
+                          <td>No El valor del campo debe ser igual a 0.</td>
+                          </tr>
+                          <tr>
+                          <td class="nombre-funcion">&lt;1/1/95</td>
+                          <td>El valor del campo debe ser una fecha anterior al 1/1/95.</td>
+                          </tr>
+                          -->
+                          <tr>
+                          <td class="nombre-funcion">&gt; = Fecha ()</td>
+                          <td>El valor del campo debe ser la fecha de hoy o más tarde.</td>
+                          </tr>
+                          <tr>
+                          <td class="nombre-funcion">&lt;= Fecha ()</td>
+                          <td>El valor del campo debe ser la fecha de hoy o antes.</td>
+                          </tr>
+                          <tr>
+                          <td class="nombre-funcion">&#8220;Hombre&#8221; o &#8220;Mujer&#8221;</td>
+                          <td>El valor del campo debe ser &#8220;Hombre&#8221; o &#8220;Mujer&#8221;.</td>
+                          </tr>
+                          <tr>
+                          <td class="nombre-funcion">Como &#8220;??&#8221;</td>
+                          <td>El valor del campo debe tener dos caracteres.</td>
+                          </tr>
+                          <tr>
+                          <td class="nombre-funcion">Como &#8220;####&#8221;</td>
+                          <td>El valor del campo debe tener cuatro números.</td>
+                          </tr>
+                          </tbody>
+                      </table>  
+                    </div>
+                  </p>
+                  
+                </div>
+                
+            </center>
+          </p>
+          
+      
+
+
+                <h3 class="title">Ejemplo. Validación de fecha</h3>
+                <p>Puedes utilizar una regla de validación de campo para comprobar el valor especificado en un campo al
+                  salir de él. Por ejemplo, imagine que tiene un campo Fecha y escribe >=#01/01/2010# en la propiedad Regla de validación 
                   de ese campo. La regla obligará a los usuarios a escribir fechas que coincidan con el 1 de enero de 2010 o
                   sean posteriores. Si especifica una fecha anterior a 2010 e intenta colocar el foco en otro campo,
                   Access no le permitirá abandonar el campo actual hasta que corrija el problema.
@@ -1068,178 +1247,46 @@
                 </p>
             -->
             
-          <p>
-            <center>
-              <button class="respButton hvr-grow ">  Ejemplos basicos de reglas de validación</button>
-                <div class="resp-box flexbox">
-                  <p> 
-                    <div class="flexbox">   
-                      <table class="tabla-funciones">
-                          <thead>
-                          <tr>
-                          <th>Regla de validación</th>
-                          <th>Descripción</th>
-                          </tr>
-                          </thead>
-                          <tbody>
-                          <tr>
-                          <td class="nombre-funcion">&lt;100</td>
-                          <td>Debe ser inferior a 100.</td>
-                          </tr>
-                          <tr>
-                          <td class="nombre-funcion">&lt;= 100</td>
-                          <td>Debe ser menor o igual a 100.</td>
-                          </tr>
-                          <tr>
-                          <td class="nombre-funcion">Entre 1 y 10</td>
-                          <td>Debe estar entre 1 y 10.</td>
-                          </tr>
-                          <tr>
-                        <!--  <td>0 0</td>
-                          <td>No debe ser igual a 0.</td>
-                          </tr>
-                          <tr>
-                          <td class="nombre-funcion">&lt;1/1/95</td>
-                          <td>Debe ser una fecha anterior al 1/1/95.</td>
-                          </tr>
-                          -->
-                          <tr>
-                          <td class="nombre-funcion">&gt; = Fecha ()</td>
-                          <td>Debe ser la fecha de hoy o más tarde.</td>
-                          </tr>
-                          <tr>
-                          <td class="nombre-funcion">&lt;= Fecha ()</td>
-                          <td>Debe ser la fecha de hoy o antes.</td>
-                          </tr>
-                          <tr>
-                          <td class="nombre-funcion">&#8220;Hombre&#8221; o &#8220;Mujer&#8221;</td>
-                          <td>Debe ser &#8220;Hombre&#8221; o &#8220;Mujer&#8221;.</td>
-                          </tr>
-                          <tr>
-                          <td class="nombre-funcion">Como &#8220;??&#8221;</td>
-                          <td>Debe tener dos caracteres.</td>
-                          </tr>
-                          <tr>
-                          <td class="nombre-funcion">Como &#8220;####&#8221;</td>
-                          <td>Debe tener cuatro números.</td>
-                          </tr>
-                          </tbody>
-                      </table>  
-                    </div>
-                  </p>
-                </div>
-            </center>
-          </p>
-                
-          <p>
-            <center>
-              <button class="respButton hvr-grow "> Ejemplos de sintaxis de operadores de regla de validación comunes</button>
-                <div class="resp-box flexbox">
-                  <p>
-                    <div class="flexbox"> 
+
+          <h3 class="title"> Ejemplo: Validación por longitud</h3>
+
+            <p>Supongamos que tenemmos un campo <b>Contraseña</b> y queremos que este tenga una 
+            longitud mínima de 8 caracteres. Entonces podemos usar: </p>
+            <p>
+                <b>Como "????????*""
             
-                        
-                      <table class="tabla-funciones">
-                        <thead>
-                          <tr>
-                            <th>Operador</th>
-                            <th>Función</th>
-                            <th>Ejemplo</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="nombre-funcion">Y</td>
-                                <td>Especifica que todas las partes de la regla de validación deben cumplirse.</td>
-                                <td>&gt;= #01/01/2007# Y &lt;=#06/03/2008#</b>
-                                  </p>
-                                  <div class="ocpAlert">
-                          <p class="ocpAlertSection"><b class="ocpNote">Nota: </b>Se puede usar <b class="ocpLegacyBold">Y</b> también para combinar reglas de validación. Por ejemplo: <b class="ocpLegacyBold">NO "Reino Unido" Y COMO "R*"</b>.</p>
-                        </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td class="nombre-funcion">O</td>
-                                <td>Especifica que algunas partes (no todas) de la regla de validación deben cumplirse.</td>
-                                <td>enero O febrero</td>
-                              </tr>
-                              <tr>
-                                <td class="nombre-funcion">&lt;</td>
-                                <td>Menor que.</td>
-                                <td></td>
-                              </tr>
-                              <tr>
-                                <td class="nombre-funcion">&lt;=</td>
-                                <td>Menor o igual que.</td>
-                                <td></td>
-                              </tr>
-                              <tr>
-                                <td class="nombre-funcion">&gt;</td>
-                                <td>Mayor que.</td>
-                                <td></td>
-                              </tr>
-                              <tr>
-                                <td class="nombre-funcion">&gt;=</td>
-                                <td>Mayor o igual que.</td>
-                                <td></td>
-                              </tr>
-                              <tr>
-                                <td class="nombre-funcion">=</td>
-                                <td>Igual que.</td>
-                                <td></td>
-                              </tr>
-                              <tr>
-                                <td class="nombre-funcion">&lt;&gt;</td>
-                                <td>Distinto de.</td>
-                                <td></td>
-                              </tr>
-                          <tr>
-                            <td class="nombre-funcion">NO</td>
-                            <td>
-                              <p>Comprueba si hay valores opuestos. Se puede usar delante de cualquier operador de comparación, salvo NO ES NULO.</p>
-                            </td>
-                            <td>NO &gt; 10</b> (es lo mismo que <b class="ocpLegacyBold">&lt;=10</b>).</p>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="nombre-funcion">EN</td>
-                            <td>
-                              <p>Comprueba si hay valores iguales a los elementos de una lista. El valor de comparación debe ser una lista de valores separados por comas que aparece entre paréntesis.</p>
-                            </td>
-                            <td>EN ("Tokio","París","Moscú")</td>
-                          </tr>
-                          <tr>
-                            <td class="nombre-funcion">ENTRE</td>
-                            <td>
-                              <p>Comprueba si hay un intervalo de valores. Debe haber dos valores de comparación (un valor alto y un valor bajo) y esos valores deben ir separados por el separador Y.</p>
-                            </td>
-                            <td>ENTRE 100 Y 1000</b> (es lo mismo que <b class="ocpLegacyBold">&gt;=100 Y &lt;=1000</b>)</p>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="nombre-funcion">COMO</td>
-                            <td>
-                              <p>Busca cadenas modelo coincidentes en los campos de tipo Texto y Memo.</p>
-                            </td>
-                            <td>COMO "Geo*"</td>
-                          </tr>
-                          <!-- <tr>
-                            <td>NO ES NULO</td>
-                            <td>
-                              <p>Obliga a los usuarios a escribir valores en el campo. Equivale a establecer el valor de la propiedad de campo <b class="ocpLegacyBold">Requerido</b> en <b class="ocpLegacyBold">Sí</b>. Sin embargo, cuando se habilita la propiedad <b class="ocpLegacyBold">Requerido</b> y un usuario no especifica un valor, Access muestra un mensaje de error poco descriptivo. En general, el uso de las bases de datos resulta más fácil si se utiliza NO ES NULO y se escribe un mensaje descriptivo en la propiedad <b class="ocpLegacyBold">Texto de validación</b>.</p>
-                            </td>
-                            <td>NO ES NULO</td>
-                          </tr>
-                        -->
-                        </tbody>
-                      </table>
-                        
-                    </div>
-                  </p>
-                </div>
-            </center>
+                </b>
+            </p>
+            Cuando ingrese la información, cada ? representa una posición que deberá rellenarse obligatoriamente,
+            y el * del final, nos indica que una vez cumplida la longitud mínima, ya se pueden indicar los caracteres 
+            que se consideren conveniente
           </p>
 
+
+          <h3 class="title"> Ejemplo: Validación de Correo electrónico </h3>
+          <p>
+                      Supongamos que el formato requerido del campo correo electrónico es:
+              
+                      <ul>
+                      <li>Más de 1 caracter(podemos suponer mas de tres, y empezando por letra)</li>
+                      <li>el símbolo @</li>
+                      <li>más de un carácter(y más de tres)</li>
+                      <li>un punto (.)</li>
+                      <li>varios caracteres alfabéticos (como mínimo 2)</li>
+                      </ul>
+                      Para comprobar esas condiciones, podríamos escribir en la «Regla de validación de ese campo:
+              
+                      <p>
+                        <center>
+                          <b>Como "[A-Z]??*@???*.??*"</b>
+                        </center>
+                      </p>
+             
+          </p>
+                
+            
+                
+          
           <p>
           <center>
           <button class="respButton hvr-grow ">  Ejemplos de regla de validación y texto de validación</button>
@@ -1338,54 +1385,10 @@
           </center>
           </p>
             
-          <p>
-            <center>
-              <button class="respButton hvr-grow ">  Ejemplo: Validación por longitud </button>
-                <div class="resp-box flexbox">
-                  <div class="flexbox">   
-                      <p>Supongamos que tenemmos un campo <b>Contraseña</b> y queremos que este tenga una 
-                      longitud mínima de 8 caracteres. Entonces podemos usar: </p>
-            <p>
-                <b>Como "????????*""
+          
+         
             
-                </b>
-            </p>
-            Cuando ingrese la información, cada ? representa una posición que deberá rellenarse obligatoriamente,
-            y el * del final, nos indica que una vez cumplida la longitud mínima, ya se pueden indicar los caracteres 
-            que se consideren conveniente
-            
-                  </div>
-                </div>
-            </center>
-          </p>
-            
-          <p>
-            <center>    
-              <button class="respButton hvr-grow ">  Ejemplo: Validación de Correo electrónico </button>
-                <div class="resp-box flexbox">
-                  <p>
-                    <div class="flexbox">   
-            
-                      Supongamos que el formato requerido del campo correo electrónico es:
-              
-                      <ul>
-                      <li>Más de 1 caracter(podemos suponer mas de tres, y empezando por letra)</li>
-                      <li>el símbolo @</li>
-                      <li>más de un carácter(y más de tres)</li>
-                      <li>un punto (.)</li>
-                      <li>varios caracteres alfabéticos (como mínimo 2)</li>
-                      </ul>
-                      Para comprobar esas condiciones, podríamos escribir en la «Regla de validación de ese campo:
-              
-                      <p><b>Como "[A-Z]??*@???*.??*"</b></p>
-                    </div>
-                  </p>
-                </div>
-            </center>
-          </p>
-                
-            
-                <h1 class="number-title"> Regla de validación de registro  :</h1>
+                <h2 class="title">Regla de validación de registro </h2>
             
                 <p>
                  Puede usar una regla de validación de registro para especificar una condición que necesitan cumplir todos los 
@@ -1402,39 +1405,43 @@
                   Puede definir una regla de validación de registro como [FechaObligatoria]<=[FechaPedido]+30 para evitar que un
                    usuario especifique una fecha de envío (el valor del campo FechaObligatoria) demasiado lejana en el futuro.
                 </p>
+                <p>
+                  <center>
+                    <button class="respButton hvr-grow ">  Ejemplos de regla de validación y texto de validación</button>
+                      <div class="resp-box flexbox">
+                        <p>
+                          <div class="flexbox">   
+                              <table class="tabla-funciones" >
+                                  <thead>
+                                    <tr>
+                                      <th>
+                                        Regla de validación
+                                      </th>
+                                      <th>
+                                        Texto de validación
+                                      </th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                
+                                    <tr>
+                                      <td class="nombre-funcion">[FechaObligatoria]&lt;=[FechaPedido]+30</td>
+                                      <td>Escriba una fecha obligatoria que no sea posterior a un plazo de 30 días a partir de la fecha de pedido.</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="nombre-funcion">[FechaFin]&gt;=[FechaInicio]</td>
+                                      <td>Escriba una fecha de fin que sea igual o posterior a la fecha de inicio.</td>
+                                    </tr>
+                                  </tbody>
+                              </table>
+                          </div>
+                        </p>
+                      </div>
+                    </center>
+                  </p>
             
             
-                <button class="respButton hvr-grow ">  Ejemplos de regla de validación y texto de validación</button>
-                  <div class="resp-box flexbox">
-                    <div class="flexbox">   
-                        <table class="tabla-funciones" >
-                            <thead>
-                              <tr>
-                                <td>
-                                  Regla de validación
-                                </td>
-                                <td>
-                                  Texto de validación
-                                </td>
-                              </tr>
-                            </thead>
-                            <tbody>
-                          
-                              <tr>
-                                <td class="nombre-funcion">[FechaObligatoria]&lt;=[FechaPedido]+30</td>
-                                <td class="nombre-funcion">Escriba una fecha obligatoria que no sea posterior a un plazo de 30 días a partir de la fecha de pedido.</td>
-                              </tr>
-                              <tr>
-                                <td class="nombre-funcion">[FechaFin]&gt;=[FechaInicio]</td>
-                                <td class="nombre-funcion">Escriba una fecha de fin que sea igual o posterior a la fecha de inicio.</td>
-                              </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                  </div>
-            
-            
-            <h2 class="number-title"> Validación en un formulario </h2>
+            <!-- <h2 class="number-title"> Validación en un formulario </h2>
             
             
               <p>
@@ -1443,8 +1450,8 @@
                     Regla de validación funciona como una regla de validación de campo. Normalmente, se usa una regla de validación
                     de formulario en lugar de una regla de validación de campo si se trata de una regla específica del formulario
                     y no de la tabla, sin importar donde se use.
-                  </p>
-              </div>
+                  </p> -->
+              
                 
   <!--
 
@@ -1636,7 +1643,457 @@
                   </ol>
               </p>
       
- -->
+            -->
+
+            <h1 class="number-title"> Campos de busqueda</h1>
+
+            <p>La creación de un campo de búsqueda no solo mejora el significado de los datos,
+              también le ayuda a evitar errores de entrada de datos al limitar los valores que se pueden escribir. </p>
+
+            <p>Un campo de búsqueda es un campo en una tabla cuyo valor se obtiene de otra tabla o consulta.
+              Siempre que sea posible, debería usar al Asistente para búsquedas para crear un campo de búsqueda.
+              El Asistente para búsquedas simplifica el proceso, rellena automáticamente las propiedades del campo apropiado
+              y crea las relaciones de tabla adecuadas.
+            </p>
+            
+            
+            <h2 class="number-title"> Un campo de búsqueda  en la vista Diseño: Lista de valores </h2>
+              <p>
+                <ol type="1" itemscope="" itemtype="http://schema.org/ItemList">
+                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <p>Abra la tabla en la <b class="ocpUI">Vista Diseño</b>.</p>
+                  <meta itemprop="position" content="1">
+                </li>
+
+                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <p>Haga clic en la columna <b class="ocpUI">Tipo de datos</b> de  la fila donde desea agregar la busqueda, 
+                      haga clic en la flecha y, a continuación, en la lista desplegable, seleccione <b class="ocpUI">Asistente para búsquedas</b>.</p>
+                    <p>
+                    <!--  <b class="ocpRunInHead">Nota</b>   El Asistente para búsquedas crea tres tipos de listas: búsqueda, valores y campos multivalor, según las opciones que elija en el asistente.</p>
+                  <meta itemprop="position" content="3">
+                  -->
+                </li>
+                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <p>Una vez en el asistente:</p>
+                    <ol type="a" itemscope="" itemtype="http://schema.org/ItemList">
+                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                        <p>En la primera página, seleccione <b class="ocpUI">Escribiré los valores que desee</b> y haga clic en <b class="ocpUI">Siguiente</b>.</p>
+                      <meta itemprop="position" content="1">
+                </li>
+                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                        <p>En la segunda página, indique el numero de columnas que desea y los valores que se  mostrarán dentro de la lista desplegable <b class="ocpUI">Siguiente</b>.</p>
+                      <meta itemprop="position" content="2">
+                </li>
+
+                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                        <p>En la tercera página, conserve el nombre del campo o escriba uno nuevo, y 
+                          elija si desea delimitar las entradas a las opciones dadas o bien si desee 
+                          permitir seleccionar varios valores de la lista, a continuación, haga clic en
+                          <b class="ocpUI">Finalizar</b>. </p>
+                        
+                      <meta itemprop="position" content="6">
+                </li>
+                </ol>
+                  <meta itemprop="position" content="4">
+                </li>
+                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <p>Guarde los cambios.</p>
+                  <meta itemprop="position" content="5">
+                </li>
+                </ol>
+              </p>
+            
+            <h2 class="number-title">Crear un campo de búsqueda  en la vista Diseño: Tabla/consulta </h2>
+              <p>
+               
+                        <ol type="1" itemscope="" itemtype="http://schema.org/ItemList">
+                            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                                      <p>Abra la tabla en la <b class="ocpUI">Vista Diseño</b>.</p>
+                                    <meta itemprop="position" content="1">
+                            </li>
+                            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                                      <p>En la primera fila vacía disponible, haga clic en una celda en la columna <b class="ocpUI">Nombre de campo</b> y escriba un nombre para el campo de búsqueda.</p>
+                                    <meta itemprop="position" content="2">
+                            </li>
+                            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                                      <p>Haga clic en la columna <b class="ocpUI">Tipo de datos</b> de dicha fila, haga clic en la flecha y, a continuación, en la lista desplegable, seleccione <b class="ocpUI">Asistente para búsquedas</b>.</p>
+                                      <p>
+                                        <b class="ocpRunInHead">Nota</b>   El Asistente para búsquedas crea tres tipos de listas: búsqueda, valores y campos multivalor, según las opciones que elija en el asistente.</p>
+                                    <meta itemprop="position" content="3">
+                            </li>
+                            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                                      <p>Siga con cuidado estos pasos en el asistente:</p>
+                                      <ol type="a" itemscope="" itemtype="http://schema.org/ItemList">
+                                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                                          <p>En la primera página, seleccione <b class="ocpUI">Deseo que el campo de búsqueda obtenga los valores de otra tabla o consulta</b> y haga clic en <b class="ocpUI">Siguiente</b>.</p>
+                                        <meta itemprop="position" content="1">
+                                </li>
+                                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                                          <p>En la segunda página, seleccione la tabla o consulta que contiene los valores y, a continuación, haga clic en <b class="ocpUI">Siguiente</b>.</p>
+                                        <meta itemprop="position" content="2">
+                                </li>
+                                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                                          <p>En la tercera página, seleccione uno o más campos y, a continuación, haga clic en <b class="ocpUI">Siguiente</b>.</p>
+                                        <meta itemprop="position" content="3">
+                                </li>
+                                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                                          <p>En la cuarta página, seleccione un criterio de ordenación de los campos al mostrarse en una lista y, a continuación, haga clic en <b class="ocpUI">Siguiente</b>.</p>
+                                        <meta itemprop="position" content="4">
+                                </li>
+                                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                                          <p>En la quinta página, ajuste el ancho de la columna para que los valores sean más fáciles de leer y, a continuación, haga clic en <b class="ocpUI">Siguiente</b>.</p>
+                                        <meta itemprop="position" content="5">
+                                </li>
+                                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                                          <p>En la sexta página, conserve el nombre del campo o escriba uno nuevo, seleccione <b class="ocpUI">Habilitar integridad de datos</b>, elija una opción de <b class="ocpUI">Eliminación en cascada</b> o <b class="ocpUI">Eliminación restringida</b> y, a continuación, haga clic en <b class="ocpUI">Finalizar</b>. </p>
+                                          <!-- <p>Para obtener más información sobre cómo reforzar la integridad referencial, vea <a href="/es-es/office/crear-modificar-o-eliminar-una-relaci%C3%B3n-dfa453a7-0b6d-4c34-a128-fdebc7e686af" class="ocpArticleLink">Crear, modificar o eliminar una relación</a>.</p> -->
+                                        <meta itemprop="position" content="6">
+                                </li>
+                              </ol>
+                                    <meta itemprop="position" content="4">
+                            </li>
+                            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                                      <p>Guarde los cambios.</p>
+                                    <meta itemprop="position" content="5">
+                            </li>
+                          </ol>
+                        
+              </p>
+
+              <h1 class="number-title"> Relaciones</h1>
+              <p>
+                  Uno de los objetivos de un buen diseño de base de datos es eliminar la redundancia de los datos (datos duplicados).
+                  Para conseguirlo, conviene dividir  los datos/información  en muchas tablas basadas en temas para que cada hecho
+                  esté representado solo una vez. Después, se debe proveer a Access de un medio para recopilar de nuevo 
+                  la información desglosada  colocando campos comunes en tablas que estén relacionadas. De esta manera es posible 
+                  crear <em>consultas</em>, <em>formularios</em> e <em>informes</em> que muestren a la vez la información de varias tablas.
+              </p>
+          
+              <h2 class="number-title"> Clave principal</h2>
+              <p>Recordemos que la <b>clave (llave) principal (primaria)</b> de una tabla  es una columna (o combinación de columnas)     que     permite identificar 
+                  de forma inequívoca/exclusiva  cada  fila/registro almacenado en  la tabla, 
+                  El tipo de campo para una clave principal puede ser “Texto” o
+                  “Autonumérico” (el campo contador de Access). Una <b>clave foránea</b> es una columna (o combinación de columnas)
+                  que contiene un valor que hace referencia a una fila de otra tabla (en algunos casos puede ser la misma tabla).
+                 </p>
+              
+             <p>
+              Para establecer la clave principal haga clic en el campo que desee utilizar como clave
+              principal. Si desea crear una clave principal de múltiples campos, mantenga presionada la
+              tecla <em>Crtl</em>  y haga clic sobre cada uno de los campos que desee incluir. 
+             </p>
+          
+           
+               <p>
+              Una tabla tiene una única clave principal. Una tabla puede contener cero o más claves foráneas.  Cuando se define una columna como clave principal 
+              no pueden haber en una tabla dos filas/registros  con el mismo  valor en la columna definida como clave principal, y ademas  ninguna fila de la tabla 
+              puede  contener un valor nulo en esa columna. Mientras que cuando se define una columna como clave foránea,  las filas de la tabla pueden contener 
+              en esa columna o bien el valor nulo, o bien un valor que existe en la otra tabla.  Esto último es lo que se denomina integridad referencial
+              que consiste en que los datos que referencian otros (clave foránea) deben ser correctos.
+              </p>
+          
+          
+             <h2 class="number-title"> Tipos de relaciones entre tablas</h2>
+          
+          
+             <p>El poder de una base de datos relacional reside en la combinación de datos entre tablas.
+              Para ello,  debemos establecer relaciones entre las tablas. Una <b>relación</b> en Access permite 
+              combinar datos de dos tablas distintas.
+           </p>
+             
+          
+            
+             <p><b>Ejemplo:</b>  
+              Si tenemos dos tablas,  alumnos y cursos, en la tabla de alumnos pondríamos una columna curso: para saber en qué curso
+              está matriculado el alumno, la columna curso en la tabla de alumnos es clave foránea, mientras que la columna codigo 
+              de la tabla de cursos será clave primaria.
+              </p>
+          
+          
+              
+          
+             <p>
+              Entre dos tablas de cualquier base de datos relacional pueden haber tres tipos de relaciones entre tablas,
+              relaciones uno a uno, relaciones uno a mucho y relaciones varios a varios:
+             </p>
+             
+             <ol>
+             <b><li><h3> Relación Uno a Uno:</h3></li></b>
+             <p>
+              En este tipo de relación un registro de la tabla principal se relaciona con un solo registro
+              de la tabla secundaria y un registro de la tabla secundaria se relaciona con un solo registro de
+              la tabla principal.
+             </p>
+          
+             <p>
+              Esta relación no es común porque la mayor parte de las veces la información relacionada de este modo 
+              se almacena en la misma tabla. Puede usar la relación uno a uno para dividir una tabla  con muchos campos,
+              para aislar parte de una tabla por razones de seguridad o para almacenar información que solo se aplica 
+              a un subconjunto de la tabla principal.
+             </p>
+             
+             <!-- <h3 class="title">Ejemplo: Relacion Uno a Uno </h3>
+              <p>
+                Entre las tablas  profesores e institutos queremos saber que profesor el el director del instituto
+                entonces, tenemos una relación uno a uno entre las dos tablas ya que un instituto tiene un solo director y un profesor 
+                puede ser director de un solo instituto.
+              </p> -->
+             
+              <b> <li><h3> Relación Uno a Varios: </h3></li></b> 
+              
+              <p>
+              Esta relación indica a Access que hay un registro en la tabla principal que se relaciona  con un solo registro de la tabla secundaria.
+              Este tipo de relación es el más frecuente en una base de datos relacional.
+             </p>
+          
+          
+          
+          
+             <b><li><h3>Varios a varios:</h3></li></b>
+             
+             <p>
+              En este tipo de relación un registro de la tabla principal puede relacionarse con más de
+              un registro de la tabla secundaria y un registro de la tabla secundaria también puede
+              relacionarse con más de un registro de la tabla principal. 
+             </p>
+          
+             <p>
+              Para detectar las relaciones “varios a varios” entre las tablas, es importante que observe 
+              la relación en los dos sentidos. Este tipo de relación requiere cambiar el diseño de la base de datos
+              antes de poder especificar correctamente la relación, porque es muy complicado para el administrador de la
+              base extraer la información de las tablas secundarias así. La solución es crear una tercera tabla
+              que divida la relación “varios a varios” en dos relaciones “uno a varios”. En esta tercera tabla
+              se incluiría la clave principal de cada una de las dos tablas anteriores.
+             </p>
+             
+             Cuando uno o más elementos en una tabla puede tener una relación con uno o más elementos 
+             de otra tabla. 
+             
+             <p>Para representar una relación de varios a varios, debe crear una tercera tabla, a menudo denominada tabla de unión, 
+                    que divide la relación de varios a varios en dos relaciones uno a varios. Debe insertar la clave principal de cada 
+                    una de las dos tablas en la tercera. Como resultado, la tercera tabla registra cada ocurrencia, o instancia, 
+                    de la relación
+                 </p>
+             
+             
+             
+             
+             
+             
+             </ol>
+             
+             <h2 class="number-title"> Integridad referencial</h2>
+          
+                 <p>
+                   La <b>integridad referencial</b> es un sistema de reglas que utilizan la mayoría de las bases
+                   de datos relacionales para asegurarse que los registros de tablas relacionadas son válidos
+                   y que no se borren o cambien datos relacionados de forma accidental produciendo errores de integridad.
+                   El propósito de la integridad referencial es evitar los registros huérfanos y mantener las referencias 
+                   ente las tablas relacionadas sincronizadas.
+                  </p>
+          
+          
+                <h3 class="title">Ejemplo</h3>  
+                <p>
+                  Supongamos que tenemos una relación de uno a varios entre las tablas Transportistas y Pedidos y vamos a
+                  eliminar un transportista. Si el destinatario que desea quitar tiene pedidos en la tabla Pedidos, dichos pedidos quedarán
+                  <b>"huérfanos"</b> si elimina el registro Transportista. Los pedidos todavía contendrán un Id. de transportista, 
+                  pero el Id. ya no será válido, porque el registro al que hace referencia ya no existe.
+                  </b>
+                  
+                  <p>
+                  Para exigir la integridad referencial, es preciso habilitarla para una relación de tabla. Una vez habilitada,
+                  Access rechazará todas las operaciones que infrinjan la integridad referencial para esa relación de tabla. 
+                  Esto significa que Access rechaza las actualizaciones que cambien el destino de una referencia,
+                  así como las eliminaciones que quiten el destino deuna referencia. Sin embargo, es posible que tenga la
+                  necesidad perfectamente válida de cambiar la clave principal de un transportista que tiene pedidos en la 
+                  tabla Pedidos. Para tales casos, lo que realmente necesita es que Access actualice automáticamente todas las
+                  filas afectadas como parte de una única operación. De ese modo,  Access se asegura de que la actualización es 
+                  completa y la base de datos no tiene un estado incoherente, con algunas filas actualizadas y otras no.
+                  Por ello, Access incluye la opción Actualizar/Eliminar en cascada los campos relacionados.
+                  </p>
+                  
+          
+                <ul>
+                    <li><h5 class="title">Actualizar en cascada</h5>
+                      <p>
+                      Cuando se aplica la integridad referencial y se selecciona la opción Actualizar
+                      en cascada. Si actuaiza/modifica una clave principal, Access actualiza 
+                      automáticamente todos los  campos que hagan referencia a la clave principal.
+                      </p>
+                    </li>
+                  
+                    <li><h5 class="title">Eliminar  en cascada</h5>
+                      <p>
+                      Cuando se aplica la integridad referencial y se selecciona la opción Eliminar en cascada.
+                      Access eliminará todos los registros relacionados cuando borre un registro principal, por ejemplo 
+                      si elimina un cliente, Access también borrara todos los registros de los pedidos para ese cliente.
+                      </p>
+                    </li>
+              </ul>  
+          
+          
+          
+              <div class="flexbox">
+                  <img src="..\Imagenes\S5\Integridad_referencial.PNG" alt="relaciones" width="55%" height="auto">
+                </div>
+          
+                
+              <h3 class="title">Observación:</h3>
+              <p>
+                  La relación entre dos tablas es única y se establece siempre a través de un campo común a ambas.
+                  No es necesario que el campo tenga el mismo nombre, pero sí es recomendable  nombrar 
+                  los campos comunes del mismo modo, para evitar posibles equivocaciones a la hora de crear las relaciones.
+                  </p> 
+
+
+            <h1 class="number-title"> Vista relaciones</h1>
+          
+            <p>Para ver todas las relaciones existentes definidas para una base de datos,
+            abra la base de datos de Access, vaya a la pestaña <b>Herramientas de base de datos</b> y,
+             a continuación, seleccione <b>Relaciones</b>.
+          </p>
+          
+          Las líneas en la vista Relaciones indican las conexiones entre las tablas.
+          En la siguiente imagen, la tabla a la izquierda es la <b>tabla primaria</b>. 
+          La tabla a la derecha es la <b>tabla secundaria</b>. La línea entre ellas conecta
+          los campos (en este caso, Numero de trabajador,  Director) usados para emparejar los datos.
+          <p>
+            <div class="flexbox">
+                <img src="../Imagenes/S5/relaciones.png" alt="relaciones" width="55%" height="auto">
+            </div>
+          </p>
+            
+          <p>Las líneas y los símbolos muestran cómo se relacionan las tablas:</p>
+          
+          <ul>
+              <li>Una <b>línea de conexión gruesa</b> significa que exige integridad referencial de datos.
+                   Eso es bueno. Mantiene sus datos sincronizados. </li><br>
+          
+              <li>En la ilustración, el <b>número 1</b> indica que puede haber un único registro coincidente en esa tabla. 
+
+                  <!-- En la tabla pedidos que se muestra aquí, un único registro coincide con cada pedido. --></li>
+                  <br>
+                  
+              <li>El <b>símbolo ∞</b> indica que muchos de los registros pueden incluir la misma Id. 
+                  <!-- En la tabla Detalles de pedido que se muestra aquí, puede aparecer un pedido 
+                  (indicado con su Id. de pedido) varias veces porque el mismo pedido puede incluir varios productos.-->
+              </li>
+          
+          </ul>
+          
+          <h3 class="title">Observaciones:</h3>
+          <p></p>
+          <ul>
+              <li><h5 class="title">Crear una relación Uno a Uno</h5>
+              <p>Ambos campos comunes (normalmente, los campos de clave principal y clave externa) deben tener un índice único.
+              Esto significa que la propiedad Indizado de estos campos debe tener el valor Sí (Sin duplicados). 
+              Si ambos campos tienen un índice único, Access crea una relación uno a uno.
+            </p>
+              
+              <li><h5 class="title"> Para crear una relación uno a varios</h5>
+              <p>El campo en el lado uno de la relación (normalmente, el campo de clave principal) debe tener un índice único.
+              Esto significa que la propiedad Indizado de este campo debe tener el valor Sí (Sin duplicados). El campo ubicado 
+              en el lado varios de la relación no debe tener un índice único. Puede tener un índice, pero debe permitir los
+              duplicados. Esto quiere decir que la propiedad Indizado de este campo debe tener el valor No o Sí (Con duplicados). 
+              Cuando un campo tiene un índice único y el otro no, Access crea una relación uno a varios.
+              </p></li>
+          </ul>
+          
+          </p>
+          <p><center>
+          <div class="flexbox">
+              <img src="../Imagenes/S5/relaciones_base_datos.PNG" alt="relaciones" width="101%" height="auto">
+            </div>
+          </center></p>
+          
+          
+        
+              <h1 class="number-title"> Consultas </h1>
+              
+               <p>
+                El objetivo de una consulta es poder analizar los datos que previamente hemos
+                introducido en nuestra base de datos. Los datos de una consulta pueden proceder de una o varias
+                tablas. Una vez creada una consulta se le puede utilizar para crear un formulario, un informe, un
+                gráfico e incluso para otra consulta. Por ejemplo: Es posible  crear una consulta que nos muestre 
+                las ventas realizadas en el último año.
+               
+               </p>
+          
+          
+              <h2 class="number-title"> Tipos de Consultas</h2>
+          
+              <p>
+              En general existen dos  tipos de consultas en Access: <b>Consultas de selección</b> y <b>consultas de acción</b>. Las 
+              consultas de selección permiten seleccionar informacin de un conjunto de datos mientras que con 
+              las consultas de acción podemos además operar  sobre  los datos seleccionados.
+              </p>
+          
+              <p>
+              A su vez hay tres tipos de consultas de acción: de actualización, de eliminación  y de datos anexados. 
+              </p>
+          
+          
+              <ul>
+              <h3><li><b>Consultas de selección.</b></li></h3>
+          
+              <p>
+               Es la más utilizada, con este tipo de consulta se puede ver lo datos de las tablas, analizar
+               dichos datos e incluso hacer cambios en ellos. Es posible ver datos procedentes de una sola
+               tabla o consulta, o bien agregar campos de varias tablas o consultas distintas.
+              </p>
+          
+             
+          
+              <p>
+              Son las consultas que extraen o nos muestran datos. Muestran aquellos datos de una tabla que cumplen
+              los criterios especificados. Una vez obtenido el resultado podremos consultar los datos para modificarlos 
+              (esto se podrá hacer o no según la consulta). Una consulta de selección genera una tabla lógica
+              (se llama lógica porque no está físicamente en el disco duro sino en la memoria del ordenador y
+              cada vez que se abre se vuelve a calcular).
+              </p>
+          
+             
+          
+              <h3><li><b>Consultas de acción.</b></li></h3>
+          
+              Las consultas de acción son aquellas que, además de permitir la selección de datos,
+              posibilitan efectuar operaciones con estos, con el objetivo de obtener resultados que modifiquen
+              la información o estructura de la base de datos. Mencionaremos brevemente sus variantes:
+          
+              <ul> 
+          
+                  <h4><li><b>Consultas de creación de tablas: </b></li></h4>
+                  Permiten crear nuevas tablas con base en el contenido de otras. El contenido de las nuevas puede
+                  incluir parcial o completamente el contenido de otra tabla.
+          
+                  <h4><li><b> Consultas de referencias cruzadas:</b></li></h4>
+                  
+                  Posibilitan realizar cálculos con los datos existentes en las tablas. Se pueden llevar a cabo cálculos 
+                  de totales, con base en los valores de un determinado campo, agrupándolos tanto en columnas como en filas.
+          
+                  <h4><li><b> Consultas de datos anexados: </b></li></h4>
+                  
+                  Permiten agregar datos en tablas existentes. Debe existir la tabla original (que es la que contiene los
+                  datos) y la tabla destino (la cual recibirá los nuevos datos). Es decir que se copiarán los
+                  datos de la tabla original en la tabla destino.
+          
+          
+                  <h4><li><b> Consultas de eliminación: </b></li></h4>
+          
+                  Eliminan registros de una tabla que cumplan con los criterios especificados. Este tipo de consultas 
+                  permite supresiones ágiles, pero debemos tener cuidado ya que luego no es posible recuperar los datos borrados.
+              
+          
+                  <h4><li><b> Consultas de actualización: </b></li></h4>
+                  Eliminan registros de una tabla que cumplan con los criterios especificados. Este tipo de consultas 
+                  permite supresiones ágiles, pero debemos tener cuidado ya que luego no es posible recuperar los datos borrados.
+                  
+              </ul>
+          
+              </ul>
+          
+             
 
 
  

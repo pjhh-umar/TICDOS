@@ -1183,20 +1183,18 @@ font-weight: 600;
 
 
 
-
 .video{
-  /*background-color: #FFFFFF	;
+  border: 5px solid black;
     border-radius: 25px;
     padding: 10px;
-    border: 10px solid white;*/
     margin: auto;
-    font-size: 20px;
-    width: 10%;
-    height: 10%;
-    align-content: center;
+    margin-bottom: 5px;
+    margin-top: 5px;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
 }
-
 
 .imagen-box{
     border-radius: 25px;

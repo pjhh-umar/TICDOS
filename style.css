@@ -752,7 +752,7 @@ h1.number-title-practica::after{
     border: 0px solid  rgb(218,165,32);
     margin: auto; 
     /* margin-top: 50px; */
-    font-size: 20px;
+    font-size: 25px;
     width: 85%;
     box-shadow: 0px 0px 10px 0px  rgb(218,165,32);
     align-items: center;
@@ -1189,7 +1189,7 @@ font-weight: 600;
 
 
 .video{
-  border: 5px solid black;
+  border: 5px solid rgba(52, 173, 249, 0.718);
     border-radius: 25px;
     padding: 10px;
     margin: auto;

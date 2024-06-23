@@ -766,11 +766,11 @@
   
            <li>
                <h5 class="title">La segunda sección</h5> es opcional y hace referencia a los caracteres de máscara insertados y
-                al modo en que se almacenan dentro del campo, esto es, en esta seccion <b>se especifica
-                si Access almacena los caracteres de visualización literales en la tabla al introducir datos</b>.
-                Si utilizas 0 para esta sección, todos los caracteres de visualización literales (por ejemplo, 
+                al modo en que se almacenan dentro del campo, esto es, en esta seccion se especifica
+                si Access almacena los caracteres de visualización literales en la tabla al introducir datos.
+                <b>Si utilizas 0</b> para esta sección, todos los caracteres de visualización literales (por ejemplo, 
                 el paréntesis de una máscara de entrada de un número de teléfono) se almacenan con el valor; 
-                si introduces 1 o dejas esta sección en blanco, sólo se almacenan los caracteres introducidos.
+                <b>si introduces 1</b> o dejas esta sección en blanco, sólo se almacenan los caracteres introducidos.
            </li><br>
   
            <li>
@@ -1007,15 +1007,15 @@
                       </li>
                     </ul>
                 </p>
-                <p>Cuando se escriben datos, Access comprueba si se ha infringido alguna regla de validación y, si así es,
-                   los datos escritos no se aceptan y Access muestra un mensaje (<b>Mensaje de validacion</b>).
+                <p><h3 class="title">Observación.</h3> Cuando se escriben datos, Access comprueba si se ha infringido alguna regla de validación y, si así es,
+                   los datos escritos no se aceptan y Access muestra un <b>mensaje de validacion</b>.
                 </p>
  
             
                 <p>
                   Estos métodos de validación de datos se pueden usar de forma aislada o combinados entre sí. En Access puede
                   establecer reglas de validación en la vista de diseño de  tabla o en la de hoja de datos de tabla.
-                  Puede añadir una <i>regla de validación de campo</i> o una <i>regla de validación de registro</i>. 
+                  Puede añadir una <i><b>regla de validación de campo</b></i> o una <i><b>regla de validación de registro</b></i>. 
                   Una regla de validación de campo comprueba la entrada de un campo y se aplica cuando el foco deja el campo. 
                   Una regla de validación de registro comprueba la entrada de uno o más campos y se aplica cuando el foco deja 
                   el registro. Habitualmente, una regla de validación de registro compara los valores de dos o más campos.
@@ -1031,13 +1031,11 @@
             
             
                 <p>
-                  Puede usar una <b>regla de validación de campo</b> para especificar un criterio que deben cumplir
-                  todos los valores de campo válidos. En principio en una regla de validación de campo no se deberían tener que especificar el campo actual
-                  como parte de la regla a no ser que use el campo en una función. Las restricciones sobre los tipos de caracteres que se 
-                  escriban en un campo pueden aplicarse más fácilmente con una máscara de entrada. 
+                  Puede usar una <b>regla de validación de campo</b> para especificar un <b>criterio que deben cumplir
+                  todos los valores de campo válidos</b>. En principio en una regla de validación de campo no se deberían tener que especificar el campo actual
+                  como parte de la regla a no ser que use el campo en una función. 
                 </p>
-                
-                <p>
+               
                   <center>
                     <button class="respButton hvr-grow ">Operadores de reglas de validación</button>
                       <div class="resp-box flexbox">
@@ -1146,7 +1144,9 @@
                   </center>
                 </p>
 
-
+                <p><h3 class="title">Observación.</h3> Las restricciones sobre los tipos de caracteres que se 
+                  escriban en un campo pueden aplicarse más fácilmente con una máscara de entrada. </p>
+                <p>
           <p>
             <center>
               <button class="respButton hvr-grow ">  Ejemplos basicos de reglas de validación de campo</button>
@@ -1253,9 +1253,9 @@
             <p>Supongamos que tenemmos un campo <b>Contraseña</b> y queremos que este tenga una 
             longitud mínima de 8 caracteres. Entonces podemos usar: </p>
             <p>
-                <b>Como "????????*""
-            
-                </b>
+              <center>
+                <b>Como "????????*""</b>
+              </center>
             </p>
             Cuando ingrese la información, cada ? representa una posición que deberá rellenarse obligatoriamente,
             y el * del final, nos indica que una vez cumplida la longitud mínima, ya se pueden indicar los caracteres 
@@ -1268,11 +1268,11 @@
                       Supongamos que el formato requerido del campo correo electrónico es:
               
                       <ul>
-                      <li>Más de 1 caracter(podemos suponer mas de tres, y empezando por letra)</li>
-                      <li>el símbolo @</li>
-                      <li>al menos tres carácteres</li>
-                      <li>un punto (.)</li>
-                      <li>varios caracteres alfabéticos (como mínimo 2)</li>
+                      <li>Mas de tres caracteres y que el primero sea una letra</li>
+                      <li>Luego, el símbolo @</li>
+                      <li>Enseguida al menos tres carácteres</li>
+                      <li>Un punto (.)</li>
+                      <li>Y al final mínimo 2 caracteres alfabéticos</li>
                       </ul>
                       Para comprobar esas condiciones, podríamos escribir en la «Regla de validación de ese campo:
               
@@ -1391,8 +1391,8 @@
                 <h2 class="title">Regla de validación de registro </h2>
             
                 <p>
-                 Puede usar una regla de validación de registro para especificar una condición que necesitan cumplir todos los 
-                 registros válidos. Puede comparar valores de distintos campos con una regla de validación de registro.
+                 Puede usar una regla de validación de registro para <b>especificar una condición que necesitan cumplir todos los 
+                 registros válidos</b>. Puede comparar valores de distintos campos con una regla de validación de registro.
                  Por ejemplo, un registro con dos campos de fecha puede necesitar que los valores de un campo siempre sean anteriores a los del otro (por ejemplo, que FechaDeInicio sea anterior a FechaDeFinalización).
                 </p>
                 
@@ -1425,7 +1425,7 @@
                                   <tbody>
                                 
                                     <tr>
-                                      <td class="nombre-funcion">[FechaObligatoria]&lt;=[FechaPedido]+30</td>
+                                      <td class="nombre-funcion"><p>[FechaObligatoria]&lt;=[FechaPedido]+30</p></td>
                                       <td>Escriba una fecha obligatoria que no sea posterior a un plazo de 30 días a partir de la fecha de pedido.</td>
                                     </tr>
                                     <tr>
@@ -1647,15 +1647,17 @@
 
             <h1 class="number-title"> Campos de busqueda</h1>
 
-            <p>La creación de un campo de búsqueda no solo mejora el significado de los datos,
-              también le ayuda a evitar errores de entrada de datos al limitar los valores que se pueden escribir. </p>
-
             <p>Un campo de búsqueda es un campo en una tabla cuyo valor se obtiene de otra tabla o consulta.
-              Siempre que sea posible, debería usar al Asistente para búsquedas para crear un campo de búsqueda.
+              Siempre que sea posible, debería usar al <b>Asistente para búsquedas</b> para crear un campo de búsqueda.
               El Asistente para búsquedas simplifica el proceso, rellena automáticamente las propiedades del campo apropiado
               y crea las relaciones de tabla adecuadas.
             </p>
             
+
+            <p>La creación de un campo de búsqueda no solo mejora el significado de los datos,
+              también le <b>ayuda a evitar errores de entrada de datos al limitar los valores que se pueden escribir</b>. </p>
+
+     
             
             <h2 class="number-title"> Un campo de búsqueda  en la vista Diseño: Lista de valores </h2>
               <p>
@@ -1677,11 +1679,13 @@
                     <p>Una vez en el asistente:</p>
                     <ol type="a" itemscope="" itemtype="http://schema.org/ItemList">
                 <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-                        <p>En la primera página, seleccione <b class="ocpUI">Escribiré los valores que desee</b> y haga clic en <b class="ocpUI">Siguiente</b>.</p>
+                        <p>En la primera página, seleccione <b class="ocpUI">Escribiré los valores que desee</b> y
+                          haga clic en <b class="ocpUI">Siguiente</b>.</p>
                       <meta itemprop="position" content="1">
                 </li>
                 <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-                        <p>En la segunda página, indique el numero de columnas que desea y los valores que se  mostrarán dentro de la lista desplegable <b class="ocpUI">Siguiente</b>.</p>
+                        <p>En la segunda página, indique el numero de columnas que desea y los valores que se 
+                          mostrarán dentro de la lista desplegable <b class="ocpUI">Siguiente</b>.</p>
                       <meta itemprop="position" content="2">
                 </li>
 
@@ -1718,7 +1722,7 @@
                             <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
                                       <p>Haga clic en la columna <b class="ocpUI">Tipo de datos</b> de dicha fila, haga clic en la flecha y, a continuación, en la lista desplegable, seleccione <b class="ocpUI">Asistente para búsquedas</b>.</p>
                                       <p>
-                                        <b class="ocpRunInHead">Nota</b>   El Asistente para búsquedas crea tres tipos de listas: búsqueda, valores y campos multivalor, según las opciones que elija en el asistente.</p>
+                                        <h5 class="title">Nota.</h5>   El Asistente para búsquedas crea tres tipos de listas: búsqueda, valores y campos multivalor, según las opciones que elija en el asistente.</p>
                                     <meta itemprop="position" content="3">
                             </li>
                             <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
@@ -1773,7 +1777,9 @@
               <p>Recordemos que la <b>clave (llave) principal (primaria)</b> de una tabla  es una columna (o combinación de columnas)     que     permite identificar 
                   de forma inequívoca/exclusiva  cada  fila/registro almacenado en  la tabla, 
                   El tipo de campo para una clave principal puede ser “Texto” o
-                  “Autonumérico” (el campo contador de Access). Una <b>clave foránea</b> es una columna (o combinación de columnas)
+                  “Autonumérico” (el campo contador de Access).
+              </p>
+              <p>Una <b>clave foránea</b> es una columna (o combinación de columnas)
                   que contiene un valor que hace referencia a una fila de otra tabla (en algunos casos puede ser la misma tabla).
                  </p>
               
@@ -1784,11 +1790,12 @@
              </p>
           
            
-               <p>
+               <p><h3 class="title">Observación.</h3>
               Una tabla tiene una única clave principal. Una tabla puede contener cero o más claves foráneas.  Cuando se define una columna como clave principal 
               no pueden haber en una tabla dos filas/registros  con el mismo  valor en la columna definida como clave principal, y ademas  ninguna fila de la tabla 
               puede  contener un valor nulo en esa columna. Mientras que cuando se define una columna como clave foránea,  las filas de la tabla pueden contener 
-              en esa columna o bien el valor nulo, o bien un valor que existe en la otra tabla.  Esto último es lo que se denomina integridad referencial
+              en esa columna o bien el valor nulo, o bien un valor que existe en la otra tabla.  Esto último es lo que se 
+              denomina <i><b>integridad referencial</b></i>
               que consiste en que los datos que referencian otros (clave foránea) deben ser correctos.
               </p>
           
@@ -1803,7 +1810,7 @@
              
           
             
-             <p><b>Ejemplo:</b>  
+             <p><h3 >Ejemplo:</h3>  
               Si tenemos dos tablas,  alumnos y cursos, en la tabla de alumnos pondríamos una columna curso: para saber en qué curso
               está matriculado el alumno, la columna curso en la tabla de alumnos es clave foránea, mientras que la columna codigo 
               de la tabla de cursos será clave primaria.

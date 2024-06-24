@@ -1811,11 +1811,11 @@
              
           
             
-             <p><h3 >Ejemplo:</h3>  
+             <!-- <p><h3 >Ejemplo:</h3>  
               Si tenemos dos tablas,  alumnos y cursos, en la tabla de alumnos pondríamos una columna curso: para saber en qué curso
               está matriculado el alumno, la columna curso en la tabla de alumnos es clave foránea, mientras que la columna codigo 
               de la tabla de cursos será clave primaria.
-              </p>
+              </p> -->
           
           
               
@@ -1825,8 +1825,8 @@
               relaciones uno a uno, relaciones uno a mucho y relaciones varios a varios:
              </p>
              
-             <ol>
-             <b><li><h3> Relación Uno a Uno:</h3></li></b>
+             <ul>
+             <li><h3 class="title"> Relación Uno a Uno:</h3></li>
              <p>
               En este tipo de relación un registro de la tabla principal se relaciona con un solo registro
               de la tabla secundaria y un registro de la tabla secundaria se relaciona con un solo registro de
@@ -1846,19 +1846,14 @@
                 entonces, tenemos una relación uno a uno entre las dos tablas ya que un instituto tiene un solo director y un profesor 
                 puede ser director de un solo instituto.
               </p> -->
-             
-              <b> <li><h3> Relación Uno a Varios: </h3></li></b> 
+             <li><h3 class="title"> Relación Uno a Varios: </h3></li>
               
-              <p>
+            <p>
               Esta relación indica a Access que hay un registro en la tabla principal que se relaciona  con un solo registro de la tabla secundaria.
               Este tipo de relación es el más frecuente en una base de datos relacional.
-             </p>
-          
-          
-          
-          
-             <b><li><h3>Varios a varios:</h3></li></b>
-             
+            </p>
+            
+            <li><h3 class="title">Relación Varios a Varios:</h3></li> 
              <p>
               En este tipo de relación un registro de la tabla principal puede relacionarse con más de
               un registro de la tabla secundaria y un registro de la tabla secundaria también puede
@@ -1883,12 +1878,7 @@
                     de la relación
                  </p>
              
-             
-             
-             
-             
-             
-             </ol>
+             </ul>
              
              <h2 class="number-title"> Integridad referencial</h2>
           
@@ -1896,8 +1886,8 @@
                    La <b>integridad referencial</b> es un sistema de reglas que utilizan la mayoría de las bases
                    de datos relacionales para asegurarse que los registros de tablas relacionadas son válidos
                    y que no se borren o cambien datos relacionados de forma accidental produciendo errores de integridad.
-                   El propósito de la integridad referencial es evitar los registros huérfanos y mantener las referencias 
-                   ente las tablas relacionadas sincronizadas.
+                   El propósito de la integridad referencial es <b>evitar los registros huérfanos y mantener las referencias 
+                   ente las tablas relacionadas sincronizadas</b>.
                   </p>
           
           
@@ -1905,7 +1895,7 @@
                 <p>
                   Supongamos que tenemos una relación de uno a varios entre las tablas Transportistas y Pedidos y vamos a
                   eliminar un transportista. Si el destinatario que desea quitar tiene pedidos en la tabla Pedidos, dichos pedidos quedarán
-                  <b>"huérfanos"</b> si elimina el registro Transportista. Los pedidos todavía contendrán un Id. de transportista, 
+                  <i>"huérfanos"</i> si elimina el registro Transportista. Los pedidos todavía contendrán un Id. de transportista, 
                   pero el Id. ya no será válido, porque el registro al que hace referencia ya no existe.
                   </b>
                   
@@ -1913,25 +1903,32 @@
                   Para exigir la integridad referencial, es preciso habilitarla para una relación de tabla. Una vez habilitada,
                   Access rechazará todas las operaciones que infrinjan la integridad referencial para esa relación de tabla. 
                   Esto significa que Access rechaza las actualizaciones que cambien el destino de una referencia,
-                  así como las eliminaciones que quiten el destino deuna referencia. Sin embargo, es posible que tenga la
+                  así como las eliminaciones que quiten el destino de una referencia. Sin embargo, es posible que tenga la
                   necesidad perfectamente válida de cambiar la clave principal de un transportista que tiene pedidos en la 
                   tabla Pedidos. Para tales casos, lo que realmente necesita es que Access actualice automáticamente todas las
                   filas afectadas como parte de una única operación. De ese modo,  Access se asegura de que la actualización es 
                   completa y la base de datos no tiene un estado incoherente, con algunas filas actualizadas y otras no.
-                  Por ello, Access incluye la opción Actualizar/Eliminar en cascada los campos relacionados.
+                  Por ello, Access incluye la opción <b><i>Actualizar/Eliminar en cascada</i></b> los campos relacionados.
                   </p>
                   
+                  <center>
+                    <p>
+                      <div class="flexbox">
+                        <img src="..\Imagenes\S5\Integridad_referencial.PNG" alt="relaciones" width="55%" height="auto">
+                      </div>
+                    </p>
+                  </center>
           
                 <ul>
-                    <li><h5 class="title">Actualizar en cascada</h5>
+                    <li><h3 class="title">Actualizar en cascada</h3>
                       <p>
                       Cuando se aplica la integridad referencial y se selecciona la opción Actualizar
-                      en cascada. Si actuaiza/modifica una clave principal, Access actualiza 
+                      en cascada. Si actualiza o modifica una clave principal, Access actualiza 
                       automáticamente todos los  campos que hagan referencia a la clave principal.
                       </p>
                     </li>
                   
-                    <li><h5 class="title">Eliminar  en cascada</h5>
+                    <li><h3 class="title">Eliminar  en cascada</h3>
                       <p>
                       Cuando se aplica la integridad referencial y se selecciona la opción Eliminar en cascada.
                       Access eliminará todos los registros relacionados cuando borre un registro principal, por ejemplo 
@@ -1942,16 +1939,12 @@
           
           
           
-              <div class="flexbox">
-                  <img src="..\Imagenes\S5\Integridad_referencial.PNG" alt="relaciones" width="55%" height="auto">
-                </div>
-          
                 
-              <h3 class="title">Observación:</h3>
-              <p>
+              
+              <p><h3 class="title">Observación:</h3>
                   La relación entre dos tablas es única y se establece siempre a través de un campo común a ambas.
-                  No es necesario que el campo tenga el mismo nombre, pero sí es recomendable  nombrar 
-                  los campos comunes del mismo modo, para evitar posibles equivocaciones a la hora de crear las relaciones.
+                  <b>No es necesario que el campo tenga el mismo nombre, pero sí es recomendable  nombrar 
+                  los campos comunes del mismo modo</b>, para evitar posibles equivocaciones a la hora de crear las relaciones.
                   </p> 
 
 
@@ -2019,20 +2012,18 @@
         
               <h1 class="number-title"> Consultas </h1>
               
-               <p>
-                El objetivo de una consulta es poder analizar los datos que previamente hemos
-                introducido en nuestra base de datos. Los datos de una consulta pueden proceder de una o varias
-                tablas. Una vez creada una consulta se le puede utilizar para crear un formulario, un informe, un
-                gráfico e incluso para otra consulta. Por ejemplo: Es posible  crear una consulta que nos muestre 
-                las ventas realizadas en el último año.
-               
+               <p>El objetivo de una consulta es poder analizar los datos que previamente hemos
+                introducido en nuestra base de datos. Los datos de una consulta pueden proceder 
+                de una o varias tablas. Una vez creada una consulta se le puede utilizar para crear un formulario, 
+                un informe, un gráfico e incluso para otra consulta. Por ejemplo: Es posible  crear una consulta
+                que nos muestre las ventas realizadas en el último año.
                </p>
-          
           
               <h2 class="number-title"> Tipos de Consultas</h2>
           
               <p>
-              En general existen dos  tipos de consultas en Access: <b>Consultas de selección</b> y <b>consultas de acción</b>. Las 
+              En general existen dos  tipos de consultas en Access: <b><i>Consultas de selección</i></b> 
+              y <b><i>consultas de acción</i></b>. Las 
               consultas de selección permiten seleccionar informacin de un conjunto de datos mientras que con 
               las consultas de acción podemos además operar  sobre  los datos seleccionados.
               </p>
@@ -2043,10 +2034,10 @@
           
           
               <ul>
-              <h3><li><b>Consultas de selección.</b></li></h3>
+              <li><h3 class="title">Consultas de selección.</h3></li>
           
               <p>
-               Es la más utilizada, con este tipo de consulta se puede ver lo datos de las tablas, analizar
+               Es la más utilizada, con este tipo de consulta se pueden ver los datos de las tablas, analizar
                dichos datos e incluso hacer cambios en ellos. Es posible ver datos procedentes de una sola
                tabla o consulta, o bien agregar campos de varias tablas o consultas distintas.
               </p>
@@ -2062,44 +2053,45 @@
               </p>
           
              
+              <li><h3 class="title">Consultas de acción.</h3></li>
           
-              <h3><li><b>Consultas de acción.</b></li></h3>
           
               Las consultas de acción son aquellas que, además de permitir la selección de datos,
               posibilitan efectuar operaciones con estos, con el objetivo de obtener resultados que modifiquen
               la información o estructura de la base de datos. Mencionaremos brevemente sus variantes:
           
-              <ul> 
-          
-                  <h4><li><b>Consultas de creación de tablas: </b></li></h4>
-                  Permiten crear nuevas tablas con base en el contenido de otras. El contenido de las nuevas puede
+              <ul>
+                <li> 
+                <h5 class="title"> Consultas de creación de tablas:</h5> Permiten crear nuevas tablas con base en el contenido de otras. El contenido de las nuevas puede
                   incluir parcial o completamente el contenido de otra tabla.
+                </li>
           
-                  <h4><li><b> Consultas de referencias cruzadas:</b></li></h4>
-                  
-                  Posibilitan realizar cálculos con los datos existentes en las tablas. Se pueden llevar a cabo cálculos 
+                <li><h5 class="title"> Consultas de referencias cruzadas:</h5> Posibilitan realizar cálculos con los datos existentes en las tablas. Se pueden llevar a cabo cálculos 
                   de totales, con base en los valores de un determinado campo, agrupándolos tanto en columnas como en filas.
+                </li>
           
-                  <h4><li><b> Consultas de datos anexados: </b></li></h4>
+                <li><h5 class="title"> Consultas de datos anexados:</h5>
                   
                   Permiten agregar datos en tablas existentes. Debe existir la tabla original (que es la que contiene los
                   datos) y la tabla destino (la cual recibirá los nuevos datos). Es decir que se copiarán los
                   datos de la tabla original en la tabla destino.
-          
-          
-                  <h4><li><b> Consultas de eliminación: </b></li></h4>
+                </li>
+
+                <li><h5 class="title"> Consultas de eliminación: </h5>
           
                   Eliminan registros de una tabla que cumplan con los criterios especificados. Este tipo de consultas 
                   permite supresiones ágiles, pero debemos tener cuidado ya que luego no es posible recuperar los datos borrados.
-              
-          
-                  <h4><li><b> Consultas de actualización: </b></li></h4>
+                </li>
+
+                <li><h5 class="title"> Consultas de actualización: </h5>
                   Eliminan registros de una tabla que cumplan con los criterios especificados. Este tipo de consultas 
                   permite supresiones ágiles, pero debemos tener cuidado ya que luego no es posible recuperar los datos borrados.
                   
               </ul>
           
               </ul>
+
+
           
              
 

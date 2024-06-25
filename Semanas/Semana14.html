@@ -2091,8 +2091,1313 @@
           
               </ul>
 
+            <h2 class="number-title"> Combinaciones </h2>
+            <p>
+              <div class="flexbox">
+                  <img src="..\Imagenes\S6\nueva_combinacion.PNG" alt="relaciones" width="40%" height="auto">
+                </div>
+            </p>
+            
+            <p>Al crear una relación, es posible agregar una combinación. Uno de los campos es arrastrado
+              de una tabla origen de datos hasta el campo correspondiente de otra tabla. La tabla desde
+              la que arrastra es la que aparecerá a la izquierda en el <b><i>cuadro de diálogo de la combinación</i></b>.
+            </p>
+            <p>
+              <div class="flexbox">
+                  <img src="..\Imagenes\S6\Combinaciones.PNG" alt="relaciones" width="40%" height="auto">
+              </div>
+            </p>
+              
+            <p>
+              De forma predeterminada, Access crea una <em>combinación interna</em>.
+              Si necesita una <em>combinación externa</em>, puede  cambiar su tipo.
+            </p>
+            <ul>
+              <li><h3 class="title">Combinaciones internas</h3>
+              <p>
+              Solo incluye las filas (registros) en la que los campos combinados de ambas tablas sean iguales, es decir, 
+              solo muestran los datos cuando hay un identificador coincidente de ambos orígenes de datos 
+              conectados. 
+              </p>
+              
+              
+              <p>
+              <h4 class="title">Ejemplo:</h4> Si desea mostrar los productos y cantidades vendidos, 
+              debe crear una combinación interna entre
+              las tablas Productos y Detalles del pedido. Cuando se ejecuta la consulta, solo devolverá
+              los productos que aparecen en pedidos (solo los productos que tienen pedidos asociados
+              con ellos) y que, por tanto, aparecen en ambas tablas 
+              </p>
+              
+              <p>
+                  La mayoría de las veces, no es necesario hacer nada para usar una combinación interna. 
+                  Si las tablas que agrega a una consulta ya tienen relaciones, Access crea automáticamente una combinación interna
+                  entre cada par de tablas relacionadas, al agregar las tablas. Si se aplica la integridad referencial,
+                  Access muestra también un "1" sobre la línea de la combinación para indicar la tabla del lado "uno" de una relación
+                  de uno a varios y un símbolo de infinito (∞) para indicar la tabla del lado "varios"
+              </p>
+              
+              <p>
+                  Incluso si no ha creado relaciones, Access crea automáticamente combinaciones internas si agrega dos tablas a una 
+                  consulta y cada una de ellas tiene un campo con el mismo tipo de datos o compatible y uno de los campos de
+                  combinación es un clave principal. Los símbolos "uno" y "varios" no se muestran en este caso, porque no se
+                   exige la integridad referencial.
+              </p>
+              </li>
+              <li><h3 class="title">Combinaciones externas</h3>
+              
+              <p>
+              A veces, en las consultas, desea ver todos los registros de una tabla junto con los registros coincidentes de otra.
+              Para ello, podemos utilizar las <b>combinaciones externas</b>. Las combinaciones externas indican  a una consulta que,
+              aunque algunas de las filas de ambos lados de la combinación se corresponden exactamente, la consulta debe incluir
+              todas las filas de una tabla y también las filas de la otra tabla que comparten un valor común a ambos lados
+              de la combinación. 
+              </p>
+              
+              <p><h4 class="title">Ejemplo:</h4> Si deseas ver qué productos todavía no ha vendido, crea 
+              una consulta que muestre la IDProducto
+              de la tabla Producto y las IDPedido coincidentes de la tabla DetallesPedido.
+              Los productos que no tengan registros coincidentes en la tabla DetallesPedido
+              devuelven el nombre del producto sin ningún valor en el campo IDPedido.   
+              </p>
+              
+              <!-- <h3>Combinaciones externas izquierdas y combinaciones externas derechas</h3> -->
+              
+              <p>Las combinaciones externas pueden ser combinaciones <b><i>externas izquierdas</i></b> o pueden ser combinaciones 
+                <b><i>externas derechas</i></b>. En una combinación externa, la tabla que muestra <b>todos sus registros</b> se denomina <b>tabla base.</b>
+              La tabla que muestra <b>solo algunos registros</b> (coincidentes) se denomina <b>tabla secundaria.</b>
+              </p>
+              
+              <ol>
+               <li><h5 class="title">Combinaciones externas izquierdas: </h5>
+              
+              <p>
+              Incluye <b>todos</b> los registros de la tabla con el nombre Izquierda y <b>solo</b> aquellos registros de la tabla
+              con el nombre Derecha en los que los campos combinados sean iguales, por ejemplo, todos los pedidos,
+              pero solo las cantidades y el Id. de producto de aquellos pedidos que tienen productos asociados con ellos.   
+              </p>
+            </li>  
+               <li><h5 class="title">Combinaciones externas derechas: </h5>
+              
+              <p>
+              Incluye <b>todos</b> los registros de la tabla con el nombre Derecha y <b>solo</b> aquellos registros de la tabla con el nombre
+              Izquierda en los que los campos combinados sean iguales, por ejemplo,todos los productos,
+              incluso aquellos para los que no hay pedido, en cuyo caso mostrará valores en blanco en los campos Cantidad 
+              e Id. de pedido.   
+              </p>
+            </li>
+              </ol>
+              
+              
+              <p><b>Observacion:</b> Es importante saber qué tabla está a la izquierda y cuál está a la derecha, pues puede diferenciar 
+              la forma en la que las tablas se organizan en la ventana de consulta. Para entender qué datos recibirá de su consulta,
+              lea el texto cuidadosamente en el cuadro de diálogo Propiedades de la combinación.
+              </p>
 
-          
+            </li>
+          </ul>
+              <h2 class="number-title"> Criterios de consulta</h2>
+              
+              <p>
+              Los criterios de consulta ayudan a centrar la búsqueda en elementos específicos de la base de datos de Access.
+              Si algún elemento coincide con todos los criterios introducidos, aparecerá en los resultados de la consulta. 
+              Para agregar un criterio a una consulta de Access, ábrala en la vista Diseño e identifique los campos (columnas)
+              para los que desea especificar criterios. Si este campo no está en la cuadrícula de diseño, haga doble clic en el 
+              campo para agregarlo y entonces escriba el criterio en la fila Criterios de ese campo
+              </p>
+              
+              
+              
+              <p>
+              Un criterio de busqueda es una expresión/cadena que puede estar compuesta por referencias de campo, operadores y constantes. 
+              Access compara estas expresiones con valores de campo de consulta para determinar si incluir
+              el registro que contiene cada valor. Por ejemplo, = "Oaxaca" es una expresión que Access puede comparar con valores de un campo
+              de texto en una consulta. Si el valor de ese campo en un registro determinado es "Oaxaca", Access incluye el registro en los resultados de la consulta.   
+              </p>
+              
+              
+              
+              
+              
+              <p>A continuación se presentan  distintos operadores que podemos utilizar en una condición/criterio dentro de una regla de validación y/o consulta.</p>
+              
+              
+              
+              <!--
+              <button class="respButton hvr-grow ">  Encabezados de columna </button>
+              <div class="resp-box flexbox">
+              <div class="flexbox">  
+              <h3>Encabezados de columna:</h3>
+              <p>
+               Podemos cambiar el encabezado de las columnas del resultado de la consulta.
+              </p>
+              <p>
+               Normalmente aparece en el encabezado de la columna el nombre de la columna, si queremos cambiar ese encabezado lo 
+               indicamos en la fila Campo: escribiéndolo delante del nombre del campo y seguido de dos puntos ( : ). Se suele 
+               utilizar sobre todo para los campos calculados.
+              </p>
+              </div>
+              </div>
+              -->
+<!--               
+              
+              <button class="respButton hvr-grow ">  Campos calculados </button>
+              <div class="resp-box flexbox">
+              <div class="flexbox">   -->
+              <ul>
+                <li><h3 class="title">Campos calculados</h3>
+                  <p>
+                  Al igual que podemos definir en una tabla un campo cuyo tipo de datos sea Calculado también podemos incluir campos
+                  calculados en las consultas.
+                  </p>
+                  
+                  <p>
+                  ¿Cuándo incluir la expresión en una tabla y cuándo en una consulta? La respuesta dependerá de cada caso concreto. 
+                  Si el resultado de la expresión se va a utilizar frecuentemente en consultas, listados o estadísticas, puede ser más
+                  interesante guardar el dato en la propia tabla. Si en cambio se trata de un cálculo más específico puede ser preferible
+                  no utilizar espacio en el disco para conservar estos valores, definiendo un campo calculado en la consulta.
+                  </p>
+                  
+                  <p>
+                  Para crear a cabo un campo calculado, debemos situarnos en una celda vacía del diseño de la consulta y escribir la sintaxis
+                  correspondiente, que se compone de:
+                  <ul>
+                  <li><h5 class="title">Nombre del campo:</h5>
+                    Cadena de caracteres que se corresponde con el nombre que tendrá el campo que se calculará.
+                  </li>
+                  <li><h5 class="title">Dos puntos:</h5>
+                    Luego de escribir el nombre del campo, tenemos que agregar dos puntos (:) para separarlo del cálculo que se va a realizar.
+                  </li> 
+                  <li><h5 class="title">Fórmula:</h5>
+                    Sintaxis que determina los cálculos que se deben hacer para obtener los valores del nuevo campo. En nuestro caso, la sintaxis es:
+                    <p>
+                      <center> 
+                        <b>Total:[Precio]*[Cantidad]</b>
+                      </center>
+                    </p>
+                  </li>
+                </ul>
+                  <p><b>Observación:</b> En el caso de las consultas, los campos calculados   las operaciones unicamente pueden ser definidas sobre  
+                      campos con datos númericos  
+                  </p>
+                </li>
+              </ul>
+
+              
+              <!-- <button class="respButton hvr-grow "> El operador Como </button>
+              <div class="resp-box flexbox">
+              <div class="flexbox">   
+               -->
+                  <h3 class="title">El operador Como    </h3>
+                  <p>Se utiliza cuando queremos utilizar caracteres comodines para formar el valor con el que comparar.</p>
+                  
+                  <p><h4 class="title">Ejemplo.</h4>
+                  Si queremos visualizar los empleados cuyo nombre acabe en 'o'. Tenemos que utilizar el comodín *
+                  y utilizar el operador <b>Como</b> para que Access reconozca el * como un comodín y no como el carácter asterisco.
+                  La condición sería nombre como '*o'.
+                  </p>
+                  
+                  <p>
+                   El valor que contiene los comodines se conoce como patrón y tiene que ir encerrado entre comillas (simples o dobles). 
+                   La sintaxis es la siguiente:
+                  </p>
+                  <center> <b>Expresión Como 'patrón'</b></center>
+                  
+                  <p>En la siguiente tabla se  indican los caracteres comódines que se pueden poner en un
+                     patrón y su significado.
+                  </p>
+                  <center>
+                  <table class="tabla-funciones">
+                    <thead>
+                      <tr>
+                        <th>Caracteres en patr&oacute;n</th>
+                        <th>Significado</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                     
+                      <tr>
+                        <td class="nombre-funcion">?</td>
+                        <td>Un car&aacute;cter cualquiera</td>
+                      </tr>
+                      <tr>
+                        <td class="nombre-funcion">*</td>
+                        <td>Cero o m&aacute;s caracteres</td>
+                      </tr>
+                      <tr>
+                        <td class="nombre-funcion">#</td>
+                        <td>Un d&iacute;gito cualquiera (0-9)</td>
+                      </tr>
+                      <tr>
+                        <td class="nombre-funcion"><strong>[</strong>ListaCaracteres<strong>]</strong></td>
+                        <td>Un car&aacute;cter cualquiera de listacaracteres</td>
+                      </tr>
+                      <tr>
+                        <td class="nombre-funcion"><strong>[!</strong>ListaCaracteres<strong>]</strong></td>
+                        <td>Un car&aacute;cter cualquiera no incluido en listacaracteres</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  </center>
+                  
+                  
+                  <ul>
+                    <li>
+                       <p>
+                       <b>ListaCaracteres:</b> representa una lista de caracteres y puede incluir casi cualquier carácter, incluyendo dígitos, 
+                        los caracteres se escriben uno detrás de otro sin espacios en blanco ni comas. Por ejemplo para sacar los nombres
+                        que empiezan por a,g,r o v el patrón sería: '[agrv]*'
+                      </p>
+                    </li>
+                  
+                      <li>
+                      <p>
+                      Los caracteres especiales corchete de apertura [, interrogación ?, Hashtag # y asterisco * dejan de ser 
+                      considerados comodines cuando van entre corchetes. Por ejemplo para buscar los nombres que contienen un asterisco,
+                      el patrón sería: '*[*]*' en este caso el segundo * dentro del patrón no actúa como comodín sino como un carácter 
+                      cualquiera porque va dentro de los corchetes.
+                      </p>
+                      </li>
+                    
+                      <li>
+                       <p>Si no se encierra entre corchetes, la exclamación ! representa el carácter exclamación.</p>
+                      </li>
+                      
+                      <li>
+                      <p>
+                      El corchete de cierre ] se puede utilizar fuera de una listacaracteres como carácter independiente pero no se puede
+                      utilizar en una listacaracteres. Por ejemplo, el patrón 'a]*' permite encontrar nombres que empiecen por una a seguida de un corchete de cierre.
+                      </p>
+                      </li>
+                  
+                      <li>
+                      <p>La secuencia de caracteres [] se considera una cadena de caracteres de longitud cero ("").</p>
+                      </li>
+                  
+                      <li>
+                      <p>
+                      Se puede especificar un intervalo de caracteres en ListaCaracteres colocando un guión - para separar los límites inferior y superior del intervalo.
+                      Por ejemplo, la secuencia [A-Z ] en patrón representa cualquier carácter comprendido en el intervalo de la A a la Z. 
+                      Cuando se especifica un intervalo de caracteres, éstos deben aparecer en orden ascendente (de menor a mayor).[A-Z] es un intervalo válido,
+                      pero [Z-A] no lo es. Se pueden incluir múltiples intervalos entre corchetes, sin necesidad de delimitadores. 
+                      El guión - define un intervalo únicamente cuando aparece dentro de los corchetes entre dos caracteres, en cualquier otro caso representa el carácter guión.
+                      </p>
+                      </li>
+                    
+                      <p>
+                      <b>Ejemplo</b>
+                       Por ejemplo queremos saber los alumnos de determinada provincia (son los que tienen un código postal
+                       que empieza por 46 seguido de tres dígitos cualesquiera, la condición podría ser [código postal] como '46###'
+                      </p>
+                      </ul>
+                  
+                  
+                  
+             
+              
+<!--               
+              <button class="respButton hvr-grow ">  Criterios para campos de texto, Memo e hipervínculo </button>
+              <div class="resp-box flexbox">
+              <div class="flexbox">    -->
+              <p>
+              Los ejemplos siguientes son para el campo Estado de una consulta que se basa en una tabla que almacena información de contactos. 
+              </p>
+              
+              <table class="tabla-funciones">
+                  <thead>
+                      <tr>
+                          <th colspan="2" style="font-size: 25px;"> <b>Criterios para campos de texto, Memo e hipervínculo</b></th>
+                         </tr>
+                    <tr>
+                      <th>Criterios</th>
+                      <th>Descripción</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      
+                   
+                   <!-- 
+                    <tr>
+                      <td class="nombre-funcion">
+                        <p>Is Null</p>
+                      </td>
+                      <td>
+                        <p>Este criterio se puede aplicar a cualquier tipo de campo para mostrar los registros en los que <b class="ocpLegacyBold">el valor del campo es NULL</b>. </p>
+                      </td>
+                    </tr> -->
+                    <tr>
+                      <td class="nombre-funcion">
+                          <p>"Oaxaca"</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros en los que el campo Estado tenga el valor Oaxaca.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                      <td class="nombre-funcion">
+                          <p>NoEs "Durango"</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros en los que el campo Estado tenga un valor distinto de Durango.</p>
+                        </td>
+                      
+                    </tr>
+                    <tr>
+                      <td class="nombre-funcion">
+                          <p>Como "U*"</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros de todos los estados cuyos nombres empiecen por "C", como , Chiapas, etc. </p>
+                        </td>
+                    </td>
+                    </tr>
+                    <tr>
+                      <td class="nombre-funcion">
+                          <p>NoEs como "D*"</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros de todos los estados cuyos nombres empiezan por un carácter distinto de "D".</p>
+                        </td>
+                    </tr>
+                    <tr>
+                  <td>
+                      <p>Como "*Oaxaca*"</p>
+                  </td>
+                  <td>
+                    <p>Devuelvan registros de todos los estados que contengan la cadena "Oaxaca".</p>
+                  </td>
+                    </tr>
+                    <tr>
+                      <td class="nombre-funcion">
+                          <p>NoEs como "*Mexico*"</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros de todos estados que no contengan la cadena "Mexico".</p>
+                        </td>
+                    </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                    <p>Como "*a"</p>
+                  </td>
+                  <td>
+                    <p>Devuelvan registros de todos los estados cuyos nombres acaben con "a", como Oaxaca y Puebla .</p>
+                  </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                      <p>NoEs como "*s"</p>
+                  </td>
+                  <td>
+                    <p>Devuelvan registros de todos los países o regiones cuyos nombres no acaben con "s", como Oaxaca y Chihuahua.</p>
+                  </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>Es Nulo</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros en los que no hay ningún valor en el campo.</p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>No es Nulo</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan elementos en los que no falta el valor del campo.</p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                                <p>"" (un par de comillas)</p>
+                              </td>
+                              <td>
+                                <p>Devuelvan registros en los que el campo tiene un valor en blanco (pero no nulo). 
+                                  Por ejemplo, los registros de ventas realizadas a otro departamento podrían contener un valor 
+                                  en blanco en el campo Estado.</p>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>NoEs ""</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros en los que el campo Estado no tiene un valor en blanco.</p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>"" O Es Nulo</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros en los que no hay ningún valor en el campo, o bien el campo tiene un valor en blanco.</p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>No es Nulo Y Sin ""</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros en los que el campo Estado tiene un valor no en blanco y no nulo.</p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>No es Nulo Y Sin ""</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros en los que el campo Estado tiene un valor no en blanco y no nulo.</p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>&gt;= "México"</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros de todos los países o regiones a partir de México y posteriores por orden alfabético.</p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>Como "[A-D]*"</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros de países o regiones cuyos nombres empiezan por las letras "A" a la "D".</p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>"Durango" O "Zacatecas"</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros donde aparecen los  estados de Durango y Zacatecas.</p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>En("Chiapas", "Oaxaca", "Guerrero")</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros de todos los estados especificados en la lista.</p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>Der([Estado], 1) = "y"</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros de todos los estados cuya última letra sea "y".</p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>Longitud([Estado]) &gt; 10</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros de estados cuyo nombre esté formado por más de 10 caracteres.</p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>Como "Chi??"</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros países o regiones, como Chiapas  cuyos nombres tengan cinco caracteres y los primeros tres sean "Chi".</p>
+                      
+                        </td>
+                  </tr>
+                
+                </table>
+              
+              
+              
+              
+              <!-- <button class="respButton hvr-grow ">  Criterios para campos de número, moneda y autonuméricos </button>
+              <div class="resp-box flexbox">
+              <div class="flexbox">    -->
+              <p>
+              Los ejemplos siguientes son para el campo Precio_unitario de una consulta que se basa en una tabla que almacena información de productos.
+              El criterio se especifica en la fila Criterios del campo en la cuadrícula de diseño de la consulta.
+              </p>
+              <table class="tabla-funciones">
+                  <thead>
+                      <tr>
+                          <th colspan="2" style="font-size: 25px;"> <b>Criterios para campos de número, moneda y autonuméricos</b></th>
+                         </tr>
+                         <tr>
+                          <th style="width:200px">
+                            <p>
+                              <b class="ocpLegacyBold">Criterios</b>
+                            </p>
+                          </th>
+                         
+                          <th>
+                            <p>
+                              <b class="ocpLegacyBold">Descripción</b>
+                            </p>
+                          </th>
+                        </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>
+                            <p>&gt;25 y &lt;50</p>
+                          </td>
+                          <td>
+                            <p>Este criterio devuelve aquellos registros en los que el campo Precio_unitario contiene <b class="ocpLegacyBold">un valor superior a 25 y menor que 50</b>.</p>
+                          </td>
+                        </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>NoEs 1000</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros en los que el precio unitario del producto no es $1000 .</p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>&lt; 100<br>&lt;= 100</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros en los que el precio unitario es menor que &#36;100  (&lt;100). La segunda expresión (&lt;=100) muestra los registros en los que el precio por unidad es menor o igual que &#36;100 .</p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>&gt;99,99<br>&gt;=99,99</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros en los que el precio unitario es mayor que $99.99  (&gt;99.99). La segunda expresión muestra los registros en los que el precio por unidad es mayor o igual que 99.99 $.</p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>20 o 25</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros en los que el precio por unidad es $20  o $25.</p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>&gt;49,99 Y &lt;99,99<br>O bien,<br>Entre 50 Y 100</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros en los que el precio unitario está entre $49,99  y $99,99  (pero sin incluir estas cantidades).</p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>&lt;50 O &gt;100</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros en los que el precio por unidad no está entre $50  y $100 .</p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>En(20, 25, 30)</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros en los que el precio por unidad es $20 , $25  o $30 .</p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>Como "*4,99"</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros en los que el precio por unidad acaba con "4.99", como $4.99 , $14.99, $24.99, etc.</p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>Is Null</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros en los que no se ha especificado ningún valor en el campo PrecioUnidad.</p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>No es Nulo</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros en los que no falta el valor del campo PrecioUnidad.</p>
+                        </td>
+                  </tr>
+              </tbody>
+              </table>
+              
+              
+              
+              <!-- <button class="respButton hvr-grow ">  Criterios para campos de fecha y hora </button>
+              <div class="resp-box flexbox">
+              <div class="flexbox">    -->
+              <p>
+              Los ejemplos siguientes son para el campo FechaPedido en una consulta basada en una tabla que almacena información de Pedidos. 
+              El criterio se especifica en la fila Criterios del campo en la cuadrícula de diseño de la consulta.
+              </p>
+              
+              <table class="tabla-funciones">
+                  <thead>
+                      <tr>
+                          <th colspan="2" style="font-size: 25px;"><b>Criterios para campos de número, moneda y autonuméricos</b></th>
+                         </tr>
+                         <tr>
+                          <th style="width:300px">
+                            <p>
+                              <b class="ocpLegacyBold">Criterios</b>
+                            </p>
+                          </th>
+                         
+                          <th>
+                            <p>
+                              <b class="ocpLegacyBold">Descripción</b>
+                            </p>
+                          </th>
+                        </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>
+                            <p>DifFecha ( "aaaa", [FechaPedido], Fecha()) &gt; 30</p>
+                          </td>
+                          <td>
+                            <p>Devuelve solo los registros en los que <b class="ocpLegacyBold">el número de años que transcurren entre la </b><b class="ocpLegacyBold">FechaPedido</b><b class="ocpLegacyBold"> y la fecha de hoy es mayor que 30</b> se incluyen en el resultado de la consulta. </p>
+                          </td>
+                        </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>#02/02/2006#</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros de transacciones que tuvieron lugar el 2 de febrero de 2006. Recuerde rodear los valores de fecha con el carácter # para que Access pueda distinguir entre valores de fecha y cadenas de texto. </p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>No 1000</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros en los que el precio unitario del producto no es $1000.</p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>No #02/02/2006#</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros de transacciones que tuvieron lugar cualquier día menos el 2 de febrero de 2006.</p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>&lt; #02/02/2006#</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros de transacciones que tuvieron lugar después del 2 de febrero de 2006.</p>
+                          <p>Si desea ver las transacciones que tuvieron lugar en esta fecha o antes de ella, use el operador <b class="ocpLegacyBold">&lt;=</b> en vez del operador <b class="ocpLegacyBold">&lt;</b>.</p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>&gt; #02/02/2006#</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros de transacciones que tuvieron lugar antes del 2 de febrero de 2006.</p>
+                          <p>Si desea ver las transacciones que tuvieron lugar en esta fecha o después de ella, use el operador <b class="ocpLegacyBold">&gt;=</b> en vez del operador <b class="ocpLegacyBold">&gt;</b>.</p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>&gt;#02/02/2006# y &lt;#04/02/2006#</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan los registros en los que las transacciones tuvieron lugar entre el 2 de febrero de 2006 y el 4 de febrero de 2006.</p>
+                          <p>También puede usar el operador <b class="ocpLegacyBold">Entre</b> para filtrar según un intervalo de valores, incluidos los extremos. Por ejemplo, Entre #02/02/2006# y #04/02/2006# es lo mismo que &gt;=#02/02/2006# y &lt;=#04/02/2006#.</p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>&lt;#02/02/2006# o &gt;#04/02/2006#</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan los registros en los que las transacciones tuvieron lugar antes del 2 de febrero de 2006 o después del 4 de febrero de 2006.</p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>#02/02/2006# o #03/02/2006#</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros de transacciones que tuvieron lugar el 2 de febrero de 2006 o el 3 de febrero de 2006.</p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>DatePart("m", [SalesDate]) = 12</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros en los que las transacciones tuvieron lugar en diciembre de cualquier año.</p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>DatePart("q", [SalesDate]) = 1</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros en los que las transacciones tuvieron lugar en el primer trimestre de cualquier año.</p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>Fecha()</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros de transacciones que tuvieron lugar el día actual. Si hoy es 02/02/2006, verá los registros en los que el campo FechaPedido esté definido en 2 de febrero de 2006.</p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>Fecha()-1</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros de transacciones que tuvieron lugar el día anterior al día actual. Si hoy es 02/02/2006, verá los registros del 1 de febrero de 2006.</p>
+                        </td>
+                  </tr>
+                  <tr>
+                      <td class="nombre-funcion">
+                          <p>Date() + 1</p>
+                        </td>
+                        <td>
+                          <p>Devuelvan registros de transacciones que tuvieron lugar el día posterior al día actual. Si hoy es 02/02/2006, verá los registros del 3 de febrero de 2006.</p>
+                        </td>
+                  </tr>
+              
+              
+              
+              
+              
+              
+              
+                  <tr>
+                      
+                      <td>
+                        <p>DatePart("ww", [SalesDate]) = DatePart("ww", Date()) and Year( [SalesDate]) = Year(Date())</p>
+                      </td>
+                      <td>
+                        <p>Devuelvan registros de transacciones que tuvieron lugar durante la semana actual. La semana empieza el domingo y acaba el sábado.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      
+                      <td>
+                        <p>Year([SalesDate])* 53 + DatePart("ww", [SalesDate]) = Year(Date())* 53 + DatePart("ww", Date()) - 1 </p>
+                      </td>
+                      <td>
+                        <p>Devuelvan registros de transacciones que tuvieron lugar durante la semana pasada. La semana empieza el domingo y acaba el sábado.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                     
+                      <td>
+                        <p>Year([SalesDate])* 53+DatePart("ww", [SalesDate]) = Year(Date())* 53+DatePart("ww", Date()) + 1 </p>
+                      </td>
+                      <td>
+                        <p>Devuelvan registros de transacciones que tendrán lugar la semana siguiente. La semana empieza el domingo y acaba el sábado.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                     
+                      <td>
+                        <p>Between Date() and Date()-6</p>
+                      </td>
+                      <td>
+                        <p>Devuelvan registros de transacciones que tuvieron lugar durante los últimos 7 días. Si hoy es el 02/02/2006, verá los registros correspondientes al intervalo comprendido entre el 24 de enero de 2006 y el 2 de febrero de 2006.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                     
+                      <td>
+                        <p>Year([SalesDate]) = Year(Now()) And Month([SalesDate]) = Month(Now())</p>
+                      </td>
+                      <td>
+                        <p>Devuelvan registros del mes actual. Si hoy es 02/02/2006, verá los registros de febrero de 2006.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                     
+                      <td>
+                        <p>Year([SalesDate])* 12 + DatePart("m", [SalesDate]) = Year(Date())* 12 + DatePart("m", Date()) - 1</p>
+                      </td>
+                      <td>
+                        <p>Devuelvan registros del mes anterior. Si hoy es 02/02/2006, verá los registros de enero de 2006.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                     
+                      <td>
+                        <p>Year([SalesDate])* 12 + DatePart("m", [SalesDate]) = Year(Date())* 12 + DatePart("m", Date()) + 1</p>
+                      </td>
+                      <td>
+                        <p>Devuelvan registros del mes siguiente. Si hoy es 02/02/2006, verá los registros de marzo de 2006.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                     
+                      <td>
+                        <p>Between Date( ) And DateAdd("M", -1, Date( ))</p>
+                      </td>
+                      <td>
+                        <p>Registros de ventas de un mes. Si hoy es 02/02/2006, verá los registros del período entre el 2 de enero de 2006. y el 2 de febrero de 2006</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      
+                      <td>
+                        <p>Year([SalesDate]) = Year(Now()) And DatePart("q", Date()) = DatePart("q", Now())</p>
+                      </td>
+                      <td>
+                        <p>Devuelvan registros del trimestre en curso. Si hoy es 02/02/2006, verá los registros correspondientes al primer trimestre de 2006.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                              <td>
+                        <p>Year([SalesDate])*4+DatePart("q",[SalesDate]) = Year(Date())*4+DatePart("q",Date())- 1</p>
+                      </td>
+                      <td>
+                        <p>Devuelvan registros del trimestre anterior. Si hoy es 02/02/2006, verá los registros correspondientes al último trimestre de 2005.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                     
+                      <td>
+                        <p>Year([SalesDate])*4+DatePart("q",[SalesDate]) = Year(Date())*4+DatePart("q",Date())+1</p>
+                      </td>
+                      <td>
+                        <p>Devuelvan registros del trimestre siguiente. Si hoy es 02/02/2006, verá los registros correspondientes al segundo trimestre de 2006.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                     
+                      <td>
+                        <p>Year([SalesDate]) = Year(Date())</p>
+                      </td>
+                      <td>
+                        <p>Devuelvan registros del año en curso. Si hoy es 02/02/2006, verá los registros del año 2006.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="nombre-funcion">
+                        <p>Year([SalesDate]) = Year(Date()) - 1</p>
+                      </td>
+                      <td>
+                        <p>Devuelvan registros de transacciones que tuvieron lugar durante el año pasado. Si hoy es 02/02/2006, verá los registros del año 2005.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                    
+                      <td>
+                        <p>Year([SalesDate]) = Year(Date()) + 1</p>
+                      </td>
+                      <td>
+                        <p>Devuelvan registros de transacciones con fecha del año siguiente. Si hoy es 02/02/2006, verá los registros del año 2007.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      
+                      <td>
+                        <p>Year([SalesDate]) = Year(Date()) and Month([SalesDate]) &lt;= Month(Date()) and Day([SalesDate]) &lt;= Day (Date())</p>
+                      </td>
+                      <td>
+                        <p>Devuelvan registros de transacciones fechados entre el 1 de enero del año en curso y hoy. Si hoy es 02/02/2006, verá los registros del período entre el 1 de enero de 2006 y el 02/02/2006.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                    
+                      <td>
+                        <p>&lt; Date()</p>
+                      </td>
+                      <td>
+                        <p>Devuelvan registros de transacciones que tengan lugar después de hoy.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                     
+                      <td>
+                        <p>&gt; Date()</p>
+                      </td>
+                      <td>
+                        <p>Devuelvan registros de transacciones que tendrán lugar después de hoy.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                     
+                      <td>
+                        <p>Is Null</p>
+                      </td>
+                      <td>
+                        <p>Devuelvan registros en los que falte la fecha de la transacción.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                     
+                      <td>
+                        <p>Is Not Null</p>
+                      </td>
+                      <td>
+                        <p>Devuelvan registros en los que se conozca la fecha de la transacción.</p>
+                      </td>
+                    </tr>
+              
+              
+              
+              
+                  
+                  </tbody>
+              </table>
+              
+             
+              
+<!--               
+              
+              <button class="respButton hvr-grow "> Consultas con parámetros </button>
+              <div class="resp-box flexbox">
+              <div class="flexbox">    -->
+              
+              
+              <h2 class="number-title">Consultas con parámetros.</h2>
+              
+              <p>
+               A menudo, en una consulta necesitamos utilizar un valor que no es conocido en ese momento sino que queremos que lo
+               introduzca el usuario cuando se ejecute la consulta. 
+              </p>
+              
+              <p>
+               En este caso necesitamos utilizar en nuestra consulta un parámetro. Un parámetro funciona de forma parecida 
+               a un campo de tabla, pero el valor que almacena lo introduce el usuario cuando se ejecuta la consulta.
+              </p>
+              <p>
+               En una consulta cuando utilizamos un nombre de campo que no está en el origen de datos, Access considera este campo como un parámetro y cuando se ejecuta la consulta nos pide Introducir el valor del parámetro mediante un cuadro de diálogo
+              </p>
+              
+              <p>
+               <b>Observacion</b> Cuando pongamos el nombre del parámetro es importante escribirlo entre corchetes,
+               de lo contrario Access le añadirá comillas y no lo considerará como un nombre de parámetro sino como un valor.
+              </p>
+              
+              
+              <p>
+               Otra forma de utilizar un parámetro en una consulta es definiéndolo mediante el botón Parámetros de la pestaña Diseño.
+               La diferencia entre escribir directamente un nombre de parámetro y definirlo con el botón Parámetros es que, 
+               si le hemos asignado un tipo de dato, Access comprueba automáticamente el tipo del valor introducido por el usuario.
+              </p>
+              
+              
+              
+              
+              
+              
+              
+              <button class="respButton hvr-grow "> Función DifFecha </button>
+              <div class="resp-box flexbox">
+              <div class="flexbox">   
+              
+              
+              <h3> Función DifFecha</h3>
+              
+              <p>
+                
+              La función DifFecha nos permite calcular el número de intervalos de tiempo transcurridos entre dos fechas especificadas. 
+              Este intervalo de tiempo pueden ser días, meses, semanas, años, etc. Lo importante a la hora de utilizar
+              la función DifFecha es indicar el intervalo adecuado.
+              La sintaxis de la función tiene 5 argumentos: los tres primeros son obligatorios y los dos últimos son opcionales.
+              
+              <center> <b>DifFecha (“intervalo”;[fecha 1];[fecha 2];primer_día_semana; primera_semana_año)</b></center></p>
+              
+              
+              <table class="banded">
+                <thead>
+                  <tr>
+                    <td>
+                      <p>argumento</p>
+                    </td>
+                    <td>
+                      <p>Descripción</p>
+                    </td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <p>
+                        <i class="ocpItalic">intervalo</i>
+                      </p>
+                    </td>
+                    <td>
+                      <p>Obligatorio. Expresión de cadena que es el intervalo de tiempo que se usa para calcular la diferencia entre <b class="ocpLegacyBold"><i class="ocpItalic">fecha1</i></b> y <b class="ocpLegacyBold"><i class="ocpItalic">fecha2.</i></b></p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>
+                        <i class="ocpItalic">fecha1</i>, <i class="ocpItalic">fecha2</i></p>
+                    </td>
+                    <td>
+                      <p>Obligatorio. <b class="ocpLegacyBold">Variant</b> (<b class="ocpLegacyBold">Fecha</b>). Dos fechas que se desea utilizar en el cálculo.</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>
+                        <i class="ocpItalic">primer_día_semana</i>
+                      </p>
+                    </td>
+                    <td>
+                      <p>Opcional. Un constante que especifica el primer día de la semana. Si no se especifica ningún valor, se supone que es el domingo.</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>
+                        <i class="ocpItalic">primera_semana_año</i>
+                      </p>
+                    </td>
+                    <td>
+                      <p>Opcional. Una constante que especifica la primera semana del año. Si no se especifica, se entiende que la primera semana es aquella que contiene el día 1 de enero.</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              <h3>Configuración</h3>
+              
+              
+              <table class="banded">
+                <thead>
+                  <tr>
+                    <td>
+                      <p>Configuración</p>
+                    </td>
+                    <td>
+                      <p>Descripción</p>
+                    </td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <p>yyyy</p>
+                    </td>
+                    <td>
+                      <p>Año</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>q</p>
+                    </td>
+                    <td>
+                      <p>Trimestre</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>m</p>
+                    </td>
+                    <td>
+                      <p>Mes</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>y</p>
+                    </td>
+                    <td>
+                      <p>Día del año</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>d</p>
+                    </td>
+                    <td>
+                      <p>Día</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>w</p>
+                    </td>
+                    <td>
+                      <p>Weekday</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>ww</p>
+                    </td>
+                    <td>
+                      <p>Semana</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>h</p>
+                    </td>
+                    <td>
+                      <p>Hora</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>n</p>
+                    </td>
+                    <td>
+                      <p>Minuto</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>s</p>
+                    </td>
+                    <td>
+                      <p>Segundo</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <p>
+                El intervalo es el primer argumento de la función, hemos de escribirlo entre comillas,
+                pudiendo disponer de los siguientes intervalos:
+                <ul>
+                  <li>“a” años</li>
+                  <li>“d” días</li>
+              <li>“w” día de la semana (por ejemplo miércoles transcurridos entre las dos fechas)</li>
+              <li>“ww” semanas</li>
+              <li>“m” meses</li>
+              <li>“q” trimestres</li>
+              <li>“y” días del año (transcurridos entre dos fechas, es lo mismo que especificar d)</li>
+              <li>“yyyy” años</li>
+              <li>“h” horas</li>
+              <li>“n” minutos</li>
+              <li>“s” segundos</li>
+                  </li>
+                </ul>
+              </p>
+              
+              <p> Fecha 1 y Fecha 2 son las fechas entre las cuales queremos calcular el intervalo.</p>
+              
+              <p><b>Ejemplo:</b> Tenemos una tabla de pedidos, y queremos saber cuantos días han transcurrido 
+                entre la fecha de pedido y la fecha de entrega. Creamos una consulta en la que utilizamos la función DifFecha 
+                con la siguiente expresión:
+              
+              <center><b>Días transcurridos:DifFecha("d";[Fecha_Pedido];[Fecha_Entrega])</b></center>
+              
+              
+              </p>
+              
+              <p><b>ARGUMENTOS OPCIONALES:</b></p>
+              
+              <p>
+                Primer día de la semana, es una constante numérica, por defecto es 1, y corresponde al domingo, 
+                ya que se rige por el calendario anglosajón, cuyas semanas comienzan en domingo. Si queremos especificar 
+                que el primer día de la semana es el lunes escribiríamos un 2).
+              </p>
+              
+              
+              
+              
+              <p>
+                Primera semana, en este argumento se indica cual es la primera semana del año. Si no es especificamos nada, 
+                Access toma como primera semana del año la semana del 1 de enero.
+              </p>
+              
+              
+              
+              
+              </div>
+              </div>
+              
+              
+              
+              
+              
+              <button class="respButton hvr-grow ">  Consulta de Totales </button>
+              <div class="resp-box flexbox">
+              <div class="flexbox">   
+              <p>Para calcular los totales dentro de una consulta, pulsa el botón Totales de la barra de herramientas en Vista Diseño para abrir la fila Total en la cuadrícula de diseño.</p>
+              
+              <h3>Totales dentro de grupos</h3>
+              <p>
+                La primera vez que pulsemos el botón Totales en la barra de herramientas, Access visualiza Agrupar
+                por en la fila Total de todos los campos que se encuentren en la cuadrícula de diseño.
+                En este momento, los registros de cada campo estarán agrupados pero NO totalizados.
+                Podemos crear totales reemplazando el ajuste Agrupar por con algunas funciones de totales en la fila Total.
+              </p>  
+              
+              <p>Access proporciona hasta nueve funciones de totales diferentes:</p>
+              
+              <table>
+                <tbody>
+                <tr>
+                <td width="14%" valign="top"><em>Suma&nbsp;</em></td>
+                <td width="86%" valign="top">Calcula la <em>suma</em> de todos los valores de este campo en cada grupo. S&oacute;lo podemos especificar esta funci&oacute;n en columnas de campos num&eacute;ricos o de moneda&nbsp;</td>
+                </tr>
+                <tr>
+                <td width="14%" valign="top"><em>Promedio&nbsp;</em></td>
+                <td width="86%" valign="top">Calcula la <em>media aritm&eacute;tica</em> de todos los valores de este campo en cada grupo. S&oacute;lo podemos especificar esta funci&oacute;n en columnas de campos num&eacute;ricos o de moneda. <strong>Access</strong> no incluye los valores nulos en el c&aacute;lculo&nbsp;</td>
+                </tr>
+                <tr>
+                <td width="14%" valign="top"><em>M&iacute;n&nbsp;</em></td>
+                <td width="86%" valign="top">Da por resultado el <em>m&iacute;nimo</em> valor encontrado en esta columna dentro de cada grupo. Para valores num&eacute;ricos, devuelve el valor m&aacute;s peque&ntilde;o. Para valores de texto, devuelve el valor m&aacute;s peque&ntilde;o en la secuencia recogida, sin tener en cuenta las may&uacute;sculas o min&uacute;sculas. <strong>Access</strong> ignora los valores nulos&nbsp;</td>
+                </tr>
+                <tr>
+                <td width="14%" valign="top"><em>M&aacute;x&nbsp;</em></td>
+                <td width="86%" valign="top">Da por resultado el <em>mayor</em> valor encontrado en esta columna dentro de cada grupo. Para valores num&eacute;ricos, devuelve el valor mayor. Para valores de texto, devuelve el valor m&aacute;s alto en la secuencia recogida, sin tener en cuenta las may&uacute;sculas o min&uacute;sculas. <strong>Access</strong> ignora los valores nulos&nbsp;</td>
+                </tr>
+                <tr>
+                <td width="14%" valign="top"><em>Cuenta&nbsp;</em></td>
+                <td width="86%" valign="top">Da por resultado el <em>n&uacute;mero de filas</em> en las que el campo especificado no posee un valor nulo. Tambi&eacute;n podemos introducir la expresi&oacute;n <em>Cuenta(*) </em>en la fila Campo para contar todas las filas de cada grupo, independientemente de la existencia de valores nulos&nbsp;</td>
+                </tr>
+                <tr>
+                <td width="14%" valign="top"><em>DesVest&nbsp;</em></td>
+                <td width="86%" valign="top">Calcula la <em>desviaci&oacute;n t&iacute;pica </em>de todos los valores de este campo en cada grupo. S&oacute;lo podemos especificar esta funci&oacute;n en columnas de campos num&eacute;ricos o de moneda. Si el grupo no contiene al menos dos filas, <strong>Access</strong> devuelve un valor nulo&nbsp;</td>
+                </tr>
+                <tr>
+                <td width="14%" valign="top"><em>Var&nbsp;</em></td>
+                <td width="86%" valign="top">Calcula la <em>varianza</em> de todos los valores de este campo en cada grupo. S&oacute;lo podemos especificar esta funci&oacute;n en columnas de campos num&eacute;ricos o de moneda. Si el grupo no contiene al menos dos filas, <strong>Access</strong> devuelve un valor nulo&nbsp;</td>
+                </tr>
+                <tr>
+                <td width="14%" valign="top"><em>Primero&nbsp;</em></td>
+                <td width="86%" valign="top">Devuelve el <em>primer</em> valor de este campo&nbsp;</td>
+                </tr>
+                <tr>
+                <td width="14%" valign="top"><em>&Uacute;ltimo&nbsp;</em></td>
+                <td width="86%" valign="top">Devuelve el <em>&uacute;ltimo</em> valor de este campo&nbsp;</td>
+                </tr>
+                </tbody>
+                </table>
+                En la lista desplegable de la fila Total de la cuadrícula, también podemos encontrar un parámetro llamado Expresión. Elija este parámetro cuando desees crear una expresión en la fila Campo que utilice alguna de las funciones de totales listadas anteriormente.
+              </div>
+              </div>
+              
+              
+              
+              
+              <button class="respButton hvr-grow "> Funciones (organizadas por categoría) </button>
+              <div class="resp-box flexbox">
+              <div class="flexbox">   
+              
+                <p>
+                <a href="https://support.microsoft.com/es-es/office/funciones-organizadas-por-categor%C3%ADa-b8b136c3-2716-4d39-94a2-658ce330ed83
+                ">Funciones comunes que se usan en expresiones de Microsoft Access.</a>.
+                </p>
+              
+              
              
 
 
